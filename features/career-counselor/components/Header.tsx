@@ -206,7 +206,7 @@ const Header: React.FC<{ theme: string; setTheme: (theme: 'light' | 'dark') => v
                 aria-label="EEC Global - Visit main website"
               >
                 <img 
-                  src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png" 
+                  src="/assets/logos/eeclogo-main.png" 
                   alt="EEC Global Logo - Gujarat's Largest Study Abroad Company Since 1997" 
                   className="h-7 sm:h-9 w-auto"
                   width="120"

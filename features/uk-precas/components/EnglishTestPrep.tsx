@@ -88,7 +88,7 @@ export const EnglishTestPrep: React.FC = () => {
                         </p>
                         
                         {/* Hidden structured data */}
-                        <link itemProp="image" href="https://ai.eecglobal.com/assets/logos/eeclogo-main.png" />
+                        <link itemProp="image" href="/assets/logos/eeclogo-main.png" />
                         <meta itemProp="brand" content="EEC - Enbee Education Center" />
                         <meta itemProp="sku" content="PTE-VOUCHER-2026" />
                     </div>

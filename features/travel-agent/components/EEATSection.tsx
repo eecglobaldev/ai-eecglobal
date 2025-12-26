@@ -9,7 +9,7 @@ export const EEATSection = () => {
       exp: "27+ Years",
       spec: "US & Canada Immigration Law",
       desc: "Pioneer of study abroad consulting in Gujarat. Expert in challenging INA 214(b) refusals.",
-      imageUrl: "https://ai.eecglobal.com/assets/amit.jpeg"
+      imageUrl: "/assets/amit.jpeg"
     },
     {
       name: "CA Madhav Gupta",
@@ -17,7 +17,7 @@ export const EEATSection = () => {
       exp: "18+ Years",
       spec: "Financial Forensics & Compliance",
       desc: "Expert in financial documentation forensics, funds verification, and high-stakes visa compliance.",
-      imageUrl: "https://ai.eecglobal.com/assets/Madhav-Gupta.jpeg"
+      imageUrl: "/assets/Madhav-Gupta.jpeg"
     },
     {
       name: "Mrs. Mohita Gupta",
@@ -25,7 +25,7 @@ export const EEATSection = () => {
       exp: "12+ Years",
       spec: "Global Operations & GS",
       desc: "Specializes in complex GS drafting, academic assessment, and operational excellence for student visas.",
-      imageUrl: "https://ai.eecglobal.com/assets/mohita-gupta.jpeg"
+      imageUrl: "/assets/mohita-gupta.jpeg"
     }
   ];
 

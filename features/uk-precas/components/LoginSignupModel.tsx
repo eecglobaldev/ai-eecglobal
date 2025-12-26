@@ -316,7 +316,7 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
 
         {/* Header */}
         <div className="text-center mb-3">
-          <img src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png" alt="EEC" className="mx-auto h-10 mb-2" />
+          <img src="/assets/logos/eeclogo-main.png" alt="EEC" className="mx-auto h-10 mb-2" />
           <h2 className="mt-1 text-xl font-bold text-slate-900 dark:text-slate-100">
             Welcome!
           </h2>

@@ -341,7 +341,7 @@ export default function TravelAgentApp() {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <a href="https://eecglobal.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group cursor-pointer">
             <img
-              src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png"
+              src="/assets/logos/eeclogo-main.png"
               alt="Logo"
               className="h-8 sm:h-10"
             />

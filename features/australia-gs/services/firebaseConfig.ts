@@ -1,5 +1,5 @@
 // firebaseConfig.ts
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import {
@@ -18,7 +18,9 @@ const firebaseConfig = {
   appId: "1:777839011356:web:125ba58cd0a86da0e561d9"
 };
 
-export const app = initializeApp(firebaseConfig);
+// Initialize Firebase (Singleton pattern to prevent duplicate app errors)
+// Check if app is already initialized to avoid errors in Next.js SSR/build
+export const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
 // Configure Auth with persistent sessions so dashboard reuses login state
 // SSR guard: browserLocalPersistence is only available in the browser

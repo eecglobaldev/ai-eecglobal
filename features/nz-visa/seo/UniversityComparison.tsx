@@ -639,7 +639,7 @@ export const UniversityComparison: React.FC = () => {
   const universityListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "@id": "https://ai.eecglobal.com/nzvisaprep/#nz-universities",
+    "@id": "/nz-visa-prep/#nz-universities",
     "name": "All 8 New Zealand Universities - Complete Guide for Indian Students",
     "description": "Comprehensive comparison of all 8 QS-ranked New Zealand universities",
     "numberOfItems": 8,

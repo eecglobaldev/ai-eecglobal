@@ -420,7 +420,7 @@ const BranchCard: React.FC<{ branch: Branch; cityName: string; cityCluster: Topi
         "description": `Expert UK Pre-CAS interview preparation for September 2026 & January 2027 intakes, IELTS coaching (6.5+ bands), and Tier 4 student visa guidance at EEC ${branchNameShort}. Walk-in consultation available. ${cityCluster.description}`,
         "url": "https://eecglobal.com",
         "telephone": branch.contactPoint[0]?.telephone || "+918758880170",
-        "image": "https://ai.eecglobal.com/assets/logos/eeclogo-main.png",
+        "image": "/assets/logos/eeclogo-main.png",
         "priceRange": "₹₹",
         "currenciesAccepted": "INR",
         "paymentAccepted": "Cash, Card, UPI, Bank Transfer",
@@ -700,7 +700,7 @@ const BranchCard: React.FC<{ branch: Branch; cityName: string; cityCluster: Topi
                 </a>
             </nav>
             
-            <meta itemProp="image" content="https://ai.eecglobal.com/assets/logos/eeclogo-main.png" />
+            <meta itemProp="image" content="/assets/logos/eeclogo-main.png" />
         </article>
     );
 };
@@ -772,7 +772,7 @@ export const BranchLocator: React.FC = () => {
         "@graph": [
             {
                 "@type": "ItemList",
-                "@id": "https://ai.eecglobal.com/ukprecas/#branch-network-silo",
+                "@id": "/uk-precas/#branch-network-silo",
                 "name": "EEC UK Visa Interview Coaching Network - Gujarat 2026",
                 "description": `India's largest UK study abroad consultancy network with ${BRANCH_STATS.totalBranches} branches across ${BRANCH_STATS.totalCities} Gujarat cities. ${BRANCH_STATS.totalReviews.toLocaleString()}+ Google reviews with ${BRANCH_STATS.averageRating}★ average rating. Expert UK Pre-CAS credibility interview preparation for September 2026 & January 2027 intakes. AIRC certified till 2031. Walk-in consultation available.`,
                 "numberOfItems": BRANCH_STATS.totalBranches,
@@ -790,13 +790,13 @@ export const BranchLocator: React.FC = () => {
                     "@type": "ListItem",
                     "position": index + 1,
                     "name": `UK Visa Interview Coaching in ${city} 2026`,
-                    "url": `https://ai.eecglobal.com/ukprecas/#${generateCitySlug(city)}`,
+                    "url": `/uk-precas/#${generateCitySlug(city)}`,
                     "description": cityTopicalClusters[city]?.description || `UK Pre-CAS interview preparation for September 2026 & January 2027 intakes in ${city}`
                 }))
             },
             {
                 "@type": "Service",
-                "@id": "https://ai.eecglobal.com/ukprecas/#uk-precas-service-2026",
+                "@id": "/uk-precas/#uk-precas-service-2026",
                 "name": "UK Pre-CAS Credibility Interview Preparation 2026",
                 "alternateName": ["UK Visa Interview Coaching 2026", "CAS Shield Interview Training", "UKVI Credibility Test Prep", "UK Airport Interview Practice"],
                 "serviceType": ["Educational Consulting", "Visa Consulting", "Test Preparation"],
@@ -822,7 +822,7 @@ export const BranchLocator: React.FC = () => {
                 },
                 "availableChannel": {
                     "@type": "ServiceChannel",
-                    "serviceUrl": "https://ai.eecglobal.com/ukprecas/",
+                    "serviceUrl": "/uk-precas/",
                     "servicePhone": "+918758880170",
                     "availableLanguage": ["English", "Hindi", "Gujarati"]
                 }
@@ -1137,13 +1137,13 @@ export const BranchLocator: React.FC = () => {
                     
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
                         {[
-                            { name: 'UK Pre-CAS 2026', url: 'https://ai.eecglobal.com/ukprecas', icon: '🇬🇧', active: true },
-                            { name: 'USA F-1 Visa Prep', url: 'https://ai.eecglobal.com/usavisaprep', icon: '🇺🇸' },
-                            { name: 'Australia GS Prep', url: 'https://ai.eecglobal.com/australiagsprep', icon: '🇦🇺' },
+                            { name: 'UK Pre-CAS 2026', url: '/uk-precas', icon: '🇬🇧', active: true },
+                            { name: 'USA F-1 Visa Prep', url: '/usa-f1-visa', icon: '🇺🇸' },
+                            { name: 'Australia GS Prep', url: '/australia-gs-prep', icon: '🇦🇺' },
                             { name: 'Germany Visa Prep', url: 'https://ai.eecglobal.com/germanyvisaprep', icon: '🇩🇪' },
-                            { name: 'NZ Visa Prep', url: 'https://ai.eecglobal.com/nzvisaprep', icon: '🇳🇿' },
-                            { name: 'Career Counselor', url: 'https://ai.eecglobal.com/careercounselor', icon: '🎯' },
-                            { name: 'Travel Agent', url: 'https://ai.eecglobal.com/travelagent', icon: '✈️' },
+                            { name: 'NZ Visa Prep', url: '/nz-visa-prep', icon: '🇳🇿' },
+                            { name: 'Career Counselor', url: '/career-counselor', icon: '🎯' },
+                            { name: 'Travel Agent', url: '/travel-agent', icon: '✈️' },
                             { name: 'UK Courses 2026', url: 'https://courses.eecglobal.com/united-kingdom', icon: '📚' },
                             { name: 'PTE Voucher ₹15,300', url: 'https://ptetestindia.com', icon: '📝', highlight: true },
                             { name: 'IELTS AI FREE', url: 'https://t.me/eecieltsbot', icon: '🤖', highlight: true },
@@ -1179,7 +1179,7 @@ export const BranchLocator: React.FC = () => {
                     </p>
                     <div className="flex flex-wrap justify-center gap-3">
                         <a 
-                            href="https://ai.eecglobal.com/ukprecas/"
+                            href="/uk-precas/"
                             className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-semibold rounded-lg transition-all shadow-lg text-sm"
                         >
                             🤖 Start Free AI Interview Prep

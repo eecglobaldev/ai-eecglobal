@@ -132,7 +132,7 @@ const Header: React.FC = () => {
             <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center gap-3">
-                        <img src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png" alt="EEC" className="h-8" />
+                        <img src="/assets/logos/eeclogo-main.png" alt="EEC" className="h-8" />
                         <span className="text-xl font-bold text-slate-800 dark:text-slate-200">USA F-1 Visa Prep</span>
                     </div>
                     <div className="flex items-center space-x-3 md:space-x-8">

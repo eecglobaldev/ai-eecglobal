@@ -14,7 +14,7 @@ const SEOFooter: React.FC = () => {
                     {/* Logo Section with Rich Description */}
                     <div className="col-span-1 md:col-span-1">
                         <div className="flex items-center gap-3">
-                            <img src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png" alt="EEC - Enbee Education Center Logo - Gujarat's Best USA Study Abroad Consultant" className="h-8" />
+                            <img src="/assets/logos/eeclogo-main.png" alt="EEC - Enbee Education Center Logo - Gujarat's Best USA Study Abroad Consultant" className="h-8" />
                             <span className="text-lg font-bold text-slate-800 dark:text-slate-200">
                                 USA F-1 Visa Prep
                             </span>

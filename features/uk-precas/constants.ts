@@ -5,5 +5,5 @@ export const COURSE_LEVELS = ["Foundation", "International Year 1", "Internation
 
 export const AUTH_MODAL_EVENT = 'eec:open-auth-modal';
 export const AUTH_SUCCESS_EVENT = 'auth-success';
-export const DASHBOARD_URL = 'https://ai.eecglobal.com/ukprecas/dashboard/';
+export const DASHBOARD_URL = '/uk-precas/dashboard/';
 

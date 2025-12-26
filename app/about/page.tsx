@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     images: [
       {
-        url: 'https://ai.eecglobal.com/og-about-image.png',
+        url: '/og-about-image.png',
         width: 1200,
         height: 630,
         alt: 'About EEC AI Tools',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About EEC AI Tools | 28 Years of Expertise, Digitized',
     description: 'AIRC certified, 26 branches, 100,000+ students. Discover why Gujarat trusts EEC for overseas education.',
-    images: ['https://ai.eecglobal.com/twitter-about-image.png'],
+    images: ['/twitter-about-image.png'],
   },
   alternates: {
     canonical: 'https://ai.eecglobal.com/about',
@@ -56,11 +56,11 @@ export default function AboutPage() {
         "url": "https://eecglobal.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://ai.eecglobal.com/assets/logos/eeclogo-main.png",
+          "url": "/assets/logos/eeclogo-main.png",
           "width": 200,
           "height": 200
         },
-        "image": "https://ai.eecglobal.com/assets/logos/eeclogo-main.png",
+        "image": "/assets/logos/eeclogo-main.png",
         "description": "Enbee Education Center (EEC) is Gujarat's leading overseas education consultancy, established in 1997. With 26 branches across 12 cities and over 100,000 students guided, EEC combines 28 years of consular expertise with cutting-edge AI technology.",
         "foundingDate": "1997",
         "founder": {
@@ -404,7 +404,7 @@ export default function AboutPage() {
             <div className="not-prose my-12 grid md:grid-cols-3 gap-6">
               <div className="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 backdrop-blur-sm">
                 <div className="w-12 h-12 mb-4 rounded-xl flex items-center justify-center">
-                  <img src="https://ai.eecglobal.com/assets/Amit-Jalan.jpeg" alt="Mr. Amit Jalan" className="w-12 h-12 rounded-full object-cover" />
+                  <img src="/assets/Amit-Jalan.jpeg" alt="Mr. Amit Jalan" className="w-12 h-12 rounded-full object-cover" />
                 </div>
                 <h4 className="text-lg font-bold text-white">Mr. Amit Jalan</h4>
                 <p className="text-sm text-blue-400 font-medium mb-2">Managing Director</p>
@@ -413,7 +413,7 @@ export default function AboutPage() {
               </div>
               <div className="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 backdrop-blur-sm">
                 <div className="w-12 h-12 mb-4 rounded-xl flex items-center justify-center">
-                  <img src="https://ai.eecglobal.com/assets/Madhav-Gupta.jpeg" alt="CA Madhav Gupta" className="w-12 h-12 rounded-full object-cover" />
+                  <img src="/assets/Madhav-Gupta.jpeg" alt="CA Madhav Gupta" className="w-12 h-12 rounded-full object-cover" />
                 </div>
                 <h4 className="text-lg font-bold text-white">CA Madhav Gupta</h4>
                 <p className="text-sm text-blue-400 font-medium mb-2">Director, Financial Forensics</p>
@@ -422,7 +422,7 @@ export default function AboutPage() {
               </div>
               <div className="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 backdrop-blur-sm">
                 <div className="w-12 h-12 mb-4 rounded-xl flex items-center justify-center">
-                  <img src="https://ai.eecglobal.com/assets/mohita-gupta.jpeg" alt="Mrs. Mohita Gupta" className="w-12 h-12 rounded-full object-cover" />
+                  <img src="/assets/mohita-gupta.jpeg" alt="Mrs. Mohita Gupta" className="w-12 h-12 rounded-full object-cover" />
                 </div>
                 <h4 className="text-lg font-bold text-white">Mrs. Mohita Gupta</h4>
                 <p className="text-sm text-blue-400 font-medium mb-2">Vice President, Visa Strategy</p>

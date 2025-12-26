@@ -53,7 +53,7 @@ export const TOOLS: Tool[] = [
         icon: BookOpen,
         url: 'https://test-ireland.eecglobal.com', // External
         color: 'text-emerald-600 dark:text-emerald-400',
-        customIconUrl: 'https://ai.eecglobal.com/assets/ireland.png',
+        customIconUrl: '/assets/ireland.png',
         features: ['2-Year Post-Study Work Visa', 'No Application Fee Options', 'Europe\'s Tech Capital (Jobs)']
     },
     {

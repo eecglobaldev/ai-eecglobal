@@ -182,7 +182,7 @@ export const NZStatistics: React.FC = () => {
   const datasetSchema = {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    "@id": "https://ai.eecglobal.com/nzvisaprep/#nz-visa-statistics",
+    "@id": "/nz-visa-prep/#nz-visa-statistics",
     "name": "New Zealand Student Visa Statistics 2024-2025",
     "description": "Comprehensive statistics on NZ student visa applications for Indian students",
     "creator": { "@type": "Organization", "name": "EEC Global" },

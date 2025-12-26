@@ -36,7 +36,7 @@ const BREADCRUMB_ITEMS: BreadcrumbItem[] = [
   },
   {
     name: 'UK Pre-CAS Interview Prep',
-    url: 'https://ai.eecglobal.com/ukprecas',
+    url: '/uk-precas',
     current: true,
   },
 ];

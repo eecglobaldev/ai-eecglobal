@@ -175,7 +175,7 @@ export const CostCalculator: React.FC = () => {
   const calculatorSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "@id": "https://ai.eecglobal.com/nzvisaprep/#cost-calculator",
+    "@id": "/nz-visa-prep/#cost-calculator",
     "name": "NZ Student Visa Cost Calculator 2025",
     "description": "Free interactive calculator to estimate total study costs in New Zealand including tuition fees, living expenses, accommodation, and visa costs for Indian students",
     "applicationCategory": "EducationalApplication",

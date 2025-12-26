@@ -82,7 +82,7 @@ const EXPERTS: ExpertProfile[] = [
     role: 'NZ University Admissions Expert',
     organization: 'ESTERO New Zealand',
     initials: 'KG',
-    profileImage: 'https://ai.eecglobal.com/assets/Kshitij-Garg.jpg',
+    profileImage: '/assets/Kshitij-Garg.jpg',
     description: 'University of Auckland alumnus and NZ Permanent Resident with over 15 years in international education. Has personally guided 5,000+ students to New Zealand universities.',
     expertise: ['NZ University Admissions', 'Scholarship Negotiations', 'Post-Study Work Strategy', 'Auckland Settlement'],
     credentials: [
@@ -109,7 +109,7 @@ const EXPERTS: ExpertProfile[] = [
     role: 'Immigration Strategy Expert',
     organization: 'EEC',
     initials: 'AJ',
-    profileImage: 'https://ai.eecglobal.com/assets/Amit-Jalan.jpeg',
+    profileImage: '/assets/Amit-Jalan.jpeg',
     description: 'Purdue University alumnus with 28+ years in international education consulting. Founded EEC in 1997, growing it to 26 branches. US and UK embassy training invitee.',
     expertise: ['Immigration Strategy', 'Complex Visa Cases', 'AI Tool Strategy', 'Education Policy'],
     credentials: [
@@ -138,7 +138,7 @@ const EXPERTS: ExpertProfile[] = [
     role: 'Financial Documentation Specialist',
     organization: 'EEC',
     initials: 'MG',
-    profileImage: 'https://ai.eecglobal.com/assets/Madhav-Gupta.jpeg',
+    profileImage: '/assets/Madhav-Gupta.jpeg',
     description: 'Chartered Accountant (ICAI Member: 421209) specializing in financial documentation for student visas. Reviewed 5000+ CA certificates with deep FTS expertise.',
     expertise: ['FTS Documentation', 'Source of Funds Verification', 'CA Certificate Preparation', 'Financial Case Building'],
     credentials: [
@@ -167,7 +167,7 @@ const EXPERTS: ExpertProfile[] = [
     role: 'GTE Assessment Expert',
     organization: 'EEC',
     initials: 'AG',
-    profileImage: 'https://ai.eecglobal.com/assets/Anirudh-Gupta.jpeg',
+    profileImage: '/assets/Anirudh-Gupta.jpeg',
     description: 'Bond University alumnus and lead intentions auditor. Specializes in GTE assessment and SOP review with expertise in identifying red flags before submission.',
     expertise: ['GTE Assessment', 'SOP Review', 'Return Intent Strategy', 'Profile Risk Analysis'],
     credentials: [
@@ -193,7 +193,7 @@ const EXPERTS: ExpertProfile[] = [
     role: 'Credibility Interview Specialist',
     organization: 'EEC',
     initials: 'MoG',
-    profileImage: 'https://ai.eecglobal.com/assets/mohita-gupta.jpeg',
+    profileImage: '/assets/mohita-gupta.jpeg',
     description: 'Former Citibank investment banker turned education counselor. Brings corporate rigor to visa interview prep, specializing in high-risk profiles.',
     expertise: ['Credibility Interview Coaching', 'High-Risk Profiles', 'Mock Interviews', 'Communication Training'],
     credentials: [
@@ -455,7 +455,7 @@ export const AuthorProfiles: React.FC = () => {
   const personSchemas = EXPERTS.map(expert => ({
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": `https://ai.eecglobal.com/nzvisaprep/#expert-${expert.id}`,
+    "@id": `/nz-visa-prep/#expert-${expert.id}`,
     "name": expert.name,
     "jobTitle": expert.title,
     "description": expert.description,

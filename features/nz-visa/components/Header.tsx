@@ -136,7 +136,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, setTheme }) => {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <img src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png" alt="EEC Logo" className="h-8" />
+              <img src="/assets/logos/eeclogo-main.png" alt="EEC Logo" className="h-8" />
               <span className="text-lg font-bold text-slate-800 dark:text-slate-200 sm:text-xl">
                 NZ Student Visa Prep
               </span>

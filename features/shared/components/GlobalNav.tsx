@@ -122,10 +122,11 @@ const GlobalNav: React.FC = () => {
                         <Link href="/" className="flex items-center gap-2 group">
                             <div className="relative h-8 sm:h-10 w-32 sm:w-40">
                                 <Image
-                                    src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png"
+                                    src="/assets/logos/eeclogo-main.png"
                                     alt="Logo"
                                     fill
                                     className="object-contain"
+                                    unoptimized
                                 />
                             </div>
                         </Link>

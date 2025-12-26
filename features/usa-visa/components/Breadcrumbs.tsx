@@ -36,7 +36,7 @@ const BREADCRUMB_ITEMS: BreadcrumbItem[] = [
     },
     {
         name: 'USA Visa Interview Prep',
-        url: 'https://ai.eecglobal.com/usavisaprep', // This might need update later if URL structure changes
+        url: '/usa-f1-visa', // This might need update later if URL structure changes
         current: true,
     },
 ];

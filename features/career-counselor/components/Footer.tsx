@@ -151,7 +151,7 @@ const Footer: React.FC = () => {
                 itemProp="url"
               >
                 <img 
-                  src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png" 
+                  src="/assets/logos/eeclogo-main.png" 
                   alt="EEC Global Logo - Gujarat's Largest Study Abroad Company" 
                   className="h-14 sm:h-16 w-auto" 
                   itemProp="logo"

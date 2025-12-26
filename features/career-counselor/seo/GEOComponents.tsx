@@ -87,7 +87,7 @@ export const LLMContentLayer: React.FC = () => {
             {AI_COUNSELOR_ENTITY.description}
           </p>
           <p data-semantic-role="access-info">
-            URL: https://ai.eecglobal.com/careercounselor | Price: Free | Registration: Not Required
+            URL: /career-counselor | Price: Free | Registration: Not Required
           </p>
           {AI_COUNSELOR_ENTITY.citableStatements.map((stmt, idx) => (
             <blockquote key={idx} data-confidence={stmt.confidence}>
@@ -286,7 +286,7 @@ export const EntityKnowledgeSection: React.FC = () => {
           >
             <div className="flex items-center gap-3 mb-4">
               <img 
-                  src="https://ai.eecglobal.com/assets/EECLOGORED.png" 
+                  src="/assets/EECLOGORED.png" 
                   alt="EEC Global Logo - Gujarat's Largest Study Abroad Company Since 1997" 
                   className="h-7 sm:h-12 w-auto rounded-full"
                   width="120"
@@ -342,7 +342,7 @@ export const EntityKnowledgeSection: React.FC = () => {
           >
             <div className="flex items-center gap-3 mb-4">
               <img 
-                  src="https://ai.eecglobal.com/assets/Amit-Jalan.jpeg" 
+                  src="/assets/Amit-Jalan.jpeg" 
                   alt="Amit Jalan - Managing Director" 
                   className="h-7 sm:h-12 w-auto rounded-full"
                   width="120"
@@ -398,7 +398,7 @@ export const EntityKnowledgeSection: React.FC = () => {
           >
             <div className="flex items-center gap-3 mb-4">
             <img 
-                  src="https://ai.eecglobal.com/assets/Madhav-Gupta.jpeg" 
+                  src="/assets/Madhav-Gupta.jpeg" 
                   alt="CA Madhav Gupta - Director" 
                   className="h-7 sm:h-12 w-auto rounded-full"
                   width="120"
@@ -660,7 +660,7 @@ export const SemanticClaritySection: React.FC = () => {
               <div className="flex flex-col sm:flex-row sm:gap-4">
                 <dt className="font-medium text-slate-700 dark:text-slate-300 sm:w-1/3">URL:</dt>
                 <dd className="text-slate-600 dark:text-slate-400">
-                  <a href="https://ai.eecglobal.com/careercounselor" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+                  <a href="/career-counselor" className="text-indigo-600 dark:text-indigo-400 hover:underline">
                     ai.eecglobal.com/careercounselor
                   </a>
                 </dd>
@@ -720,7 +720,7 @@ export const LLMCitabilityBanner: React.FC = () => {
         <article data-citation-style="source-attribution">
           <h3>Source Attribution</h3>
           <p>Source: EEC Global (https://eecglobal.com)</p>
-          <p>Source: EEC AI Course Counselor (https://ai.eecglobal.com/careercounselor)</p>
+          <p>Source: EEC AI Course Counselor (/career-counselor)</p>
         </article>
         
         <article data-citation-style="verification">

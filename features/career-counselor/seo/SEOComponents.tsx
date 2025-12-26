@@ -605,7 +605,7 @@ export const LongTailContentSection: React.FC = () => {
           <article className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200/50 dark:border-slate-700/50 group hover:shadow-xl transition-all">
             <div className="h-32 flex items-center justify-center">
             <img 
-          src="https://ai.eecglobal.com/assets/usa-flag.jpg"
+          src="/assets/usa-flag.jpg"
         alt="USA Flag"
         className="w-full h-full object-cover"
       
@@ -638,7 +638,7 @@ export const LongTailContentSection: React.FC = () => {
           <article className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200/50 dark:border-slate-700/50 group hover:shadow-xl transition-all">
           <div className="h-32 flex items-center justify-center">
             <img 
-          src="https://ai.eecglobal.com/assets/uk-flag.jpg"
+          src="/assets/uk-flag.jpg"
         alt="USA Flag"
         className="w-full h-full object-cover"
       
@@ -671,7 +671,7 @@ export const LongTailContentSection: React.FC = () => {
           <article className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200/50 dark:border-slate-700/50 group hover:shadow-xl transition-all">
           <div className="h-32 flex items-center justify-center">
             <img 
-          src="https://ai.eecglobal.com/assets/canada-flag.jpg"
+          src="/assets/canada-flag.jpg"
         alt="USA Flag"
         className="w-full h-full object-cover"
       
@@ -704,7 +704,7 @@ export const LongTailContentSection: React.FC = () => {
           <article className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200/50 dark:border-slate-700/50 group hover:shadow-xl transition-all">
           <div className="h-32 flex items-center justify-center">
             <img 
-          src="https://ai.eecglobal.com/assets/australia-flag.jpg"
+          src="/assets/australia-flag.jpg"
         alt="USA Flag"
         className="w-full h-full object-cover"
       
@@ -737,7 +737,7 @@ export const LongTailContentSection: React.FC = () => {
           <article className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200/50 dark:border-slate-700/50 group hover:shadow-xl transition-all">
           <div className="h-32 flex items-center justify-center">
             <img 
-          src="https://ai.eecglobal.com/assets/germany-flag.jpg"
+          src="/assets/germany-flag.jpg"
         alt="USA Flag"
         className="w-full h-full object-cover"
       
@@ -770,7 +770,7 @@ export const LongTailContentSection: React.FC = () => {
           <article className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200/50 dark:border-slate-700/50 group hover:shadow-xl transition-all">
           <div className="h-32 flex items-center justify-center">
             <img 
-          src="https://ai.eecglobal.com/assets/ireland-flag.jpg"
+          src="/assets/ireland-flag.jpg"
         alt="USA Flag"
         className="w-full h-full object-cover"
       

@@ -43,13 +43,13 @@ const experts: Expert[] = [
         name: "Amit Jalan",
         title: "Study Abroad Industry Veteran & Lead AI Strategist and Systems Architect | Managing Director, EEC | Alumnus – Purdue University, USA",
         bio: <>Amit is a study abroad industry veteran and the driving force behind EEC's AI-led systems and strategy. With 28+ years of deep expertise in <strong>US university admissions, F-1 visa strategy, and evolving US immigration updates, he is widely regarded as a go-to authority for high-stakes USA study plans and USA Student Visa preparation.</strong></>,
-        image: <ExpertImage src="https://ai.eecglobal.com/assets/amit.jpeg" alt="Amit Jalan" />
+        image: <ExpertImage src="/assets/amit.jpeg" alt="Amit Jalan" />
     },
     {
         name: "CA Madhav Gupta",
         title: "Director, EEC | Chartered Accountant (2012) – Membership No. 421209",
         bio: <>Madhav is one of India's leading study abroad experts on the <strong>financial and compliance</strong> side of <strong>USA student visas</strong>. He specialises in <strong>F-1 financial planning, proof of funds, loan and savings structuring, and visa-compliant documentation</strong> that matches US consulate expectations. His guidance ensures that every USA Student Visa file is <strong>clean, consistent, well-documented, and visa-officer friendly</strong>, significantly boosting approval confidence.</>,
-        image: <ExpertImage src="https://ai.eecglobal.com/assets/Madhav-Gupta.jpeg" alt="CA Madhav Gupta" />
+        image: <ExpertImage src="/assets/Madhav-Gupta.jpeg" alt="CA Madhav Gupta" />
     }
 ];
 

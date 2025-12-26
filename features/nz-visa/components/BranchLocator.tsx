@@ -47,7 +47,7 @@ const generateBranchSchema = (branch: Branch): object => ({
     "@id": `https://eecglobal.com/branches/${branch.identifier}`,
     "name": branch.name,
     "description": `${branch.name} - EEC Study Abroad Consultancy Branch providing IELTS/PTE coaching, university admissions, and visa guidance services for students planning to study in New Zealand, UK, USA, Canada, Australia, and Germany.`,
-    "image": "https://ai.eecglobal.com/assets/eeclogo.svg",
+    "image": "/assets/eeclogo.svg",
     "url": "https://eecglobal.com",
     "telephone": branch.contactPoint[0]?.telephone || "+918758750036",
     "priceRange": "$$",

@@ -40,7 +40,7 @@ const BREADCRUMB_ITEMS: BreadcrumbItem[] = [
   },
   {
     name: 'Australia GS Interview Prep',
-    url: 'https://ai.eecglobal.com/australiagsprep',
+    url: '/australia-gs-prep',
     current: true,
   },
 ];

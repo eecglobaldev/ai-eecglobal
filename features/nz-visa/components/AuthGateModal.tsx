@@ -148,7 +148,7 @@ const AuthGateModal: React.FC<Props> = ({
         {/* Header with Logo */}
         <div className="text-center mb-6">
           <img 
-            src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png" 
+            src="/assets/logos/eeclogo-main.png" 
             alt="EEC" 
             className="mx-auto h-10 mb-4" 
           />

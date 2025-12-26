@@ -519,7 +519,7 @@ const UsaVisaApp: React.FC = () => {
                             <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Enter your details for an ultra hyper-personalized US student visa preparation UNLIMITED experience. Anytime. Anywhere (Version 3.0)</p>
                             <div className="flex flex-col items-center justify-center mt-8">
                                 <img
-                                    src="https://ai.eecglobal.com/assets/visaQueue.jpeg"
+                                    src="/assets/visaQueue.jpeg"
                                     alt="Visa Interview Queue"
                                     className="rounded-2xl shadow-lg object-cover w-full max-w-md"
                                 />

@@ -16,8 +16,8 @@ export const ORGANIZATION = {
   
   urls: {
     main: "https://eecglobal.com",
-    aiTool: "https://ai.eecglobal.com/careercounselor",
-    logo: "https://ai.eecglobal.com/assets/eeclogo.svg",
+    aiTool: "/career-counselor",
+    logo: "/assets/eeclogo.svg",
   },
   
   contact: {
@@ -165,7 +165,7 @@ export const KEY_PERSONS = [
     education: "Purdue University, USA",
     experience: "28+ years",
     linkedin: "https://in.linkedin.com/in/amitjalan",
-    image: "https://ai.eecglobal.com/assets/Amit-Jalan.jpeg",
+    image: "/assets/Amit-Jalan.jpeg",
   },
   {
     name: "CA Madhav Gupta",
@@ -183,7 +183,7 @@ export const KEY_PERSONS = [
       { name: "British Council UK Education Agent Training", id: "17810" },
     ],
     linkedin: "https://in.linkedin.com/in/madhav-gupta-9027781a7",
-    image: "https://ai.eecglobal.com/assets/Madhav-Gupta.jpeg",
+    image: "/assets/Madhav-Gupta.jpeg",
   },
 ];
 

@@ -31,7 +31,7 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ params, result }) => {
     }
 
     // Update or Create Canonical
-    const currentUrl = `https://ai.eecglobal.com/travelagent/#/destination/${encodeURIComponent(params.destination)}/type/${encodeURIComponent(params.visaType)}`;
+    const currentUrl = `/travel-agent/#/destination/${encodeURIComponent(params.destination)}/type/${encodeURIComponent(params.visaType)}`;
     if (canonical) {
       canonical.setAttribute('href', currentUrl);
     } else {
@@ -61,12 +61,12 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ params, result }) => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://ai.eecglobal.com/travelagent"
+        "item": "/travel-agent"
       }, {
         "@type": "ListItem",
         "position": 2,
         "name": params.destination || "Destinations",
-        "item": `https://ai.eecglobal.com/travelagent/#/destination/${encodeURIComponent(params.destination || '')}`
+        "item": `/travel-agent/#/destination/${encodeURIComponent(params.destination || '')}`
       }, {
         "@type": "ListItem",
         "position": 3,

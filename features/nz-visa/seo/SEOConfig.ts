@@ -198,7 +198,7 @@ export const TOPICAL_CLUSTERS = {
     ],
     internalLinks: [
       '/nzvisaprep',
-      'https://ai.eecglobal.com/careercounselor',
+      '/career-counselor',
     ],
   },
   
@@ -255,7 +255,7 @@ export const TOPICAL_CLUSTERS = {
       'Interview Skills for NZ Jobs',
     ],
     internalLinks: [
-      'https://ai.eecglobal.com/careercounselor',
+      '/career-counselor',
       '/nzvisaprep',
     ],
   },

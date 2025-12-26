@@ -36,7 +36,7 @@ const BREADCRUMB_ITEMS: BreadcrumbItem[] = [
   },
   {
     name: 'Visa & Travel Services',
-    url: 'https://ai.eecglobal.com/travelagent',
+    url: '/travel-agent',
     current: true
   },
 ];

@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
               className="inline-block group"
             >
               <img
-                src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png"
+                src="/assets/logos/eeclogo-main.png"
                 alt="Logo"
                 className="h-14 sm:h-10"
               />

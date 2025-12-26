@@ -172,7 +172,7 @@ const SUCCESS_STORIES = [
     details: "University of Auckland, MBA Student",
     location: "Ahmedabad",
     rating: 5,
-    image: "https://ai.eecglobal.com/assets/studentimg/female1.png",
+    image: "/assets/studentimg/female1.png",
     keywords: ['inz interview', 'credibility interview preparation', 'auckland mba'],
   },
   {
@@ -181,7 +181,7 @@ const SUCCESS_STORIES = [
     details: "Massey University, Engineering",
     location: "Surat",
     rating: 5,
-    image: "https://ai.eecglobal.com/assets/studentimg/male1.png",
+    image: "/assets/studentimg/male1.png",
     keywords: ['married applicant visa', 'spouse visa nz', 'massey university'],
   },
   {
@@ -190,7 +190,7 @@ const SUCCESS_STORIES = [
     details: "Victoria University, Law",
     location: "Vadodara",
     rating: 5,
-    image: "https://ai.eecglobal.com/assets/studentimg/female2.png",
+    image: "/assets/studentimg/female2.png",
     keywords: ['fts financial questions', 'sponsor documentation', 'victoria law'],
   },
 ];

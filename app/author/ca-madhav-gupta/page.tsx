@@ -20,7 +20,7 @@ const structuredData = {
   "honorificPrefix": "CA",
   "jobTitle": "Director & Chartered Accountant",
   "description": "India's leading Visa Financial Forensics Expert. Chartered Accountant specializing in auditing student financial documents for international visa applications.",
-  "image": "https://ai.eecglobal.com/assets/Madhav-Gupta.jpeg",
+  "image": "/assets/Madhav-Gupta.jpeg",
   "url": "https://ai.eecglobal.com/author/ca-madhav-gupta",
   "worksFor": {
     "@type": "Organization",
@@ -61,7 +61,7 @@ export default function CAMadhavGuptaPage() {
           <div className="grid lg:grid-cols-3 gap-12 items-start">
             <div className="lg:col-span-1">
               <div className="w-64 h-64 mx-auto lg:mx-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center shadow-2xl">
-                <img src="https://ai.eecglobal.com/assets/Madhav-Gupta.jpeg"
+                <img src="/assets/Madhav-Gupta.jpeg"
                 alt="CA Madhav Gupta" className="rounded-2xl w-full h-full object-cover" />
               </div>
               <div className="bg-amber-100 dark:bg-amber-900 px-4 py-2 rounded-full text-amber-800 dark:text-amber-200 font-semibold text-sm text-center mt-4">

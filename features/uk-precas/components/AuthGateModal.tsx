@@ -129,7 +129,7 @@ const AuthGateModal: React.FC<Props> = ({
         <div className="relative text-center mb-8">
           <div className="inline-flex items-center justify-center p-4 bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 rounded-2xl mb-5 shadow-lg shadow-indigo-500/20">
             <img 
-              src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png" 
+              src="/assets/logos/eeclogo-main.png" 
               alt="EEC" 
               className="h-10" 
             />

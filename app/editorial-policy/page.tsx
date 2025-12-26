@@ -148,7 +148,7 @@ export default function EditorialPolicyPage() {
             <div className="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm">
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <img src="https://ai.eecglobal.com/assets/Amit-Jalan.jpeg" alt="Amit Jalan" className="w-16 h-16 rounded-full object-cover" />
+                  <img src="/assets/Amit-Jalan.jpeg" alt="Amit Jalan" className="w-16 h-16 rounded-full object-cover" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-bold text-slate-900 dark:text-white text-lg">Amit Jalan</h3>
@@ -177,7 +177,7 @@ export default function EditorialPolicyPage() {
             <div className="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm">
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <img src="https://ai.eecglobal.com/assets/Madhav-Gupta.jpeg" alt="CA Madhav Gupta" className="w-16 h-16 rounded-full object-cover" />
+                  <img src="/assets/Madhav-Gupta.jpeg" alt="CA Madhav Gupta" className="w-16 h-16 rounded-full object-cover" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-bold text-slate-900 dark:text-white text-lg">CA Madhav Gupta</h3>
@@ -206,7 +206,7 @@ export default function EditorialPolicyPage() {
             <div className="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm">
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <img src="https://ai.eecglobal.com/assets/mohita-gupta.jpeg" alt="Mohita Gupta" className="w-16 h-16 rounded-full object-cover" />
+                  <img src="/assets/mohita-gupta.jpeg" alt="Mohita Gupta" className="w-16 h-16 rounded-full object-cover" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-bold text-slate-900 dark:text-white text-lg">Mohita Gupta</h3>

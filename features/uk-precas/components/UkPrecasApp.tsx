@@ -902,7 +902,7 @@ function UkPrecasApp() {
               <div className="flex items-center justify-between h-16">
                   <div className="flex items-center gap-3 group">
                     <div className="relative">
-                      <img src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png" alt="EEC" className="h-9 transition-transform duration-300 group-hover:scale-110" />
+                      <img src="/assets/logos/eeclogo-main.png" alt="EEC" className="h-9 transition-transform duration-300 group-hover:scale-110" />
                       <div className="absolute -inset-2 bg-gradient-to-r from-indigo-500/30 to-purple-500/30 rounded-xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                     <div className="font-bold text-slate-900 dark:text-gray-100">

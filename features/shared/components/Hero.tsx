@@ -37,11 +37,12 @@ const Hero: React.FC = () => {
                 <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-8 w-full max-w-3xl mx-auto">
                     <div className="relative h-20 xs:h-28 sm:h-32 md:h-28 w-64 md:w-80">
                         <Image
-                            src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png"
+                            src="/assets/logos/eeclogo-main.png"
                             alt="EEC logo"
                             fill
                             className="object-contain"
                             priority
+                            unoptimized
                         />
                     </div>
                 </div>

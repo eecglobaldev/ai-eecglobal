@@ -115,7 +115,7 @@ const TRUST_CERTIFICATIONS = [
     premium: true,
     color: 'from-amber-500 via-orange-500 to-red-500',
     shadow: 'shadow-orange-500/25',
-    logo: 'https://ai.eecglobal.com/assets/unilogo/airclogo.png',
+    logo: '/assets/unilogo/airclogo.png',
   },
   { 
     name: 'ICEF IAS', 
@@ -125,7 +125,7 @@ const TRUST_CERTIFICATIONS = [
     premium: false,
     color: 'from-blue-500 via-indigo-500 to-violet-500',
     shadow: 'shadow-indigo-500/25',
-    logo: 'https://ai.eecglobal.com/assets/unilogo/icef-logo.png'
+    logo: '/assets/unilogo/icef-logo.png'
   },
   { 
     name: 'U.S. News', 
@@ -135,7 +135,7 @@ const TRUST_CERTIFICATIONS = [
     premium: true,
     color: 'from-rose-500 via-pink-500 to-fuchsia-500',
     shadow: 'shadow-pink-500/25',
-    logo: 'https://ai.eecglobal.com/assets/unilogo/usnews-logo.png'
+    logo: '/assets/unilogo/usnews-logo.png'
   },
   { 
     name: 'ENZRA', 
@@ -145,7 +145,7 @@ const TRUST_CERTIFICATIONS = [
     premium: true,
     color: 'from-emerald-500 via-teal-500 to-cyan-500',
     shadow: 'shadow-emerald-500/25',
-    logo: 'https://ai.eecglobal.com/assets/unilogo/enzra-logo.jpeg'
+    logo: '/assets/unilogo/enzra-logo.jpeg'
   },
   { 
     name: 'British Council', 
@@ -155,7 +155,7 @@ const TRUST_CERTIFICATIONS = [
     premium: false,
     color: 'from-violet-500 via-purple-500 to-fuchsia-500',
     shadow: 'shadow-purple-500/25',
-    logo: 'https://ai.eecglobal.com/assets/unilogo/british-council-logo.jpeg'
+    logo: '/assets/unilogo/british-council-logo.jpeg'
   },
   { 
     name: 'Australia PIER', 
@@ -165,7 +165,7 @@ const TRUST_CERTIFICATIONS = [
     premium: false,
     color: 'from-cyan-500 via-sky-500 to-blue-500',
     shadow: 'shadow-blue-500/25',
-    logo: 'https://ai.eecglobal.com/assets/unilogo/australia-pier-logo.jpeg'
+    logo: '/assets/unilogo/australia-pier-logo.jpeg'
   },
 ];
 
@@ -422,7 +422,7 @@ export const EEATEnhancement: React.FC = () => {
                     { label: 'US Embassy', sub: 'Training Partner', countryCode: 'US' },
                     { label: 'UK High Comm', sub: 'Official Invitee', countryCode: 'GB' },
                     { label: 'NAFSA', sub: 'Global Member', icon: 'https://www.nafsa.org/themes/custom/nafsa/images/nafsa_logo_main.svg' },
-                    { label: 'AIRC', sub: 'Certified', icon: 'https://ai.eecglobal.com/assets/unilogo/airclogo.png' },
+                    { label: 'AIRC', sub: 'Certified', icon: '/assets/unilogo/airclogo.png' },
                   ].map((item, idx) => (
                     <div key={idx} className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-4 lg:p-5 border border-white/10 hover:bg-white/10 transition-colors group/item min-w-0 flex flex-col items-center text-center">
                       <div className="mb-3 sm:mb-3 lg:mb-4 transform group-hover/item:scale-110 transition-transform flex items-center justify-center">

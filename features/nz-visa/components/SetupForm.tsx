@@ -149,13 +149,13 @@ export const SetupForm: React.FC<SetupFormProps> = ({ profile, setProfile, onGen
                 {/* Logo Section with Plus Sign */}
                 <div className="flex flex-row xs:flex-row sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 w-full max-w-3xl mx-auto">
                     <img
-                        src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png"
+                        src="/assets/logos/eeclogo-main.png"
                         alt="EEC"
                         className="h-20 xs:h-28 sm:h-32 md:h-40 w-auto object-contain max-w-[130px] xs:max-w-[150px] sm:max-w-[180px] md:max-w-[230px] flex-shrink-0"
                     />
                     <Plus className="h-8 w-8 sm:h-10 sm:w-10 md:h-14 md:w-14 text-slate-400 dark:text-slate-500 flex-shrink-0" strokeWidth={2.5} />
                     <img
-                        src="https://ai.eecglobal.com/assets/Estero_logo.png"
+                        src="/assets/Estero_logo.png"
                         alt="Estero"
                         className="h-20 xs:h-28 sm:h-32 md:h-40 w-auto object-contain max-w-[130px] xs:max-w-[150px] sm:max-w-[180px] md:max-w-[230px] flex-shrink-0 dark:hidden"
                     />

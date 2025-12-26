@@ -170,7 +170,7 @@ const Footer: React.FC = () => {
   const specialAnnouncementSchema = {
     "@context": "https://schema.org",
     "@type": "SpecialAnnouncement",
-    "@id": "https://ai.eecglobal.com/ukprecas/#announcement-sept-2026",
+    "@id": "/uk-precas/#announcement-sept-2026",
     "name": "UK September 2026 & January 2027 Intake - Applications Open",
     "text": "Applications open for UK September 2026 and January 2027 intakes. Start your UK Pre-CAS interview preparation now with EEC's free AI tool. Walk-in for free consultation at any of our 26 Gujarat branches. Limited seats for popular UK courses.",
 "datePosted": "2026-01-01",
@@ -203,13 +203,13 @@ const Footer: React.FC = () => {
       { "@type": "InteractionCounter", "interactionType": "https://schema.org/FollowAction", "userInteractionCount": 15000 }
     ],
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "item": { "@type": "SoftwareApplication", "name": "UK Pre-CAS & Airport Interview Prep 2026", "description": "AI-powered UK credibility interview preparation for September 2026 & January 2027 intakes. Personalized questions, audio recording, transcription, real-time feedback for Tier 4 student visa success. 25,000+ mock interviews completed.", "url": "https://ai.eecglobal.com/ukprecas", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR", "priceValidUntil": "2027-12-31" } } },
-      { "@type": "ListItem", "position": 2, "item": { "@type": "SoftwareApplication", "name": "USA F-1 Student Visa Interview Prep", "description": "AI tool for F-1 visa interview practice with consular interview simulation", "url": "https://ai.eecglobal.com/usavisaprep", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" } } },
-      { "@type": "ListItem", "position": 3, "item": { "@type": "SoftwareApplication", "name": "Australia GS Visa Interview Prep", "description": "Genuine Student (GS) requirement preparation for Australian student visa", "url": "https://ai.eecglobal.com/australiagsprep", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" } } },
+      { "@type": "ListItem", "position": 1, "item": { "@type": "SoftwareApplication", "name": "UK Pre-CAS & Airport Interview Prep 2026", "description": "AI-powered UK credibility interview preparation for September 2026 & January 2027 intakes. Personalized questions, audio recording, transcription, real-time feedback for Tier 4 student visa success. 25,000+ mock interviews completed.", "url": "/uk-precas", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR", "priceValidUntil": "2027-12-31" } } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "SoftwareApplication", "name": "USA F-1 Student Visa Interview Prep", "description": "AI tool for F-1 visa interview practice with consular interview simulation", "url": "/usa-f1-visa", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" } } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "SoftwareApplication", "name": "Australia GS Visa Interview Prep", "description": "Genuine Student (GS) requirement preparation for Australian student visa", "url": "/australia-gs-prep", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" } } },
       { "@type": "ListItem", "position": 4, "item": { "@type": "SoftwareApplication", "name": "Germany Visa Interview Prep", "description": "German student visa interview preparation for Blocked Account and study programs", "url": "https://ai.eecglobal.com/germanyvisaprep", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" } } },
-      { "@type": "ListItem", "position": 5, "item": { "@type": "SoftwareApplication", "name": "New Zealand Visa Interview Prep", "description": "NZ student visa interview practice tool", "url": "https://ai.eecglobal.com/nzvisaprep", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" } } },
-      { "@type": "ListItem", "position": 6, "item": { "@type": "SoftwareApplication", "name": "ALL COUNTRY Career Counselor", "description": "AI career counselor providing course-based career prospects, salary data, hiring companies across all countries", "url": "https://ai.eecglobal.com/careercounselor", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" } } },
-      { "@type": "ListItem", "position": 7, "item": { "@type": "SoftwareApplication", "name": "EEC Visa & Travel Agent", "description": "AI agent for tourist visa, student visa information, and flight bookings for 40+ countries", "url": "https://ai.eecglobal.com/travelagent", "applicationCategory": "TravelApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" } } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "SoftwareApplication", "name": "New Zealand Visa Interview Prep", "description": "NZ student visa interview practice tool", "url": "/nz-visa-prep", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" } } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "SoftwareApplication", "name": "ALL COUNTRY Career Counselor", "description": "AI career counselor providing course-based career prospects, salary data, hiring companies across all countries", "url": "/career-counselor", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" } } },
+      { "@type": "ListItem", "position": 7, "item": { "@type": "SoftwareApplication", "name": "EEC Visa & Travel Agent", "description": "AI agent for tourist visa, student visa information, and flight bookings for 40+ countries", "url": "/travel-agent", "applicationCategory": "TravelApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" } } },
       { "@type": "ListItem", "position": 8, "item": { "@type": "WebApplication", "name": "UK Course Search - 40,000+ Courses 2026", "description": "Search and compare 40,000+ UK university courses for September 2026 & January 2027 intakes. Fees, entry requirements, IELTS scores", "url": "https://courses.eecglobal.com/united-kingdom", "applicationCategory": "EducationalApplication" } },
       { "@type": "ListItem", "position": 9, "item": { "@type": "WebApplication", "name": "40+ Countries Course Search", "description": "Global course search across universities in 40+ countries", "url": "https://courses.eecglobal.com", "applicationCategory": "EducationalApplication" } },
       { "@type": "ListItem", "position": 10, "item": { "@type": "WebApplication", "name": "Australia Expert PR Points Calculator", "description": "Accurate Australia Permanent Residency points calculation tool", "url": "https://australia.eecglobal.com/prpointscalculator", "applicationCategory": "UtilityApplication" } },
@@ -404,7 +404,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col items-start lg:col-span-1" itemScope itemType="https://schema.org/Organization">
             <a href="https://eecglobal.com" target="_blank" rel="noopener noreferrer" className="inline-block" itemProp="url">
               <img 
-                src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png" 
+                src="/assets/logos/eeclogo-main.png" 
                 alt="EEC Logo - Gujarat's Largest UK Study Abroad Consultancy Since 1997 - AIRC Certified - September 2026 Intake" 
                 className="h-12 sm:h-14 w-auto mb-4" 
                 loading="lazy"
@@ -474,13 +474,13 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-1.5 text-xs">
               <li><a href="https://ai.eecglobal.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-purple-600 transition-colors font-medium"><Globe className="h-3.5 w-3.5" aria-hidden="true" /> AI Tools Home</a></li>
-              <li><a href="https://ai.eecglobal.com/ukprecas" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">🇬🇧 UK Pre-CAS 2026</a></li>
-              <li><a href="https://ai.eecglobal.com/usavisaprep" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">🇺🇸 USA F-1 Visa Prep</a></li>
-              <li><a href="https://ai.eecglobal.com/australiagsprep" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">🇦🇺 Australia GS Prep</a></li>
+              <li><a href="/uk-precas" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">🇬🇧 UK Pre-CAS 2026</a></li>
+              <li><a href="/usa-f1-visa" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">🇺🇸 USA F-1 Visa Prep</a></li>
+              <li><a href="/australia-gs-prep" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">🇦🇺 Australia GS Prep</a></li>
               <li><a href="https://ai.eecglobal.com/germanyvisaprep" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">🇩🇪 Germany Visa Prep</a></li>
-              <li><a href="https://ai.eecglobal.com/nzvisaprep" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">🇳🇿 New Zealand Prep</a></li>
-              <li><a href="https://ai.eecglobal.com/careercounselor" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">🎯 Career Counselor</a></li>
-              <li><a href="https://ai.eecglobal.com/travelagent" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">✈️ Visa & Travel Agent</a></li>
+              <li><a href="/nz-visa-prep" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">🇳🇿 New Zealand Prep</a></li>
+              <li><a href="/career-counselor" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">🎯 Career Counselor</a></li>
+              <li><a href="/travel-agent" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">✈️ Visa & Travel Agent</a></li>
             </ul>
             
             {/* NEW: English Test Prep Tools */}
@@ -578,7 +578,7 @@ const Footer: React.FC = () => {
                 <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
                   <img 
-                    src="https://ai.eecglobal.com/assets/Amit-Jalan.jpeg" 
+                    src="/assets/Amit-Jalan.jpeg" 
                     alt="Amit Jalan - Managing Director"
                     className="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl"
                     itemProp="image"
@@ -622,7 +622,7 @@ const Footer: React.FC = () => {
                         <div className=" justify-end relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
                           <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
                           <img 
-                            src="https://ai.eecglobal.com/assets/Madhav-Gupta.jpeg" 
+                            src="/assets/Madhav-Gupta.jpeg" 
                             alt="CA Madhav Gupta - Director"
                             className="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl"
                             itemProp="image"
@@ -667,7 +667,7 @@ const Footer: React.FC = () => {
                 <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
                   <img 
-                    src="https://ai.eecglobal.com/assets/mohita-gupta.jpeg" 
+                    src="/assets/mohita-gupta.jpeg" 
                     alt="Mohita Gupta - Vice President"
                     className="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl"
                     itemProp="image"

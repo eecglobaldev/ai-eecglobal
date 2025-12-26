@@ -491,10 +491,10 @@ export const VisaChecklist: React.FC = () => {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "@id": "https://ai.eecglobal.com/nzvisaprep/#visa-checklist",
+    "@id": "/nz-visa-prep/#visa-checklist",
     "name": "NZ Student Visa Document Checklist 2025 - Complete Guide",
     "description": "Complete checklist of documents required for New Zealand student visa application from India. Includes academic, financial, identity, health, and accommodation documents.",
-    "image": "https://ai.eecglobal.com/assets/nz-visa-prep-og.png",
+    "image": "/assets/nz-visa-prep-og.png",
     "totalTime": "P4W",
     "estimatedCost": {
       "@type": "MonetaryAmount",

@@ -103,7 +103,7 @@ const PILLAR_CLUSTERS = [
       'Post-Study Work Visa', 'Job Market', 'Skilled Migrant',
       'Occupation Lists', 'Partner Rights', 'Salary Expectations'
     ],
-    primaryCTA: { text: 'Career Counselor', url: 'https://ai.eecglobal.com/careercounselor' },
+    primaryCTA: { text: 'Career Counselor', url: '/career-counselor' },
     secondaryCTA: { text: 'PR Calculator', url: 'https://australia.eecglobal.com/prpointscalculator' },
   },
   {
@@ -128,15 +128,15 @@ const PILLAR_CLUSTERS = [
 
 const INTERNAL_LINKS = {
   visaPrep: [
-    { text: 'USA F-1 Visa Prep', url: 'https://ai.eecglobal.com/usavisaprep' },
-    { text: 'UK Pre-CAS Prep', url: 'https://ai.eecglobal.com/ukprecas' },
-    { text: 'Australia GS Prep', url: 'https://ai.eecglobal.com/australiagsprep' },
+    { text: 'USA F-1 Visa Prep', url: '/usa-f1-visa' },
+    { text: 'UK Pre-CAS Prep', url: '/uk-precas' },
+    { text: 'Australia GS Prep', url: '/australia-gs-prep' },
     { text: 'Germany Visa Prep', url: 'https://ai.eecglobal.com/germanyvisaprep' },
   ],
   courseSearch: [
     { text: 'NZ Courses', url: 'https://nz.eecglobal.com' },
     { text: 'All Countries', url: 'https://courses.eecglobal.com' },
-    { text: 'Career Counselor', url: 'https://ai.eecglobal.com/careercounselor' },
+    { text: 'Career Counselor', url: '/career-counselor' },
   ],
   mainSite: [
     { text: 'EEC Main Website', url: 'https://eecglobal.com' },

@@ -111,6 +111,7 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
                                     alt={tool.title}
                                     fill
                                     className="object-cover"
+                                    unoptimized
                                 />
                             </div>
                         ) : tool.flagCode ? (

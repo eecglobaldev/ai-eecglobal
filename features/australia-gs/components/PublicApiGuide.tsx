@@ -67,7 +67,7 @@ export const PublicApiGuide: React.FC = () => {
                     <h3 className="text-xl font-bold text-blue-800 dark:text-blue-300 mb-2">Terms of Use & Attribution</h3>
                     <p className="text-sm text-blue-700 dark:text-blue-200">
                         This data is provided for free under a Creative Commons license. You are free to use it for any non-commercial purpose. If you use this data in a public-facing project, we kindly request that you provide attribution by linking back to our{' '}
-                        <a href="https://ai.eecglobal.com/australiagsprep" className="font-bold underline">GS Prep Tool</a>.
+                        <a href="/australia-gs-prep" className="font-bold underline">GS Prep Tool</a>.
                     </p>
                 </div>
             </div>

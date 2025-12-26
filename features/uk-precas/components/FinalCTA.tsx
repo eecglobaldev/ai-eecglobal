@@ -35,7 +35,7 @@ export const FinalCTA: React.FC = () => {
                 
                 <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 lg:gap-5">
                     <a 
-                        href="https://ai.eecglobal.com/ukprecas/"
+                        href="/uk-precas/"
                         className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 bg-white text-indigo-700 font-bold rounded-lg sm:rounded-xl shadow-2xl shadow-black/20 hover:shadow-white/25 hover:scale-105 transition-all duration-300 overflow-hidden text-sm sm:text-base"
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-indigo-100 to-purple-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

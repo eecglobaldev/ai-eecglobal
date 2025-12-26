@@ -131,7 +131,7 @@ export default function AustraliaGSGuidePage() {
             <p className="text-amber-100 mb-4">
               EEC's AI GS Statement Builder helps you craft compelling 150-word answers for each question.
             </p>
-            <a href="https://ai.eecglobal.com/australiagsprep" 
+            <a href="/australia-gs-prep" 
                className="inline-block bg-white text-amber-700 px-6 py-3 rounded-lg font-semibold hover:bg-amber-50 transition">
               Try GS Prep Tool →
             </a>

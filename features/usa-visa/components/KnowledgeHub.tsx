@@ -32,7 +32,7 @@ const KnowledgeHub: React.FC = () => {
                                 </div>
                             </div>
                             <img
-                                src="https://ai.eecglobal.com/assets/youtube-img.jpeg"
+                                src="/assets/youtube-img.jpeg"
                                 alt="F-1 Visa Interview Guide Video Thumbnail"
                                 className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
                             />

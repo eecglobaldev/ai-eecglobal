@@ -162,7 +162,7 @@ export default function RefusalRecoveryPage() {
             <p className="text-red-100 mb-4">
               Our AI Visa Officer simulates real interview conditions. Get scored on clarity, confidence, and content.
             </p>
-            <a href="https://ai.eecglobal.com/usavisaprep" 
+            <a href="/usa-f1-visa" 
                className="inline-block bg-white text-red-700 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 transition">
               Start Free Practice →
             </a>

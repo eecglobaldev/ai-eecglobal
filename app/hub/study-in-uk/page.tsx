@@ -76,7 +76,7 @@ export default function StudyInUKPage() {
                 1-year Master's, world-class universities, and 2-year Graduate Route work visa. Your gateway to British education.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="https://ai.eecglobal.com/ukprecas" className="bg-white text-violet-900 px-6 py-3 rounded-lg font-semibold hover:bg-violet-50 transition">
+                <a href="/uk-precas" className="bg-white text-violet-900 px-6 py-3 rounded-lg font-semibold hover:bg-violet-50 transition">
                   Practice Credibility Interview
                 </a>
               </div>

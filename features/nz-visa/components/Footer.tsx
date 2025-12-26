@@ -44,14 +44,14 @@ const Footer: React.FC = () => {
 
   // AI Tools Data
   const aiTools = [
-    { name: 'Career Counselor AI', url: 'https://ai.eecglobal.com/careercounselor', isNew: true },
-    { name: 'USA F-1 Visa Prep', url: 'https://ai.eecglobal.com/usavisaprep' },
-    { name: 'UK Pre-CAS Prep', url: 'https://ai.eecglobal.com/ukprecas' },
-    { name: 'Australia GS Prep', url: 'https://ai.eecglobal.com/australiagsprep' },
+    { name: 'Career Counselor AI', url: '/career-counselor', isNew: true },
+    { name: 'USA F-1 Visa Prep', url: '/usa-f1-visa' },
+    { name: 'UK Pre-CAS Prep', url: '/uk-precas' },
+    { name: 'Australia GS Prep', url: '/australia-gs-prep' },
     { name: 'Australia PR Calculator', url: 'https://australia.eecglobal.com/prpointscalculator' },
     { name: 'Germany Visa Prep', url: 'https://ai.eecglobal.com/germanyvisaprep' },
-    { name: 'NZ Visa Prep', url: 'https://ai.eecglobal.com/nzvisaprep', isCurrent: true },
-    { name: 'Travel Agent AI', url: 'https://ai.eecglobal.com/travelagent', isNew: true },
+    { name: 'NZ Visa Prep', url: '/nz-visa-prep', isCurrent: true },
+    { name: 'Travel Agent AI', url: '/travel-agent', isNew: true },
     { name: 'Germany Public University', url: 'https://germany.eecglobal.com/public', isNew: true },
   ];
 
@@ -116,7 +116,7 @@ const Footer: React.FC = () => {
 
                   {/* EEC Logo */}
                   <img
-                    src="https://ai.eecglobal.com/assets/logos/eeclogo-main.png"
+                    src="/assets/logos/eeclogo-main.png"
                     alt="EEC logo"
                     className="
                       h-14 sm:h-16 md:h-12 lg:h-12 xl:h-12

@@ -36,7 +36,7 @@ const BREADCRUMB_ITEMS: BreadcrumbItem[] = [
   },
   {
     name: 'NZ Visa Interview Prep',
-    url: 'https://ai.eecglobal.com/nzvisaprep',
+    url: '/nz-visa-prep',
     current: true,
   },
 ];
