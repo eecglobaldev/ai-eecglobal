@@ -1,0 +1,4 @@
+
+// Re-export with both names for backwards compatibility
+export { BRANCH_DATA as BRANCHES };
+export { BRANCH_DATA as BRANCHES };

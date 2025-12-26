@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      { hostname: 'ai.eecglobal.com' },
+      { hostname: 'eecglobal.com' },
+      { hostname: 'firebasestorage.googleapis.com' },
+      { hostname: 'flagcdn.com' }
+    ],
+  },
+  typedRoutes: true,
 };
 
 export default nextConfig;
