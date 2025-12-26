@@ -28,27 +28,27 @@ const ResourceHub: React.FC = () => {
                         Country Guides
                     </h3>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                        <a href="/pages/hub/study-in-usa.html" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
+                        <a href="/hub/study-in-usa" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
                             <span className="mb-2 flex items-center justify-center"><Flag country="US" size={32} /></span>
                             <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in USA</span>
                         </a>
-                        <a href="/pages/hub/study-in-canada.html" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
+                        <a href="/hub/study-in-canada" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
                             <span className="mb-2 flex items-center justify-center"><Flag country="CA" size={32} /></span>
                             <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in Canada</span>
                         </a>
-                        <a href="/pages/hub/study-in-uk.html" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
+                        <a href="/hub/study-in-uk" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
                             <span className="mb-2 flex items-center justify-center"><Flag country="GB" size={32} /></span>
                             <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in UK</span>
                         </a>
-                        <a href="/pages/hub/study-in-australia.html" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
+                        <a href="/hub/study-in-australia" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
                             <span className="mb-2 flex items-center justify-center"><Flag country="AU" size={32} /></span>
                             <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in Australia</span>
                         </a>
-                        <a href="/pages/hub/study-in-germany.html" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
+                        <a href="/hub/study-in-germany" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
                             <span className="mb-2 flex items-center justify-center"><Flag country="DE" size={32} /></span>
                             <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in Germany</span>
                         </a>
-                        <a href="/pages/hub/study-in-ireland.html" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
+                        <a href="/hub/study-in-ireland" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
                             <span className="mb-2 flex items-center justify-center"><Flag country="IE" size={32} /></span>
                             <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in Ireland</span>
                         </a>
@@ -62,22 +62,22 @@ const ResourceHub: React.FC = () => {
                         Expert Guides
                     </h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <a href="/guides/australia-gs-guide.html" className="group p-5 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-emerald-500/40 hover:bg-emerald-100/50 dark:hover:bg-emerald-500/5 transition-all">
+                        <a href="/guides/australia-gs-guide" className="group p-5 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-emerald-500/40 hover:bg-emerald-100/50 dark:hover:bg-emerald-500/5 transition-all">
                             <div className="mb-3"><Flag country="AU" size={28} /></div>
                             <h4 className="font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 mb-2">Australia GS Test Guide 2026-2027</h4>
                             <p className="text-sm text-slate-600 dark:text-slate-400">Complete guide to passing the Genuine Student requirement</p>
                         </a>
-                        <a href="/guides/german-grade-guide.html" className="group p-5 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-emerald-500/40 hover:bg-emerald-100/50 dark:hover:bg-emerald-500/5 transition-all">
+                        <a href="/guides/german-grade-guide" className="group p-5 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-emerald-500/40 hover:bg-emerald-100/50 dark:hover:bg-emerald-500/5 transition-all">
                             <div className="mb-3"><Flag country="DE" size={28} /></div>
                             <h4 className="font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 mb-2">German Grade Calculator Guide</h4>
                             <p className="text-sm text-slate-600 dark:text-slate-400">Modified Bavarian Formula explained for Indian students</p>
                         </a>
-                        <a href="/guides/germany-blocked-account-guide.html" className="group p-5 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-emerald-500/40 hover:bg-emerald-100/50 dark:hover:bg-emerald-500/5 transition-all">
+                        <a href="/guides/germany-blocked-account-guide" className="group p-5 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-emerald-500/40 hover:bg-emerald-100/50 dark:hover:bg-emerald-500/5 transition-all">
                             <div className="mb-3"><Flag country="DE" size={28} /></div>
                             <h4 className="font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 mb-2">Germany Blocked Account 2026</h4>
                             <p className="text-sm text-slate-600 dark:text-slate-400">€11,904 requirement, APS, and step-by-step process</p>
                         </a>
-                        <a href="/guides/214b-refusal-recovery.html" className="group p-5 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-emerald-500/40 hover:bg-emerald-100/50 dark:hover:bg-emerald-500/5 transition-all">
+                        <a href="/guides/214b-refusal-recovery" className="group p-5 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-emerald-500/40 hover:bg-emerald-100/50 dark:hover:bg-emerald-500/5 transition-all">
                             <div className="mb-3"><Flag country="US" size={28} /></div>
                             <h4 className="font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 mb-2">214(b) Refusal Recovery</h4>
                             <p className="text-sm text-slate-600 dark:text-slate-400">How to overcome US visa rejection with expert help</p>
@@ -94,10 +94,10 @@ const ResourceHub: React.FC = () => {
                             📖 Visa Glossary
                         </h3>
                         <ul className="space-y-2">
-                            <li><a href="/pages/glossary/f1-visa.html" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">F-1 Visa (USA Student Visa)</a></li>
-                            <li><a href="/pages/glossary/genuine-student-test.html" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Genuine Student Test (Australia)</a></li>
-                            <li><a href="/pages/glossary/blocked-account.html" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Blocked Account (Germany)</a></li>
-                            <li><a href="/pages/glossary/index.html" className="text-sm text-blue-700 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 font-medium">View Full Glossary →</a></li>
+                            <li><a href="/glossary/f1-visa" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">F-1 Visa (USA Student Visa)</a></li>
+                            <li><a href="/glossary/genuine-student-test" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Genuine Student Test (Australia)</a></li>
+                            <li><a href="/glossary/blocked-account" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Blocked Account (Germany)</a></li>
+                            <li><a href="/glossary" className="text-sm text-blue-700 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 font-medium">View Full Glossary →</a></li>
                         </ul>
                     </div>
 
@@ -107,7 +107,7 @@ const ResourceHub: React.FC = () => {
                             ⚖️ Country Comparisons
                         </h3>
                         <ul className="space-y-2">
-                            <li><a href="/pages/compare/usa-vs-canada.html" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">USA vs Canada for Indian Students</a></li>
+                            <li><a href="/compare/usa-vs-canada" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">USA vs Canada for Indian Students</a></li>
                         </ul>
                     </div>
 
@@ -117,10 +117,10 @@ const ResourceHub: React.FC = () => {
                             📰 News & Trust
                         </h3>
                         <ul className="space-y-2">
-                            <li><a href="/pages/news/ireland-2026-employment-permit-update.html" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Ireland 2026 Employment Permit Update</a></li>
-                            <li><a href="/pages/author/ca-madhav-gupta.html" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Meet CA Madhav Gupta (Visa Forensics)</a></li>
-                            <li><a href="/pages/editorial-policy.html" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Our Editorial Policy</a></li>
-                            <li><a href="/pages/sitemap.html" className="text-sm text-blue-700 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 font-medium">Full Sitemap →</a></li>
+                            <li><a href="/news/ireland-2026-employment-permit-update" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Ireland 2026 Employment Permit Update</a></li>
+                            <li><a href="/author/ca-madhav-gupta" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Meet CA Madhav Gupta (Visa Forensics)</a></li>
+                            <li><a href="/editorial-policy" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Our Editorial Policy</a></li>
+                            <li><a href="/sitemap-page" className="text-sm text-blue-700 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 font-medium">Full Sitemap →</a></li>
                         </ul>
                     </div>
 

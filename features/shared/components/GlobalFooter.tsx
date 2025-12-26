@@ -51,33 +51,33 @@ const AI_TOOLS_LINKS = [
 ];
 
 const COUNTRY_HUB_LINKS = [
-    { name: 'Study in USA', href: '/pages/hub/study-in-usa.html' },
-    { name: 'Study in Canada', href: '/pages/hub/study-in-canada.html' },
-    { name: 'Study in UK', href: '/pages/hub/study-in-uk.html' },
-    { name: 'Study in Australia', href: '/pages/hub/study-in-australia.html' },
-    { name: 'Study in Germany', href: '/pages/hub/study-in-germany.html' },
-    { name: 'Study in Ireland', href: '/pages/hub/study-in-ireland.html' },
+    { name: 'Study in USA', href: '/hub/study-in-usa' },
+    { name: 'Study in Canada', href: '/hub/study-in-canada' },
+    { name: 'Study in UK', href: '/hub/study-in-uk' },
+    { name: 'Study in Australia', href: '/hub/study-in-australia' },
+    { name: 'Study in Germany', href: '/hub/study-in-germany' },
+    { name: 'Study in Ireland', href: '/hub/study-in-ireland' },
 ];
 
 const GUIDES_LINKS = [
-    { name: 'Australia GS Guide 2026-2027', href: '/guides/australia-gs-guide.html' },
-    { name: 'German Grade Guide', href: '/guides/german-grade-guide.html' },
-    { name: 'Germany Blocked Account Guide', href: '/guides/germany-blocked-account-guide.html' },
-    { name: '214(b) Refusal Recovery', href: '/guides/214b-refusal-recovery.html' },
+    { name: 'Australia GS Guide 2026-2027', href: '/guides/australia-gs-guide' },
+    { name: 'German Grade Guide', href: '/guides/german-grade-guide' },
+    { name: 'Germany Blocked Account Guide', href: '/guides/germany-blocked-account-guide' },
+    { name: '214(b) Refusal Recovery', href: '/guides/214b-refusal-recovery' },
 ];
 
 const GLOSSARY_LINKS = [
-    { name: 'F-1 Visa (USA)', href: '/pages/glossary/f1-visa.html' },
-    { name: 'Genuine Student Test', href: '/pages/glossary/genuine-student-test.html' },
-    { name: 'Blocked Account', href: '/pages/glossary/blocked-account.html' },
-    { name: 'Full Glossary', href: '/pages/glossary/index.html' },
+    { name: 'F-1 Visa (USA)', href: '/glossary/f1-visa' },
+    { name: 'Genuine Student Test', href: '/glossary/genuine-student-test' },
+    { name: 'Blocked Account', href: '/glossary/blocked-account' },
+    { name: 'Full Glossary', href: '/glossary' },
 ];
 
 const TRUST_LINKS = [
-    { name: 'Editorial Policy', href: '/pages/editorial-policy.html' },
-    { name: 'Meet Our Experts', href: '/pages/author/ca-madhav-gupta.html' },
-    { name: 'Sitemap', href: '/pages/sitemap.html' },
-    { name: 'About EEC', href: '/about.html' },
+    { name: 'Editorial Policy', href: '/editorial-policy' },
+    { name: 'Meet Our Experts', href: '/author/ca-madhav-gupta' },
+    { name: 'Sitemap', href: '/sitemap-page' },
+    { name: 'About EEC', href: '/about' },
 ];
 
 const SOCIAL_LINKS = [
@@ -346,7 +346,7 @@ const GlobalFooter: React.FC = () => {
                             <ul className="space-y-2">
                                 <li>
                                     <a
-                                        href="/pages/news/ireland-2026-employment-permit-update.html"
+                                        href="/news/ireland-2026-employment-permit-update"
                                         className="text-sm text-slate-400 hover:text-orange-400 transition-colors"
                                     >
                                         Ireland 2026 Employment Permit Update
@@ -354,7 +354,7 @@ const GlobalFooter: React.FC = () => {
                                 </li>
                                 <li>
                                     <a
-                                        href="/pages/compare/usa-vs-canada.html"
+                                        href="/compare/usa-vs-canada"
                                         className="text-sm text-slate-400 hover:text-blue-400 transition-colors"
                                     >
                                         USA vs Canada Comparison

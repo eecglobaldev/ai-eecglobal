@@ -14,12 +14,12 @@ interface NavLink {
 }
 
 const DESTINATIONS: NavLink[] = [
-    { name: 'Study in USA', href: '/pages/hub/study-in-usa.html', country: 'US' },
-    { name: 'Study in UK', href: '/pages/hub/study-in-uk.html', country: 'GB' },
-    { name: 'Study in Canada', href: '/pages/hub/study-in-canada.html', country: 'CA' },
-    { name: 'Study in Australia', href: '/pages/hub/study-in-australia.html', country: 'AU' },
-    { name: 'Study in Germany', href: '/pages/hub/study-in-germany.html', country: 'DE' },
-    { name: 'Study in Ireland', href: '/pages/hub/study-in-ireland.html', country: 'IE' },
+    { name: 'Study in USA', href: '/hub/study-in-usa', country: 'US' },
+    { name: 'Study in UK', href: '/hub/study-in-uk', country: 'GB' },
+    { name: 'Study in Canada', href: '/hub/study-in-canada', country: 'CA' },
+    { name: 'Study in Australia', href: '/hub/study-in-australia', country: 'AU' },
+    { name: 'Study in Germany', href: '/hub/study-in-germany', country: 'DE' },
+    { name: 'Study in Ireland', href: '/hub/study-in-ireland', country: 'IE' },
     { name: 'Study in Finland', href: 'https://finland.eecglobal.com', external: true, country: 'FI' },
     { name: 'Study in New Zealand', href: 'https://courses.eecglobal.com', external: true, country: 'NZ' },
 ];
@@ -54,24 +54,24 @@ const GUIDES_RESOURCES: {
     trust: NavLink[];
 } = {
     guides: [
-        { name: 'Australia GS Test Guide 2026-2027', href: '/guides/australia-gs-guide.html', country: 'AU' },
-        { name: 'German Grade Calculator Guide', href: '/guides/german-grade-guide.html', country: 'DE' },
-        { name: 'Germany Blocked Account Guide', href: '/guides/germany-blocked-account-guide.html', country: 'DE' },
-        { name: '214(b) Refusal Recovery', href: '/guides/214b-refusal-recovery.html', country: 'US' },
+        { name: 'Australia GS Test Guide 2026-2027', href: '/guides/australia-gs-guide', country: 'AU' },
+        { name: 'German Grade Calculator Guide', href: '/guides/german-grade-guide', country: 'DE' },
+        { name: 'Germany Blocked Account Guide', href: '/guides/germany-blocked-account-guide', country: 'DE' },
+        { name: '214(b) Refusal Recovery', href: '/guides/214b-refusal-recovery', country: 'US' },
     ],
     glossary: [
-        { name: 'F-1 Visa (USA)', href: '/pages/glossary/f1-visa.html', country: 'US' },
-        { name: 'Genuine Student Test', href: '/pages/glossary/genuine-student-test.html', country: 'AU' },
-        { name: 'Blocked Account (Germany)', href: '/pages/glossary/blocked-account.html', country: 'DE' },
-        { name: 'Full Glossary', href: '/pages/glossary/index.html' },
+        { name: 'F-1 Visa (USA)', href: '/glossary/f1-visa', country: 'US' },
+        { name: 'Genuine Student Test', href: '/glossary/genuine-student-test', country: 'AU' },
+        { name: 'Blocked Account (Germany)', href: '/glossary/blocked-account', country: 'DE' },
+        { name: 'Full Glossary', href: '/glossary' },
     ],
     news: [
-        { name: 'Ireland 2026 Employment Update', href: '/pages/news/ireland-2026-employment-permit-update.html', country: 'IE' },
+        { name: 'Ireland 2026 Employment Update', href: '/news/ireland-2026-employment-permit-update', country: 'IE' },
     ],
     trust: [
-        { name: 'Meet CA Madhav Gupta', href: '/pages/author/ca-madhav-gupta.html' },
-        { name: 'Editorial Policy', href: '/pages/editorial-policy.html' },
-        { name: 'Sitemap', href: '/pages/sitemap.html' },
+        { name: 'Meet CA Madhav Gupta', href: '/author/ca-madhav-gupta' },
+        { name: 'Editorial Policy', href: '/editorial-policy' },
+        { name: 'Sitemap', href: '/sitemap-page' },
     ],
 };
 
@@ -367,7 +367,7 @@ const GlobalNav: React.FC = () => {
 
                             {/* About Link */}
                             <a
-                                href="/about.html"
+                                href="/about"
                                 className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
                             >
                                 About
