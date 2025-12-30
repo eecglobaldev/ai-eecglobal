@@ -1,5 +1,5 @@
 export const IMAGES = {
-    eecLogo: "https://ai.eecglobal.com/assets/logos/eeclogo-main.png",
+    eecLogo: "/assets/logos/eeclogo-main.png",
    
     Amit_Jalan: "https://ai.eecglobal.com/assets/amit.jpeg",
    

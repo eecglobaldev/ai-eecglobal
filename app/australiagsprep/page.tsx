@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     },
     icons: {
         icon: [
-            { url: 'https://australia.eecglobal.com/australialogo.png', type: 'image/png' },
+            { url: '/assets/logos/australialogo.png', type: 'image/png' },
             { url: '/favicon.ico', sizes: 'any' },
         ],
         apple: [

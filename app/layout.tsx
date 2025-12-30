@@ -55,13 +55,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/assets/logos/eeclogo-main.png", sizes: "400x400", type: "image/png" },
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico", type: "image/x-icon" },
     ],
     apple: [
       { url: "/assets/logos/eeclogo-main.png", sizes: "180x180", type: "image/png" },
-    ],
-    shortcut: [
-      { url: "/assets/logos/eeclogo-main.png", type: "image/png" },
     ],
   },
   appleWebApp: {
