@@ -455,7 +455,7 @@ export const AuthorProfiles: React.FC = () => {
   const personSchemas = EXPERTS.map(expert => ({
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": `/nz-visa-prep/#expert-${expert.id}`,
+    "@id": `/nzvisaprep/#expert-${expert.id}`,
     "name": expert.name,
     "jobTitle": expert.title,
     "description": expert.description,

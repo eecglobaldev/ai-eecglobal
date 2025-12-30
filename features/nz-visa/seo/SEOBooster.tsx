@@ -49,7 +49,7 @@ export const generateMasterSchema = () => {
           },
           {
             "@type": "ReadAction",
-            "target": "/nz-visa-prep"
+            "target": "/nzvisaprep"
           }
         ],
         "copyrightHolder": { "@id": "https://eecglobal.com/#organization" },
@@ -61,29 +61,29 @@ export const generateMasterSchema = () => {
       // =========================================================================
       {
         "@type": "WebPage",
-        "@id": "/nz-visa-prep/#webpage",
-        "url": "/nz-visa-prep",
+        "@id": "/nzvisaprep/#webpage",
+        "url": "/nzvisaprep",
         "name": "Free AI New Zealand Student Visa Interview Preparation | INZ Credibility Interview Practice | EEC Global",
         "description": "India's first 100% FREE AI-powered New Zealand student visa interview preparation tool. Practice INZ credibility interviews with personalized questions, model answers, and expert guidance from ENZRA certified agents. Covers all 8 NZ universities. Trusted by 100,000+ students since 1997.",
         "isPartOf": { "@id": "https://ai.eecglobal.com/#website" },
         "about": [
-          { "@id": "/nz-visa-prep/#softwareapplication" },
-          { "@id": "/nz-visa-prep/#service" }
+          { "@id": "/nzvisaprep/#softwareapplication" },
+          { "@id": "/nzvisaprep/#service" }
         ],
         "mentions": [
           { "@id": "https://eecglobal.com/#organization" },
           { "@id": "https://estero.co.nz/#organization" }
         ],
-        "mainEntity": { "@id": "/nz-visa-prep/#softwareapplication" },
+        "mainEntity": { "@id": "/nzvisaprep/#softwareapplication" },
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "@id": "/nz-visa-prep/#primaryimage",
-          "url": "/assets/nz-visa-prep-og.png",
+          "@id": "/nzvisaprep/#primaryimage",
+          "url": "/assets/nzvisaprep-og.png",
           "width": 1200,
           "height": 630,
           "caption": "EEC Global AI-Powered New Zealand Student Visa Interview Preparation Tool"
         },
-        "breadcrumb": { "@id": "/nz-visa-prep/#breadcrumb" },
+        "breadcrumb": { "@id": "/nzvisaprep/#breadcrumb" },
         "inLanguage": "en-IN",
         "datePublished": "2024-01-15",
         "dateModified": currentDate,
@@ -100,9 +100,9 @@ export const generateMasterSchema = () => {
           "https://estero.co.nz"
         ],
         "relatedLink": [
-          "/usa-f1-visa",
-          "/uk-precas",
-          "/australia-gs-prep",
+          "/usavisaprep",
+          "/ukprecas",
+          "/australiagsprep",
           "https://ai.eecglobal.com/germanyvisaprep"
         ],
         "lastReviewed": currentDate,
@@ -114,7 +114,7 @@ export const generateMasterSchema = () => {
       // =========================================================================
       {
         "@type": "BreadcrumbList",
-        "@id": "/nz-visa-prep/#breadcrumb",
+        "@id": "/nzvisaprep/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -138,7 +138,7 @@ export const generateMasterSchema = () => {
             "@type": "ListItem",
             "position": 4,
             "name": "NZ Visa Interview Prep",
-            "item": "/nz-visa-prep"
+            "item": "/nzvisaprep"
           }
         ]
       },
@@ -148,7 +148,7 @@ export const generateMasterSchema = () => {
       // =========================================================================
       {
         "@type": "SoftwareApplication",
-        "@id": "/nz-visa-prep/#softwareapplication",
+        "@id": "/nzvisaprep/#softwareapplication",
         "name": "NZ Visa Interview Prep AI by EEC",
         "alternateName": [
           "New Zealand Student Visa Interview Preparation Tool",
@@ -156,7 +156,7 @@ export const generateMasterSchema = () => {
           "NZ Visa Prep by EEC Global"
         ],
         "description": "One of its kind and first of its kind absolutely and positively 100% FREE AI tool for Indian students. Comprehensive AI-Powered New Zealand Student Visa Interview Preparation with hyper-personalized practice, model answers, expert guidance, advanced analytics, and benchmarking with previous histories in your personalized dashboard.",
-        "url": "/nz-visa-prep",
+        "url": "/nzvisaprep",
         "applicationCategory": "EducationalApplication",
         "applicationSubCategory": [
           "Visa Interview Preparation",
@@ -173,7 +173,7 @@ export const generateMasterSchema = () => {
         "screenshot": [
           {
             "@type": "ImageObject",
-            "url": "/assets/nz-visa-prep-og.png",
+            "url": "/assets/nzvisaprep-og.png",
             "caption": "NZ Visa Prep Interface"
           }
         ],
@@ -198,7 +198,7 @@ export const generateMasterSchema = () => {
         "softwareHelp": {
           "@type": "CreativeWork",
           "name": "NZ Visa Prep User Guide",
-          "url": "https://eecglobal.com/help/nz-visa-prep"
+          "url": "https://eecglobal.com/help/nzvisaprep"
         },
         "offers": {
           "@type": "Offer",
@@ -274,7 +274,7 @@ export const generateMasterSchema = () => {
       // =========================================================================
       {
         "@type": "Service",
-        "@id": "/nz-visa-prep/#service",
+        "@id": "/nzvisaprep/#service",
         "name": "New Zealand Student Visa Interview Preparation Service",
         "alternateName": "NZ Visa Prep Service",
         "serviceType": [
@@ -308,7 +308,7 @@ export const generateMasterSchema = () => {
           {
             "@type": "ServiceChannel",
             "serviceType": "Online",
-            "serviceUrl": "/nz-visa-prep",
+            "serviceUrl": "/nzvisaprep",
             "availableLanguage": ["English", "Hindi", "Gujarati"]
           },
           {
@@ -801,7 +801,7 @@ export const generateMasterSchema = () => {
       // =========================================================================
       {
         "@type": "FAQPage",
-        "@id": "/nz-visa-prep/#faq",
+        "@id": "/nzvisaprep/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -907,10 +907,10 @@ export const generateMasterSchema = () => {
       // =========================================================================
       {
         "@type": "HowTo",
-        "@id": "/nz-visa-prep/#howto",
+        "@id": "/nzvisaprep/#howto",
         "name": "How to Prepare for New Zealand Student Visa Interview",
         "description": "Step-by-step guide to preparing for your INZ (Immigration New Zealand) credibility interview using EEC's free AI-powered preparation tool.",
-        "image": "/assets/nz-visa-prep-og.png",
+        "image": "/assets/nzvisaprep-og.png",
         "totalTime": "PT2H",
         "estimatedCost": {
           "@type": "MonetaryAmount",
@@ -937,56 +937,56 @@ export const generateMasterSchema = () => {
             "position": 1,
             "name": "Enter Your Academic Details",
             "text": "Select your chosen New Zealand institution (university or ITP), course level (undergraduate/postgraduate), and specific course name. The AI uses this to generate relevant questions about your university choice.",
-            "url": "/nz-visa-prep#academic"
+            "url": "/nzvisaprep#academic"
           },
           {
             "@type": "HowToStep",
             "position": 2,
             "name": "Complete Your Profile",
             "text": "Enter your educational background, work experience, English test scores (IELTS/PTE), and career goals. Be detailed - the more information you provide, the more personalized your preparation.",
-            "url": "/nz-visa-prep#profile"
+            "url": "/nzvisaprep#profile"
           },
           {
             "@type": "HowToStep",
             "position": 3,
             "name": "Add Financial Information",
             "text": "Fill in your financial details including sponsor information, FTS scheme participation, funding sources, and amounts. This is crucial as financial questions are common in NZ visa interviews.",
-            "url": "/nz-visa-prep#financial"
+            "url": "/nzvisaprep#financial"
           },
           {
             "@type": "HowToStep",
             "position": 4,
             "name": "Generate Your Personalized Prep Plan",
             "text": "Click 'Generate Prep Plan' and the AI will create 15-20 interview questions specifically tailored to your profile, along with model answers and expert guidance for each question.",
-            "url": "/nz-visa-prep#generate"
+            "url": "/nzvisaprep#generate"
           },
           {
             "@type": "HowToStep",
             "position": 5,
             "name": "Study Key Talking Points",
             "text": "Review the key talking points generated for your specific university and course. These are ultra-personalized reasons and facts you should know for your interview.",
-            "url": "/nz-visa-prep#talkingpoints"
+            "url": "/nzvisaprep#talkingpoints"
           },
           {
             "@type": "HowToStep",
             "position": 6,
             "name": "Practice Speaking Your Answers",
             "text": "For each question, use the recording feature to practice speaking your answer. The AI will analyze your response and provide feedback on confidence, clarity, and content.",
-            "url": "/nz-visa-prep#practice"
+            "url": "/nzvisaprep#practice"
           },
           {
             "@type": "HowToStep",
             "position": 7,
             "name": "Review Feedback and Improve",
             "text": "Check your scores and feedback for each practice session. Focus on areas marked for improvement and practice again until you achieve high scores consistently.",
-            "url": "/nz-visa-prep#feedback"
+            "url": "/nzvisaprep#feedback"
           },
           {
             "@type": "HowToStep",
             "position": 8,
             "name": "Visit EEC Branch for Expert Review",
             "text": "For final preparation, visit your nearest EEC branch for a free consultation with an ENZRA certified counselor who can review your documents and provide in-person interview coaching.",
-            "url": "/nz-visa-prep#branches"
+            "url": "/nzvisaprep#branches"
           }
         ]
       },
@@ -996,7 +996,7 @@ export const generateMasterSchema = () => {
       // =========================================================================
       {
         "@type": "Course",
-        "@id": "/nz-visa-prep/#course",
+        "@id": "/nzvisaprep/#course",
         "name": "New Zealand Student Visa Interview Preparation Course",
         "description": "Comprehensive self-paced course for preparing for INZ credibility interviews. Covers all aspects from academic justification to financial documentation to post-study plans.",
         "provider": { "@id": "https://eecglobal.com/#organization" },
@@ -1048,7 +1048,7 @@ export const generateMasterSchema = () => {
               "item": {
                 "@type": "SoftwareApplication",
                 "name": "Career Counselor AI",
-                "url": "/career-counselor",
+                "url": "/careercounselor",
                 "description": "AI-powered career guidance based on courses worldwide - job prospects, salaries, hiring companies"
               }
             },
@@ -1058,7 +1058,7 @@ export const generateMasterSchema = () => {
               "item": {
                 "@type": "SoftwareApplication",
                 "name": "USA F-1 Visa Interview Prep",
-                "url": "/usa-f1-visa",
+                "url": "/usavisaprep",
                 "description": "AI-powered USA F-1 Student Visa Interview Preparation"
               }
             },
@@ -1068,7 +1068,7 @@ export const generateMasterSchema = () => {
               "item": {
                 "@type": "SoftwareApplication",
                 "name": "UK Pre-CAS & Airport Interview Prep",
-                "url": "/uk-precas",
+                "url": "/ukprecas",
                 "description": "AI-powered UK Pre-CAS and Airport Interview Preparation"
               }
             },
@@ -1078,7 +1078,7 @@ export const generateMasterSchema = () => {
               "item": {
                 "@type": "SoftwareApplication",
                 "name": "Australia GS Visa Prep",
-                "url": "/australia-gs-prep",
+                "url": "/australiagsprep",
                 "description": "AI-powered Australia Genuine Student Visa Interview Preparation"
               }
             },
@@ -1098,7 +1098,7 @@ export const generateMasterSchema = () => {
               "item": {
                 "@type": "SoftwareApplication",
                 "name": "NZ Visa Interview Prep",
-                "url": "/nz-visa-prep",
+                "url": "/nzvisaprep",
                 "description": "AI-powered New Zealand Student Visa Interview Preparation"
               }
             },
@@ -1108,7 +1108,7 @@ export const generateMasterSchema = () => {
               "item": {
                 "@type": "SoftwareApplication",
                 "name": "Travel Agent AI",
-                "url": "/travel-agent",
+                "url": "/travelagent",
                 "description": "AI Travel Agent for Tourist and Student Visa information & Flights"
               }
             }
@@ -1121,7 +1121,7 @@ export const generateMasterSchema = () => {
       // =========================================================================
       {
         "@type": "WebPage",
-        "@id": "/nz-visa-prep/#speakable",
+        "@id": "/nzvisaprep/#speakable",
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": [

@@ -437,7 +437,7 @@ export const CountryComparison: React.FC = () => {
   const comparisonSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "@id": "/nz-visa-prep/#country-comparison",
+    "@id": "/nzvisaprep/#country-comparison",
     "name": "Study Abroad Country Comparison - NZ vs Australia vs Canada vs UK vs USA vs Germany",
     "description": "Comprehensive comparison of study abroad destinations for Indian students including tuition fees, living costs, work rights, and PR pathways",
     "numberOfItems": COUNTRIES.length,

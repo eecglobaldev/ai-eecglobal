@@ -12,7 +12,7 @@ export default function UsaVisaDashboardPage() {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
         // Redirect to login if not authenticated
-        router.push('/usa-f1-visa');
+        router.push('/usavisaprep');
       }
     });
 
@@ -34,4 +34,5 @@ export default function UsaVisaDashboardPage() {
     </div>
   );
 }
+
 

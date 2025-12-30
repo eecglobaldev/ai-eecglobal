@@ -43,22 +43,22 @@ export default function SitemapPage() {
             </h2>
             <ul className="space-y-3">
               <li>
-                <Link href="/usa-f1-visa" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
+                <Link href="/usavisaprep" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
                   → USA F1 Visa Mock Interview
                 </Link>
               </li>
               <li>
-                <Link href="/australia-gs-prep" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
+                <Link href="/australiagsprep" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
                   → Australia GS Prep AI
                 </Link>
               </li>
               <li>
-                <Link href="/uk-precas" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
+                <Link href="/ukprecas" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
                   → UK Credibility Interview Prep
                 </Link>
               </li>
               <li>
-                <Link href="/nz-visa" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
+                <Link href="/nzvisaprep" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
                   → New Zealand Visa Prep
                 </Link>
               </li>
@@ -68,17 +68,17 @@ export default function SitemapPage() {
                 </a>
               </li>
               <li>
-                <a href="https://ai.eecglobal.com/prpointscalculator" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400" target="_blank" rel="noopener noreferrer">
+                <a href="https://australia.eecglobal.com/prpointscalculator" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400" target="_blank" rel="noopener noreferrer">
                   → Australia PR Points Calculator
                 </a>
               </li>
               <li>
-                <Link href="/career-counselor" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
+                <Link href="/careercounselor" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
                   → Career Counselor AI
                 </Link>
               </li>
               <li>
-                <Link href="/travel-agent" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
+                <Link href="/travelagent" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
                   → Travel Agent & Visa Checker
                 </Link>
               </li>

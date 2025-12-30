@@ -36,7 +36,7 @@ const BREADCRUMB_ITEMS: BreadcrumbItem[] = [
   },
   {
     name: 'Visa & Travel Services',
-    url: '/travel-agent',
+    url: '/travelagent',
     current: true
   },
 ];

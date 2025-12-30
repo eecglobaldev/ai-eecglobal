@@ -40,7 +40,7 @@ const BREADCRUMB_ITEMS: BreadcrumbItem[] = [
   },
   {
     name: 'Australia GS Interview Prep',
-    url: '/australia-gs-prep',
+    url: '/australiagsprep',
     current: true,
   },
 ];

@@ -12,7 +12,7 @@ export default function NzVisaDashboardPage() {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
         // Redirect to login if not authenticated
-        router.push('/nz-visa-prep');
+        router.push('/nzvisaprep');
       }
     });
 
@@ -34,4 +34,5 @@ export default function NzVisaDashboardPage() {
     </div>
   );
 }
+
 

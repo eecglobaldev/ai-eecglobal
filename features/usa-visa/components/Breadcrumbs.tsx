@@ -36,7 +36,7 @@ const BREADCRUMB_ITEMS: BreadcrumbItem[] = [
     },
     {
         name: 'USA Visa Interview Prep',
-        url: '/usa-f1-visa', // This might need update later if URL structure changes
+        url: '/usavisaprep', // This might need update later if URL structure changes
         current: true,
     },
 ];

@@ -25,10 +25,10 @@ export const generateVideoSchemas = () => {
     {
       "@context": "https://schema.org",
       "@type": "VideoObject",
-      "@id": "/nz-visa-prep/#video-nz-visa-guide",
+      "@id": "/nzvisaprep/#video-nz-visa-guide",
       "name": "New Zealand Student Visa Interview Preparation Guide 2025",
       "description": "Complete guide to preparing for your New Zealand student visa interview. Learn what INZ visa officers ask, how to answer credibility interview questions, and tips from ENZRA certified experts at EEC Global.",
-      "thumbnailUrl": "/assets/nz-visa-prep-og.png",
+      "thumbnailUrl": "/assets/nzvisaprep-og.png",
       "uploadDate": "2024-06-15",
       "duration": "PT15M32S",
       "contentUrl": "https://www.youtube.com/watch?v=example",
@@ -63,10 +63,10 @@ export const generateVideoSchemas = () => {
     {
       "@context": "https://schema.org",
       "@type": "VideoObject",
-      "@id": "/nz-visa-prep/#video-fts-explained",
+      "@id": "/nzvisaprep/#video-fts-explained",
       "name": "FTS (Funds to Support) Scheme Explained for NZ Visa",
       "description": "Detailed explanation of New Zealand's Funds to Support scheme. Learn how to prepare financial documents, what amounts are required, and how to present your financial capacity to Immigration New Zealand.",
-      "thumbnailUrl": "/assets/nz-visa-prep-og.png",
+      "thumbnailUrl": "/assets/nzvisaprep-og.png",
       "uploadDate": "2024-08-20",
       "duration": "PT12M45S",
       "publisher": {
@@ -79,10 +79,10 @@ export const generateVideoSchemas = () => {
     {
       "@context": "https://schema.org",
       "@type": "VideoObject",
-      "@id": "/nz-visa-prep/#video-pswv-guide",
+      "@id": "/nzvisaprep/#video-pswv-guide",
       "name": "Post-Study Work Visa (PSWV) in New Zealand - Complete Guide",
       "description": "Everything you need to know about the 3-year Post-Study Work Visa in New Zealand. Career opportunities, PR pathway, and how to transition from student visa to work visa.",
-      "thumbnailUrl": "/assets/nz-visa-prep-og.png",
+      "thumbnailUrl": "/assets/nzvisaprep-og.png",
       "uploadDate": "2024-10-05",
       "duration": "PT18M20S",
       "publisher": {
@@ -116,9 +116,9 @@ export const generateEventSchemas = () => {
       "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
       "location": {
         "@type": "VirtualLocation",
-        "url": "https://eecglobal.com/webinars/nz-visa"
+        "url": "https://eecglobal.com/webinars/nzvisaprep"
       },
-      "image": "/assets/nz-visa-prep-og.png",
+      "image": "/assets/nzvisaprep-og.png",
       "organizer": {
         "@type": "Organization",
         "@id": "https://eecglobal.com/#organization",
@@ -144,7 +144,7 @@ export const generateEventSchemas = () => {
         "price": "0",
         "priceCurrency": "INR",
         "availability": "https://schema.org/InStock",
-        "url": "https://eecglobal.com/webinars/nz-visa",
+        "url": "https://eecglobal.com/webinars/nzvisaprep",
         "validFrom": today.toISOString()
       },
       "audience": {
@@ -204,7 +204,7 @@ export const generateDefinedTermSetSchema = () => {
   return {
     "@context": "https://schema.org",
     "@type": "DefinedTermSet",
-    "@id": "/nz-visa-prep/#terminology",
+    "@id": "/nzvisaprep/#terminology",
     "name": "New Zealand Student Visa Terminology Glossary",
     "description": "Comprehensive glossary of terms related to New Zealand student visas, INZ processes, and study abroad requirements.",
     "inLanguage": "en",
@@ -288,31 +288,31 @@ export const generateSiteNavigationSchema = () => {
         "@type": "SiteNavigationElement",
         "name": "NZ Visa Interview Prep",
         "description": "Free AI-powered New Zealand student visa interview preparation",
-        "url": "/nz-visa-prep"
+        "url": "/nzvisaprep"
       },
       {
         "@type": "SiteNavigationElement",
         "name": "Career Counselor AI",
         "description": "AI-powered career guidance for any course worldwide",
-        "url": "/career-counselor"
+        "url": "/careercounselor"
       },
       {
         "@type": "SiteNavigationElement",
         "name": "USA F-1 Visa Prep",
         "description": "USA student visa interview preparation",
-        "url": "/usa-f1-visa"
+        "url": "/usavisaprep"
       },
       {
         "@type": "SiteNavigationElement",
         "name": "UK Pre-CAS Prep",
         "description": "UK Pre-CAS and airport interview preparation",
-        "url": "/uk-precas"
+        "url": "/ukprecas"
       },
       {
         "@type": "SiteNavigationElement",
         "name": "Australia GS Prep",
         "description": "Australia Genuine Student visa interview preparation",
-        "url": "/australia-gs-prep"
+        "url": "/australiagsprep"
       },
       {
         "@type": "SiteNavigationElement",
@@ -344,7 +344,7 @@ export const generateScholarshipSchema = () => {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "@id": "/nz-visa-prep/#scholarships",
+    "@id": "/nzvisaprep/#scholarships",
     "name": "New Zealand Scholarships for Indian Students",
     "description": "Comprehensive list of scholarships available for Indian students studying in New Zealand",
     "numberOfItems": 8,

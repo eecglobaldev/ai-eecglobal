@@ -5,14 +5,14 @@ export default function AustraliaGsStructuredData() {
       {
         "@type": "WebSite",
         "@id": "#website",
-        "url": "https://ai.eecglobal.com/australia-gs-prep",
+        "url": "https://ai.eecglobal.com/australiagsprep",
         "name": "EEC Australia GS Prep Tool",
         "publisher": { "@id": "#organization" },
         "potentialAction": {
           "@type": "SearchAction",
           "target": {
             "@type": "EntryPoint",
-            "urlTemplate": "https://ai.eecglobal.com/australia-gs-prep?s={search_term_string}"
+            "urlTemplate": "https://ai.eecglobal.com/australiagsprep?s={search_term_string}"
           },
           "query-input": "required name=search_term_string"
         }
@@ -20,7 +20,7 @@ export default function AustraliaGsStructuredData() {
       {
         "@type": "WebPage",
         "@id": "#webpage",
-        "url": "https://ai.eecglobal.com/australia-gs-prep",
+        "url": "https://ai.eecglobal.com/australiagsprep",
         "name": "Free AI Australia GS Interview Prep Tool by EEC",
         "author": [
           { "@id": "#amit-jalan" },
@@ -305,5 +305,6 @@ export default function AustraliaGsStructuredData() {
     />
   );
 }
+
 
 

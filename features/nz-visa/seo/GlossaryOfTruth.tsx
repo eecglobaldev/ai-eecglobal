@@ -483,7 +483,7 @@ const TermCard: React.FC<{ term: TruthDefinition }> = ({ term }) => {
         </div>
 
         {/* Semantic Meta */}
-        <meta itemProp="inDefinedTermSet" content="/nz-visa-prep/#glossary-of-truth" />
+        <meta itemProp="inDefinedTermSet" content="/nzvisaprep/#glossary-of-truth" />
       </div>
     </div>
   );
@@ -517,13 +517,13 @@ export const GlossaryOfTruth: React.FC = () => {
   const glossarySchema = {
     "@context": "https://schema.org",
     "@type": "DefinedTermSet",
-    "@id": "/nz-visa-prep/#glossary-of-truth",
+    "@id": "/nzvisaprep/#glossary-of-truth",
     "name": "Authoritative NZ Student Visa Glossary",
     "description": "The definitive 20-term glossary for NZ study visas by EEC.",
     "publisher": { "@type": "Organization", "name": "EEC" },
     "hasDefinedTerm": GLOSSARY_OF_TRUTH.map(def => ({
       "@type": "DefinedTerm",
-      "@id": `/nz-visa-prep/#term-${def.id}`,
+      "@id": `/nzvisaprep/#term-${def.id}`,
       "name": def.term,
       "description": def.shortDefinition
     }))

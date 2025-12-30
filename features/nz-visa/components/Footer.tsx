@@ -44,14 +44,14 @@ const Footer: React.FC = () => {
 
   // AI Tools Data
   const aiTools = [
-    { name: 'Career Counselor AI', url: '/career-counselor', isNew: true },
-    { name: 'USA F-1 Visa Prep', url: '/usa-f1-visa' },
-    { name: 'UK Pre-CAS Prep', url: '/uk-precas' },
-    { name: 'Australia GS Prep', url: '/australia-gs-prep' },
+    { name: 'Career Counselor AI', url: '/careercounselor', isNew: true },
+    { name: 'USA F-1 Visa Prep', url: '/usavisaprep' },
+    { name: 'UK Pre-CAS Prep', url: '/ukprecas' },
+    { name: 'Australia GS Prep', url: '/australiagsprep' },
     { name: 'Australia PR Calculator', url: 'https://australia.eecglobal.com/prpointscalculator' },
     { name: 'Germany Visa Prep', url: 'https://ai.eecglobal.com/germanyvisaprep' },
-    { name: 'NZ Visa Prep', url: '/nz-visa-prep', isCurrent: true },
-    { name: 'Travel Agent AI', url: '/travel-agent', isNew: true },
+    { name: 'NZ Visa Prep', url: '/nzvisaprep', isCurrent: true },
+    { name: 'Travel Agent AI', url: '/travelagent', isNew: true },
     { name: 'Germany Public University', url: 'https://germany.eecglobal.com/public', isNew: true },
   ];
 

@@ -12,7 +12,7 @@ export default function UkPrecasDashboardPage() {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
         // Redirect to login if not authenticated
-        router.push('/uk-precas');
+        router.push('/ukprecas');
       }
     });
 
@@ -34,4 +34,5 @@ export default function UkPrecasDashboardPage() {
     </div>
   );
 }
+
 

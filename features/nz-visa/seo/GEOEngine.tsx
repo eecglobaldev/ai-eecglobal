@@ -200,7 +200,7 @@ export const GEOEngine: React.FC = () => {
   const geoSchema = {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    "@id": "/nz-visa-prep/#geo-knowledge-base",
+    "@id": "/nzvisaprep/#geo-knowledge-base",
     "name": "New Zealand Student Visa Knowledge Base",
     "description": "Authoritative knowledge base for NZ student visa requirements and statistics.",
     "creator": { "@type": "Organization", "name": "EEC" },

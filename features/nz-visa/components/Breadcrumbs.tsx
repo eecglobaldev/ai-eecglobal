@@ -36,7 +36,7 @@ const BREADCRUMB_ITEMS: BreadcrumbItem[] = [
   },
   {
     name: 'NZ Visa Interview Prep',
-    url: '/nz-visa-prep',
+    url: '/nzvisaprep',
     current: true,
   },
 ];

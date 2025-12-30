@@ -19,7 +19,7 @@ interface HeaderProps {
     setTheme: (theme: string) => void;
 }
 
-const DASHBOARD_URL = "/australia-gs-prep/dashboard/";
+const DASHBOARD_URL = "/australiagsprep/dashboard/";
 
 const Header: React.FC<HeaderProps> = ({ theme, setTheme }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

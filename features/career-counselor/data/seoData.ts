@@ -16,7 +16,7 @@ export const ORGANIZATION = {
   
   urls: {
     main: "https://eecglobal.com",
-    aiTool: "/career-counselor",
+    aiTool: "/careercounselor",
     logo: "/assets/eeclogo.svg",
   },
   

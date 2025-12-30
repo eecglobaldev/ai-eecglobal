@@ -132,7 +132,7 @@ export default function GenuineStudentTestPage() {
             Since March 2024, EEC has processed <strong>400+ GS applications</strong> with an 
             <strong> 89% approval rate</strong>—compared to the 65% industry average for Indian applicants.
           </p>
-          <a href="/australia-gs-prep" 
+          <a href="/australiagsprep" 
              className="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition">
             Try GS Statement Builder →
           </a>
@@ -141,6 +141,7 @@ export default function GenuineStudentTestPage() {
     </>
   );
 }
+
 
 
 

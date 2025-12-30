@@ -17,13 +17,12 @@ export default function robots(): MetadataRoute.Robots {
           '/author/*',
           '/news/*',
           '/sitemap',
-          '/usa-f1-visa',
-          '/australia-gs-prep',
-          '/uk-precas',
-          '/nz-visa',
-          '/nz-visa-prep',
-          '/career-counselor',
-          '/travel-agent',
+          '/usavisaprep',
+          '/australiagsprep',
+          '/ukprecas',
+          '/nzvisaprep',
+          '/careercounselor',
+          '/travelagent',
         ],
         disallow: [
           '/api/',
@@ -102,6 +101,7 @@ export default function robots(): MetadataRoute.Robots {
     host: baseUrl,
   };
 }
+
 
 
 

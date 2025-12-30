@@ -31,7 +31,7 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ params, result }) => {
     }
 
     // Update or Create Canonical
-    const currentUrl = `/travel-agent/#/destination/${encodeURIComponent(params.destination)}/type/${encodeURIComponent(params.visaType)}`;
+    const currentUrl = `/travelagent/#/destination/${encodeURIComponent(params.destination)}/type/${encodeURIComponent(params.visaType)}`;
     if (canonical) {
       canonical.setAttribute('href', currentUrl);
     } else {
@@ -61,12 +61,12 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ params, result }) => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "/travel-agent"
+        "item": "/travelagent"
       }, {
         "@type": "ListItem",
         "position": 2,
         "name": params.destination || "Destinations",
-        "item": `/travel-agent/#/destination/${encodeURIComponent(params.destination || '')}`
+        "item": `/travelagent/#/destination/${encodeURIComponent(params.destination || '')}`
       }, {
         "@type": "ListItem",
         "position": 3,

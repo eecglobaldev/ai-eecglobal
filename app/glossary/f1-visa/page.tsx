@@ -175,7 +175,7 @@ export default function F1VisaPage() {
         <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 rounded-xl text-white mt-12">
           <h3 className="text-xl font-bold mb-2">Preparing for F1 Visa Interview?</h3>
           <p className="text-blue-100 mb-4">Practice with our AI Visa Officer that simulates real interview conditions.</p>
-          <Link href="/usa-f1-visa" className="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition">
+          <Link href="/usavisaprep" className="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition">
             Start Free Practice →
           </Link>
         </div>
