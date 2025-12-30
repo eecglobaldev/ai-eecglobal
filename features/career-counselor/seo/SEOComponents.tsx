@@ -603,13 +603,16 @@ export const LongTailContentSection: React.FC = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* USA Card */}
           <article className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200/50 dark:border-slate-700/50 group hover:shadow-xl transition-all">
-            <div className="h-32 flex items-center justify-center">
+            <div className="h-32 flex items-center justify-center bg-slate-100 dark:bg-slate-700">
             <img 
           src="/assets/usa-flag.jpg"
         alt="USA Flag"
         className="w-full h-full object-cover"
-      
         loading="eager"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.src = 'https://ai.eecglobal.com/assets/usa-flag.jpg';
+        }}
       />
             </div>
             <div className="p-5">
@@ -636,13 +639,16 @@ export const LongTailContentSection: React.FC = () => {
 
           {/* UK Card */}
           <article className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200/50 dark:border-slate-700/50 group hover:shadow-xl transition-all">
-          <div className="h-32 flex items-center justify-center">
+          <div className="h-32 flex items-center justify-center bg-slate-100 dark:bg-slate-700">
             <img 
           src="/assets/uk-flag.jpg"
-        alt="USA Flag"
+        alt="UK Flag"
         className="w-full h-full object-cover"
-      
         loading="eager"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.src = 'https://ai.eecglobal.com/assets/uk-flag.jpg';
+        }}
       />
             </div>
             <div className="p-5">
@@ -669,13 +675,16 @@ export const LongTailContentSection: React.FC = () => {
 
           {/* Canada Card */}
           <article className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200/50 dark:border-slate-700/50 group hover:shadow-xl transition-all">
-          <div className="h-32 flex items-center justify-center">
+          <div className="h-32 flex items-center justify-center bg-slate-100 dark:bg-slate-700">
             <img 
           src="/assets/canada-flag.jpg"
-        alt="USA Flag"
+        alt="Canada Flag"
         className="w-full h-full object-cover"
-      
         loading="eager"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.src = 'https://ai.eecglobal.com/assets/canada-flag.jpg';
+        }}
       />
             </div>
             <div className="p-5">
@@ -702,13 +711,16 @@ export const LongTailContentSection: React.FC = () => {
 
           {/* Australia Card */}
           <article className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200/50 dark:border-slate-700/50 group hover:shadow-xl transition-all">
-          <div className="h-32 flex items-center justify-center">
+          <div className="h-32 flex items-center justify-center bg-slate-100 dark:bg-slate-700">
             <img 
           src="/assets/australia-flag.jpg"
-        alt="USA Flag"
+        alt="Australia Flag"
         className="w-full h-full object-cover"
-      
         loading="eager"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.src = 'https://ai.eecglobal.com/assets/australia-flag.jpg';
+        }}
       />
             </div>
             <div className="p-5">
@@ -735,13 +747,16 @@ export const LongTailContentSection: React.FC = () => {
 
           {/* Germany Card */}
           <article className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200/50 dark:border-slate-700/50 group hover:shadow-xl transition-all">
-          <div className="h-32 flex items-center justify-center">
+          <div className="h-32 flex items-center justify-center bg-slate-100 dark:bg-slate-700">
             <img 
           src="/assets/germany-flag.jpg"
-        alt="USA Flag"
+        alt="Germany Flag"
         className="w-full h-full object-cover"
-      
         loading="eager"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.src = 'https://ai.eecglobal.com/assets/germany-flag.jpg';
+        }}
       />
             </div>
             <div className="p-5">
@@ -768,13 +783,16 @@ export const LongTailContentSection: React.FC = () => {
 
           {/* Ireland Card */}
           <article className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200/50 dark:border-slate-700/50 group hover:shadow-xl transition-all">
-          <div className="h-32 flex items-center justify-center">
+          <div className="h-32 flex items-center justify-center bg-slate-100 dark:bg-slate-700">
             <img 
           src="/assets/ireland-flag.jpg"
-        alt="USA Flag"
+        alt="Ireland Flag"
         className="w-full h-full object-cover"
-      
         loading="eager"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.src = 'https://ai.eecglobal.com/assets/ireland-flag.jpg';
+        }}
       />
             </div>
             <div className="p-5">

@@ -125,7 +125,7 @@ const seoLinks = [
 
 
 const Footer: React.FC = () => {
-    const baseUrl = '/australia-gs-prep';
+    const baseUrl = 'https://ai.eecglobal.com/australia-gs-prep';
 
     const mainLinks = [
         { href: "#prep-tool-section", text: "GS Prep Tool" },
@@ -246,7 +246,7 @@ const Footer: React.FC = () => {
                             <a href="#public-api" className="hover:text-brand dark:hover:text-brand-light transition-colors">
                                 Public Data API
                             </a>
-                            <a href="/australiagsprep/llm.txt" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-brand-light transition-colors">
+                            <a href="/australia-gs-prep/llm.txt" target="_blank" rel="noopener noreferrer" className="hover:text-brand dark:hover:text-brand-light transition-colors">
                                 LLM & Generative Engines read here
                             </a>
                         </div>

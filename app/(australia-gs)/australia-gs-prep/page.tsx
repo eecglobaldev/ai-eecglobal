@@ -1,37 +1,57 @@
 import { Metadata } from 'next';
 import AustraliaGsApp from '@/features/australia-gs/components/AustraliaGsApp';
+import AustraliaGsStructuredData from '@/features/australia-gs/components/AustraliaGsStructuredData';
 
 export const metadata: Metadata = {
-    title: 'Australia GS Interview Prep | AI-Powered Practice Tool',
-    description: 'Prepare for your Australia Graduate Skills Assessment interview with AI-powered feedback, personalized prep plans, and expert guidance from EEC Global.',
-    keywords: ['Australia GS', 'Graduate Skills', 'Interview Prep', 'Study Abroad', 'Australia Visa', 'Student Visa', 'Genuine Student Test'],
+    title: 'Free AI Australia GS Interview Prep Tool by EEC',
+    description: '10X your Australian student visa success with EEC\'s free AI-powered Genuine Student (GS) interview prep tool. Get hyper-personalized questions, practice with your voice, and receive instant, expert feedback. Designed for Indian students applying for the Subclass 500 visa.',
+    keywords: ['Australia student visa', 'Genuine Student', 'GS interview', 'GS criteria Australia', 'EEC', 'study in Australia', 'visa interview prep', 'AI visa tool', 'Indian students', 'subclass 500 visa India', 'free AI interview coach', 'genuine student assessment Australia', 'GTE to GS changes', 'Australian visa interview questions for Indian students', 'EEC branches Gujarat', 'study abroad consultants India'],
+    authors: [{ name: 'EEC (Enbee Education Center Private Limited)' }],
+    publisher: 'EEC (Enbee Education Center Private Limited)',
     openGraph: {
         type: 'website',
         url: 'https://ai.eecglobal.com/australia-gs-prep',
-        title: 'Australia GS Interview Prep | AI-Powered Practice',
-        description: 'Master your Australia Graduate Skills interview with AI-powered practice and feedback.',
-        siteName: 'EEC AI Tools',
+        title: 'Free AI Australia GS Interview Prep Tool by EEC',
+        description: 'A 100% free, AI-powered tool for Indian students to prepare for the Australian Genuine Student (GS) visa interview.',
+        siteName: 'EEC Australia GS Prep',
         locale: 'en_IN',
         images: [
             {
-                url: '/og-image.png',
+                url: '/assets/logos/eeclogo-main.png',
                 width: 1200,
                 height: 630,
-                alt: 'Australia GS Interview Prep - AI Powered',
+                alt: 'EEC Australia GS Prep Tool',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Australia GS Interview Prep | AI-Powered Practice',
-        description: 'Master your Australia Graduate Skills interview with AI-powered practice and feedback.',
-        images: ['/twitter-image.png'],
+        title: 'Free AI Australia GS Interview Prep Tool by EEC',
+        description: 'A 100% free, AI-powered tool for Indian students to prepare for the Australian Genuine Student (GS) visa interview.',
+        images: ['/assets/logos/eeclogo-main.png'],
     },
     alternates: {
         canonical: 'https://ai.eecglobal.com/australia-gs-prep',
     },
+    icons: {
+        icon: [
+            { url: 'https://australia.eecglobal.com/australialogo.png', type: 'image/png' },
+            { url: '/favicon.ico', sizes: 'any' },
+        ],
+        apple: [
+            { url: '/apple-touch-icon.png', sizes: '180x180' },
+        ],
+    },
+    other: {
+        'google-site-verification': 'rqiI0_ZlREHbdPNC1E_HUY_RMmHcYEiO6yL9HdZ1VfE',
+    },
 };
 
 export default function AustraliaGsPrepPage() {
-    return <AustraliaGsApp />;
+    return (
+        <>
+            <AustraliaGsStructuredData />
+            <AustraliaGsApp />
+        </>
+    );
 }

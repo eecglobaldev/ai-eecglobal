@@ -141,7 +141,22 @@ const KEY_STATS = [
 // COMPONENTS
 // =============================================================================
 
-const NeoStatCard: React.FC<{ stat: typeof KEY_STATS[0]; index: number }> = ({ stat, index }) => (
+const NeoStatCard: React.FC<{ stat: typeof KEY_STATS[0]; index: number }> = ({ stat, index }) => {
+  // Extract color from bg class and convert to RGB values for inline styles
+  const colorMap: Record<string, { r: number; g: number; b: number }> = {
+    'blue-500': { r: 59, g: 130, b: 246 },
+    'emerald-500': { r: 16, g: 185, b: 129 },
+    'violet-500': { r: 139, g: 92, b: 246 },
+    'amber-500': { r: 245, g: 158, b: 11 },
+    'rose-500': { r: 244, g: 63, b: 94 },
+    'cyan-500': { r: 6, g: 182, b: 212 },
+  };
+  
+  const colorMatch = stat.bg.match(/bg-([^/]+)/);
+  const colorKey = colorMatch ? colorMatch[1] : 'cyan-500';
+  const color = colorMap[colorKey] || colorMap['cyan-500'];
+  
+  return (
   <div 
     className="
       group relative bg-white dark:bg-slate-900 rounded-[2rem] 
@@ -151,13 +166,28 @@ const NeoStatCard: React.FC<{ stat: typeof KEY_STATS[0]; index: number }> = ({ s
     "
     style={{ animationDelay: `${index * 100}ms` }}
   >
-    <div className={`
-      absolute top-0 right-0 
-      w-16 h-16 sm:w-24 sm:h-24 
-      ${stat.bg.replace('/10', '/5')} 
-      rounded-bl-[36px] sm:rounded-bl-[60px] 
-      transition-transform group-hover:scale-110
-    `} />
+    <div 
+      className="
+        absolute top-0 right-0 
+        w-16 h-16 sm:w-24 sm:h-24 
+        rounded-bl-[36px] sm:rounded-bl-[60px] 
+        transition-transform group-hover:scale-110
+        semi-circle-bg
+      "
+      style={{
+        '--light-opacity': '0.05',
+        '--dark-opacity': '0.2',
+        '--color-r': color.r.toString(),
+        '--color-g': color.g.toString(),
+        '--color-b': color.b.toString(),
+      } as React.CSSProperties & {
+        '--light-opacity': string;
+        '--dark-opacity': string;
+        '--color-r': string;
+        '--color-g': string;
+        '--color-b': string;
+      }}
+    />
     
     <div className="relative z-10">
       <div className="flex items-start justify-between mb-3 sm:mb-4">
@@ -178,7 +208,8 @@ const NeoStatCard: React.FC<{ stat: typeof KEY_STATS[0]; index: number }> = ({ s
       </div>
     </div>
   </div>
-);
+  );
+};
 
 const HolographicDefinition: React.FC<{ def: typeof DEFINITIONS[0] }> = ({ def }) => {
   const Icon = def.icon;

@@ -76,7 +76,7 @@ export const GeoAeoContentSections: React.FC = () => {
                     
                     {/* Main Hero Title */}
                     <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 leading-[1.1]">
-                        <span className="text-slate-800 dark:text-gradient-white">UK Visa</span>
+                        <span className="text-slate-800 dark:text-white">UK Visa</span>
                         <br />
                         <span className="text-gradient-pink">Intelligence</span>
                     </h2>

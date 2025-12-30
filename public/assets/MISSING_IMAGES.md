@@ -16,8 +16,8 @@ The following images are referenced in the code but are missing from the `public
    - **Action**: Copy from `https://ai.eecglobal.com/assets/ireland.png` or from `eec-ai-tools`
 
 3. **OG Images**:
-   - `/og-image.png`
-   - `/twitter-image.png`
+   - ✅ `/og-image.png` - **CREATED** (1200x630px, placeholder)
+   - ✅ `/twitter-image.png` - **CREATED** (1200x630px, placeholder)
    - `/og-about-image.png` (optional)
    - `/twitter-about-image.png` (optional)
 
@@ -44,4 +44,6 @@ public/
     │   └── ireland.png
     └── Madhav-Gupta.jpeg
 ```
+
+
 

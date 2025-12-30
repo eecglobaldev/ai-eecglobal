@@ -2,10 +2,8 @@
 export default {
     darkMode: "selector", // Enables class-based dark mode (.dark class)
     content: [
-        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-        "./components/**/*.{js,ts,jsx,tsx,mdx}",
-        "./app/**/*.{js,ts,jsx,tsx,mdx}",
-        "./features/**/*.{js,ts,jsx,tsx,mdx}",
+        "./app/**/*.{js,ts,jsx,tsx}",
+        "./features/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
         extend: {

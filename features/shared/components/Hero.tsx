@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Sparkles, Globe2, ShieldCheck, Zap } from 'lucide-react';
 import Image from 'next/image';

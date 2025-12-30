@@ -9,7 +9,7 @@ export const SPONSOR_TYPES = ["Father", "Mother", "Both Parents", "Self", "Other
 
 export const AUTH_MODAL_EVENT = 'nzprep:open-auth-modal';
 export const AUTH_SUCCESS_EVENT = 'auth-success';
-export const DASHBOARD_URL = '/nz-visa-prep/dashboard/';
+export const DASHBOARD_URL = '/nzvisaprep/dashboard/';
 
 export const INITIAL_USER_PROFILE: UserProfile = {
   institutionType: '',

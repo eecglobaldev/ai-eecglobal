@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { ArrowRight, Check, Star } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,6 +15,7 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
     // Note: Experimental typedRoutes might require specific string literals, 
     // but tool.url is string. We trust the input for now.
     const isInternal = tool.url.startsWith('/');
+    const [imageError, setImageError] = useState(false);
 
     // Optimized gradients for distinct themes
     const getGradientTheme = (id: string, flagCode?: string): [string, string] => {
@@ -104,7 +107,7 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
                 {/* Header: Icon & Badge */}
                 <div className="flex justify-between items-start mb-8 relative z-10">
                     <div className="relative">
-                        {tool.customIconUrl ? (
+                        {tool.customIconUrl && !imageError ? (
                             <div className="relative w-16 h-16 rounded-2xl overflow-hidden ring-4 ring-slate-50 dark:ring-white/5 shadow-lg group-hover:scale-110 transition-transform duration-500">
                                 <Image
                                     src={tool.customIconUrl}
@@ -112,15 +115,18 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
                                     fill
                                     className="object-cover"
                                     unoptimized
+                                    onError={() => setImageError(true)}
                                 />
                             </div>
-                        ) : tool.flagCode ? (
+                        ) : tool.flagCode && !imageError ? (
                             <div className="relative w-16 h-16 rounded-2xl overflow-hidden ring-4 ring-slate-50 dark:ring-white/5 shadow-lg group-hover:scale-110 transition-transform duration-500">
                                 <Image
                                     src={`https://flagcdn.com/w160/${tool.flagCode}.png`}
                                     alt={`${tool.flagCode} flag`}
                                     fill
                                     className="object-cover transform scale-125"
+                                    unoptimized
+                                    onError={() => setImageError(true)}
                                 />
                             </div>
                         ) : (

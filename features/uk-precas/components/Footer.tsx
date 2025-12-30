@@ -582,6 +582,10 @@ const Footer: React.FC = () => {
                     alt="Amit Jalan - Managing Director"
                     className="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl"
                     itemProp="image"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = 'https://ai.eecglobal.com/assets/Amit-Jalan.jpeg';
+                    }}
                   />
                 </div>
                 </div>
@@ -671,6 +675,10 @@ const Footer: React.FC = () => {
                     alt="Mohita Gupta - Vice President"
                     className="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl"
                     itemProp="image"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = 'https://ai.eecglobal.com/assets/mohita-gupta.jpeg';
+                    }}
                   />
                 </div>
 

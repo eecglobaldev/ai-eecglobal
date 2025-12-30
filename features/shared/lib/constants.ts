@@ -51,7 +51,7 @@ export const TOOLS: Tool[] = [
         title: 'Study in Ireland Comprehensive Guide 2026',
         description: 'Ireland is the Silicon Valley of Europe and the only English-speaking country in the Eurozone. Unlock a 2-year stay-back visa and land roles at Google, Meta, or Intel HQ.',
         icon: BookOpen,
-        url: 'https://test-ireland.eecglobal.com', // External
+        url: 'https://ireland.eecglobal.com', // External
         color: 'text-emerald-600 dark:text-emerald-400',
         customIconUrl: '/assets/ireland.png',
         features: ['2-Year Post-Study Work Visa', 'No Application Fee Options', 'Europe\'s Tech Capital (Jobs)']
@@ -92,7 +92,7 @@ export const TOOLS: Tool[] = [
         title: 'Study in Germany Comprehensive Guide 2026',
         description: 'German Universities are free but the paperwork is confusing. Convert your Indian CGPA to the German Grade (Bavarian Formula) instantly and check if you qualify for Public Universities.',
         icon: BookOpen,
-        url: 'https://test-germany.eecglobal.com', // External
+        url: 'https://germany.eecglobal.com/public/', // External
         color: 'text-yellow-600 dark:text-yellow-400',
         flagCode: 'de',
         features: ['Indian CGPA to German Grade', 'Check Free University Eligibility', 'APS Certificate Guide']
@@ -102,7 +102,7 @@ export const TOOLS: Tool[] = [
         title: 'Study in Australia 2026 Guide',
         description: 'Is Sydney too expensive? How much can you save doing part-time jobs? Get honest, verified facts about rent, groceries, and savings for Indian students in Australia.',
         icon: BookOpen,
-        url: 'https://test-aus.eecglobal.com', // External
+        url: 'https://australia.eecglobal.com', // External
         color: 'text-green-600 dark:text-green-400',
         flagCode: 'au',
         features: ['Calculate Monthly Rent', 'Part-Time Earnings Check', 'Best Cities for Students']

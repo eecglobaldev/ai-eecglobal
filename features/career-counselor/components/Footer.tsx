@@ -33,7 +33,7 @@ const CertificationBadge: React.FC<{ cert: typeof CERTIFICATIONS[0] }> = ({ cert
     href={cert.url}
     target="_blank"
     rel="noopener noreferrer"
-    className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-750 border border-slate-200 dark:border-slate-700 rounded-lg hover:shadow-md transition-all group"
+    className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg hover:shadow-md transition-all group"
     title={cert.fullName}
   >
     {cert.code ? (
@@ -56,9 +56,18 @@ const CertificationBadge: React.FC<{ cert: typeof CERTIFICATIONS[0] }> = ({ cert
 );
 
 // Person Card Component
-const PersonCard: React.FC<{ person: typeof KEY_PERSONS[0] }> = ({ person }) => (
+const PersonCard: React.FC<{ person: typeof KEY_PERSONS[0]; index: number }> = ({ person, index }) => {
+  // Different colors for different people - matching EntityKnowledgeSection
+  const cardStyles = [
+    // Amit Jalan - Blue/Indigo gradient
+    "bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border-blue-200 dark:border-blue-800/50",
+    // CA Madhav Gupta - Amber/Orange gradient
+    "bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 border-amber-200 dark:border-amber-800/50",
+  ];
+  
+  return (
   <div 
-    className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-850 rounded-xl p-4 border border-slate-200 dark:border-slate-700"
+    className={`${cardStyles[index] || cardStyles[0]} rounded-xl p-4 border`}
     itemScope 
     itemType="https://schema.org/Person"
   >
@@ -104,7 +113,8 @@ const PersonCard: React.FC<{ person: typeof KEY_PERSONS[0] }> = ({ person }) => 
       Connect on LinkedIn
     </a>
   </div>
-);
+  );
+};
 
 const Footer: React.FC = () => {
   const [showAllBranches, setShowAllBranches] = useState(false);
@@ -262,7 +272,7 @@ const Footer: React.FC = () => {
             </h3>
             <div className="space-y-4">
               {KEY_PERSONS.map((person, idx) => (
-                <PersonCard key={idx} person={person} />
+                <PersonCard key={idx} person={person} index={idx} />
               ))}
             </div>
           </div>

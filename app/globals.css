@@ -123,18 +123,35 @@
 :root {
   --background: #ffffff;
   --foreground: #020617;
+  
+  /* UK Pre-CAS theme colors - matching original */
+  --bg-base: #ffffff;
+  --bg-card: #f8fafc;
+  --bg-elevated: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
 }
-
-
 
 .dark {
   --background: #020617;
   --foreground: #ededed;
+  
+  /* UK Pre-CAS dark theme colors - matching original */
+  --bg-base: #0d1117;
+  --bg-card: #161b22;
+  --bg-elevated: #21262d;
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  --border-color: #30363d;
 }
 
 body {
   background-color: var(--background);
-  color: var(--foreground);
+  /* Use text-primary if available (for UK Pre-CAS), otherwise fallback to foreground */
+  color: var(--text-primary, var(--foreground));
 }
 
 /* Custom Scrollbar */
@@ -161,4 +178,163 @@ body {
 
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #475569;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UK PRE-CAS CARD GLOW EFFECTS - Matching Original Implementation
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Always-on glow for important cards */
+.card-glow-always {
+  box-shadow: 
+    0 0 0 1px rgba(99, 102, 241, 0.1),
+    0 4px 20px rgba(99, 102, 241, 0.1),
+    0 8px 40px rgba(99, 102, 241, 0.05);
+}
+
+.dark .card-glow-always {
+  box-shadow: 
+    0 0 0 1px rgba(99, 102, 241, 0.2),
+    0 4px 30px rgba(99, 102, 241, 0.15),
+    0 8px 60px rgba(99, 102, 241, 0.1);
+}
+
+/* Hover glow card */
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2), rgba(6, 182, 212, 0.2));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  filter: blur(20px);
+  transition: opacity 0.4s ease;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+/* Strong neon glow card */
+.card-neon {
+  position: relative;
+}
+
+.card-neon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #6366f1, #a855f7, #22d3ee);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.card-neon:hover::before {
+  opacity: 1;
+}
+
+.card-neon::after {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.15), transparent 70%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card-neon:hover::after {
+  opacity: 1;
+}
+
+/* Stagger animation for card items */
+.stagger-item {
+  animation: fadeUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+.stagger-item:nth-child(6) { animation-delay: 0.6s; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UK PRE-CAS TEXT GRADIENT EFFECTS - Matching Original Implementation
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Magenta/Pink gradient */
+.text-gradient-pink {
+  background: linear-gradient(135deg, #d946ef 0%, #ec4899 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Orange/Coral gradient */
+.text-gradient-orange {
+  background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fdba74 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Purple gradient */
+.text-gradient-purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Cyan gradient */
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 50%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Blue to Purple animated gradient */
+.text-gradient-animated {
+  background: linear-gradient(270deg, #6366f1, #8b5cf6, #d946ef, #6366f1);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-text-flow 6s ease infinite;
+}
+
+@keyframes gradient-text-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* White to gray gradient for dark mode titles */
+.text-gradient-white {
+  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* NZ Visa Prep - Quick Facts Semi-Circle Background */
+.semi-circle-bg {
+  background-color: rgba(var(--color-r), var(--color-g), var(--color-b), var(--light-opacity));
+}
+
+.dark .semi-circle-bg {
+  background-color: rgba(var(--color-r), var(--color-g), var(--color-b), var(--dark-opacity));
 }

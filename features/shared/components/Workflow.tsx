@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Check, ArrowRight } from 'lucide-react';
 import { WORKFLOW_STEPS } from '../lib/constants';

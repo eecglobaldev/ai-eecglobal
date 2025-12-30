@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/features/shared/context/ThemeContext";
+import StructuredData from "@/features/shared/components/StructuredData";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -82,6 +83,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable} scroll-smooth`} suppressHydrationWarning>
       <body className="antialiased selection:bg-blue-500/30">
+        <StructuredData />
         <ThemeProvider>
           {children}
         </ThemeProvider>

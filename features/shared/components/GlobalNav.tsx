@@ -111,8 +111,8 @@ const GlobalNav: React.FC = () => {
         <>
             <header
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? 'bg-slate-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/20'
-                    : 'bg-slate-900/80 backdrop-blur-md'
+                    ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-white/10 shadow-2xl shadow-black/10 dark:shadow-black/20'
+                    : 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md'
                     }`}
             >
                 <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -142,18 +142,18 @@ const GlobalNav: React.FC = () => {
                                 className="relative"
                                 onMouseEnter={() => setActiveDropdown('destinations')}
                             >
-                                <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5">
+                                <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">
                                     Study Destinations
                                     <ChevronDown className="w-4 h-4" />
                                 </button>
                                 {activeDropdown === 'destinations' && (
                                     <div className="absolute top-full left-0 pt-2 w-64">
-                                        <div className="bg-slate-800 border border-white/10 rounded-xl shadow-2xl shadow-black/30 py-2 animate-fade-up">
+                                        <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 rounded-xl shadow-2xl shadow-black/10 dark:shadow-black/30 py-2 animate-fade-up">
                                             {DESTINATIONS.map((item) => (
                                                 <a
                                                     key={item.name}
                                                     href={item.href}
-                                                    className="flex items-center justify-between px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+                                                    className="flex items-center justify-between px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
                                                     target={item.external ? "_blank" : undefined}
                                                     rel={item.external ? "noopener noreferrer" : undefined}
                                                 >
@@ -181,13 +181,13 @@ const GlobalNav: React.FC = () => {
                                 </button>
                                 {activeDropdown === 'tools' && (
                                     <div className="absolute top-full left-0 pt-2 w-80">
-                                        <div className="bg-slate-800 border border-white/10 rounded-xl shadow-2xl shadow-black/30 py-2 animate-fade-up">
-                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 tracking-wider">Visa Interview Prep</div>
+                                        <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 rounded-xl shadow-2xl shadow-black/10 dark:shadow-black/30 py-2 animate-fade-up">
+                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Visa Interview Prep</div>
                                             {AI_TOOLS.interview.map((item) => (
                                                 <Link
                                                     key={item.name}
                                                     href={item.href as any}
-                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-blue-500/10 transition-colors"
+                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors"
                                                 >
                                                     <span className="flex items-center gap-2">
                                                         {item.country && <Flag country={item.country} size={20} />}
@@ -195,13 +195,13 @@ const GlobalNav: React.FC = () => {
                                                     </span>
                                                 </Link>
                                             ))}
-                                            <div className="h-px bg-white/10 my-2" />
-                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 tracking-wider">Calculators & Guides</div>
+                                            <div className="h-px bg-slate-200 dark:bg-white/10 my-2" />
+                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Calculators & Guides</div>
                                             {AI_TOOLS.calculators.map((item) => (
                                                 <a
                                                     key={item.name}
                                                     href={item.href}
-                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-blue-500/10 transition-colors"
+                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors"
                                                 >
                                                     <span className="flex items-center gap-2">
                                                         {item.country && <Flag country={item.country} size={20} />}
@@ -209,13 +209,13 @@ const GlobalNav: React.FC = () => {
                                                     </span>
                                                 </a>
                                             ))}
-                                            <div className="h-px bg-white/10 my-2" />
-                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 tracking-wider">Resources</div>
+                                            <div className="h-px bg-slate-200 dark:bg-white/10 my-2" />
+                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Resources</div>
                                             {AI_TOOLS.resources.map((item) => (
                                                 <a
                                                     key={item.name}
                                                     href={item.href}
-                                                    className="flex items-center justify-between px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-blue-500/10 transition-colors"
+                                                    className="flex items-center justify-between px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors"
                                                     target={item.external ? "_blank" : undefined}
                                                     rel={item.external ? "noopener noreferrer" : undefined}
                                                 >
@@ -226,7 +226,7 @@ const GlobalNav: React.FC = () => {
                                                     {item.external && <ExternalLink className="w-3 h-3 opacity-50" />}
                                                 </a>
                                             ))}
-                                            <div className="p-2 mt-1 border-t border-white/10">
+                                            <div className="p-2 mt-1 border-t border-slate-200 dark:border-white/10">
                                                 <Link
                                                     href="/"
                                                     className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:from-blue-500 hover:to-purple-500 transition-all"
@@ -244,19 +244,19 @@ const GlobalNav: React.FC = () => {
                                 className="relative"
                                 onMouseEnter={() => setActiveDropdown('resources')}
                             >
-                                <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5">
+                                <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">
                                     Guides & Resources
                                     <ChevronDown className="w-4 h-4" />
                                 </button>
                                 {activeDropdown === 'resources' && (
                                     <div className="absolute top-full left-0 pt-2 w-80">
-                                        <div className="bg-slate-800 border border-white/10 rounded-xl shadow-2xl shadow-black/30 py-2 animate-fade-up">
-                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 tracking-wider">Expert Guides</div>
+                                        <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 rounded-xl shadow-2xl shadow-black/10 dark:shadow-black/30 py-2 animate-fade-up">
+                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Expert Guides</div>
                                             {GUIDES_RESOURCES.guides.map((item) => (
                                                 <a
                                                     key={item.name}
                                                     href={item.href}
-                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-emerald-500/10 transition-colors"
+                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-50 dark:hover:bg-emerald-500/10 transition-colors"
                                                 >
                                                     <span className="flex items-center gap-2">
                                                         {item.country && <Flag country={item.country} size={20} />}
@@ -264,13 +264,13 @@ const GlobalNav: React.FC = () => {
                                                     </span>
                                                 </a>
                                             ))}
-                                            <div className="h-px bg-white/10 my-2" />
-                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 tracking-wider">Visa Glossary</div>
+                                            <div className="h-px bg-slate-200 dark:bg-white/10 my-2" />
+                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Visa Glossary</div>
                                             {GUIDES_RESOURCES.glossary.map((item) => (
                                                 <a
                                                     key={item.name}
                                                     href={item.href}
-                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-blue-500/10 transition-colors"
+                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors"
                                                 >
                                                     <span className="flex items-center gap-2">
                                                         {item.country && <Flag country={item.country} size={20} />}
@@ -278,13 +278,13 @@ const GlobalNav: React.FC = () => {
                                                     </span>
                                                 </a>
                                             ))}
-                                            <div className="h-px bg-white/10 my-2" />
-                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 tracking-wider">News & Updates</div>
+                                            <div className="h-px bg-slate-200 dark:bg-white/10 my-2" />
+                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">News & Updates</div>
                                             {GUIDES_RESOURCES.news.map((item) => (
                                                 <a
                                                     key={item.name}
                                                     href={item.href}
-                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-orange-500/10 transition-colors"
+                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-orange-50 dark:hover:bg-orange-500/10 transition-colors"
                                                 >
                                                     <span className="flex items-center gap-2">
                                                         {item.country && <Flag country={item.country} size={20} />}
@@ -292,13 +292,13 @@ const GlobalNav: React.FC = () => {
                                                     </span>
                                                 </a>
                                             ))}
-                                            <div className="h-px bg-white/10 my-2" />
-                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 tracking-wider">Trust & Transparency</div>
+                                            <div className="h-px bg-slate-200 dark:bg-white/10 my-2" />
+                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Trust & Transparency</div>
                                             {GUIDES_RESOURCES.trust.map((item) => (
                                                 <a
                                                     key={item.name}
                                                     href={item.href}
-                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
                                                 >
                                                     <span className="flex items-center gap-2">
                                                         {item.country && <Flag country={item.country} size={20} />}
@@ -316,47 +316,47 @@ const GlobalNav: React.FC = () => {
                                 className="relative"
                                 onMouseEnter={() => setActiveDropdown('branches')}
                             >
-                                <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5">
+                                <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">
                                     Branches
                                     <ChevronDown className="w-4 h-4" />
                                 </button>
                                 {activeDropdown === 'branches' && (
                                     <div className="absolute top-full left-0 pt-2 w-64">
-                                        <div className="bg-slate-800 border border-white/10 rounded-xl shadow-2xl shadow-black/30 py-2 animate-fade-up">
-                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 tracking-wider">Vadodara</div>
+                                        <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 rounded-xl shadow-2xl shadow-black/10 dark:shadow-black/30 py-2 animate-fade-up">
+                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Vadodara</div>
                                             {BRANCHES.vadodara.map((item, index) => (
                                                 <a
                                                     key={index}
                                                     href={item.href}
-                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
                                                 >
                                                     {item.name}
                                                 </a>
                                             ))}
-                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 tracking-wider">Surat</div>
+                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Surat</div>
                                             {BRANCHES.surat.map((item, index) => (
                                                 <a
                                                     key={index}
                                                     href={item.href}
-                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
                                                 >
                                                     {item.name}
                                                 </a>
                                             ))}
-                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 tracking-wider">Ahmedabad</div>
+                                            <div className="px-4 py-2 text-xs font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Ahmedabad</div>
                                             {BRANCHES.ahmedabad.map((item, index) => (
                                                 <a
                                                     key={index}
                                                     href={item.href}
-                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+                                                    className="flex items-center px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
                                                 >
                                                     {item.name}
                                                 </a>
                                             ))}
-                                            <div className="p-2 mt-1 border-t border-white/10">
+                                            <div className="p-2 mt-1 border-t border-slate-200 dark:border-white/10">
                                                 <a
                                                     href="https://eecglobal.com/locations"
-                                                    className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-all"
+                                                    className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all"
                                                 >
                                                     View All 26 Branches →
                                                 </a>
@@ -369,7 +369,7 @@ const GlobalNav: React.FC = () => {
                             {/* About Link */}
                             <a
                                 href="/about"
-                                className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                                className="px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-white/5"
                             >
                                 About
                             </a>
@@ -388,7 +388,7 @@ const GlobalNav: React.FC = () => {
 
                         {/* Mobile Menu Toggle */}
                         <button
-                            className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+                            className="lg:hidden p-2 text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg transition-colors"
                             onClick={() => setMobileMenuOpen(true)}
                             aria-label="Open menu"
                         >
@@ -401,40 +401,86 @@ const GlobalNav: React.FC = () => {
 
             {/* Mobile Menu (simplified for migration, can be enhanced) */}
             {mobileMenuOpen && (
-                <div className="fixed inset-0 z-[60] bg-slate-900 lg:hidden overflow-y-auto">
+                <div className="fixed inset-0 z-[60] bg-white dark:bg-slate-900 lg:hidden overflow-y-auto">
                     <div className="flex flex-col min-h-full">
-                        <div className="flex items-center justify-between p-4 border-b border-white/10">
+                        <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-white/10">
                             <Link href="/" className="flex items-center gap-2">
                                 <div className="bg-blue-600 p-1.5 rounded-lg">
                                     <Sparkles className="w-4 h-4 text-white" />
                                 </div>
-                                <span className="text-xl font-bold text-white">
+                                <span className="text-xl font-bold text-slate-900 dark:text-white">
                                     EEC<span className="text-blue-500">Global</span>
                                 </span>
                             </Link>
                             <button
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="p-2 bg-slate-800 rounded-full text-white hover:bg-slate-700 transition-colors"
+                                className="p-2 bg-slate-100 dark:bg-slate-800 rounded-full text-slate-700 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
                                 aria-label="Close menu"
                             >
                                 <X className="w-6 h-6" />
                             </button>
                         </div>
 
-                        <div className="p-4 space-y-6">
-                            {/* Simplified Mobile Links */}
-                            <Link href="/" className="block p-3 bg-slate-800 rounded-lg text-white font-bold" onClick={() => setMobileMenuOpen(false)}>
-                                Home
-                            </Link>
-                            {/* ... Add other mobile links as needed ... */}
-                            <div className="p-4 border-t border-white/10 mt-8">
-                                <a
-                                    href="https://eecglobal.com/locations"
-                                    className="flex items-center justify-center w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold text-lg shadow-lg"
-                                >
-                                    Book Free Counseling
+                        <div className="flex-1 overflow-y-auto p-4 space-y-6">
+                            {/* Mobile AI Tools Section */}
+                            <div>
+                                <div className="flex items-center gap-2 mb-3">
+                                    <span className="px-2 py-1 text-xs font-bold uppercase bg-emerald-500 text-white rounded">Free</span>
+                                    <span className="text-lg font-bold text-slate-900 dark:text-white">AI Tools</span>
+                                </div>
+                                <div className="grid grid-cols-2 gap-2">
+                                    <Link href="/usa-f1-visa" className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 text-sm hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
+                                        <Flag country="US" size={20} /> USA Visa Prep
+                                    </Link>
+                                    <Link href="/australia-gs-prep" className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 text-sm hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
+                                        <Flag country="AU" size={20} /> Australia GS
+                                    </Link>
+                                    <a href="https://germany.eecglobal.com/public/" className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 text-sm hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center gap-2">
+                                        <Flag country="DE" size={20} /> German Grade
+                                    </a>
+                                    <Link href="/career-counselor" className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 text-sm hover:bg-slate-200 dark:hover:bg-slate-700" onClick={() => setMobileMenuOpen(false)}>
+                                        Career AI
+                                    </Link>
+                                </div>
+                                <Link href="/" className="block mt-2 text-center py-2 text-blue-600 dark:text-blue-400 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+                                    View All Tools →
+                                </Link>
+                            </div>
+
+                            {/* Mobile Destinations */}
+                            <div>
+                                <span className="text-lg font-bold text-slate-900 dark:text-white mb-3 block">Study Destinations</span>
+                                <div className="space-y-2">
+                                    {DESTINATIONS.slice(0, 4).map((item) => (
+                                        <a
+                                            key={item.name}
+                                            href={item.href}
+                                            className="block p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 text-sm hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center gap-2"
+                                        >
+                                            {item.country && <Flag country={item.country} size={20} />}
+                                            {item.name}
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Mobile Branches */}
+                            <div>
+                                <span className="text-lg font-bold text-slate-900 dark:text-white mb-3 block">Find a Branch</span>
+                                <a href="https://eecglobal.com/locations" className="block p-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-lg text-slate-900 dark:text-white text-center font-medium">
+                                    View All 26 Branches
                                 </a>
                             </div>
+                        </div>
+
+                        {/* Mobile CTA */}
+                        <div className="p-4 border-t border-slate-200 dark:border-white/10">
+                            <a
+                                href="https://eecglobal.com/locations"
+                                className="flex items-center justify-center w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold text-lg shadow-lg"
+                            >
+                                Book Free Counseling
+                            </a>
                         </div>
                     </div>
                 </div>
