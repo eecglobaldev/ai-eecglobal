@@ -49,7 +49,7 @@ export const generateMasterSchema = () => {
           },
           {
             "@type": "ReadAction",
-            "target": "/nzvisaprep"
+            "target": "/nzvisaprep/"
           }
         ],
         "copyrightHolder": { "@id": "https://eecglobal.com/#organization" },
@@ -62,7 +62,7 @@ export const generateMasterSchema = () => {
       {
         "@type": "WebPage",
         "@id": "/nzvisaprep/#webpage",
-        "url": "/nzvisaprep",
+        "url": "/nzvisaprep/",
         "name": "Free AI New Zealand Student Visa Interview Preparation | INZ Credibility Interview Practice | EEC Global",
         "description": "India's first 100% FREE AI-powered New Zealand student visa interview preparation tool. Practice INZ credibility interviews with personalized questions, model answers, and expert guidance from ENZRA certified agents. Covers all 8 NZ universities. Trusted by 100,000+ students since 1997.",
         "isPartOf": { "@id": "https://ai.eecglobal.com/#website" },
@@ -100,9 +100,9 @@ export const generateMasterSchema = () => {
           "https://estero.co.nz"
         ],
         "relatedLink": [
-          "/usavisaprep",
-          "/ukprecas",
-          "/australiagsprep",
+          "/usavisaprep/",
+          "/ukprecas/",
+          "/australiagsprep/",
           "https://ai.eecglobal.com/germanyvisaprep"
         ],
         "lastReviewed": currentDate,
@@ -138,7 +138,7 @@ export const generateMasterSchema = () => {
             "@type": "ListItem",
             "position": 4,
             "name": "NZ Visa Interview Prep",
-            "item": "/nzvisaprep"
+            "item": "/nzvisaprep/"
           }
         ]
       },
@@ -156,7 +156,7 @@ export const generateMasterSchema = () => {
           "NZ Visa Prep by EEC Global"
         ],
         "description": "One of its kind and first of its kind absolutely and positively 100% FREE AI tool for Indian students. Comprehensive AI-Powered New Zealand Student Visa Interview Preparation with hyper-personalized practice, model answers, expert guidance, advanced analytics, and benchmarking with previous histories in your personalized dashboard.",
-        "url": "/nzvisaprep",
+        "url": "/nzvisaprep/",
         "applicationCategory": "EducationalApplication",
         "applicationSubCategory": [
           "Visa Interview Preparation",
@@ -198,7 +198,7 @@ export const generateMasterSchema = () => {
         "softwareHelp": {
           "@type": "CreativeWork",
           "name": "NZ Visa Prep User Guide",
-          "url": "https://eecglobal.com/help/nzvisaprep"
+          "url": "https://eecglobal.com/help/nzvisaprep/"
         },
         "offers": {
           "@type": "Offer",
@@ -308,7 +308,7 @@ export const generateMasterSchema = () => {
           {
             "@type": "ServiceChannel",
             "serviceType": "Online",
-            "serviceUrl": "/nzvisaprep",
+            "serviceUrl": "/nzvisaprep/",
             "availableLanguage": ["English", "Hindi", "Gujarati"]
           },
           {
@@ -1048,7 +1048,7 @@ export const generateMasterSchema = () => {
               "item": {
                 "@type": "SoftwareApplication",
                 "name": "Career Counselor AI",
-                "url": "/careercounselor",
+                "url": "/careercounselor/",
                 "description": "AI-powered career guidance based on courses worldwide - job prospects, salaries, hiring companies"
               }
             },
@@ -1058,7 +1058,7 @@ export const generateMasterSchema = () => {
               "item": {
                 "@type": "SoftwareApplication",
                 "name": "USA F-1 Visa Interview Prep",
-                "url": "/usavisaprep",
+                "url": "/usavisaprep/",
                 "description": "AI-powered USA F-1 Student Visa Interview Preparation"
               }
             },
@@ -1068,7 +1068,7 @@ export const generateMasterSchema = () => {
               "item": {
                 "@type": "SoftwareApplication",
                 "name": "UK Pre-CAS & Airport Interview Prep",
-                "url": "/ukprecas",
+                "url": "/ukprecas/",
                 "description": "AI-powered UK Pre-CAS and Airport Interview Preparation"
               }
             },
@@ -1078,7 +1078,7 @@ export const generateMasterSchema = () => {
               "item": {
                 "@type": "SoftwareApplication",
                 "name": "Australia GS Visa Prep",
-                "url": "/australiagsprep",
+                "url": "/australiagsprep/",
                 "description": "AI-powered Australia Genuine Student Visa Interview Preparation"
               }
             },
@@ -1098,7 +1098,7 @@ export const generateMasterSchema = () => {
               "item": {
                 "@type": "SoftwareApplication",
                 "name": "NZ Visa Interview Prep",
-                "url": "/nzvisaprep",
+                "url": "/nzvisaprep/",
                 "description": "AI-powered New Zealand Student Visa Interview Preparation"
               }
             },
@@ -1108,7 +1108,7 @@ export const generateMasterSchema = () => {
               "item": {
                 "@type": "SoftwareApplication",
                 "name": "Travel Agent AI",
-                "url": "/travelagent",
+                "url": "/travelagent/",
                 "description": "AI Travel Agent for Tourist and Student Visa information & Flights"
               }
             }

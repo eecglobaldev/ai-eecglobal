@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     keywords: ['UK Pre-CAS', 'UK Visa Interview', 'Interview Prep', 'Study Abroad', 'UK Visa', 'Student Visa', 'Credibility Interview'],
     openGraph: {
         type: 'website',
-        url: 'https://ai.eecglobal.com/ukprecas',
+        url: 'https://ai.eecglobal.com/ukprecas/',
         title: 'UK Pre-CAS Interview Prep | AI-Powered Practice',
         description: 'Master your UK Pre-CAS credibility interview with AI-powered practice and feedback.',
         siteName: 'EEC AI Tools',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         images: ['/twitter-image.png'],
     },
     alternates: {
-        canonical: 'https://ai.eecglobal.com/ukprecas',
+        canonical: 'https://ai.eecglobal.com/ukprecas/',
     },
 };
 

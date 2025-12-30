@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     publisher: 'EEC (Enbee Education Center Private Limited)',
     openGraph: {
         type: 'website',
-        url: 'https://ai.eecglobal.com/australiagsprep',
+        url: 'https://ai.eecglobal.com/australiagsprep/',
         title: 'Free AI Australia GS Interview Prep Tool by EEC',
         description: 'A 100% free, AI-powered tool for Indian students to prepare for the Australian Genuine Student (GS) visa interview.',
         siteName: 'EEC Australia GS Prep',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         images: ['/assets/logos/eeclogo-main.png'],
     },
     alternates: {
-        canonical: 'https://ai.eecglobal.com/australiagsprep',
+        canonical: 'https://ai.eecglobal.com/australiagsprep/',
     },
     icons: {
         icon: [

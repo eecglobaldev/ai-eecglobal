@@ -19,7 +19,7 @@ export const TOOLS: Tool[] = [
         title: 'Australia Genuine Student Visa Interview Prep',
         description: 'Australia now rejects students who sound "memorized." Our AI listens to your voice and trains you to speak naturally. Pass the "Genuine Student" test on your first try.',
         icon: Mic,
-        url: '/australiagsprep',
+        url: '/australiagsprep/',
         color: 'text-blue-600 dark:text-blue-400',
         badge: 'Stop Rejection',
         flagCode: 'au',
@@ -31,7 +31,7 @@ export const TOOLS: Tool[] = [
         title: 'USA F-1 Student Visa Interview Prep',
         description: 'The Visa Officer gives you only 2 minutes. One wrong answer means rejection. Practice with our strict AI officer until you are brave, clear, and ready to win your visa.',
         icon: Globe,
-        url: '/usavisaprep',
+        url: '/usavisaprep/',
         color: 'text-red-600 dark:text-red-400',
         flagCode: 'us',
         features: ['Know Your Rejection Risk', 'Perfect Your "Why USA?"', 'Review DS-160 Answers']
@@ -41,7 +41,7 @@ export const TOOLS: Tool[] = [
         title: 'UK CAS & Airport Interview Prep',
         description: 'UK Universities conduct tough interviews before giving admission. If you fail, you lose your seat. Use our AI to practice university-specific questions and get your CAS letter faster.',
         icon: GraduationCap,
-        url: '/ukprecas',
+        url: '/ukprecas/',
         color: 'text-indigo-600 dark:text-indigo-400',
         flagCode: 'gb',
         features: ['University Compliance Check', 'Improve Speaking Fluency', 'Instant Feedback Report']
@@ -72,7 +72,7 @@ export const TOOLS: Tool[] = [
         title: 'New Zealand Visa Interview Prep & NZ 2026 Comprehensive Guide',
         description: 'NZ immigration is very strict about your funds and career plans. Learn exactly how to explain your "Study Gaps" and family finances to the officer clearly and honestly.',
         icon: MapPin,
-        url: '/nzvisaprep',
+        url: '/nzvisaprep/',
         color: 'text-teal-600 dark:text-teal-400',
         flagCode: 'nz',
         features: ['Justify Study Gaps', 'Explain Family Funds', 'Prove Strong Ties to India']
@@ -82,7 +82,7 @@ export const TOOLS: Tool[] = [
         title: 'Study Abroad Career Counsellor',
         description: 'Don\'t waste ₹30 Lakhs on a useless degree. Our AI analyzes global job markets to tell you which courses will actually get you a high-paying job in 2026.',
         icon: Briefcase,
-        url: '/careercounselor',
+        url: '/careercounselor/',
         color: 'text-purple-600 dark:text-purple-400',
         badge: 'Save Money',
         features: ['Predict Future Salary', 'Find High-Demand Jobs', 'Course ROI Calculator']
@@ -122,7 +122,7 @@ export const TOOLS: Tool[] = [
         title: 'EEC Visa & Travel Agent',
         description: 'Avoid last-minute airport panic. Find the cheapest student flights and get a personalized checklist of every document you must carry for immigration.',
         icon: Plane,
-        url: '/travelagent',
+        url: '/travelagent/',
         color: 'text-sky-500 dark:text-sky-400',
         features: ['Student Flight Discounts', 'Immigration Doc Checklist', 'Smart Packing Guide']
     },

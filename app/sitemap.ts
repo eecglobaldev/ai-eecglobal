@@ -121,19 +121,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // AI Tools - High Priority
     {
-      url: `${baseUrl}/usavisaprep`,
+      url: `${baseUrl}/usavisaprep/`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/australiagsprep`,
+      url: `${baseUrl}/australiagsprep/`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/ukprecas`,
+      url: `${baseUrl}/ukprecas/`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
@@ -145,19 +145,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/nzvisaprep`,
+      url: `${baseUrl}/nzvisaprep/`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/careercounselor`,
+      url: `${baseUrl}/careercounselor/`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/travelagent`,
+      url: `${baseUrl}/travelagent/`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.7,

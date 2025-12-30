@@ -660,7 +660,7 @@ export const SemanticClaritySection: React.FC = () => {
               <div className="flex flex-col sm:flex-row sm:gap-4">
                 <dt className="font-medium text-slate-700 dark:text-slate-300 sm:w-1/3">URL:</dt>
                 <dd className="text-slate-600 dark:text-slate-400">
-                  <a href="/careercounselor" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+                  <a href="/careercounselor/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
                     ai.eecglobal.com/careercounselor
                   </a>
                 </dd>

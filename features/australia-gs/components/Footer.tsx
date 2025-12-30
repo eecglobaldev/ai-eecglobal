@@ -125,7 +125,7 @@ const seoLinks = [
 
 
 const Footer: React.FC = () => {
-    const baseUrl = 'https://ai.eecglobal.com/australiagsprep';
+    const baseUrl = 'https://ai.eecglobal.com/australiagsprep/';
 
     const mainLinks = [
         { href: "#prep-tool-section", text: "GS Prep Tool" },

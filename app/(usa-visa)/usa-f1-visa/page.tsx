@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     keywords: ['USA F1 Visa', 'F-1 Visa Interview', 'Visa Interview Prep', 'Study Abroad', 'USA Visa', 'Student Visa', 'AI Interview Practice'],
     openGraph: {
         type: 'website',
-        url: 'https://ai.eecglobal.com/usavisaprep',
+        url: 'https://ai.eecglobal.com/usavisaprep/',
         title: 'USA F-1 Visa Interview Prep - AI Powered | EEC',
         description: 'Practice for your USA F-1 Student Visa Interview with our advanced AI interviewer. Get real-time feedback, pronunciation guides, and personalized prep plans.',
         siteName: 'EEC AI Tools',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         images: ['/twitter-image.png'],
     },
     alternates: {
-        canonical: 'https://ai.eecglobal.com/usavisaprep',
+        canonical: 'https://ai.eecglobal.com/usavisaprep/',
     },
 };
 

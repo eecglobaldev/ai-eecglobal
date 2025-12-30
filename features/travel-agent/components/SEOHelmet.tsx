@@ -61,7 +61,7 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ params, result }) => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "/travelagent"
+        "item": "/travelagent/"
       }, {
         "@type": "ListItem",
         "position": 2,

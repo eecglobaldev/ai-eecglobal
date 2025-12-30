@@ -42,11 +42,11 @@ const BRANCH_LINKS = {
 };
 
 const AI_TOOLS_LINKS = [
-    { name: 'USA Visa Prep', href: '/usavisaprep' },
-    { name: 'Australia GS Prep', href: '/australiagsprep' },
+    { name: 'USA Visa Prep', href: '/usavisaprep/' },
+    { name: 'Australia GS Prep', href: '/australiagsprep/' },
     { name: 'German Grade Calculator', href: 'https://germany.eecglobal.com/public/' },
     { name: 'PR Points Calculator', href: 'https://australia.eecglobal.com/prpointscalculator' },
-    { name: 'Career Counselor', href: '/careercounselor' },
+    { name: 'Career Counselor', href: '/careercounselor/' },
     { name: 'Course Search', href: 'https://courses.eecglobal.com' },
 ];
 

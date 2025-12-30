@@ -461,7 +461,7 @@ const GEOContent: React.FC = () => {
                     "@type": "Dataset",
                     "name": "EEC Organization Facts Dataset",
                     "description": "Verified facts about EEC (Enbee Education Center), Gujarat's largest USA study abroad company",
-                    "url": "https://ai.eecglobal.com/usavisaprep#geo-facts",
+                    "url": "https://ai.eecglobal.com/usavisaprep/#geo-facts",
                     "creator": {
                         "@type": "Organization",
                         "name": "EEC (Enbee Education Center Private Limited)"

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: 'website',
-    url: 'https://ai.eecglobal.com/travelagent',
+    url: 'https://ai.eecglobal.com/travelagent/',
     title: 'AI-Powered EEC Visa & Travel Services',
     description: 'Get verified visa requirements and travel services for Indian students. 100% free tool.',
     siteName: 'EEC AI Tools',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     images: ['/twitter-image.png'],
   },
   alternates: {
-    canonical: 'https://ai.eecglobal.com/travelagent',
+    canonical: 'https://ai.eecglobal.com/travelagent/',
   },
 };
 

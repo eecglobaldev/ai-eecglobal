@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     keywords: ['New Zealand Visa', 'NZ Student Visa', 'Interview Prep', 'Study Abroad', 'NZ Visa', 'Student Visa', 'Visa Interview'],
     openGraph: {
         type: 'website',
-        url: 'https://ai.eecglobal.com/nzvisaprep',
+        url: 'https://ai.eecglobal.com/nzvisaprep/',
         title: 'New Zealand Student Visa Prep | AI-Powered Practice',
         description: 'Master your New Zealand student visa interview with AI-powered practice and feedback.',
         siteName: 'EEC AI Tools',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         images: ['/twitter-image.png'],
     },
     alternates: {
-        canonical: 'https://ai.eecglobal.com/nzvisaprep',
+        canonical: 'https://ai.eecglobal.com/nzvisaprep/',
     },
 };
 

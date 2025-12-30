@@ -116,7 +116,7 @@ export const generateEventSchemas = () => {
       "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
       "location": {
         "@type": "VirtualLocation",
-        "url": "https://eecglobal.com/webinars/nzvisaprep"
+        "url": "https://eecglobal.com/webinars/nzvisaprep/"
       },
       "image": "/assets/nzvisaprep-og.png",
       "organizer": {
@@ -144,7 +144,7 @@ export const generateEventSchemas = () => {
         "price": "0",
         "priceCurrency": "INR",
         "availability": "https://schema.org/InStock",
-        "url": "https://eecglobal.com/webinars/nzvisaprep",
+        "url": "https://eecglobal.com/webinars/nzvisaprep/",
         "validFrom": today.toISOString()
       },
       "audience": {
@@ -288,31 +288,31 @@ export const generateSiteNavigationSchema = () => {
         "@type": "SiteNavigationElement",
         "name": "NZ Visa Interview Prep",
         "description": "Free AI-powered New Zealand student visa interview preparation",
-        "url": "/nzvisaprep"
+        "url": "/nzvisaprep/"
       },
       {
         "@type": "SiteNavigationElement",
         "name": "Career Counselor AI",
         "description": "AI-powered career guidance for any course worldwide",
-        "url": "/careercounselor"
+        "url": "/careercounselor/"
       },
       {
         "@type": "SiteNavigationElement",
         "name": "USA F-1 Visa Prep",
         "description": "USA student visa interview preparation",
-        "url": "/usavisaprep"
+        "url": "/usavisaprep/"
       },
       {
         "@type": "SiteNavigationElement",
         "name": "UK Pre-CAS Prep",
         "description": "UK Pre-CAS and airport interview preparation",
-        "url": "/ukprecas"
+        "url": "/ukprecas/"
       },
       {
         "@type": "SiteNavigationElement",
         "name": "Australia GS Prep",
         "description": "Australia Genuine Student visa interview preparation",
-        "url": "/australiagsprep"
+        "url": "/australiagsprep/"
       },
       {
         "@type": "SiteNavigationElement",

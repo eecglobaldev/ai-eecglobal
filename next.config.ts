@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
       { hostname: 'flagcdn.com' }
     ],
   },
-  typedRoutes: true,
+  trailingSlash: true,
 };
 
 export default nextConfig;

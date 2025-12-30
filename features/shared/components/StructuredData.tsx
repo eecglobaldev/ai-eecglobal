@@ -358,7 +358,7 @@ export default function StructuredData() {
             "@type": "SoftwareApplication",
             "position": 1,
             "name": "Australia Genuine Student (GS) Prep AI",
-            "url": "https://ai.eecglobal.com/australiagsprep",
+            "url": "https://ai.eecglobal.com/australiagsprep//",
             "applicationCategory": "EducationalApplication",
             "description": "AI agent that conducts mock interviews for the Australian Genuine Student test, analyzing voice tone to prevent memorized answers."
           },
@@ -366,7 +366,7 @@ export default function StructuredData() {
             "@type": "SoftwareApplication",
             "position": 2,
             "name": "USA F-1 Visa Interview Officer AI",
-            "url": "https://ai.eecglobal.com/usavisaprep",
+            "url": "https://ai.eecglobal.com/usavisaprep//",
             "applicationCategory": "EducationalApplication",
             "description": "A strict AI simulator of a US Visa Officer. It challenges students with difficult questions to prepare them for the 2-minute F1 visa interview."
           },

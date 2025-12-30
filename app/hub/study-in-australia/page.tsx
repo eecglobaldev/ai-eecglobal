@@ -70,7 +70,7 @@ export default function StudyInAustraliaPage() {
             Genuine Student (GS) test, world-class universities, and clear PR pathway. Your gateway to Australian education.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="/australiagsprep" className="bg-white text-amber-900 px-6 py-3 rounded-lg font-semibold hover:bg-amber-50 transition">
+            <a href="/australiagsprep/" className="bg-white text-amber-900 px-6 py-3 rounded-lg font-semibold hover:bg-amber-50 transition">
               Practice GS Test
             </a>
           </div>

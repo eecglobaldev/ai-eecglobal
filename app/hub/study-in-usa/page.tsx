@@ -101,7 +101,7 @@ export default function StudyInUSAPage() {
                 From F1 visa to job placement — everything you need to know about pursuing higher education in the United States. Based on 28 years of EEC's consular expertise.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="/usavisaprep" className="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition">
+                <a href="/usavisaprep/" className="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition">
                   Try Free AI Tools
                 </a>
                 <a href="#cost-calculator" className="border border-white/30 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition">
@@ -209,7 +209,7 @@ export default function StudyInUSAPage() {
                   <div>
                     <h3 className="text-xl font-bold mb-2">Practice F1 Interview with AI</h3>
                     <p className="text-indigo-100 mb-4">Our AI Visa Officer simulates real interview conditions. Get scored on clarity, confidence, and content.</p>
-                    <a href="/usavisaprep" className="inline-block bg-white text-indigo-600 px-6 py-2 rounded-lg font-semibold hover:bg-indigo-50 transition">
+                    <a href="/usavisaprep/" className="inline-block bg-white text-indigo-600 px-6 py-2 rounded-lg font-semibold hover:bg-indigo-50 transition">
                       Start Free Practice →
                     </a>
                   </div>
@@ -224,13 +224,13 @@ export default function StudyInUSAPage() {
                 <h3 className="text-xl font-bold mb-4">🚀 Free AI Tools for USA</h3>
                 <ul className="space-y-3">
                   <li>
-                    <a href="/usavisaprep" className="flex items-center gap-2 bg-white/10 hover:bg-white/20 p-3 rounded-lg transition">
+                    <a href="/usavisaprep/" className="flex items-center gap-2 bg-white/10 hover:bg-white/20 p-3 rounded-lg transition">
                       <span className="text-xl">🎤</span>
                       <span>F1 Visa Mock Interview</span>
                     </a>
                   </li>
                   <li>
-                    <a href="/careercounselor" className="flex items-center gap-2 bg-white/10 hover:bg-white/20 p-3 rounded-lg transition">
+                    <a href="/careercounselor/" className="flex items-center gap-2 bg-white/10 hover:bg-white/20 p-3 rounded-lg transition">
                       <span className="text-xl">💼</span>
                       <span>Career ROI Calculator</span>
                     </a>

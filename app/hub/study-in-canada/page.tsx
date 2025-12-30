@@ -101,7 +101,7 @@ export default function StudyInCanadaPage() {
                 SDS visa, PGWP work permit, and clear PR pathway. Your gateway to Canadian education and permanent residency.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="/careercounselor" className="bg-white text-red-900 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 transition">
+                <a href="/careercounselor/" className="bg-white text-red-900 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 transition">
                   Calculate PR Points
                 </a>
               </div>
@@ -209,7 +209,7 @@ export default function StudyInCanadaPage() {
                 <h3 className="text-xl font-bold mb-4">🚀 Free AI Tools for Canada</h3>
                 <ul className="space-y-3">
                   <li>
-                    <a href="/careercounselor" className="flex items-center gap-2 bg-white/10 hover:bg-white/20 p-3 rounded-lg transition">
+                    <a href="/careercounselor/" className="flex items-center gap-2 bg-white/10 hover:bg-white/20 p-3 rounded-lg transition">
                       <span className="text-xl">📊</span>
                       <span>PR Points Calculator</span>
                     </a>

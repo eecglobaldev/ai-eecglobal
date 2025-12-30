@@ -30,19 +30,19 @@ const AI_TOOLS: {
     resources: NavLink[];
 } = {
     interview: [
-        { name: 'USA F-1 Visa Interview', href: '/usavisaprep', country: 'US' },
-        { name: 'Australia GS Test Prep', href: '/australiagsprep', country: 'AU' },
-        { name: 'UK CAS Interview Prep', href: '/ukprecas', country: 'GB' },
-        { name: 'New Zealand Visa Prep', href: '/nzvisaprep', country: 'NZ' },
+        { name: 'USA F-1 Visa Interview', href: '/usavisaprep/', country: 'US' },
+        { name: 'Australia GS Test Prep', href: '/australiagsprep/', country: 'AU' },
+        { name: 'UK CAS Interview Prep', href: '/ukprecas/', country: 'GB' },
+        { name: 'New Zealand Visa Prep', href: '/nzvisaprep/', country: 'NZ' },
     ],
     calculators: [
         { name: 'German Grade Calculator', href: 'https://germany.eecglobal.com/public/', country: 'DE' },
         { name: 'Australia PR Calculator', href: 'https://australia.eecglobal.com/prpointscalculator', country: 'AU' },
-        { name: 'Career Counselor AI', href: '/careercounselor' },
+        { name: 'Career Counselor AI', href: '/careercounselor/' },
     ],
     resources: [
         { name: 'Course Search (85,000+)', href: 'https://courses.eecglobal.com', external: true },
-        { name: 'Visa & Travel Agent', href: '/travelagent' },
+        { name: 'Visa & Travel Agent', href: '/travelagent/' },
         { name: 'IELTS Bot (Telegram)', href: 'https://t.me/eecieltsbot', external: true },
     ],
 };
@@ -429,16 +429,16 @@ const GlobalNav: React.FC = () => {
                                     <span className="text-lg font-bold text-slate-900 dark:text-white">AI Tools</span>
                                 </div>
                                 <div className="grid grid-cols-2 gap-2">
-                                    <Link href="/usavisaprep" className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 text-sm hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
+                                    <Link href="/usavisaprep/" className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 text-sm hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
                                         <Flag country="US" size={20} /> USA Visa Prep
                                     </Link>
-                                    <Link href="/australiagsprep" className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 text-sm hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
+                                    <Link href="/australiagsprep/" className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 text-sm hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
                                         <Flag country="AU" size={20} /> Australia GS
                                     </Link>
                                     <a href="https://germany.eecglobal.com/public/" className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 text-sm hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center gap-2">
                                         <Flag country="DE" size={20} /> German Grade
                                     </a>
-                                    <Link href="/careercounselor" className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 text-sm hover:bg-slate-200 dark:hover:bg-slate-700" onClick={() => setMobileMenuOpen(false)}>
+                                    <Link href="/careercounselor/" className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 text-sm hover:bg-slate-200 dark:hover:bg-slate-700" onClick={() => setMobileMenuOpen(false)}>
                                         Career AI
                                     </Link>
                                 </div>

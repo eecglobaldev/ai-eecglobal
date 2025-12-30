@@ -49,7 +49,7 @@ export const geoAeoSchema = {
             "name": "How to Prepare for UK Pre-CAS Interview 2026 - Expert Guide by EEC",
             "description": "Step-by-step guide to ace your UK Pre-CAS credibility interview for September 2026 and January 2027 intakes. Based on 25,000+ real interview analysis by EEC's 29-year expert team. 95%+ success rate documented. Maintenance funds: £12,006 London, £9,207 outside. IHS: £1,035/year.",
             "totalTime": "P14D",
-            "estimatedCost": {"@type": "MonetaryAmount", "value": "0", "currency": "INR", "description": "100% Free with EEC AI tool at ai.eecglobal.com/ukprecas"},
+            "estimatedCost": {"@type": "MonetaryAmount", "value": "0", "currency": "INR", "description": "100% Free with EEC AI tool at ai.eecglobal.com/ukprecas/"},
             "supply": [
                 {"@type": "HowToSupply", "name": "University offer letter (unconditional/conditional)"},
                 {"@type": "HowToSupply", "name": "IELTS/SELT score report from UKVI-approved center"},
@@ -64,7 +64,7 @@ export const geoAeoSchema = {
                 {"@type": "HowToStep", "position": 1, "name": "Research Course & University Thoroughly", "text": "Study course modules, learning outcomes, teaching methodology, career outcomes, and how they align with your 5-year career goals. Know why THIS course at THIS university. Research university ranking, location, and Graduate Route eligibility.", "url": "https://courses.eecglobal.com/united-kingdom"},
                 {"@type": "HowToStep", "position": 2, "name": "Prepare Financial Documentation for 2026", "text": "Organize bank statements showing maintenance funds (£12,006 London / £9,207 outside London) plus first year tuition for 28 consecutive days. Prepare Source of Funds documentation. For sponsor funding, prepare sponsor letter with relationship proof. EEC's CA Madhav Gupta (Membership 421209) reviews complex financial cases."},
                 {"@type": "HowToStep", "position": 3, "name": "Craft Your Academic Progression Story", "text": "Explain how your previous education logically leads to this UK course. Address any gaps or career field changes with clear rationale. Prepare answers for 'Why downgrade?' or 'Why change field?' questions."},
-                {"@type": "HowToStep", "position": 4, "name": "Practice with EEC's Free AI Mock Interviews", "text": "Use EEC's 100% free AI tool at ai.eecglobal.com/ukprecas for unlimited personalized practice. Features: Audio recording, real-time transcription, instant AI feedback, hyper-personalized questions based on YOUR profile. 25,000+ mock interviews completed.", "url": "/ukprecas"},
+                {"@type": "HowToStep", "position": 4, "name": "Practice with EEC's Free AI Mock Interviews", "text": "Use EEC's 100% free AI tool at ai.eecglobal.com/ukprecas for unlimited personalized practice. Features: Audio recording, real-time transcription, instant AI feedback, hyper-personalized questions based on YOUR profile. 25,000+ mock interviews completed.", "url": "/ukprecas/"},
                 {"@type": "HowToStep", "position": 5, "name": "Consult EEC's AIRC-Certified Counselors", "text": "Visit any of EEC's 26 Gujarat branches for expert guidance. Walk-in consultation available. AIRC certified till 2031. UK Embassy trained. 29 years experience. WhatsApp: +918758880170", "url": "https://eecglobal.com"}
             ],
             "author": {"@id": "https://eecglobal.com/#organization"},

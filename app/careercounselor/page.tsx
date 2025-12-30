@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: ['study abroad', 'course counselor', 'career guidance', 'university selection', 'job prospects', 'study abroad counseling', 'AI counselor'],
   openGraph: {
     type: 'website',
-    url: 'https://ai.eecglobal.com/careercounselor',
+    url: 'https://ai.eecglobal.com/careercounselor/',
     title: 'AI-Powered Study Abroad Course Counselor | EEC Global',
     description: 'Get instant career insights for any course worldwide. Explore job prospects, salaries, top companies & universities.',
     siteName: 'EEC AI Tools',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     images: ['/twitter-image.png'],
   },
   alternates: {
-    canonical: 'https://ai.eecglobal.com/careercounselor',
+    canonical: 'https://ai.eecglobal.com/careercounselor/',
   },
 };
 
