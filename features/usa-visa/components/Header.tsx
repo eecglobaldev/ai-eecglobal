@@ -15,6 +15,9 @@ const ThemeSwitcher: React.FC = () => {
 
     // Detect and apply the actual theme after mount (client-side only)
     useEffect(() => {
+        // SSR guard: localStorage and window are only available in the browser
+        if (typeof window === 'undefined') return;
+
         setMounted(true);
 
         // Check localStorage first, then system preference
@@ -29,6 +32,9 @@ const ThemeSwitcher: React.FC = () => {
 
     // Apply theme to document
     useEffect(() => {
+        // SSR guard: window and localStorage are only available in the browser
+        if (typeof window === 'undefined') return;
+
         const root = window.document.documentElement;
         if (theme === 'dark') {
             root.classList.add('dark');
@@ -72,7 +78,13 @@ const Header: React.FC = () => {
 
     // Check authentication status (both Firebase Auth and localStorage)
     useEffect(() => {
+        // SSR guard: window and localStorage are only available in the browser
+        if (typeof window === 'undefined') return;
+
         const checkAuthStatus = () => {
+            // SSR guard: localStorage is only available in the browser
+            if (typeof window === 'undefined') return;
+
             const authInstance = getAuth();
             const firebaseUser = authInstance.currentUser;
             const userEmail = localStorage.getItem('USAUserEmail');
@@ -80,6 +92,9 @@ const Header: React.FC = () => {
             // User must be authenticated in BOTH Firebase Auth AND localStorage
             setLoggedIn(!!(firebaseUser && userEmail));
         };
+
+        // SSR guard: window and localStorage are only available in the browser
+        if (typeof window === 'undefined') return;
 
         // Check immediately on mount
         checkAuthStatus();
@@ -104,8 +119,10 @@ const Header: React.FC = () => {
 
         return () => {
             unsubscribe();
-            window.removeEventListener('storage', handleStorageChange);
-            window.removeEventListener('auth-success', handleAuthSuccess);
+            if (typeof window !== 'undefined') {
+                window.removeEventListener('storage', handleStorageChange);
+                window.removeEventListener('auth-success', handleAuthSuccess);
+            }
         };
     }, []);
 

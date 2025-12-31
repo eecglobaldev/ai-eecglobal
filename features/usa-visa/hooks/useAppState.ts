@@ -163,6 +163,9 @@ export function useAppState() {
 
   // Listen for auth success event (when user signs in)
   useEffect(() => {
+    // SSR guard: window is only available in the browser
+    if (typeof window === 'undefined') return;
+
     const handleAuthSuccess = async () => {
       // console.log('🔐 Auth success event received in useAppState');
 
@@ -200,7 +203,9 @@ export function useAppState() {
     window.addEventListener('auth-success', handleAuthSuccess);
 
     return () => {
-      window.removeEventListener('auth-success', handleAuthSuccess);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('auth-success', handleAuthSuccess);
+      }
     };
   }, []);
 

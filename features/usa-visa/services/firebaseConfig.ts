@@ -23,19 +23,26 @@ const firebaseConfig = {
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
 // Initialize Auth with browserLocalPersistence for cross-domain SSO
+// SSR guard: browserLocalPersistence is only available in the browser
 let authInstance;
 try {
     // Try to get existing auth instance first
     authInstance = getAuth(app);
 } catch (e) {
     // If not initialized, initialize it
-    try {
-        authInstance = initializeAuth(app, {
-            persistence: browserLocalPersistence,
-        });
-    } catch (err) {
-        // Fallback if initializeAuth fails (e.g. server-side) or race condition
-        console.warn("Auth initialization fallback:", err);
+    // Only use browserLocalPersistence in browser environment
+    if (typeof window !== 'undefined') {
+        try {
+            authInstance = initializeAuth(app, {
+                persistence: browserLocalPersistence,
+            });
+        } catch (err) {
+            // Fallback if initializeAuth fails (e.g. race condition)
+            console.warn("Auth initialization fallback:", err);
+            authInstance = getAuth(app);
+        }
+    } else {
+        // Server-side: just get auth without persistence config
         authInstance = getAuth(app);
     }
 }
