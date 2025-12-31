@@ -3,7 +3,7 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth, db } from '@/features/shared/lib/firebase';
-import { doc, getDoc, collection, getDocs } from 'firebase/firestore';
+import { doc, getDoc, collection, getDocs, query, where } from 'firebase/firestore';
 import { StudentProfile } from './types';
 
 import ProtectedRoute from './components/ProtectedRoute';
@@ -135,60 +135,84 @@ const UkPrecasDashboard: React.FC = () => {
             if (currentUser) {
                 console.log('currentUser in UkPrecasDashboard is authenticated', currentUser);
                 // User is authenticated, fetch their profile
-                const docRef = doc(db, COLLECTION_NAME, currentUser.uid);
+                let profileData: StudentProfile | null = null;
+                let userId: string | null = null;
+                
                 try {
-                const docSnap = await getDoc(docRef);
-                if (docSnap.exists()) {
-                    const profileData = { id: docSnap.id, ...docSnap.data() } as StudentProfile;
+                    // First, try to get document using UID as document ID
+                    const docRef = doc(db, COLLECTION_NAME, currentUser.uid);
+                    const docSnap = await getDoc(docRef);
                     
-                    // Fetch application subcollection data
-                    try {
-                        const applicationCollectionRef = collection(db, COLLECTION_NAME, currentUser.uid, 'application');
-                        const applicationSnapshot = await getDocs(applicationCollectionRef);
+                    if (docSnap.exists()) {
+                        // Document found with UID as ID
+                        userId = currentUser.uid;
+                        profileData = { id: docSnap.id, ...docSnap.data() } as StudentProfile;
+                    } else {
+                        // Fallback: Try to find user by email query (for legacy users or different document structure)
+                        console.log(`No document found with UID ${currentUser.uid}, trying email query...`);
+                        const usersRef = collection(db, COLLECTION_NAME);
+                        const emailQuery = query(usersRef, where("email", "==", currentUser.email || ""));
+                        const emailSnapshot = await getDocs(emailQuery);
                         
-                        if (!applicationSnapshot.empty) {
-                            const firstDoc = applicationSnapshot.docs[0];
-                            profileData.applicationData = { id: firstDoc.id, ...firstDoc.data() };
-                            console.log('Application data fetched from subcollection:', profileData.applicationData);
+                        if (!emailSnapshot.empty) {
+                            // Found user by email
+                            const userDoc = emailSnapshot.docs[0];
+                            userId = userDoc.id;
+                            profileData = { id: userDoc.id, ...userDoc.data() } as StudentProfile;
+                            console.log(`Found user by email with document ID: ${userId}`);
                         } else {
-                            const applicationDocRef = doc(db, COLLECTION_NAME, currentUser.uid, 'application', 'full_application_data');
-                            const applicationSnap = await getDoc(applicationDocRef);
-                            if (applicationSnap.exists()) {
-                                profileData.applicationData = applicationSnap.data();
-                                console.log('Application data fetched from specific doc:', profileData.applicationData);
-                            }
+                            console.error(`No profile document found for UID: ${currentUser.uid} or email: ${currentUser.email}`);
+                            console.error(`Please ensure a document exists at: ${COLLECTION_NAME}/${currentUser.uid} or queryable by email`);
                         }
-                    } catch (appError) {
-                        console.warn('Could not fetch application subcollection:', appError);
                     }
                     
-                    // Fetch academic_plan subcollection data
-                    try {
-                        const academicPlanDocRef = doc(db, COLLECTION_NAME, currentUser.uid, 'academic_plan', 'latest');
-                        const academicPlanSnap = await getDoc(academicPlanDocRef);
-                        
-                        if (academicPlanSnap.exists()) {
-                            profileData.academicPlanData = { id: academicPlanSnap.id, ...academicPlanSnap.data() };
-                            console.log('Academic plan data fetched:', profileData.academicPlanData);
-                        } else {
-                            const academicPlanCollectionRef = collection(db, COLLECTION_NAME, currentUser.uid, 'academic_plan');
-                            const academicPlanSnapshot = await getDocs(academicPlanCollectionRef);
+                    // If we found a profile, fetch subcollection data
+                    if (profileData && userId) {
+                        // Fetch application subcollection data
+                        try {
+                            const applicationCollectionRef = collection(db, COLLECTION_NAME, userId, 'application');
+                            const applicationSnapshot = await getDocs(applicationCollectionRef);
                             
-                            if (!academicPlanSnapshot.empty) {
-                                const firstDoc = academicPlanSnapshot.docs[0];
-                                profileData.academicPlanData = { id: firstDoc.id, ...firstDoc.data() };
-                                console.log('Academic plan data fetched from first document:', profileData.academicPlanData);
+                            if (!applicationSnapshot.empty) {
+                                const firstDoc = applicationSnapshot.docs[0];
+                                profileData.applicationData = { id: firstDoc.id, ...firstDoc.data() };
+                                console.log('Application data fetched from subcollection:', profileData.applicationData);
+                            } else {
+                                const applicationDocRef = doc(db, COLLECTION_NAME, userId, 'application', 'full_application_data');
+                                const applicationSnap = await getDoc(applicationDocRef);
+                                if (applicationSnap.exists()) {
+                                    profileData.applicationData = applicationSnap.data();
+                                    console.log('Application data fetched from specific doc:', profileData.applicationData);
+                                }
                             }
+                        } catch (appError) {
+                            console.warn('Could not fetch application subcollection:', appError);
                         }
-                    } catch (academicError) {
-                        console.warn('Could not fetch academic_plan subcollection:', academicError);
+                        
+                        // Fetch academic_plan subcollection data
+                        try {
+                            const academicPlanDocRef = doc(db, COLLECTION_NAME, userId, 'academic_plan', 'latest');
+                            const academicPlanSnap = await getDoc(academicPlanDocRef);
+                            
+                            if (academicPlanSnap.exists()) {
+                                profileData.academicPlanData = { id: academicPlanSnap.id, ...academicPlanSnap.data() };
+                                console.log('Academic plan data fetched:', profileData.academicPlanData);
+                            } else {
+                                const academicPlanCollectionRef = collection(db, COLLECTION_NAME, userId, 'academic_plan');
+                                const academicPlanSnapshot = await getDocs(academicPlanCollectionRef);
+                                
+                                if (!academicPlanSnapshot.empty) {
+                                    const firstDoc = academicPlanSnapshot.docs[0];
+                                    profileData.academicPlanData = { id: firstDoc.id, ...firstDoc.data() };
+                                    console.log('Academic plan data fetched from first document:', profileData.academicPlanData);
+                                }
+                            }
+                        } catch (academicError) {
+                            console.warn('Could not fetch academic_plan subcollection:', academicError);
+                        }
+                        
+                        setStudentProfile(profileData);
                     }
-                    
-                    setStudentProfile(profileData);
-                } else {
-                        console.error(`No profile document found for UID: ${currentUser.uid}`);
-                        console.error(`Please ensure a document exists at: ${COLLECTION_NAME}/${currentUser.uid}`);
-                }
                 } catch (error) {
                     console.error('Error fetching student profile:', error);
                 }
