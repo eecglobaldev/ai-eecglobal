@@ -1825,9 +1825,9 @@ export const SetupForm: React.FC<SetupFormProps> = ({ onFormComplete, showModal 
 
           <div className="flex-1 min-w-0">
             <Card ref={formCardRef} className="shadow-xl dark:bg-slate-600 w-full overflow-hidden">
-              <CardHeader className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+              <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div className="flex items-start gap-3">
-                  <div className="flex items-center justify-center w-10 h-10">
+                  <div className="flex items-center justify-center w-10 h-10 flex-shrink-0">
                     {headerIcon && React.createElement(headerIcon, { className: "h-6 w-6 text-indigo-500" })}
                   </div>
                   <div className="min-w-0">

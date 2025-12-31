@@ -62,20 +62,42 @@ const TranslatableContent: React.FC<{ contentId: string; htmlContent: string; on
 
     return (
         <>
-            <div className="translation-container">
-                <label htmlFor={`translate-select-${contentId}`} className="translation-label">Translate</label>
-                <select
-                    id={`translate-select-${contentId}`}
-                    value={selectedLang}
-                    onChange={(e) => handleTranslate(e.target.value)}
+            <div className="flex justify-end items-center gap-2 mb-4">
+                <span className="text-sm font-medium text-slate-600 dark:text-slate-300 hidden sm:inline">Translate:</span>
+                <button 
+                    onClick={() => handleTranslate('en')} 
+                    className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                        selectedLang === 'en' 
+                            ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                            : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                    }`} 
                     disabled={isLoading}
-                    className="translation-select"
                 >
-                    {SUPPORTED_LANGUAGES.map(lang => (
-                        <option key={lang.code} value={lang.code}>{lang.name}</option>
-                    ))}
-                </select>
-                {isLoading && <LoaderCircleIcon className="animate-spin h-4 w-4"/>}
+                    English
+                </button>
+                <button 
+                    onClick={() => handleTranslate('hi')} 
+                    className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                        selectedLang === 'hi' 
+                            ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                            : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                    }`} 
+                    disabled={isLoading}
+                >
+                    हिन्दी
+                </button>
+                <button 
+                    onClick={() => handleTranslate('gu')} 
+                    className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                        selectedLang === 'gu' 
+                            ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                            : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                    }`} 
+                    disabled={isLoading}
+                >
+                    ગુજરાતી
+                </button>
+                {isLoading && <LoaderCircleIcon className="animate-spin h-4 w-4 text-indigo-600 dark:text-indigo-400"/>}
             </div>
             <div dangerouslySetInnerHTML={{ __html: stripHtmlFence(translatedContent || htmlContent) }} />
         </>
@@ -423,7 +445,7 @@ const PracticeArea: React.FC<Pick<InterviewFlowProps, 'onAnalyzeAnswer' | 'histo
                         <button onClick={startRecording} disabled={isBusy} className="flex-1 bg-slate-200 text-slate-700 font-semibold py-3 px-6 rounded-xl hover:bg-slate-300 dark:bg-slate-600 dark:text-slate-200 dark:hover:bg-slate-500 disabled:opacity-50">
                             Record Again
                         </button>
-                        <button onClick={handleTranscribe} disabled={isTranscribing || isAnalyzing} className="flex-1 bg-brand text-white font-semibold py-3 px-6 rounded-xl hover:bg-brand/90 dark:hover:bg-brand-light/90 disabled:bg-slate-400 dark:disabled:bg-slate-600">
+                        <button onClick={handleTranscribe} disabled={isTranscribing || isAnalyzing} className="flex-1 bg-indigo-600 text-white font-semibold py-3 px-6 rounded-xl hover:bg-indigo-700 dark:hover:bg-indigo-500 disabled:bg-slate-400 dark:disabled:bg-slate-600">
                              {isTranscribing ? 'Transcribing...' : 'Transcribe Audio'}
                         </button>
                     </div>
@@ -448,7 +470,7 @@ const PracticeArea: React.FC<Pick<InterviewFlowProps, 'onAnalyzeAnswer' | 'histo
                             <p className="text-base font-semibold text-slate-700 dark:text-slate-200">{analyzingMessage}</p>
                         </div>
                     ) : (
-                        <button onClick={handleSubmitForFeedback} disabled={isBusy || !transcript.trim()} className="mt-4 w-full bg-brand text-white font-semibold py-3 px-6 rounded-xl hover:bg-brand/90 dark:hover:bg-brand/90 disabled:bg-slate-400 dark:disabled:bg-slate-600">
+                        <button onClick={handleSubmitForFeedback} disabled={isBusy || !transcript.trim()} className="mt-4 w-full bg-indigo-600 text-white font-semibold py-3 px-6 rounded-xl hover:bg-indigo-700 dark:hover:bg-indigo-500 disabled:bg-slate-400 dark:disabled:bg-slate-600">
                             Submit for Feedback
                         </button>
                     )}
@@ -640,20 +662,42 @@ const InterviewFlow: React.FC<InterviewFlowProps> = ({ prepContent, currentQuest
                     <div className="min-h-[300px]">
                         {activeTab === 'guidance' && (
                             <div id="panel-guidance" role="tabpanel" tabIndex={0} aria-labelledby="tab-guidance">
-                                <div className="translation-container">
-                                    <label htmlFor="translate-all-select" className="translation-label">Translate</label>
-                                    <select
-                                        id="translate-all-select"
-                                        value={selectedBulkLang}
-                                        onChange={(e) => handleTranslateAll(e.target.value)}
+                                <div className="flex justify-end items-center gap-2 mb-4">
+                                    <span className="text-sm font-medium text-slate-600 dark:text-slate-300 hidden sm:inline">Translate:</span>
+                                    <button 
+                                        onClick={() => handleTranslateAll('en')} 
+                                        className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                                            selectedBulkLang === 'en' 
+                                                ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                                                : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                                        }`} 
                                         disabled={isTranslating}
-                                        className="translation-select"
                                     >
-                                        {SUPPORTED_LANGUAGES.map(lang => (
-                                            <option key={lang.code} value={lang.code}>{lang.name}</option>
-                                        ))}
-                                    </select>
-                                    {isTranslating && <LoaderCircleIcon className="animate-spin h-4 w-4" />}
+                                        English
+                                    </button>
+                                    <button 
+                                        onClick={() => handleTranslateAll('hi')} 
+                                        className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                                            selectedBulkLang === 'hi' 
+                                                ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                                                : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                                        }`} 
+                                        disabled={isTranslating}
+                                    >
+                                        हिन्दी
+                                    </button>
+                                    <button 
+                                        onClick={() => handleTranslateAll('gu')} 
+                                        className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                                            selectedBulkLang === 'gu' 
+                                                ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                                                : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                                        }`} 
+                                        disabled={isTranslating}
+                                    >
+                                        ગુજરાતી
+                                    </button>
+                                    {isTranslating && <LoaderCircleIcon className="animate-spin h-4 w-4 text-indigo-600 dark:text-indigo-400" />}
                                 </div>
                                 
                                 <div className="prose prose-slate dark:prose-invert max-w-none">

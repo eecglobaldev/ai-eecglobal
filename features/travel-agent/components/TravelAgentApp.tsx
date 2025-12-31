@@ -331,7 +331,7 @@ export default function TravelAgentApp() {
   const componentKey = displayParams ? `${displayParams.destination}-${displayParams.visaType}-${displayParams.originState}` : 'init';
 
   return (
-    <div className="min-h-screen flex flex-col font-sans text-slate-900 dark:text-slate-100 selection:bg-violet-200 selection:text-violet-900 overflow-x-hidden transition-colors duration-500">
+    <div className="min-h-screen flex flex-col font-sans text-slate-900 dark:text-slate-100 selection:bg-violet-200 selection:text-violet-900 overflow-x-hidden transition-colors duration-500 mesh-bg">
 
       {/* We use displayParams here for SEO to match what's shown, falling back to form if nothing loaded yet */}
       <SEOHelmet params={displayParams || formParams} result={result} />

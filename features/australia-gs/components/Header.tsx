@@ -301,7 +301,7 @@ const Header: React.FC<HeaderProps> = ({ theme, setTheme }) => {
                                         window.scrollTo({ top: 0, behavior: 'smooth' });
                                         setIsMenuOpen(false);
                                     }}
-                                    className="w-full rounded-xl bg-brand text-white px-4 py-3 font-semibold hover:bg-brand/90 transition-colors"
+                                    className="w-full rounded-xl bg-indigo-600 text-white px-4 py-3 font-semibold hover:bg-indigo-700 dark:hover:bg-indigo-500 transition-colors"
                                 >
                                     Go to top
                                 </button>

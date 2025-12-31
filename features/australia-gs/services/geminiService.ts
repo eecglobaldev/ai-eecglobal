@@ -348,7 +348,8 @@ export const analyzeAnswer = async (
     let pswAnalysisInstruction = `
         **ANALYSIS POINT FOR PSW:** Evaluate the user's PSW answer against the correct AI-ECTA rules for Indian students (Diploma=1.5y, Bachelor's=2y, Bachelor's with STEM Hons=3y, Master's=3y, PhD=4y). Acknowledge correct answers and gently correct any outdated information.
     `;
-    if (profile.courseLevel.toLowerCase().includes('diploma')) {
+    const courseLevelLower = (profile.courseLevel || '').toLowerCase();
+    if (courseLevelLower.includes('diploma')) {
         pswAnalysisInstruction = `
             **CRITICAL ANALYSIS POINT:** The applicant is a Diploma-level student. Under the AI-ECTA, Indian students are eligible for up to 18 months of PSW for standalone Diplomas/VET courses. 
             - If the student correctly states this, praise them for excellent research. 
@@ -374,9 +375,9 @@ export const analyzeAnswer = async (
         1.  **Evaluate the answer** against the Genuine Student (GS) criteria. Consider clarity, confidence, relevance, and how it reinforces their incentive to return to India.
         ${pswAnalysisInstruction}
         2.  **Provide Feedback in HTML:** Structure your response as follows:
-            - Start with \`<div class="feedback-good">\`, include \`<h4>What Went Well</h4>\`, and a \`<ul>\` list.
-            - Follow with \`<div class="feedback-improve">\`, include \`<h4>Areas for Improvement</h4>\`, and a \`<ul>\` list.
-            - For all list items, you MUST use \`<li class="checklist-item">\`.
+            - Create a "What You Did Well" section within a \`<div class="feedback-section feedback-positive">\`. It MUST start with an \`<h5>\` containing the title "What You Did Well". Provide **at least two specific, bulleted points**. For each point, quote a phrase from their answer (using \`<mark>\`) and explain exactly why it was effective. Use \`<ul>\` with \`<li>\` elements.
+            - Create an "Areas for Improvement" section within a \`<div class="feedback-section feedback-improvement">\`. It MUST start with an \`<h5>\` containing the title "Areas for Improvement". Provide **at least two specific, bulleted points** on the most critical weaknesses. For each point, explain the issue clearly and describe its potential negative impact. Use \`<ul>\` with \`<li>\` elements.
+            - Optionally, create an "Actionable Coaching Tip" section within a \`<div class="feedback-section feedback-coaching">\`. It MUST start with an \`<h5>\` containing the title "Actionable Coaching Tip". Provide a tangible takeaway or suggested rephrasing.
             - Use rich formatting: \`<b>\`, \`<mark>\` for highlighting transcript phrases, and \`<u class="red-underline">\` for critical advice.
     3.  **Assign a Score:** Give a score from 1 to 10.
 

@@ -763,9 +763,39 @@ export const InterviewFlow: React.FC<InterviewFlowProps> = ({
               <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200">Your Key Talking Points</h3>
               <div className="flex items-center gap-2">
                   <span className="text-sm font-medium text-slate-600 dark:text-slate-300 hidden sm:inline">Translate:</span>
-                  <button onClick={() => handleKeyPointsLangClick('en')} className={`lang-btn ${keyPointsLang === 'en' ? 'active' : ''}`} disabled={isTranslatingKeyPoints}>English</button>
-                  <button onClick={() => handleKeyPointsLangClick('hi')} className={`lang-btn ${keyPointsLang === 'hi' ? 'active' : ''}`} disabled={isTranslatingKeyPoints}>हिन्दी</button>
-                  <button onClick={() => handleKeyPointsLangClick('gu')} className={`lang-btn ${keyPointsLang === 'gu' ? 'active' : ''}`} disabled={isTranslatingKeyPoints}>ગુજરાતી</button>
+                  <button 
+                      onClick={() => handleKeyPointsLangClick('en')} 
+                      className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                          keyPointsLang === 'en' 
+                              ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                              : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                      }`} 
+                      disabled={isTranslatingKeyPoints}
+                  >
+                      English
+                  </button>
+                  <button 
+                      onClick={() => handleKeyPointsLangClick('hi')} 
+                      className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                          keyPointsLang === 'hi' 
+                              ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                              : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                      }`} 
+                      disabled={isTranslatingKeyPoints}
+                  >
+                      हिन्दी
+                  </button>
+                  <button 
+                      onClick={() => handleKeyPointsLangClick('gu')} 
+                      className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                          keyPointsLang === 'gu' 
+                              ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                              : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                      }`} 
+                      disabled={isTranslatingKeyPoints}
+                  >
+                      ગુજરાતી
+                  </button>
               </div>
           </div>
           <div id="key-talking-points" className="ai-content-card prose prose-slate max-w-none dark:text-slate-400" dangerouslySetInnerHTML={{ __html: translatedKeyPoints?.keyTalkingPoints ?? prepContent.keyTalkingPoints }} />
@@ -787,9 +817,39 @@ export const InterviewFlow: React.FC<InterviewFlowProps> = ({
           <div className="flex justify-between items-start flex-col sm:flex-row sm:items-center gap-4 mb-8">
               <p className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 flex-grow">{translatedQuestionContent?.question ?? currentQuestionData.question}</p>
               <div className="flex items-center gap-2 flex-shrink-0 self-start sm:self-center">
-                  <button onClick={() => handleQuestionLangClick('en')} className={`font-semibold lang-btn ${questionLang === 'en' ? 'active' : ''}`} disabled={isTranslatingQuestion}>English</button>
-                  <button onClick={() => handleQuestionLangClick('hi')} className={`font-semibold  lang-btn ${questionLang === 'hi' ? 'active' : ''}`} disabled={isTranslatingQuestion}>हिन्दी</button>
-                  <button onClick={() => handleQuestionLangClick('gu')} className={`font-semibold lang-btn ${questionLang === 'gu' ? 'active' : ''}`} disabled={isTranslatingQuestion}>ગુજરાતી</button>
+                  <button 
+                      onClick={() => handleQuestionLangClick('en')} 
+                      className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                          questionLang === 'en' 
+                              ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                              : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                      }`} 
+                      disabled={isTranslatingQuestion}
+                  >
+                      English
+                  </button>
+                  <button 
+                      onClick={() => handleQuestionLangClick('hi')} 
+                      className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                          questionLang === 'hi' 
+                              ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                              : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                      }`} 
+                      disabled={isTranslatingQuestion}
+                  >
+                      हिन्दी
+                  </button>
+                  <button 
+                      onClick={() => handleQuestionLangClick('gu')} 
+                      className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                          questionLang === 'gu' 
+                              ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                              : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                      }`} 
+                      disabled={isTranslatingQuestion}
+                  >
+                      ગુજરાતી
+                  </button>
               </div>
           </div>
 

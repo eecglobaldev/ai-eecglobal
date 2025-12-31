@@ -961,7 +961,7 @@ function UkPrecasApp() {
       <main className="container mx-auto px-2 sm:px-4 lg:px-8 py-4 sm:py-6 md:py-12">
         {/* Decorative background elements - Premium Dark Theme */}
         <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-          <div className="absolute inset-0 bg-white dark:bg-[#0d1117] transition-colors duration-300" />
+          <div className="absolute inset-0 bg-white dark:bg-[#0f172a] transition-colors duration-300" />
           <div className="absolute inset-0 bg-grid-pattern opacity-30 dark:opacity-100" />
           <div className="absolute top-20 left-10 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-500/20 rounded-full blur-[100px] animate-blob" />
           <div className="absolute top-40 right-10 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/15 rounded-full blur-[100px] animate-blob animation-delay-2000" />
@@ -1202,6 +1202,7 @@ function UkPrecasApp() {
             handleTranslateFeedback={handleTranslateFeedback}
             translatedContent={translatedContent}
             translatedFeedback={translatedFeedback}
+            setTranslatedFeedback={setTranslatedFeedback}
             setTranslatedContent={setTranslatedContent}
             handleTranslateKeyTalkingPoints={handleTranslateKeyTalkingPoints}
             translatedKeyTalkingPoints={translatedKeyTalkingPoints}
@@ -1269,6 +1270,7 @@ interface InterviewPracticeAndHistoryProps {
     handleTranslateFeedback: (lang: 'hi' | 'gu', feedbackHtml: string) => void;
     translatedContent: {question: string; guidance: string} | null;
     translatedFeedback: string | null;
+    setTranslatedFeedback: React.Dispatch<React.SetStateAction<string | null>>;
     setTranslatedContent: React.Dispatch<React.SetStateAction<{question: string; guidance: string} | null>>;
     handleTranslateKeyTalkingPoints: (lang: 'hi' | 'gu', html: string) => void;
     translatedKeyTalkingPoints: string | null;
@@ -1590,6 +1592,7 @@ const PracticeContainer: React.FC<PracticeContainerProps> = ({
                         isTranslating={practiceProps.isTranslating}
                         handleTranslateFeedback={practiceProps.handleTranslateFeedback}
                         translatedFeedback={practiceProps.translatedFeedback}
+                        setTranslatedFeedback={practiceProps.setTranslatedFeedback}
                         showModal={practiceProps.showModal}
                     />
                 )}
@@ -1614,7 +1617,7 @@ const blobToBase64 = (blob: Blob): Promise<string> => {
 };
 
 const PracticeTab: React.FC<Omit<PracticeContainerProps, 'currentQuestion' | 'questionNumber' | 'totalQuestions' | 'changeQuestion' | 'translatedContent' | 'setTranslatedContent' | 'handleTranslate'>> = ({
-  isAnalyzing, handleAnalyzeAnswer, latestFeedback, isTranslating, handleTranslateFeedback, translatedFeedback, showModal
+  isAnalyzing, handleAnalyzeAnswer, latestFeedback, isTranslating, handleTranslateFeedback, translatedFeedback, setTranslatedFeedback, showModal
 }) => {
     // Component-local state for recording and transcription
     const [isRecording, setIsRecording] = useState(false);
@@ -1894,20 +1897,24 @@ const PracticeTab: React.FC<Omit<PracticeContainerProps, 'currentQuestion' | 'qu
                     <p class="text-sm text-slate-600 dark:text-slate-400">${new Date(latestFeedback.timestamp).toLocaleString()}</p>
                 </div>
                 <div class="text-center ml-4 flex-shrink-0">
-                   <div class="w-24 h-24 rounded-full flex items-center justify-center ${latestFeedback.score >= 8 ? 'bg-green-900 dark:bg-green-500/50' : latestFeedback.score >= 5 ? 'bg-yellow-100 dark:bg-yellow-500/50' : 'bg-red-100 dark:bg-red-300/50'}">
-                     <p class="text-4xl font-extrabold ${latestFeedback.score >= 8 ? 'text-green-200 dark:text-green-700' : latestFeedback.score >= 5 ? 'text-yellow-900 dark:text-yellow-700' : 'text-red-600 dark:text-red-700'}">${latestFeedback.score}<span class="text-2xl font-semibold opacity-60">/10</span></p>
+                   <div class="w-24 h-24 rounded-full flex items-center justify-center ${latestFeedback.score >= 8 ? 'bg-green-900 dark:bg-green-500/30' : latestFeedback.score >= 5 ? 'bg-yellow-100 dark:bg-yellow-500/30' : 'bg-red-100 dark:bg-red-500/30'}">
+                     <p class="text-4xl font-extrabold ${latestFeedback.score >= 8 ? 'text-green-200 dark:text-green-300' : latestFeedback.score >= 5 ? 'text-yellow-900 dark:text-yellow-200' : 'text-red-600 dark:text-red-300'}">${latestFeedback.score}<span class="text-2xl font-semibold opacity-60">/10</span></p>
                    </div>
                 </div>
             </div>
-            <div class="mt-4 prose prose-slate max-w-none prose-sm dark:prose-invert text-slate-800">${latestFeedback.feedback}</div>
+            <div class="mt-4 prose prose-slate max-w-none prose-sm dark:prose-invert text-slate-800 dark:text-slate-200">${latestFeedback.feedback}</div>
             <h5 class="font-semibold mt-6 mb-2 text-slate-800 text-sm dark:text-slate-200">Your Answer Transcript:</h5>
-            <p class="text-sm p-3 bg-white dark:prose-invert rounded-md border text-slate-800 dark:text-slate-200 notranslate">${latestFeedback.transcript}</p>
+            <p class="text-sm p-3 bg-white dark:bg-slate-900/70 rounded-md border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-300 notranslate">${latestFeedback.transcript}</p>
         `;
 
         return (
-             <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 mt-4 fade-in">
-                <FeedbackTranslationControls onTranslate={(lang) => handleTranslateFeedback(lang, originalFeedbackHtml)} isTranslating={isTranslating} />
-                <div className="text-slate-800" dangerouslySetInnerHTML={{ __html: translatedFeedback ?? originalFeedbackHtml }} />
+             <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 mt-4 fade-in">
+                <FeedbackTranslationControls 
+                    onTranslate={(lang) => handleTranslateFeedback(lang, originalFeedbackHtml)} 
+                    isTranslating={isTranslating}
+                    onReset={() => setTranslatedFeedback(null)}
+                />
+                <div className="text-slate-800 dark:text-slate-200" dangerouslySetInnerHTML={{ __html: translatedFeedback ?? originalFeedbackHtml }} />
              </div>
         );
     }
@@ -2040,13 +2047,15 @@ const PracticeTab: React.FC<Omit<PracticeContainerProps, 'currentQuestion' | 'qu
     );
 };
 
-const FeedbackTranslationControls: React.FC<{onTranslate: (lang: 'hi' | 'gu') => void, isTranslating: boolean}> = ({ onTranslate, isTranslating }) => {
+const FeedbackTranslationControls: React.FC<{onTranslate: (lang: 'hi' | 'gu') => void, isTranslating: boolean, onReset?: () => void}> = ({ onTranslate, isTranslating, onReset }) => {
     const [activeLang, setActiveLang] = useState('en');
 
     const handleLangClick = (lang: string) => {
         if(lang === activeLang) return;
         setActiveLang(lang);
-        if(lang !== 'en') {
+        if(lang === 'en') {
+            if(onReset) onReset();
+        } else {
             onTranslate(lang as 'hi' | 'gu');
         }
     };
@@ -2055,10 +2064,40 @@ const FeedbackTranslationControls: React.FC<{onTranslate: (lang: 'hi' | 'gu') =>
     // The parent controls the translated content state. A null value means English.
 
     return (
-         <div className="flex justify-end items-center gap-3 mb-4">
-             <button onClick={() => handleLangClick('en')} className={`font-semibold lang-btn ${activeLang === 'en' ? 'active' : ''}`} disabled={isTranslating}>English</button>
-             <button onClick={() => handleLangClick('hi')} className={`font-semibold lang-btn ${activeLang === 'hi' ? 'active' : ''}`} disabled={isTranslating}>हिन्दी</button>
-             <button onClick={() => handleLangClick('gu')} className={`font-semibold lang-btn ${activeLang === 'gu' ? 'active' : ''}`} disabled={isTranslating}>ગુજરાતી</button>
+         <div className="flex justify-end items-center gap-2 mb-4">
+             <button 
+                 onClick={() => handleLangClick('en')} 
+                 className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                     activeLang === 'en' 
+                         ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                         : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                 }`} 
+                 disabled={isTranslating}
+             >
+                 English
+             </button>
+             <button 
+                 onClick={() => handleLangClick('hi')} 
+                 className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                     activeLang === 'hi' 
+                         ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                         : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                 }`} 
+                 disabled={isTranslating}
+             >
+                 हिन्दी
+             </button>
+             <button 
+                 onClick={() => handleLangClick('gu')} 
+                 className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${
+                     activeLang === 'gu' 
+                         ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30' 
+                         : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                 }`} 
+                 disabled={isTranslating}
+             >
+                 ગુજરાતી
+             </button>
         </div>
     );
 }
