@@ -1,405 +1,615 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { PrepContent, HistoryItem, Question } from '../types';
-import { MessageSquare, RefreshCw, Volume2, Mic, Save, ArrowRight, BookOpen, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react';
-import { translateText, transcribeAudio } from '../services/geminiService';
-import AutoResizeTextarea from './AutoResizeTextarea';
-import { uploadToStorage } from '../services/storageService'; // Updated import
-import { ensureUserSignedIn } from '../services/authService';
-import { useRecorder } from '../hooks/useRecorder';
+import React, { useState, useEffect, useRef, forwardRef, useCallback, useMemo } from "react";
+import { PrepContent, HistoryItem, Question } from "../types";
+import { translateText, transcribeAudio } from "../services/geminiService";
+import AutoResizeTextarea from "./AutoResizeTextarea";
+import { uploadToStorage } from "../services/storageService";
+import { ensureUserSignedIn } from "../services/authService";
+import { useRecorder } from "../hooks/useRecorder";
 
-interface PracticeSectionProps {
-    content: PrepContent | null;
-    currentQuestionIndex: number;
-    history: HistoryItem[];
-    onNextQuestion: () => void;
-    onPrevQuestion: () => void;
-    onSelectHistoryItem: (item: HistoryItem) => void;
-    onSaveFunc: (blob: Blob | null, text: string, question: string) => Promise<void>;
+const Spinner: React.FC<{ className?: string }> = ({
+  className = "h-4 w-4 text-indigo-600 dark:text-indigo-400",
+}) => (
+  <svg
+    className={`animate-spin ${className}`}
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <circle
+      className="opacity-25"
+      cx="12"
+      cy="12"
+      r="10"
+      stroke="currentColor"
+      strokeWidth="4"
+    ></circle>
+    <path
+      className="opacity-75"
+      fill="currentColor"
+      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+    ></path>
+  </svg>
+);
+
+/* ===========================================================
+   TranslatableContent Component
+   =========================================================== */
+interface TranslatableContentProps {
+  contentId: string;
+  htmlContent: string;
 }
 
-const PracticeSection: React.FC<PracticeSectionProps> = ({
-    content,
-    currentQuestionIndex,
-    history,
-    onNextQuestion,
-    onPrevQuestion,
-    onSelectHistoryItem,
-    onSaveFunc
+const TranslatableContent: React.FC<TranslatableContentProps> = ({
+  contentId,
+  htmlContent,
 }) => {
-    const [userAnswer, setUserAnswer] = useState('');
-    const [translatedQuestion, setTranslatedQuestion] = useState<string | null>(null);
-    const [isTranslating, setIsTranslating] = useState(false);
-    const [isSaving, setIsSaving] = useState(false);
-    const [saveStatus, setSaveStatus] = useState<'idle' | 'success' | 'error'>('idle');
-    const [showTips, setShowTips] = useState(false);
+  const [translations, setTranslations] = useState<{ [key: string]: string }>({
+    en: htmlContent,
+  });
+  const [currentLang, setCurrentLang] = useState<"en" | "hi" | "gu">("en");
+  const [isTranslating, setIsTranslating] = useState<string | null>(null);
 
-    // Audio State
-    const {
-        isRecording,
-        timer,
-        audioBlob,
-        startRecording,
-        stopRecording,
-        reset: resetRecording
-    } = useRecorder();
+  useEffect(() => {
+    setTranslations({ en: htmlContent });
+    setCurrentLang("en");
+  }, [htmlContent]);
 
-    const [isTranscribing, setIsTranscribing] = useState(false);
-
-    // Derived State - Ensure we always have interview_questions by flattening sections if needed
-    const interviewQuestions = content?.interview_questions || content?.sections?.flatMap(s => s.questions || []) || [];
-    const currentQuestionItem = interviewQuestions[currentQuestionIndex];
-    const currentQuestionText = currentQuestionItem?.question || "";
-    // Safe access for tips, handling undefined/null cases efficiently
-    const currentTips = currentQuestionItem?.tips
-        ? (Array.isArray(currentQuestionItem.tips) ? currentQuestionItem.tips : [currentQuestionItem.tips])
-        : [];
-
-    const hasAudio = !!audioBlob;
-
-    // Reset local state when question changes
-    useEffect(() => {
-        setUserAnswer('');
-        setTranslatedQuestion(null);
-        resetRecording();
-        setSaveStatus('idle');
-        setShowTips(false);
-    }, [currentQuestionIndex, content, resetRecording]);
-
-    const handleTranslate = async () => {
-        if (!currentQuestionText) return;
-        setIsTranslating(true);
-        try {
-            const translation = await translateText(currentQuestionText, 'gu'); // Default to Gujarati
-            setTranslatedQuestion(translation);
-        } catch (error) {
-            console.error("Translation failed", error);
-        } finally {
-            setIsTranslating(false);
-        }
-    };
-
-    const handleTranscribe = async () => {
-        if (!audioBlob) return;
-        setIsTranscribing(true);
-        try {
-            const text = await transcribeAudio(audioBlob);
-            setUserAnswer(prev => prev + (prev ? ' ' : '') + text);
-        } catch (error) {
-            console.error("Transcription failed", error);
-            alert("Could not transcribe audio. Please try again.");
-        } finally {
-            setIsTranscribing(false);
-        }
-    };
-
-    const handleSave = async () => {
-        if ((!userAnswer.trim() && !audioBlob)) {
-            alert("Please record an audio answer or type your response before saving.");
-            return;
-        }
-
-        setIsSaving(true);
-        setSaveStatus('idle');
-        try {
-            await onSaveFunc(audioBlob, userAnswer, currentQuestionText);
-            setSaveStatus('success');
-            // Optional: Auto-advance after short delay? 
-            // setTimeout(onNextQuestion, 1500); 
-        } catch (error) {
-            console.error("Error in handleSave:", error);
-            setSaveStatus('error');
-        } finally {
-            setIsSaving(false);
-        }
-    };
-
-    if (!content) {
-        return (
-            <div className="flex flex-col items-center justify-center p-12 text-center bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-dashed border-slate-300 dark:border-slate-700 h-64">
-                <div className="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-full flex items-center justify-center mb-4">
-                    <BookOpen size={32} />
-                </div>
-                <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200">No Prep Content Yet</h3>
-                <p className="text-slate-500 dark:text-slate-400 mt-2 max-w-md">Generate your personalized interview plan to start practicing.</p>
-            </div>
-        );
+  const handleTranslate = async (lang: "hi" | "gu" | "en") => {
+    if (lang === "en" || translations[lang]) {
+      setCurrentLang(lang);
+      return;
     }
 
-    return (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6" id="practice-section">
-            {/* Main Practice Area */}
-            <div className="lg:col-span-8 space-y-6">
+    setIsTranslating(lang);
+    try {
+      const translated = await translateText(htmlContent, lang);
+      if (translated) {
+        setTranslations((prev) => ({ ...prev, [lang]: translated }));
+        setCurrentLang(lang);
+      }
+    } finally {
+      setIsTranslating(null);
+    }
+  };
 
-                {/* Question Card */}
-                <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden relative">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"></div>
-                    <div className="p-6 md:p-8">
-                        {/* Header */}
-                        <div className="flex justify-between items-start mb-6">
-                            <span className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold tracking-wide uppercase">
-                                Question {currentQuestionIndex + 1} of {interviewQuestions.length}
-                            </span>
-                            <div className="flex gap-2">
-                                <button
-                                    onClick={handleTranslate}
-                                    disabled={isTranslating || !!translatedQuestion}
-                                    className="p-2 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors disabled:opacity-50"
-                                    title="Translate to Gujarati/Hindi"
-                                >
-                                    <RefreshCw size={18} className={isTranslating ? "animate-spin" : ""} />
-                                </button>
-                            </div>
-                        </div>
+  const getButtonClass = (lang: "en" | "hi" | "gu") => {
+    const base =
+      "text-xs font-semibold py-1 px-3 rounded-full transition-colors flex items-center justify-center min-w-[60px] h-6";
+    if (currentLang === lang) {
+      return `${base} bg-indigo-100 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-400`;
+    }
+    return `${base} bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-wait`;
+  };
 
-                        {/* Question Text */}
-                        <div className="mb-8">
-                            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white leading-tight">
-                                {currentQuestionText}
-                            </h3>
-                            {translatedQuestion && (
-                                <div className="mt-4 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border-l-4 border-amber-400 text-lg text-slate-700 dark:text-slate-300 font-medium">
-                                    {translatedQuestion}
-                                </div>
-                            )}
-                        </div>
+  if (!htmlContent) return null;
 
-                        {/* Tips Accordion - Improved Visibility */}
-                        {currentTips.length > 0 && (
-                            <div className="mb-6">
-                                <button
-                                    onClick={() => setShowTips(!showTips)}
-                                    className="flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors mb-2 focus:outline-none"
-                                >
-                                    {showTips ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                                    {showTips ? "Hide Expert Tips" : "Show Expert Tips"}
-                                </button>
+  return (
+    <>
+      <div
+        className="translation-controls flex items-center justify-end gap-2 mb-2"
+        data-content-id={contentId}
+      >
+        <button onClick={() => handleTranslate("en")} className={getButtonClass("en")}>
+          English
+        </button>
+        <button
+          onClick={() => handleTranslate("hi")}
+          disabled={isTranslating === "hi"}
+          className={getButtonClass("hi")}
+        >
+          {isTranslating === "hi" ? <Spinner /> : "हिन्दी"}
+        </button>
+        <button
+          onClick={() => handleTranslate("gu")}
+          disabled={isTranslating === "gu"}
+          className={getButtonClass("gu")}
+        >
+          {isTranslating === "gu" ? <Spinner /> : "ગુજરાતી"}
+        </button>
+      </div>
 
-                                {showTips && (
-                                    <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-xl p-5 border border-indigo-100 dark:border-indigo-800 animate-fadeIn">
-                                        <div className="flex items-start gap-3">
-                                            <div className="mt-0.5 min-w-[20px] text-indigo-600 dark:text-indigo-400">
-                                                <AlertCircle size={20} />
-                                            </div>
-                                            <div>
-                                                <h4 className="font-bold text-indigo-900 dark:text-indigo-200 mb-2 text-sm uppercase tracking-wide">
-                                                    How to Answer
-                                                </h4>
-                                                <ul className="space-y-2">
-                                                    {currentTips.map((tip, idx) => (
-                                                        <li key={idx} className="text-indigo-800 dark:text-indigo-300 text-base leading-relaxed flex gap-2">
-                                                            <span className="font-bold">•</span>
-                                                            {tip}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        )}
-
-                        {/* Tips (Original context/talking points if available separately or combined) 
-                            The current 'questions' structure has 'tips'. 
-                            Sometimes 'context' or 'key_points' might be available in other data structures, 
-                            but based on types, we rely on 'tips'.
-                        */}
-
-                        {/* Input Area */}
-                        <div className="space-y-4">
-                            <div className="relative">
-                                <AutoResizeTextarea
-                                    value={userAnswer}
-                                    onChange={(e) => setUserAnswer(e.target.value)}
-                                    placeholder="Type your answer here or transcribe from your recording..."
-                                    className="w-full p-4 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all md:text-lg resize-none"
-                                    style={{ minHeight: '120px' }}
-                                />
-                                {hasAudio && !isRecording && (
-                                    <button
-                                        onClick={handleTranscribe}
-                                        disabled={isTranscribing}
-                                        className="absolute bottom-3 right-3 text-xs bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 shadow-sm px-2 py-1 rounded hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors flex items-center gap-1 text-slate-600 dark:text-slate-300"
-                                    >
-                                        <MessageSquare size={12} />
-                                        {isTranscribing ? 'Transcribing...' : 'Transcribe to Text'}
-                                    </button>
-                                )}
-                            </div>
-
-                            {/* Recorder Controls */}
-                            <div className="flex items-center justify-between bg-slate-100 dark:bg-slate-800/80 p-3 rounded-xl">
-                                <div className="flex items-center gap-4">
-                                    <button
-                                        onClick={isRecording ? stopRecording : startRecording}
-                                        className={`flex items-center justify-center w-12 h-12 rounded-full transition-all shadow-md ${isRecording
-                                            ? 'bg-red-500 hover:bg-red-600 text-white animate-pulse'
-                                            : 'bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-600 border border-slate-200 dark:border-slate-600'
-                                            }`}
-                                        title={isRecording ? "Stop Recording" : "Start Recording"}
-                                    >
-                                        <div className={`transition-transform duration-200 ${isRecording ? 'scale-110' : 'scale-100'}`}>
-                                            {isRecording ? <div className="w-4 h-4 bg-white rounded-sm" /> : <Mic size={24} />}
-                                        </div>
-                                    </button>
-                                    <div className="text-sm font-mono font-medium text-slate-600 dark:text-slate-400 min-w-[60px]">
-                                        {timer ? (
-                                            <span className="text-red-500">{timer}</span>
-                                        ) : "00:00"}
-                                    </div>
-                                </div>
-                                {hasAudio && (
-                                    <div className="flex items-center gap-2">
-                                        <audio src={window.URL.createObjectURL(audioBlob)} controls className="h-8 w-32 md:w-48" />
-                                        <button
-                                            onClick={resetRecording}
-                                            className="text-slate-400 hover:text-red-500 p-1"
-                                            title="Delete Recording"
-                                        >
-                                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-                                        </button>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Footer Actions */}
-                    <div className="bg-slate-50 dark:bg-slate-800/80 px-6 md:px-8 py-4 border-t border-slate-200 dark:border-slate-700 flex justify-between items-center">
-                        <button
-                            onClick={onPrevQuestion}
-                            disabled={currentQuestionIndex === 0}
-                            className="text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 font-medium text-sm transition-colors disabled:opacity-30 flex items-center gap-1"
-                        >
-                            <ChevronDown size={16} className="rotate-90" /> Previous
-                        </button>
-
-                        <button
-                            onClick={handleSave}
-                            disabled={isSaving || isRecording || (!userAnswer.trim() && !hasAudio)}
-                            className={`
-                                flex items-center gap-2 px-6 py-2.5 rounded-lg font-bold shadow-sm transition-all
-                                ${saveStatus === 'success'
-                                    ? 'bg-green-600 text-white'
-                                    : 'bg-indigo-600 hover:bg-indigo-700 text-white disabled:bg-slate-300 disabled:dark:bg-slate-700 disabled:text-slate-500'
-                                }
-                            `}
-                        >
-                            {isSaving ? (
-                                <>
-                                    <RefreshCw size={18} className="animate-spin" /> Saving...
-                                </>
-                            ) : saveStatus === 'success' ? (
-                                <>
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Saved!
-                                </>
-                            ) : (
-                                <>
-                                    <Save size={18} /> Save Answer
-                                </>
-                            )}
-                        </button>
-
-                        <button
-                            onClick={onNextQuestion}
-                            disabled={currentQuestionIndex === interviewQuestions.length - 1}
-                            className="text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 font-medium text-sm transition-colors disabled:opacity-30 flex items-center gap-1"
-                        >
-                            Next <ChevronDown size={16} className="-rotate-90" />
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            {/* Sidebar / Navigation & History */}
-            <div className="lg:col-span-4 space-y-6">
-
-                {/* Progress / Navigation */}
-                <div className="bg-white dark:bg-slate-800 rounded-xl shadow border border-slate-200 dark:border-slate-700 p-5">
-                    <h4 className="font-bold text-slate-700 dark:text-slate-300 mb-4 flex items-center justify-between">
-                        <span>Interview Progress</span>
-                        <span className="text-xs bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded text-slate-600 dark:text-slate-400">
-                            {Math.round(((currentQuestionIndex + 1) / interviewQuestions.length) * 100)}%
-                        </span>
-                    </h4>
-                    <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2 mb-6">
-                        <div
-                            className="bg-indigo-600 h-2 rounded-full transition-all duration-500 ease-out"
-                            style={{ width: `${((currentQuestionIndex + 1) / interviewQuestions.length) * 100}%` }}
-                        ></div>
-                    </div>
-
-                    <div className="grid grid-cols-5 gap-2 max-h-48 overflow-y-auto pr-1 custom-scrollbar">
-                        {interviewQuestions.map((_, idx) => {
-                            const isCurrent = idx === currentQuestionIndex;
-                            // Check if this question has been answered in history (this is a simplified check)
-                            // Ideally, practice history needs to be correlated with question IDs or similar.
-                            // For now, we'll just style current vs others clearly.
-                            return (
-                                <button
-                                    key={idx}
-                                    onClick={() => {
-                                        if (idx !== currentQuestionIndex) {
-                                            // onNextQuestion/Prev logic is sequential in parent, 
-                                            // we might need a jumpToQuestion handler ideally.
-                                            // Assuming parent handles state if we just had a way to specific index. 
-                                            // Since props only have next/prev, we can simulate or just use this for visual only 
-                                            // if we can't jump. However, standard specific jump is better.
-                                            // For this migration, I will preserve existing prop interface but user can 
-                                            // use next/prev.
-                                            // Actually, checking previous code, the App.tsx likely manages index.
-                                            // But PracticeSection props don't have onIndexChange.
-                                            // The user can just use next/prev for now.
-                                        }
-                                    }}
-                                    className={`
-                                        h-8 w-8 rounded-lg text-xs font-semibold flex items-center justify-center transition-all
-                                        ${isCurrent
-                                            ? 'bg-indigo-600 text-white ring-2 ring-indigo-200 dark:ring-indigo-900'
-                                            : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600'
-                                        }
-                                    `}
-                                    title={`Go to Question ${idx + 1}`}
-                                >
-                                    {idx + 1}
-                                </button>
-                            );
-                        })}
-                    </div>
-                </div>
-
-                {/* History List */}
-                {history.length > 0 && (
-                    <div className="bg-white dark:bg-slate-800 rounded-xl shadow border border-slate-200 dark:border-slate-700 p-5 flex flex-col max-h-[500px]">
-                        <h4 className="font-bold text-slate-700 dark:text-slate-300 mb-4 flex items-center gap-2">
-                            <RefreshCw size={16} /> Recent Practice
-                        </h4>
-                        <div className="overflow-y-auto space-y-3 custom-scrollbar flex-grow pr-1">
-                            {history.slice().reverse().map((item, idx) => (
-                                <div
-                                    key={idx}
-                                    onClick={() => onSelectHistoryItem(item)}
-                                    className="p-3 rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 hover:border-indigo-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 cursor-pointer transition-all group"
-                                >
-                                    <p className="text-sm font-medium text-slate-800 dark:text-slate-200 line-clamp-2 mb-2 group-hover:text-indigo-700 dark:group-hover:text-indigo-300">
-                                        {item.question}
-                                    </p>
-                                    <div className="flex justify-between items-center text-xs text-slate-500 dark:text-slate-400">
-                                        <span>{new Date(item.timestamp).toLocaleDateString()}</span>
-                                        <div className="flex items-center gap-2">
-                                            {item.audioUrl && <Volume2 size={12} className="text-indigo-500" />}
-                                            {item.transcript && <MessageSquare size={12} className="text-emerald-500" />}
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
-            </div>
-        </div>
-    );
+      <div
+        dangerouslySetInnerHTML={{
+          __html: translations[currentLang] || htmlContent,
+        }}
+      />
+    </>
+  );
 };
+
+/* ===========================================================
+   Main Practice Section Component
+   =========================================================== */
+interface QuestionWithSection extends Question {
+  sectionTitle: string;
+}
+
+interface PracticeSectionProps {
+  prepContent: PrepContent | null;
+  history: HistoryItem[];
+  onGetFeedback: (
+    question: string,
+    transcript: string,
+    questionId: string,
+    audioUrl?: string,
+    audioDurationSeconds?: number
+  ) => Promise<HistoryItem | null>;
+  onClearHistory: () => void;
+}
+
+const PracticeSection = forwardRef<HTMLElement, PracticeSectionProps>(
+  ({ prepContent, history, onGetFeedback, onClearHistory }, ref) => {
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [activeTab, setActiveTab] = useState<"guidance" | "practice">("guidance");
+    const [latestFeedback, setLatestFeedback] = useState<HistoryItem | null>(null);
+
+    const [isAnalyzing, setIsAnalyzing] = useState(false);
+    const [isTranscribing, setIsTranscribing] = useState(false);
+
+    const [transcript, setTranscript] = useState("");
+    const [firebaseAudioUrl, setFirebaseAudioUrl] = useState<string | null>(null);
+
+    /* ====== USE NEW GLOBAL AUDIO RECORDER HOOK ====== */
+    const {
+      isRecording,
+      isProcessing,
+      audioBlob,
+      audioUrl,
+      durationSeconds,
+      error: recorderError,
+      timer,
+      isBusy: isRecorderBusy,
+      startRecording,
+      stopRecording,
+      reset,
+    } = useRecorder({
+      onUpload: async (blob, mimeType) => {
+        try {
+          const user = await ensureUserSignedIn();
+          const timestamp = Date.now();
+
+          const ext = mimeType.includes("webm")
+            ? "webm"
+            : mimeType.includes("ogg")
+            ? "ogg"
+            : mimeType.includes("mp4")
+            ? "mp4"
+            : "webm";
+
+          const path = `student_audio/${user.uid}/audio_${timestamp}.${ext}`;
+          const url = await uploadToStorage(blob, path);
+
+          setFirebaseAudioUrl(url);
+        } catch (err) {
+          console.error("Audio upload failed", err);
+        }
+      },
+    });
+
+    /* ===========================================================
+       Prepare question list
+       =========================================================== */
+    const allQuestions = useMemo(() => {
+      if (!prepContent) return [];
+      return prepContent.sections.flatMap((s) =>
+        s.questions.map((q) => ({ ...q, sectionTitle: s.title }))
+      );
+    }, [prepContent]);
+
+    useEffect(() => {
+      setCurrentQuestionIndex(0);
+      setLatestFeedback(null);
+      setActiveTab("guidance");
+    }, [prepContent]);
+
+    useEffect(() => {
+      if (!allQuestions.length) return;
+
+      const id = `question_${currentQuestionIndex + 1}`;
+      const questionText = allQuestions[currentQuestionIndex].question;
+
+      const match =
+        history.find((h) => h.questionId === id) ||
+        history.find((h) => h.question === questionText) ||
+        null;
+
+      setLatestFeedback(match);
+      setTranscript(match?.transcript || "");
+
+      reset();
+      setFirebaseAudioUrl(null);
+      setIsTranscribing(false);
+    }, [currentQuestionIndex, allQuestions, history, reset]);
+
+    /* ===========================================================
+       Recording helpers
+       =========================================================== */
+    const beginRecordingSession = () => {
+      setLatestFeedback(null);
+      setTranscript("");
+      setFirebaseAudioUrl(null);
+
+      reset();
+      startRecording();
+    };
+
+    const handleRecordClick = () => {
+      if (!isRecording) beginRecordingSession();
+      else stopRecording();
+    };
+
+    const handleStartRecording = () => {
+      if (!isRecording) beginRecordingSession();
+    };
+
+    /* ===========================================================
+       Transcription
+       =========================================================== */
+    const handleTranscribe = async () => {
+      if (!audioBlob) return;
+      setIsTranscribing(true);
+
+      try {
+        const text = await transcribeAudio(audioBlob);
+        setTranscript(text || "Could not transcribe audio.");
+      } catch (err: any) {
+        setTranscript("Transcription error: " + (err?.message || ""));
+      }
+
+      setIsTranscribing(false);
+    };
+
+    /* ===========================================================
+       Feedback Submission
+       =========================================================== */
+    const handleSubmitForFeedback = async () => {
+      setIsAnalyzing(true);
+
+      const q = allQuestions[currentQuestionIndex]?.question;
+      if (q && transcript.trim()) {
+        const id = `question_${currentQuestionIndex + 1}`;
+        const fb = await onGetFeedback(
+          q,
+          transcript.trim(),
+          id,
+          firebaseAudioUrl || undefined,
+          durationSeconds ?? undefined
+        );
+        if (fb) setLatestFeedback(fb);
+      }
+
+      setIsAnalyzing(false);
+    };
+
+    const isSupported =
+      typeof window !== "undefined" &&
+      typeof navigator !== "undefined" &&
+      typeof navigator.mediaDevices?.getUserMedia === "function" &&
+      typeof MediaRecorder !== "undefined";
+
+    if (!prepContent) return null;
+
+    const currentQuestion = allQuestions[currentQuestionIndex];
+    const prevQuestion = allQuestions[currentQuestionIndex - 1];
+    const showSectionTitle =
+      !prevQuestion || currentQuestion.sectionTitle !== prevQuestion.sectionTitle;
+
+    const score = latestFeedback?.score;
+    const scoreColor =
+      score === undefined
+        ? ""
+        : score >= 8
+        ? "text-green-600 bg-green-100 dark:bg-green-500/10 dark:text-green-400"
+        : score >= 5
+        ? "text-yellow-600 bg-yellow-100 dark:bg-yellow-500/10 dark:text-yellow-400"
+        : "text-red-600 bg-red-100 dark:bg-red-500/10 dark:text-red-400";
+
+    const isBusy = isRecorderBusy || isAnalyzing || isTranscribing;
+    return (
+      <>
+        <section id="interview-flow" ref={ref} className="mb-16 fade-in">
+          <div className="max-w-4xl mx-auto">
+            <div className="mb-12">
+              <TranslatableContent
+                contentId="key-talking-points"
+                htmlContent={prepContent.keyTalkingPoints || ""}
+              />
+            </div>
+
+            {showSectionTitle && (
+              <div className="mb-6 text-center">
+                <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-200 border-b-2 border-indigo-500 inline-block pb-2 px-4">
+                  {currentQuestion.sectionTitle}
+                </h2>
+              </div>
+            )}
+
+            {/* MAIN CARD */}
+            <div className="bg-white dark:bg-slate-800/50 p-6 sm:p-8 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700">
+              <div className="flex justify-between items-center mb-6">
+                <h3 className="text-lg font-bold text-indigo-600">
+                  Question {currentQuestionIndex + 1} of {allQuestions.length}
+                </h3>
+
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setCurrentQuestionIndex((i) => i - 1)}
+                    disabled={currentQuestionIndex === 0}
+                    className="p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                  </button>
+
+                  <button
+                    onClick={() => setCurrentQuestionIndex((i) => i + 1)}
+                    disabled={currentQuestionIndex === allQuestions.length - 1}
+                    className="p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <p className="text-2xl sm:text-3xl font-bold mb-2">
+                {currentQuestion.question}
+              </p>
+
+              {/* TABS */}
+              <div className="border-b border-slate-200 mb-6">
+                <nav className="flex items-center gap-3 -mb-px">
+                  <button
+                    onClick={() => setActiveTab("guidance")}
+                    className={`py-4 px-2 text-sm font-medium ${
+                      activeTab === "guidance"
+                        ? "text-indigo-600 border-b-2 border-indigo-600"
+                        : "text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200"
+                    }`}
+                  >
+                    Model Answer & Guidance
+                  </button>
+
+                  <button
+                    onClick={() => setActiveTab("practice")}
+                    className={`flex items-center gap-2 py-2.5 px-4 rounded-lg text-sm font-semibold text-white bg-red-600 hover:bg-red-700 ${
+                      activeTab === "practice" ? "ring-2 ring-red-300 ring-offset-2" : ""
+                    }`}
+                  >
+                    {/* Proper Mic SVG (Heroicons: outline/microphone) */}
+                    <svg
+                      className="w-5 h-5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 18v3m0 0h3m-3 0H9m6-6a3 3 0 01-6 0V7a3 3 0 016 0v6zm5-3v1a8 8 0 11-16 0v-1"
+                      />
+                    </svg>
+                    Practice Your Answer
+                  </button>
+                </nav>
+              </div>
+
+              {/* CONTENT */}
+              {activeTab === "guidance" && (
+                <div className="prose prose-slate max-w-none dark:prose-invert">
+                  <TranslatableContent
+                    contentId={`guidance-${currentQuestionIndex}`}
+                    htmlContent={`<h4>Model Answer</h4>${currentQuestion.modelAnswer || ""}<h4>Guidance</h4>${currentQuestion.guidance || ""}`}
+                  />
+                </div>
+              )}
+
+              {activeTab === "practice" && (
+                <div>
+                  <div className="text-center py-4">
+                    {/* RECORD BUTTON */}
+                    <button
+                      onClick={handleRecordClick}
+                      disabled={!isSupported || isAnalyzing || isTranscribing || isProcessing}
+                      className={`relative bg-red-600 text-white font-semibold py-4 px-8 rounded-full hover:bg-red-700 transition transform hover:scale-105 ${
+                        isRecording ? "recording-pulse" : ""
+                      } disabled:opacity-50`}
+                    >
+                      {isRecording ? "Stop Recording" : "Start New Recording"}
+                    </button>
+
+                    <div className="mt-4 h-6">
+                      {recorderError ? (
+                        <p className="text-red-500 text-sm">{recorderError}</p>
+                      ) : (
+                        <p className="font-mono text-slate-500">
+                          {isRecording && timer ? timer : audioBlob ? "Recording complete." : "Ready to record."}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* AUDIO PLAYER + TRANSCRIBE */}
+                  {!isRecording && audioUrl && !transcript && (
+                    <div className="mt-4 p-4 bg-slate-50 dark:bg-slate-700/50 rounded-xl border border-slate-200 dark:border-slate-600 text-center">
+                      <p className="text-sm mb-2 text-slate-700 dark:text-slate-200">Recording complete. Ready to transcribe.</p>
+
+                      <audio key={audioUrl} controls src={audioUrl} className="w-full"></audio>
+
+                      <div className="mt-4 flex gap-4">
+                        <button
+                          onClick={handleStartRecording}
+                          disabled={isBusy}
+                          className="flex-1 bg-slate-200 text-slate-700 dark:bg-slate-600 dark:text-slate-200 py-3 rounded-xl hover:bg-slate-300 dark:hover:bg-slate-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          Record Again
+                        </button>
+                        <button
+                          onClick={handleTranscribe}
+                          disabled={isTranscribing}
+                          className="flex-1 bg-indigo-600 text-white py-3 rounded-xl hover:bg-indigo-700 dark:hover:bg-indigo-500 disabled:bg-slate-400 dark:disabled:bg-slate-600 disabled:cursor-not-allowed"
+                        >
+                          {isTranscribing ? "Transcribing…" : "Transcribe"}
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* TRANSCRIPT EDITOR */}
+                  {transcript && (
+                    <div className="mt-4">
+                      <label className="text-sm mb-2 block">Your Answer Transcript:</label>
+                      <AutoResizeTextarea
+                        value={transcript}
+                        onChange={(e) => setTranscript(e.target.value)}
+                        disabled={isRecording || isTranscribing}
+                        className="w-full p-4 bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-lg"
+                      />
+
+                      <div className="mt-4 grid grid-cols-2 gap-4">
+                        <button onClick={handleStartRecording} disabled={isBusy} className="bg-slate-600 text-white py-3 rounded-lg">
+                          Record Again
+                        </button>
+
+                        <button
+                          onClick={handleSubmitForFeedback}
+                          disabled={!transcript || isAnalyzing}
+                          className="bg-indigo-600 text-white py-3 rounded-lg"
+                        >
+                          {isAnalyzing ? "Analyzing…" : "Submit for Feedback"}
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* FEEDBACK */}
+                  {latestFeedback && (
+                    <div className="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700 mt-6">
+                      <div className="flex justify-between">
+                        <div>
+                          <h4 className="text-lg font-semibold text-slate-800 dark:text-slate-200">
+                            Your Feedback
+                          </h4>
+                          <p className="text-xs text-slate-500 dark:text-slate-400">
+                            {new Date(latestFeedback.timestamp).toLocaleString()}
+                          </p>
+                        </div>
+
+                        <div className={`w-24 h-24 rounded-full flex items-center justify-center ${scoreColor}`}>
+                          <p className="text-4xl font-bold">
+                            {latestFeedback.score}
+                            <span className="text-2xl opacity-60">/10</span>
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="mt-4 prose prose-sm max-w-none prose-slate dark:prose-invert">
+                        <TranslatableContent
+                          contentId={`feedback-${latestFeedback.id}`}
+                          htmlContent={latestFeedback.feedback}
+                        />
+                      </div>
+
+                      <h5 className="font-semibold mt-6 mb-2 text-sm text-slate-700 dark:text-slate-300">
+                        Your Answer Transcript:
+                      </h5>
+                      <p className="text-sm p-3 bg-white dark:bg-slate-900/70 rounded-md border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300">
+                        {latestFeedback.transcript}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* HISTORY */}
+        {history.length > 0 && (
+          <section id="history" className="mb-16 fade-in">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex justify-between items-center border-b border-slate-200 dark:border-slate-700 pb-3 mb-8">
+                <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-200">Practice History</h2>
+
+                <button
+                  onClick={onClearHistory}
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-500 flex items-center gap-1"
+                >
+                  Clear History
+                </button>
+              </div>
+
+              <div className="space-y-4">
+                {history.map((item) => {
+                  const color =
+                    item.score >= 8
+                      ? "bg-green-100 dark:bg-green-500/10 text-green-800 dark:text-green-300"
+                      : item.score >= 5
+                      ? "bg-yellow-100 dark:bg-yellow-500/10 text-yellow-800 dark:text-yellow-300"
+                      : "bg-red-100 dark:bg-red-500/10 text-red-800 dark:text-red-300";
+
+                  return (
+                    <details
+                      key={item.id}
+                      className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow"
+                    >
+                      <summary className="flex justify-between items-center p-4 cursor-pointer">
+                        <div className="flex-grow pr-4">
+                          <p className="font-semibold text-slate-700 dark:text-slate-200">{item.question}</p>
+                          <p className="text-xs text-slate-500 dark:text-slate-400">
+                            {new Date(item.timestamp).toLocaleString()}
+                          </p>
+                        </div>
+
+                        <span className={`text-sm font-bold px-3 py-1 rounded-full ${color}`}>
+                          {item.score}/10
+                        </span>
+                      </summary>
+
+                      <div className="p-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-700">
+                        <h5 className="font-semibold text-xs uppercase mb-1 text-slate-600 dark:text-slate-300">
+                          Content Feedback
+                        </h5>
+
+                        <TranslatableContent
+                          contentId={`history-feedback-${item.id}`}
+                          htmlContent={item.feedback}
+                        />
+
+                        <h5 className="font-semibold text-xs uppercase mt-4 mb-1 text-slate-600 dark:text-slate-300">
+                          Your Answer:
+                        </h5>
+                        <p className="text-sm text-slate-700 dark:text-slate-200">{item.transcript}</p>
+                      </div>
+                    </details>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
+      </>
+    );
+  }
+);
 
 export default PracticeSection;

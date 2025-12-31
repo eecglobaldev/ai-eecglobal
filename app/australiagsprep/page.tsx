@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import AustraliaGsApp from '@/features/australia-gs/components/AustraliaGsApp';
 import AustraliaGsStructuredData from '@/features/australia-gs/components/AustraliaGsStructuredData';
+import GoogleTagManager from '@/components/GoogleTagManager';
 
 export const metadata: Metadata = {
     title: 'Free AI Australia GS Interview Prep Tool by EEC',
@@ -32,6 +33,12 @@ export const metadata: Metadata = {
     },
     alternates: {
         canonical: 'https://ai.eecglobal.com/australiagsprep/',
+        types: {
+            'application/rss+xml': [{ url: '/australiagsprep/feed.xml', title: 'RSS Feed' }],
+        },
+    },
+    other: {
+        'google-site-verification': 'rqiI0_ZlREHbdPNC1E_HUY_RMmHcYEiO6yL9HdZ1VfE',
     },
     icons: {
         icon: [
@@ -42,14 +49,16 @@ export const metadata: Metadata = {
             { url: '/apple-touch-icon.png', sizes: '180x180' },
         ],
     },
-    other: {
-        'google-site-verification': 'rqiI0_ZlREHbdPNC1E_HUY_RMmHcYEiO6yL9HdZ1VfE',
+    robots: {
+        index: true,
+        follow: true,
     },
 };
 
 export default function AustraliaGsPrepPage() {
     return (
         <>
+            <GoogleTagManager />
             <AustraliaGsStructuredData />
             <AustraliaGsApp />
         </>

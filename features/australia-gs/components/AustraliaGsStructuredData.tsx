@@ -5,7 +5,7 @@ export default function AustraliaGsStructuredData() {
       {
         "@type": "WebSite",
         "@id": "#website",
-        "url": "https://ai.eecglobal.com/australiagsprep//",
+        "url": "https://ai.eecglobal.com/australiagsprep",
         "name": "EEC Australia GS Prep Tool",
         "publisher": { "@id": "#organization" },
         "potentialAction": {
@@ -20,7 +20,7 @@ export default function AustraliaGsStructuredData() {
       {
         "@type": "WebPage",
         "@id": "#webpage",
-        "url": "https://ai.eecglobal.com/australiagsprep//",
+        "url": "https://ai.eecglobal.com/australiagsprep",
         "name": "Free AI Australia GS Interview Prep Tool by EEC",
         "author": [
           { "@id": "#amit-jalan" },
@@ -294,6 +294,11 @@ export default function AustraliaGsStructuredData() {
         "name": "Diploma of Information Technology",
         "provider": { "@id": "#tafensw" },
         "funder": { "@id": "#organization" }
+      },
+      {
+        "@type": "WebFeed",
+        "url": "https://ai.eecglobal.com/australiagsprep/feed.xml",
+        "mainEntityOfPage": { "@id": "#webpage" }
       }
     ]
   };

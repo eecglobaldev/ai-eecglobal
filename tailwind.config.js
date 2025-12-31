@@ -10,6 +10,11 @@ export default {
             colors: {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
+                'primary-purple': '#7C3AED',
+                'primary-dark-purple': '#2E1A47',
+                'secondary-pink': '#EC4899',
+                'glass-bg': 'rgba(46, 26, 71, 0.5)',
+                'glass-border': 'rgba(255, 255, 255, 0.1)',
             },
             fontFamily: {
                 sans: ['var(--font-inter)'],

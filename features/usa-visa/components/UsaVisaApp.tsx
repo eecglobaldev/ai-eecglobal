@@ -334,132 +334,35 @@ const UsaVisaApp: React.FC = () => {
         }
     };
 
-    // onSaveFunc replacement for onGetFeedback to align with PracticeSection props if needed, 
-    // or adapting PracticeSection to match App logic
-    // PracticeSection expects `onSaveFunc: (blob, text, question) => Promise<void>`
-    // App.tsx has `handleGetFeedback`.
-    // I need to adapt the handler.
-
-    // Wait, looking at App.tsx lines 391+:
-    // handleGetFeedback takes (question, transcript, questionId, audioUrl, duration).
-    // PracticeSection lines from migration:
-    // onSaveFunc(audioBlob, userAnswer, currentQuestionText)
-    // and then PracticeSection handles uploadToStorage.
-    // Actually, in `PracticeSection.tsx` migration:
-    // `const handleSave = async () => { ... await onSaveFunc(audioBlob, userAnswer, currentQuestionText); ... }`
-    // So `onSaveFunc` needs to handle the logic.
-
-    // Let's create an adapter in `UsaVisaApp`.
-
-    const onSavePracticeItem = async (blob: Blob | null, text: string, question: string) => {
+    const handleGetFeedback = async (
+        question: string,
+        transcript: string,
+        questionId?: string,
+        audioUrl?: string,
+        audioDurationSeconds?: number
+    ): Promise<HistoryItem | null> => {
         if (!isLoggedIn) {
             setShowAuthModal(true);
             setAuthScreen('login');
-            showModal('Please log in to save your practice.');
-            return; // reject promise? PracticeSection expects promise
+            showModal('Please log in to get feedback on your practice.');
+            return null;
         }
+        try {
+            const feedback = await analyzeAnswer(question, transcript);
 
-        // This resembles logic in PracticeSection / App.tsx interaction.
-        // In original App.tsx, there was `handleGetFeedback`.
-        // In original `PracticeSection` (as migrated), we need to see what `onSaveFunc` does.
-        // Wait, looking at `PracticeSection.tsx` code I wrote earlier:
-        // `import { uploadToStorage } from '../services/storageService';`
-        // It uses `uploadToStorage` inside itself? No, `PracticeSection` calls `onSaveFunc`. 
-        // Oh, wait. In `PracticeSection.tsx`:
-        /*
-            const handleSave = async () => {
-                ...
-                await onSaveFunc(audioBlob, userAnswer, currentQuestionText);
-                ...
-            }
-        */
-        // But `PracticeSection` also had `uploadToStorage` import. Where is it used?
-        // Ah, I might have kept `uploadToStorage` import but not used it if I delegated to `onSaveFunc`.
-        // OR `PracticeSection` handles upload and passes URL to `onSaveFunc`.
-        // Let's double check `PracticeSection.tsx` I wrote in step 1164.
-        // I see `import { uploadToStorage } ...` 
-        // But in `handleSave`: `await onSaveFunc(audioBlob, userAnswer, currentQuestionText);`
-        // It seems `PracticeSection` delegates EVERYTHING to `onSaveFunc`.
-        // So `UsaVisaApp` must implement the upload logic if `PracticeSection` doesn't.
-
-        // However, `useRecorder.ts` returns `audioBlob`. `uploadToStorage` takes blob and returns URL.
-        // If `PracticeSection` does NOT call `uploadToStorage`, then `UsaVisaApp` must do it.
-        // But `PracticeSection` has the import.
-
-        // Let's assume `UsaVisaApp` should handle it.
-        // In the original `App.tsx`, `handleGetFeedback` takes `audioUrl`.
-        // This implies the child `PracticeSection` performed the upload in the original code?
-        // Original `PracticeSection` (not shown fully) likely did the upload.
-        // In my `PracticeSection.tsx` migration, I see `uploadToStorage` import.
-        // But I didn't see where it was used in the code block I provided in 1164!
-        // I might have missed using it in `handleSave`.
-
-        // Let's look at `PracticeSection.tsx` again (from my memory/tool output).
-        // `PracticeSection` imports it.
-        // `handleSave` calls `onSaveFunc`.
-        // If `PracticeSection` is supposed to upload, it should do it before `onSaveFunc`.
-        // If I missed that logic in `PracticeSection` migration, I should fix it or handle it here.
-
-        // For robustness, I'll implement the upload here in `UsaVisaApp` adapter if blob is present.
-
-        let audioUrl = '';
-        if (blob) {
-            // We need to upload. But we need `uploadToStorage`. 
-            // Ideally `PracticeSection` does it because it has the blob state and UI for "Saving".
-            // If I move upload to here, `PracticeSection` "Saving" state waits for this promise.
-            // So it's fine.
-            // I need to import `uploadToStorage` in `UsaVisaApp` too if I do it here. Or rely on `PracticeSection` doing it.
-            // Given the import was in `PracticeSection`, I probably intended it there.
-            // But if I missed adding the call in `PracticeSection`, I should fix `PracticeSection`.
-
-            // Actually, checking `task.md`, user extract `uploadToStorage` to `storageService`.
-            // I updated `PracticeSection` to import it.
-            // I suspect `PracticeSection` *should* have done the upload.
-
-            // Let's implement robust handler here:
-            // If blob is passed, I'll upload it here using `uploadToStorage` (I need to import it).
-            // `uploadToStorage` was moved to `../services/storageService`.
-            // I will add the import to `UsaVisaApp.tsx`.
-        }
-
-        // Logic for `onSavePracticeItem`:
-        let uploadedUrl: string | undefined;
-        let duration = 0; // approximate or get from blob?
-
-        if (blob) {
-            const { uploadToStorage } = await import('../services/storageService');
-            // Assuming simplified upload for now or if `PracticeSection` didn't.
-            // But wait, `uploadToStorage` requires `userId`. `PracticeSection` doesn't have `userId`. 
-            // `UsaVisaApp` has `userId` (via `ensureUserSignedIn` or cache).
-            // So `UsaVisaApp` IS the right place for upload if `PracticeSection` is pure UI + Recorder.
-
-            // Get userId
-            let userId: string | null = null;
-            try {
-                const firebaseUser = await ensureUserSignedIn();
-                userId = firebaseUser.uid;
-            } catch (e) {
-                const userEmail = typeof window !== 'undefined' ? window.localStorage.getItem('USAUserEmail') : null;
-                if (userEmail) userId = await getUserIdByEmail(userEmail);
+            if (!feedback) {
+                showModal("The AI returned content feedback in an unexpected format. Please try again.");
+                return null;
             }
 
-            if (userId) {
-                const audioPath = `practice_audio/${userId}/${Date.now()}.webm`;
-                uploadedUrl = await uploadToStorage(blob as Blob, audioPath);
-            }
-        }
-
-        // Analyze answer (Get Feedback)
-        const feedback = await analyzeAnswer(question, text); // text is transcript or typed answer
-
-        if (feedback) {
             const newHistoryItem: HistoryItem = {
                 id: Date.now(),
                 timestamp: new Date().toISOString(),
                 question,
-                transcript: text,
-                audioUrl: uploadedUrl,
-                audioDurationSeconds: duration,
+                questionId,
+                transcript,
+                audioUrl,
+                audioDurationSeconds,
                 ...feedback,
             };
 
@@ -474,6 +377,12 @@ const UsaVisaApp: React.FC = () => {
             } catch (e) {
                 console.error("Failed to save history:", e);
             }
+
+            return newHistoryItem;
+        } catch (error) {
+            console.error("Error getting feedback:", error);
+            showModal(error instanceof Error ? error.message : "An error occurred while getting feedback.");
+            return null;
         }
     };
 
@@ -759,43 +668,13 @@ const UsaVisaApp: React.FC = () => {
 
                     {prepContent && (
                         <PracticeSection
-                            content={prepContent}
-                            currentQuestionIndex={currentQuestionIndex} // Managed by App usually? Or PracticeSection manages itself? 
-                            // PracticeSection migration showed it takes `currentQuestionIndex` prop.
-                            // But in `App.tsx` I viewed earlier, there was no `currentQuestionIndex` state used in App for PracticeSection!
-                            // `PracticeSection` in App.tsx was passed `prepContent`, `history`, `onGetFeedback`, `onClearHistory`.
-                            // So `PracticeSection` must have managed its own index or used `useAppState`'s index?
-                            // `useAppState` returns `currentQuestionIndex`!
-                            // So `PracticeSection` probably should use that from `useAppState` OR receive it as prop.
-                            // In my migration of `PracticeSection`, I defined props: `currentQuestionIndex`.
-                            // I need to pass it from `UsaVisaApp`.
-                            // I missed destructuring `currentQuestionIndex` and `setCurrentQuestionIndex` (if exists) from `useAppState`.
-                            // Let's add it.
-
-                            // Ah, `useAppState.ts` (viewed earlier) has `currentQuestionIndex` and `setCurrentQuestionIndex`?
-                            // "This hook manages ... currentQuestionIndex". 
-                            // Yes.
-
-                            // Let's update `UsaVisaApp` to get them from `useAppState`.
-
+                            ref={interviewSectionRef}
+                            prepContent={prepContent}
                             history={history}
-                            onNextQuestion={() => {
-                                const questions = prepContent.interview_questions || prepContent.sections?.flatMap(s => s.questions || []) || [];
-                                setCurrentQuestionIndex(prev => Math.min(prev + 1, questions.length - 1));
-                            }}
-                            onPrevQuestion={() => setCurrentQuestionIndex(prev => Math.max(prev - 1, 0))}
-                            onSelectHistoryItem={(item) => {
-                                const questions = prepContent.interview_questions || prepContent.sections?.flatMap(s => s.questions || []) || [];
-                                const idx = questions.findIndex(q => q.question === item.question);
-                                if (idx !== -1) setCurrentQuestionIndex(idx);
-                            }}
-                            onSaveFunc={onSavePracticeItem}
+                            onGetFeedback={handleGetFeedback}
+                            onClearHistory={handleClearHistory}
                         />
                     )}
-                    {/* Wait, I need to pass proper props to PracticeSection or update PracticeSection to use useAppState locally if preferred.
-                        But I already migrated PracticeSection to take props. 
-                        So I must wire them here.
-                    */}
                 </main>
 
                 <PillarContent />
