@@ -16,6 +16,7 @@ import RightPanel from './components/RightPanel';
 import ScoreDistribution from './components/ScoreDistribution';
 import ApplicationInfo from './components/ApplicationInfo';
 import { ClockIcon, TrendingUpIcon, UploadIcon, FireIcon } from './components/icons';
+import { createMissingProfile, isProfileMissing } from './utils/createMissingProfile';
 
 // Lazy load heavy components for better initial load performance
 const PracticeHistoryList = lazy(() => import('./components/PracticeHistoryList'));
@@ -129,12 +130,16 @@ const AustraliaGsDashboard: React.FC = () => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+            console.log('[Australia GS Dashboard] Auth state changed:', currentUser ? `User: ${currentUser.email} (${currentUser.uid})` : 'No user');
+            
             if (currentUser) {
                 // User is authenticated, fetch their profile
                 let profileData: StudentProfile | null = null;
                 let userId: string | null = null;
                 
                 try {
+                    console.log(`[Australia GS Dashboard] Attempting to fetch profile for UID: ${currentUser.uid}`);
+                    
                     // First, try to get document using UID as document ID
                     const docRef = doc(db, COLLECTION_NAME, currentUser.uid);
                     const docSnap = await getDoc(docRef);
@@ -143,9 +148,10 @@ const AustraliaGsDashboard: React.FC = () => {
                         // Document found with UID as ID
                         userId = currentUser.uid;
                         profileData = { id: docSnap.id, ...docSnap.data() } as StudentProfile;
+                        console.log(`[Australia GS Dashboard] ✅ Profile found by UID: ${userId}`);
                     } else {
                         // Fallback: Try to find user by email query (for legacy users or different document structure)
-                        console.log(`No document found with UID ${currentUser.uid}, trying email query...`);
+                        console.log(`[Australia GS Dashboard] ⚠️ No document found with UID ${currentUser.uid}, trying email query...`);
                         const usersRef = collection(db, COLLECTION_NAME);
                         const emailQuery = query(usersRef, where("email", "==", currentUser.email || ""));
                         const emailSnapshot = await getDocs(emailQuery);
@@ -155,16 +161,37 @@ const AustraliaGsDashboard: React.FC = () => {
                             const userDoc = emailSnapshot.docs[0];
                             userId = userDoc.id;
                             profileData = { id: userDoc.id, ...userDoc.data() } as StudentProfile;
-                            console.log(`Found user by email with document ID: ${userId}`);
+                            console.log(`[Australia GS Dashboard] ✅ Found user by email with document ID: ${userId}`);
                         } else {
-                            console.error(`No profile document found for UID: ${currentUser.uid} or email: ${currentUser.email}`);
-                            console.error(`Please ensure a document exists at: ${COLLECTION_NAME}/${currentUser.uid} or queryable by email`);
+                            console.error(`[Australia GS Dashboard] ❌ No profile document found for UID: ${currentUser.uid} or email: ${currentUser.email}`);
+                            console.error(`[Australia GS Dashboard] Please ensure a document exists at: ${COLLECTION_NAME}/${currentUser.uid} or queryable by email`);
+                            
+                            // Try to create a minimal profile document
+                            console.log(`[Australia GS Dashboard] 🔧 Attempting to create missing profile document...`);
+                            const createResult = await createMissingProfile();
+                            
+                            if (createResult.success) {
+                                console.log(`[Australia GS Dashboard] ✅ Created missing profile, reloading...`);
+                                // Retry fetching the profile
+                                const retryDocRef = doc(db, COLLECTION_NAME, currentUser.uid);
+                                const retryDocSnap = await getDoc(retryDocRef);
+                                
+                                if (retryDocSnap.exists()) {
+                                    userId = currentUser.uid;
+                                    profileData = { id: retryDocSnap.id, ...retryDocSnap.data() } as StudentProfile;
+                                    console.log(`[Australia GS Dashboard] ✅ Profile loaded after creation`);
+                                }
+                            } else {
+                                console.error(`[Australia GS Dashboard] ❌ Failed to create profile: ${createResult.error}`);
+                            }
                         }
                     }
                     
                     // If we found a profile, fetch application subcollection data
                     if (profileData && userId) {
                         try {
+                            console.log(`[Australia GS Dashboard] Fetching application data for userId: ${userId}`);
+                            
                             // First, try to get from 'application' subcollection
                             const applicationCollectionRef = collection(db, COLLECTION_NAME, userId, 'application');
                             const applicationSnapshot = await getDocs(applicationCollectionRef);
@@ -173,24 +200,32 @@ const AustraliaGsDashboard: React.FC = () => {
                                 // Get the first document from the application subcollection
                                 const firstDoc = applicationSnapshot.docs[0];
                                 profileData.applicationData = { id: firstDoc.id, ...firstDoc.data() };
+                                console.log(`[Australia GS Dashboard] ✅ Application data loaded from subcollection`);
                             } else {
                                 // If subcollection is empty, try getting specific document
                                 const applicationDocRef = doc(db, COLLECTION_NAME, userId, 'application', 'full_application_data');
                                 const applicationSnap = await getDoc(applicationDocRef);
                                 if (applicationSnap.exists()) {
                                     profileData.applicationData = applicationSnap.data();
+                                    console.log(`[Australia GS Dashboard] ✅ Application data loaded from specific document`);
                                 }
                             }
                         } catch (appError) {
-                            console.warn('Could not fetch application subcollection:', appError);
+                            console.warn('[Australia GS Dashboard] ⚠️ Could not fetch application subcollection:', appError);
                         }
                         
                         setStudentProfile(profileData);
+                        console.log(`[Australia GS Dashboard] ✅ Profile loaded successfully`);
+                    } else {
+                        console.warn(`[Australia GS Dashboard] ⚠️ Profile data or userId is null, cannot load dashboard`);
                     }
                 } catch (error) {
-                    console.error('Error fetching student profile:', error);
+                    console.error('[Australia GS Dashboard] ❌ Error fetching student profile:', error);
                 }
+            } else {
+                console.log('[Australia GS Dashboard] ⚠️ No authenticated user found');
             }
+            
             setLoading(false);
         });
 
@@ -260,8 +295,25 @@ const AustraliaGsDashboard: React.FC = () => {
                     </main>
                 </>
             ) : (
-                    <div className="flex items-center justify-center min-h-screen w-full px-4">
-                        <p className="text-center">No student profile could be loaded.</p>
+                    <div className="flex flex-col items-center justify-center min-h-screen w-full px-4 gap-4">
+                        <p className="text-center text-lg font-semibold">No student profile could be loaded.</p>
+                        <p className="text-center text-sm text-slate-500 dark:text-slate-400 max-w-md">
+                            This usually means you haven't completed the registration process yet. 
+                            Please go back to the main page and complete your profile setup first.
+                        </p>
+                        <button
+                            onClick={() => window.location.href = '/australiagsprep'}
+                            className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                        >
+                            Go to Main Page
+                        </button>
+                        <details className="mt-4 text-xs text-slate-400 dark:text-slate-500 max-w-md">
+                            <summary className="cursor-pointer">Debug Information</summary>
+                            <div className="mt-2 p-2 bg-slate-100 dark:bg-slate-800 rounded text-left">
+                                <p>Check browser console (F12) for detailed error messages.</p>
+                                <p>Look for messages starting with "[Australia GS Dashboard]".</p>
+                            </div>
+                        </details>
                     </div>
             )}
         </div>

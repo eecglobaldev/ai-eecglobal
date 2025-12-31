@@ -334,7 +334,7 @@ export const globalRegisterUser = async (
   collection: string = 'australia_gs_users'
 ): Promise<{ success: boolean; uid: string; message: string } | null> => {
   try {
-    const functionUrl = 'https://us-central1-usa-visa-prep-c72f7.cloudfunctions.net/registerUser';
+    const functionUrl = 'https://us-central1-usa-visa-prep-c72f7.cloudfunctions.net/demoregisterUser';
     const response = await fetch(functionUrl, {
       method: 'POST',
       headers: {

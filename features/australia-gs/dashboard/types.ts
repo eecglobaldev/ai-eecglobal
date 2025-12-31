@@ -80,6 +80,10 @@ export interface StudentProfile {
   // FIX: Add missing properties to StudentProfile to match data structure and fix type errors.
   practice_history?: { [key: string]: Omit<PracticeAttempt, 'id'> };
   prep_data?: { [key: string]: Omit<PrepData, 'id'> };
+  isVerified?: boolean;
+  count?: number;
+  createdAt?: any; // Firestore timestamp
+  updatedAt?: any; // Firestore timestamp
 }
 
 export interface TimelineData {
