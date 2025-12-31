@@ -5,9 +5,13 @@ import type { Profile, PrepContent, HistoryItem, Question } from '../types';
 // This ensures the API key from process.env is available at the time of the API call, resolving race conditions on app load.
 const getAiClient = () => {
     // The error "An API Key must be set..." is thrown by the constructor if the key is missing.
-    // Per guidelines, we must assume process.env.API_KEY is configured and available in the execution context.
+    // Per guidelines, we must assume process.env.NEXT_PUBLIC_GEMINI_API_KEY_AUSTRALIA_GS is configured and available in the execution context.
     // By creating the instance just-in-time, we ensure we read the key at the moment of the API call.
-    return new GoogleGenAI({ apiKey: process.env.API_KEY! });
+    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY_AUSTRALIA_GS;
+    if (!apiKey) {
+        throw new Error("NEXT_PUBLIC_GEMINI_API_KEY_AUSTRALIA_GS environment variable not set");
+    }
+    return new GoogleGenAI({ apiKey });
 };
 
 const buildProfileSummary = (profile: Profile, fromSop: boolean): string => {

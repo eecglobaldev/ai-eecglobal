@@ -4,10 +4,10 @@ import { UserProfile, Question, Feedback, Sponsor, CareerGoalOption, WorkExperie
 // Use Next.js public environment variable for client-side API usage
 // WARNING: This exposes the API key to the client. This is migrated from the original Vite app.
 // In a production Next.js app, this should ideally be moved to Server Actions/API Routes.
-const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY_USA_VISA;
 
 if (!API_KEY) {
-    console.error("NEXT_PUBLIC_GEMINI_API_KEY environment variable not set");
+    console.error("NEXT_PUBLIC_GEMINI_API_KEY_USA_VISA environment variable not set");
     // Throwing error might break the app if this file is imported but not used.
     // We'll let it fail when `ai` is used if key is missing.
 }

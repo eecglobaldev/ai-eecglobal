@@ -22,9 +22,9 @@ The JSON object must have the following keys:
 };
 
 export const callGeminiApi = async (prompt: string): Promise<GuidanceReport> => {
-  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY_CAREER_COUNSELOR;
   if (!apiKey) {
-    throw new Error("Gemini API key is not configured");
+    throw new Error("NEXT_PUBLIC_GEMINI_API_KEY_CAREER_COUNSELOR is not configured");
   }
 
   const ai = new GoogleGenAI({ apiKey });

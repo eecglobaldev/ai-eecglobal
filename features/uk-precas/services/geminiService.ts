@@ -3,11 +3,12 @@ import { StudentProfile } from '../types';
 
 // Use NEXT_PUBLIC_ prefix for client-side access in Next.js
 const getApiKey = () => {
-  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY || process.env.API_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY_UK_PRECAS;
   if (!apiKey) {
-    console.error("Gemini API key environment variable not set.");
+    console.error("NEXT_PUBLIC_GEMINI_API_KEY_UK_PRECAS environment variable not set.");
+    throw new Error("NEXT_PUBLIC_GEMINI_API_KEY_UK_PRECAS is required");
   }
-  return apiKey!;
+  return apiKey;
 };
 
 const getAiClient = () => {

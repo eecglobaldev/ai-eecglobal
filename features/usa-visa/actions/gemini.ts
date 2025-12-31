@@ -3,11 +3,18 @@
 import { GoogleGenAI, Type, Modality } from "@google/genai";
 import { UserProfile, Feedback, CareerGoalOption, PrepContent } from '../types';
 
-if (!process.env.GEMINI_API_KEY) {
-    throw new Error("GEMINI_API_KEY environment variable not set");
+// Server Action: Use server-side environment variable (no NEXT_PUBLIC_ prefix needed)
+// Fallback to client-side key for compatibility
+const getApiKey = () => {
+    return process.env.GEMINI_API_KEY_USA_VISA || process.env.NEXT_PUBLIC_GEMINI_API_KEY_USA_VISA;
+};
+
+const apiKey = getApiKey();
+if (!apiKey) {
+    throw new Error("GEMINI_API_KEY_USA_VISA or NEXT_PUBLIC_GEMINI_API_KEY_USA_VISA environment variable not set");
 }
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const ai = new GoogleGenAI({ apiKey });
 
 const extractJson = <T,>(text: string | undefined): T | null => {
     if (!text) return null;

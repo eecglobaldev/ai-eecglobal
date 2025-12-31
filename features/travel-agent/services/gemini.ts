@@ -4,9 +4,9 @@ import { VisaRequirements, ChecklistCategory } from "../types";
 
 const getAiClient = () => {
   // Next.js environment variable access
-  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY as string | undefined;
+  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY_TRAVEL_AGENT as string | undefined;
   if (!apiKey) {
-    throw new Error("NEXT_PUBLIC_GEMINI_API_KEY is not defined in environment variables.");
+    throw new Error("NEXT_PUBLIC_GEMINI_API_KEY_TRAVEL_AGENT is not defined in environment variables.");
   }
   return new GoogleGenAI({ apiKey });
 };

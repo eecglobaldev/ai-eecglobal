@@ -168,9 +168,11 @@ export default function NzVisaApp() {
 
   useEffect(() => {
     // Use NEXT_PUBLIC_ prefix for client-side access in Next.js
-    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY || process.env.API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY_NZ_VISA;
     if (apiKey) {
       ai.current = new GoogleGenAI({ apiKey });
+    } else {
+      console.error("NEXT_PUBLIC_GEMINI_API_KEY_NZ_VISA environment variable not set");
     }
   }, []);
   
@@ -240,9 +242,9 @@ export default function NzVisaApp() {
 
   const makeApiCall = async (promptOrContents: string | { parts: any[] }, systemInstruction?: string): Promise<string | null> => {
     // Use NEXT_PUBLIC_ prefix for client-side access in Next.js
-    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY || process.env.API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY_NZ_VISA;
     if (!apiKey) {
-        showModal("API Key is not configured. Please ensure it is set up in your environment variables.");
+        showModal("API Key is not configured. Please ensure NEXT_PUBLIC_GEMINI_API_KEY_NZ_VISA is set up in your environment variables.");
         return null;
     }
     if (!ai.current) {
