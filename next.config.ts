@@ -10,6 +10,15 @@ const nextConfig: NextConfig = {
     ],
   },
   trailingSlash: true,
+  // Explicitly expose environment variables to ensure they're available at build time
+  env: {
+    NEXT_PUBLIC_GEMINI_API_KEY_USA_VISA: process.env.NEXT_PUBLIC_GEMINI_API_KEY_USA_VISA,
+    NEXT_PUBLIC_GEMINI_API_KEY_AUSTRALIA_GS: process.env.NEXT_PUBLIC_GEMINI_API_KEY_AUSTRALIA_GS,
+    NEXT_PUBLIC_GEMINI_API_KEY_NZ_VISA: process.env.NEXT_PUBLIC_GEMINI_API_KEY_NZ_VISA,
+    NEXT_PUBLIC_GEMINI_API_KEY_UK_PRECAS: process.env.NEXT_PUBLIC_GEMINI_API_KEY_UK_PRECAS,
+    NEXT_PUBLIC_GEMINI_API_KEY_CAREER_COUNSELOR: process.env.NEXT_PUBLIC_GEMINI_API_KEY_CAREER_COUNSELOR,
+    NEXT_PUBLIC_GEMINI_API_KEY_TRAVEL_AGENT: process.env.NEXT_PUBLIC_GEMINI_API_KEY_TRAVEL_AGENT,
+  },
   async headers() {
     return [
       {
