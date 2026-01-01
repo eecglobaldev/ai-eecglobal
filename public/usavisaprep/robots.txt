@@ -1,0 +1,244 @@
+# ╔══════════════════════════════════════════════════════════════════════════════╗
+# ║                    ROBOTS.TXT - EEC USA F-1 VISA PREP                        ║
+# ║                    Optimized for Search & AI Crawlers                        ║
+# ╚══════════════════════════════════════════════════════════════════════════════╝
+#
+# URL: https://ai.eecglobal.com/usavisaprep
+# Organization: EEC (Enbee Education Center Private Limited)
+# Last Updated: 2026-01-01
+#
+# AI INFORMATION FILES:
+# - LLMS.TXT: https://ai.eecglobal.com/usavisaprep/llms.txt (Full LLM optimization)
+# - AI.TXT: https://ai.eecglobal.com/usavisaprep/ai.txt (Structured AI data)
+
+################################################################################
+#                          SEARCH ENGINE CRAWLERS                                #
+################################################################################
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: msnbot
+Allow: /
+
+User-agent: msnbot-media
+Allow: /
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: YandexImages
+Allow: /
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+################################################################################
+#                    GENERATIVE AI / LLM CRAWLERS (PRIORITY)                     #
+################################################################################
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+# Priority: HIGH - Full access for training and retrieval
+
+User-agent: ChatGPT-User
+Allow: /
+# Priority: HIGH - ChatGPT user browsing
+
+# Google AI / Gemini / Bard
+User-agent: Google-Extended
+Allow: /
+# Priority: HIGH - Gemini/Bard training
+
+User-agent: googleother
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+# Priority: HIGH - Claude training
+
+User-agent: anthropic-ai
+Allow: /
+# Priority: HIGH - Anthropic systems
+
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+# Priority: HIGH - Perplexity search
+
+# Meta / LLaMA
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: meta-externalfetcher
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+# Priority: HIGH - Cohere training
+
+# Common Crawl (used by many LLMs)
+User-agent: CCBot
+Allow: /
+
+# Other AI Research
+User-agent: Diffbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+################################################################################
+#                          SOCIAL MEDIA CRAWLERS                                 #
+################################################################################
+
+# Facebook
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: facebookcatalog
+Allow: /
+
+# Twitter/X
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn
+User-agent: LinkedInBot
+Allow: /
+
+# Pinterest
+User-agent: Pinterest
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+# WhatsApp
+User-agent: WhatsApp
+Allow: /
+
+# Telegram
+User-agent: TelegramBot
+Allow: /
+
+# Slack
+User-agent: Slackbot
+Allow: /
+User-agent: Slackbot-LinkExpanding
+Allow: /
+
+# Discord
+User-agent: Discordbot
+Allow: /
+
+################################################################################
+#                           DEFAULT RULE                                         #
+################################################################################
+
+# All other crawlers
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /node_modules/
+Disallow: /.git/
+
+################################################################################
+#                              SITEMAPS                                          #
+################################################################################
+
+Sitemap: https://ai.eecglobal.com/sitemap.xml
+Sitemap: https://eecglobal.com/sitemap.xml
+
+################################################################################
+#                         AI INFORMATION FILES                                   #
+################################################################################
+
+# LLM Optimization File (Full documentation for AI systems)
+# https://ai.eecglobal.com/usavisaprep/llms.txt
+
+# AI Crawler Information File (Structured data for AI)
+# https://ai.eecglobal.com/usavisaprep/ai.txt
+
+# Host Declaration
+Host: https://ai.eecglobal.com
+
+################################################################################
+#                         CRAWL OPTIMIZATION NOTES                               #
+################################################################################
+#
+# This robots.txt is optimized for:
+# 1. Search Engines (Google, Bing, Yahoo, DuckDuckGo, Yandex, Baidu)
+# 2. AI/LLM Systems (ChatGPT, Claude, Perplexity, Gemini, Grok, LLaMA, Cohere)
+# 3. Social Media (Facebook, Twitter, LinkedIn, Pinterest, WhatsApp)
+#
+# All AI crawlers have FULL ACCESS to enable:
+# - Model training
+# - RAG retrieval
+# - Real-time search
+# - Fact verification
+#
+# For detailed AI information, see:
+# - llms.txt (https://ai.eecglobal.com/usavisaprep/llms.txt)
+# - ai.txt (https://ai.eecglobal.com/usavisaprep/ai.txt)
+#
+# Contact: info@eecglobal.com
+# Organization: EEC (Enbee Education Center Private Limited)
+#
+################################################################################

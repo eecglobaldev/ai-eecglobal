@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ========================================================================
+       EEC GLOBAL - IMAGE SITEMAP FOR GOOGLE IMAGE SEARCH
+       Optimized for image SEO and rich results
+       ======================================================================== -->
+
+  <!-- Main NZ Visa Prep Page Images -->
+  <url>
+    <loc>https://ai.eecglobal.com/nzvisaprep</loc>
+    
+    <!-- Primary OG Image -->
+    <image:image>
+      <image:loc>https://ai.eecglobal.com/assets/nz-visa-prep-og.png</image:loc>
+      <image:title>Free AI-Powered New Zealand Student Visa Interview Preparation Tool by EEC Global</image:title>
+      <image:caption>India's first 100% free AI tool for NZ student visa interview preparation - Practice INZ credibility interviews with personalized questions and model answers</image:caption>
+      <image:geo_location>Gujarat, India</image:geo_location>
+      <image:license>https://eecglobal.com/terms</image:license>
+    </image:image>
+    
+    <!-- EEC Logo -->
+    <image:image>
+      <image:loc>https://ai.eecglobal.com/assets/eeclogo.svg</image:loc>
+      <image:title>EEC Logo - Gujarat's Largest Study Abroad Company Since 1997</image:title>
+      <image:caption>Enbee Education Center Private Limited - ENZRA certified study abroad consultancy with 26 branches across Gujarat</image:caption>
+    </image:image>
+
+  </url>
+
+  <!-- AI Tools Landing Page -->
+  <url>
+    <loc>https://ai.eecglobal.com/</loc>
+    <image:image>
+      <image:loc>https://ai.eecglobal.com/assets/eeclogo.svg</image:loc>
+      <image:title>EEC Global AI Tools for Study Abroad Preparation</image:title>
+      <image:caption>Free AI-powered tools for visa interview preparation, career counseling, and course search by EEC Global</image:caption>
+    </image:image>
+  </url>
+
+  <!-- USA Visa Prep -->
+  <url>
+    <loc>https://ai.eecglobal.com/usavisaprep</loc>
+    <image:image>
+      <image:loc>https://ai.eecglobal.com/assets/usa-visa-prep-og.png</image:loc>
+      <image:title>Free USA F-1 Student Visa Interview Preparation Tool</image:title>
+      <image:caption>AI-powered USA F-1 visa interview preparation by EEC Global</image:caption>
+    </image:image>
+  </url>
+
+  <!-- UK Pre-CAS Prep -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas</loc>
+    <image:image>
+      <image:loc>https://ai.eecglobal.com/assets/uk-precas-og.png</image:loc>
+      <image:title>Free UK Pre-CAS and Airport Interview Preparation Tool</image:title>
+      <image:caption>AI-powered UK visa interview preparation by EEC Global</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Australia GS Prep -->
+  <url>
+    <loc>https://ai.eecglobal.com/australiagsprep</loc>
+    <image:image>
+      <image:loc>https://ai.eecglobal.com/assets/australia-gs-og.png</image:loc>
+      <image:title>Free Australia Genuine Student Visa Interview Preparation Tool</image:title>
+      <image:caption>AI-powered Australia GS visa interview preparation by EEC Global</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Germany Visa Prep -->
+  <url>
+    <loc>https://ai.eecglobal.com/germanyvisaprep</loc>
+    <image:image>
+      <image:loc>https://ai.eecglobal.com/assets/germany-visa-og.png</image:loc>
+      <image:title>Free Germany Student Visa Interview Preparation Tool</image:title>
+      <image:caption>AI-powered Germany visa interview preparation by EEC Global</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Career Counselor -->
+  <url>
+    <loc>https://ai.eecglobal.com/careercounselor</loc>
+    <image:image>
+      <image:loc>https://ai.eecglobal.com/assets/career-counselor-og.png</image:loc>
+      <image:title>Free AI Career Counselor for Study Abroad</image:title>
+      <image:caption>AI-powered career guidance for international courses by EEC Global</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
+

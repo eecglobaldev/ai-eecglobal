@@ -1,0 +1,56 @@
+# Security and Performance Headers for UK Pre-CAS Interview Prep
+
+/ukprecas/*
+  # Security Headers
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(self), payment=(), usb=()
+  
+  # Content Security Policy (Strict)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://aistudiocdn.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://us-central1-usa-visa-prep-c72f7.cloudfunctions.net https://firebasestorage.googleapis.com https://firestore.googleapis.com https://*.googleapis.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self';
+  
+  # Performance Headers
+  Cache-Control: public, max-age=31536000, immutable
+  
+  # CORS Headers
+  Access-Control-Allow-Origin: https://ai.eecglobal.com
+  Access-Control-Allow-Methods: GET, POST, OPTIONS
+  Access-Control-Allow-Headers: Content-Type, Authorization
+  
+  # Additional Security
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-DNS-Prefetch-Control: on
+  
+  # Feature Policy
+  Feature-Policy: microphone 'self'; camera 'none'; geolocation 'none'
+
+# Cache static assets
+/ukprecas/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/ukprecas/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/ukprecas/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/ukprecas/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/ukprecas/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/ukprecas/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML files - shorter cache
+/ukprecas/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Fonts
+/ukprecas/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+

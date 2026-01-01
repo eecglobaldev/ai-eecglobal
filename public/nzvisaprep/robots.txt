@@ -1,0 +1,96 @@
+# ============================================================================
+# EEC - ROBOTS.TXT FOR TOTAL GOOGLE DOMINATION
+# ============================================================================
+# Website: https://ai.eecglobal.com
+# Organization: Enbee Education Center Private Limited
+# Last Updated: 2025-12-11
+# ============================================================================
+
+# Allow all search engine crawlers full access
+User-agent: *
+Allow: /
+
+# Specific allowances for Google crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+# Bing/Microsoft crawlers
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: msnbot
+Allow: /
+
+# Other major search engines
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Social media crawlers for rich previews
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# Disallow potentially harmful bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Disallow development/staging paths (if any)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /*.json$
+Disallow: /*.map$
+
+# ============================================================================
+# SITEMAPS - Critical for Google Discovery
+# ============================================================================
+Sitemap: https://ai.eecglobal.com/sitemap.xml
+Sitemap: https://ai.eecglobal.com/sitemap-aitools.xml
+Sitemap: https://ai.eecglobal.com/sitemap-branches.xml
+
+# ============================================================================
+# HOST DIRECTIVE
+# ============================================================================
+Host: https://ai.eecglobal.com
+

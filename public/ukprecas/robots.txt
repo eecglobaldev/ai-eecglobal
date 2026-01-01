@@ -1,0 +1,238 @@
+# robots.txt for https://ai.eecglobal.com/ukprecas/
+# Last Updated: 2026-01-16
+
+# ================================================
+# SEARCH ENGINE OPTIMIZATION DIRECTIVES
+# ================================================
+
+# Allow all search engines - Primary configuration
+User-agent: *
+Allow: /ukprecas/
+Allow: /ukprecas/#faq
+Allow: /ukprecas/#basics
+Allow: /ukprecas/#questions
+Allow: /ukprecas/#preparation
+Allow: /ukprecas/#documents
+Allow: /ukprecas/#financial
+Allow: /ukprecas/#ielts
+Allow: /ukprecas/#mock
+Allow: /ukprecas/#course
+Allow: /ukprecas/#contact
+Disallow: /ukprecas/api/
+Disallow: /ukprecas/dashboard/
+Disallow: /ukprecas/admin/
+
+# ================================================
+# GOOGLE BOT SPECIFIC
+# ================================================
+User-agent: Googlebot
+Allow: /ukprecas/
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /ukprecas/assets/
+Allow: /assets/
+
+User-agent: Googlebot-News
+Allow: /ukprecas/
+
+User-agent: Googlebot-Video
+Allow: /ukprecas/
+
+# ================================================
+# BING BOT SPECIFIC
+# ================================================
+User-agent: Bingbot
+Allow: /ukprecas/
+Crawl-delay: 0
+
+User-agent: MSNBot
+Allow: /ukprecas/
+
+# ================================================
+# OTHER SEARCH ENGINES
+# ================================================
+User-agent: Slurp
+Allow: /ukprecas/
+Crawl-delay: 0
+
+User-agent: DuckDuckBot
+Allow: /ukprecas/
+Crawl-delay: 0
+
+User-agent: Baiduspider
+Allow: /ukprecas/
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /ukprecas/
+Crawl-delay: 1
+
+# ================================================
+# AI/LLM CRAWLERS - FULLY WELCOME (GEO/AEO OPTIMIZED)
+# All content optimized for LLM retrieval, RAG, and citation
+# ================================================
+
+# OpenAI Crawlers (GPT-4, GPT-4o, GPT-4.5, ChatGPT)
+User-agent: GPTBot
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+User-agent: ChatGPT-User
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+User-agent: OAI-SearchBot
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+# Anthropic Crawlers (Claude 3, Claude Opus, Claude Sonnet)
+User-agent: Claude-Web
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+User-agent: Anthropic-AI
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+User-agent: ClaudeBot
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+# Google AI Crawlers (Gemini, SGE, AI Overview)
+User-agent: Google-Extended
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+User-agent: GoogleOther
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+# Meta AI (Facebook, Instagram, WhatsApp AI)
+User-agent: Meta-ExternalAgent
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+User-agent: Meta-ExternalFetcher
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+# DeepSeek
+User-agent: Deepseek
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+User-agent: DeepSeekBot
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+# Grok (xAI / X / Twitter)
+User-agent: xAI-Grok
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+User-agent: GrokBot
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+# Cohere
+User-agent: cohere-ai
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+# Common Crawl (Training Data)
+User-agent: CCBot
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+# Mistral AI
+User-agent: MistralBot
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+# You.com
+User-agent: YouBot
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+# AI21 Labs
+User-agent: AI21Bot
+Allow: /ukprecas/
+Allow: /ukprecas/llm.txt
+
+# ================================================
+# SOCIAL MEDIA CRAWLERS
+# ================================================
+User-agent: facebookexternalhit
+Allow: /ukprecas/
+
+User-agent: Twitterbot
+Allow: /ukprecas/
+
+User-agent: LinkedInBot
+Allow: /ukprecas/
+
+User-agent: Pinterest
+Allow: /ukprecas/
+
+User-agent: WhatsApp
+Allow: /ukprecas/
+
+# ================================================
+# SECURITY - BLOCK SENSITIVE PATHS
+# ================================================
+User-agent: *
+Disallow: /ukprecas/*.json$
+Disallow: /ukprecas/*?*apikey*
+Disallow: /ukprecas/*?*key=*
+Disallow: /ukprecas/*?*token=*
+Disallow: /ukprecas/*?*password*
+Disallow: /ukprecas/firebase*
+Disallow: /.env
+Disallow: /*.config.js$
+
+# ================================================
+# RESOURCE CRAWLING - ALLOW
+# ================================================
+User-agent: *
+Allow: /ukprecas/*.js
+Allow: /ukprecas/*.css
+Allow: /ukprecas/*.svg
+Allow: /ukprecas/*.png
+Allow: /ukprecas/*.jpg
+Allow: /ukprecas/*.webp
+Allow: /ukprecas/*.woff2
+Allow: /ukprecas/*.woff
+
+# ================================================
+# SITEMAP & INDEXNOW
+# ================================================
+Sitemap: https://ai.eecglobal.com/ukprecas/sitemap.xml
+
+# IndexNow API Key (for instant indexing)
+# Key file location: /ukprecas/indexnow-key.txt
+
+# ================================================
+# HOST DIRECTIVE
+# ================================================
+Host: https://ai.eecglobal.com
+
+# ================================================
+# CRAWL OPTIMIZATION NOTES
+# ================================================
+# - Page is a Single Page Application (SPA)
+# - Content is dynamically loaded via JavaScript
+# - All anchor links (#) point to sections within the main page
+# - Rich structured data (JSON-LD) available in <head>
+# - llm.txt file available for AI systems at /ukprecas/llm.txt
+# - Mobile-responsive design, no separate mobile URL needed

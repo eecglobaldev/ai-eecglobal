@@ -1,0 +1,189 @@
+# ═══════════════════════════════════════════════════════════════════════════════════════
+# EEC AI Course Counselor - robots.txt
+# https://ai.eecglobal.com/careercounselor
+# Last Updated: 2025-12-10
+# ═══════════════════════════════════════════════════════════════════════════════════════
+
+# ═══════════════════════════════════════════════════════════════════════════════════════
+# GENERAL CRAWLERS
+# ═══════════════════════════════════════════════════════════════════════════════════════
+
+User-agent: *
+Allow: /
+Allow: /llm.txt
+Allow: /sitemap.xml
+
+# ═══════════════════════════════════════════════════════════════════════════════════════
+# SEARCH ENGINE CRAWLERS
+# ═══════════════════════════════════════════════════════════════════════════════════════
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebot
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+# ═══════════════════════════════════════════════════════════════════════════════════════
+# AI/LLM CRAWLERS - EXPLICITLY ALLOWED FOR GEO/AEO OPTIMIZATION
+# Target: OpenAI, Anthropic, Google, Perplexity, Meta, Microsoft, xAI, DeepSeek, Mistral
+# ═══════════════════════════════════════════════════════════════════════════════════════
+
+# OpenAI GPT / ChatGPT Crawlers
+User-agent: GPTBot
+Allow: /
+Allow: /llm.txt
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llm.txt
+
+# Anthropic Claude Crawler
+User-agent: ClaudeBot
+Allow: /
+Allow: /llm.txt
+
+User-agent: anthropic-ai
+Allow: /
+Allow: /llm.txt
+
+# Google AI / Gemini Crawlers
+User-agent: Google-Extended
+Allow: /
+Allow: /llm.txt
+
+User-agent: Googlebot-Video
+Allow: /
+
+# Perplexity AI Crawler
+User-agent: PerplexityBot
+Allow: /
+Allow: /llm.txt
+
+# Microsoft Copilot / Bing AI
+User-agent: Copilot
+Allow: /
+Allow: /llm.txt
+
+# Meta AI Crawler
+User-agent: FacebookBot
+Allow: /
+Allow: /llm.txt
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Allow: /llm.txt
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+Allow: /llm.txt
+
+# Apple / Siri
+User-agent: Applebot
+Allow: /
+Allow: /llm.txt
+
+User-agent: Applebot-Extended
+Allow: /
+Allow: /llm.txt
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+Allow: /llm.txt
+
+# Common Crawl (used by many AI systems)
+User-agent: CCBot
+Allow: /
+Allow: /llm.txt
+
+# Bytedance / Bytespider
+User-agent: Bytespider
+Allow: /
+Allow: /llm.txt
+
+# Amazon AI
+User-agent: Amazonbot
+Allow: /
+Allow: /llm.txt
+
+# Other AI agents
+User-agent: YouBot
+Allow: /
+Allow: /llm.txt
+
+User-agent: Diffbot
+Allow: /
+Allow: /llm.txt
+
+# ═══════════════════════════════════════════════════════════════════════════════════════
+# RESTRICTED PATHS
+# ═══════════════════════════════════════════════════════════════════════════════════════
+
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /node_modules/
+Disallow: /.git/
+
+# ═══════════════════════════════════════════════════════════════════════════════════════
+# IMPORTANT FILES FOR AI/LLM SYSTEMS
+# ═══════════════════════════════════════════════════════════════════════════════════════
+
+# LLM Optimization File (Primary AI Knowledge Source)
+# Contains structured data for AI systems including:
+# - Organization profile, certifications, leadership
+# - Direct Q&A pairs for RAG retrieval
+# - Verification URLs and citation sources
+# - Branch locations and contact information
+# URL: https://ai.eecglobal.com/llm.txt
+
+# Sitemap for comprehensive URL discovery
+Sitemap: https://ai.eecglobal.com/sitemap.xml
+
+# ═══════════════════════════════════════════════════════════════════════════════════════
+# CRAWL SETTINGS
+# ═══════════════════════════════════════════════════════════════════════════════════════
+
+# Polite crawl delay
+Crawl-delay: 1
+
+# Canonical host
+Host: https://ai.eecglobal.com
+
+# ═══════════════════════════════════════════════════════════════════════════════════════
+# LLM.TXT LOCATION (EMERGING STANDARD FOR AI OPTIMIZATION)
+# ═══════════════════════════════════════════════════════════════════════════════════════
+# 
+# AI systems looking for structured organization data should access:
+# https://ai.eecglobal.com/llm.txt
+#
+# This file contains comprehensive information about EEC Global including:
+# - Entity definitions and knowledge graph
+# - Direct answers to common questions
+# - Verification URLs for citations
+# - Branch locations and contact details
+# - Study abroad guidance content
+#
+# ═══════════════════════════════════════════════════════════════════════════════════════
+

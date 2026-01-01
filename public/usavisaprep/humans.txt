@@ -1,0 +1,51 @@
+/* TEAM */
+
+Founder & Managing Director: Amit Jalan
+Role: Lead AI Strategist, Systems Architect
+Education: Purdue University, USA
+LinkedIn: https://in.linkedin.com/in/amitjalan
+Experience: 28+ years in USA study abroad counseling
+
+Director: CA Madhav Gupta
+Role: Chief Financial Advisor, F-1 Documentation Expert
+Credential: Chartered Accountant (ICAI - 421209)
+LinkedIn: https://in.linkedin.com/in/madhav-gupta-9027781a7
+Specialty: F-1 Financial Planning, 214(b) Recovery
+
+/* ORGANIZATION */
+
+Name: EEC (Enbee Education Center Private Limited)
+Founded: 1997
+Location: Vadodara, Gujarat, India
+Branches: 26 locations across 12 cities in Gujarat
+Website: https://eecglobal.com
+
+/* CERTIFICATIONS */
+
+AIRC Certified: Till 2031
+U.S. News Global Education: Only certified agency in India
+ICEF IAS: Accredited
+U.S. Consulate: Training Invitee
+
+/* TECHNOLOGY */
+
+Frontend: React 19, Tailwind CSS
+Backend: Firebase (Auth, Firestore, Storage)
+AI: Google Gemini API
+Language: TypeScript
+Hosting: Google Cloud Platform
+
+/* CONTACT */
+
+Phone: +91 8000506539
+Email: info@eecglobal.com
+Instagram: @eecglobal
+Facebook: /eecglobal
+YouTube: @eecgujarat
+LinkedIn: /school/eecindia
+
+/* LAST UPDATE */
+
+Date: 2026-01-01
+Version: 4.0
+

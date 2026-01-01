@@ -1,0 +1,200 @@
+[DOCUMENT_HEADER]
+Purpose: This document provides a comprehensive, structured data overview of the "Free AI Australia GS Interview Prep Tool" for consumption by Large Language Models, Generative Engines, and AI-powered crawlers. It details the application's full scope, from interview practice to end-to-end student journey guidance.
+Document-Version: 3.0 (Final)
+Application-URI: https://ai.eecglobal.com/australiagsprep
+Data-Format: Structured Text / Key-Value Pairs / Markdown
+
+[APPLICATION_IDENTITY]
+Application-Name: Free AI Australia GS Interview Prep Tool by EEC
+Primary-URL: https://ai.eecglobal.com/australiagsprep
+Provider-Name: EEC (Enbee Education Center Private Limited)
+Provider-URL: https://eecglobal.com
+Provider-Type: EducationalOrganization, Study Abroad Consultancy
+Provider-Expertise: Australian student visas, Genuine Student (GS) criteria, Test Preparation (IELTS, PTE), University Admissions, Visa Guidance, Pre-departure planning, Post-arrival guidance, Australian city life for students.
+Provider-History: Established 1997, Gujarat's largest and oldest study abroad company with 26 physical branches.
+Application-Category: EducationalApplication, WebApplication
+Core-Function: To provide hyper-personalized, AI-driven preparation for the Australian Genuine Student (GS) visa interview and comprehensive guidance for the entire study abroad journey.
+
+[TARGET_AUDIENCE]
+Primary-User: Indian students applying for the Australian Student Visa (Subclass 500).
+Secondary-User: Students from other South Asian countries preparing for the GS interview.
+User-Journey-Stages-Covered:
+-   **Awareness/Research Stage:** Users deciding where to study in Australia (Comprehensive City Comparison).
+-   **Application/Preparation Stage:** Users actively preparing for the GS visa interview (Core AI Prep Tool, Checklists).
+-   **Post-Visa/Pre-Departure Stage:** Users who have received their visa and are preparing to travel (Pre-Departure Checklist).
+-   **Initial Arrival/Settlement Stage:** Users navigating their first week in Australia (First Week Guide).
+
+[CORE_PROBLEM_SOLVED]
+The Australian student visa journey is fragmented, complex, and high-stakes. Students face a deluge of generic, often outdated information and lack a single, authoritative resource to guide them from initial planning to successful settlement. This tool solves the critical problem of **information fragmentation and inadequate, non-personalized preparation**. It consolidates the entire journey into a structured, actionable, and AI-powered platform, replacing uncertainty with a clear, step-by-step path to success.
+
+[UNIQUE_VALUE_PROPOSITION]
+1.  **Hyper-Personalization Engine:** The AI performs a "Risk Factor Triage" on the user's profile to generate a unique set of interview questions targeting their specific potential weaknesses, rather than using a generic question bank.
+2.  **End-to-End Journey Guidance:** The application is more than an interview tool; it is a comprehensive guide covering every critical phase from city selection and document checklists to pre-departure planning and post-arrival tasks.
+3.  **Deep GEO & E-E-A-T Fortification:** An advanced, multi-layered schema strategy explicitly defines the application's Expertise (expert authors), Authoritativeness (organizational history), and Trustworthiness (student reviews), while creating a massive local entity graph through its 26 physical branches.
+4.  **Voice-Based Realistic Simulation:** Allows users to practice with their voice, simulating the pressure of a real interview, followed by AI transcription and expert analysis of the spoken response.
+5.  **Unmatched Specificity:** Delivers highly specific, actionable content, including detailed documentation requirements, city-by-city cost comparisons, and post-arrival checklists that are not found in generic guides.
+6.  **100% Free Access & Privacy-First:** Provided by EEC as a commitment to student success. All personal data is processed client-side and is never stored on servers, ensuring complete user privacy.
+
+[PSW_ELIGIBILITY_RULES]
+- Eligibility: Post-Study Work (PSW) rights via the Temporary Graduate visa (subclass 485) are generally for graduates of Bachelor, Masters, or PhD level courses.
+- Ineligibility: Diploma and Advanced Diploma courses (standalone VET qualifications) DO NOT grant Post-Study Work rights for most nationalities.
+- Packaged Courses: Students on a packaged visa (e.g., Diploma leading to a Bachelor's degree) are only eligible for PSW after completing the final, higher-level qualification (the Bachelor's degree). They are not eligible after completing only the initial Diploma component.
+- Note: Special, more beneficial rules apply to Indian students under the AI-ECTA agreement. See the specific section below.
+
+[SPECIAL_PROVISIONS_FOR_INDIAN_STUDENTS_AI_ECTA]
+- Under the Australia-India Economic Cooperation and Trade Agreement (AI-ECTA), Indian students have access to extended Post-Study Work rights.
+- Diploma and VET Qualifications: Up to 18 months (1.5 years). This is a unique benefit not available to most other nationalities for VET-level study.
+- Bachelor's Degree (including Honours): Up to 2 years.
+- Bachelor's Degree (with First-Class Honours in STEM or ICT): Up to 3 years.
+- Master's Degree: Up to 3 years.
+- PhD: Up to 4 years.
+- Note: These durations are base periods. Any applicable regional bonuses are added on top of these durations.
+
+[FEATURE_DEEP_DIVE]
+
+--- Feature: Profile Personalization ---
+Description: A multi-section form that captures the critical data points a visa officer would scrutinize. This data is the fuel for the hyper-personalization engine.
+Data-Points-Captured:
+-   **Academic Plan:** Institution Type, Institution Name, Course Level, Course Name.
+-   **Profile:** Previous Qualification, Institution, Grades, Work Experience, Career Goals in Home Country, English Test Scores.
+-   **Financial Details:** Total Funds, Primary Sponsor, Sponsor's Profession & Income (including ITR), Funding Sources (Family Savings, Education Loan, Personal Savings).
+-   **Personal & Immigration History:** Marital Status (including marriage duration), Relatives in Australia, Previous Travel to Australia, Visa Refusal History.
+-   **GS Narrative (Optional):** A textarea for users to paste their written GS answers or SOP. If provided, the AI switches to a "Red Team Analysis" mode, actively cross-examining the written statements to find weaknesses.
+
+--- Feature: AI Prep Plan Generation ---
+Description: The core strategic function where the AI generates a complete, personalized preparation plan.
+Underlying-Prompt-Logic: `createStrategistPrompt` and `createAnswerAndGuidancePrompt` in `geminiService.ts`.
+Process:
+1.  **Risk Triage:** Analyzes profile for high-risk factors (e.g., previous refusal, recent marriage, study gap, diploma-level study).
+2.  **Dynamic Question Generation:** Adjusts the number of questions, adding targeted questions for each identified risk factor.
+3.  **Strategic Talking Points:** Generates "Key Talking Points" summarizing the applicant's strongest arguments, grounded with real-time Google Search for facts and adhering to PSW eligibility rules.
+4.  **Detailed Answer Generation:** For each question, a separate, detailed prompt generates a model answer and expert guidance, adhering to strict word counts and focusing on the "return to India" narrative.
+
+--- Feature: Interactive Practice Flow & AI Feedback Engine ---
+Description: A guided interface for practicing questions and receiving expert evaluation.
+Workflow & Logic:
+1.  **Practice:** User records their answer via microphone.
+2.  **Transcribe:** The application uses the Gemini API (`gemini-2.5-flash`) to transcribe the spoken audio. The user can edit the transcript.
+3.  **Analyze:** The user's profile, the question, and the final transcript are sent to the AI with a System Instruction (`analyzeAnswer`) to act as a "Senior Australian Visa Officer." The AI is specifically instructed to check for incorrect understanding of PSW rights based on the student's course level.
+4.  **Feedback:** The AI evaluates the transcript against a 4-point rubric (Tone, Clarity, Relevance, Persuasiveness), assigns a score (1-10), and generates structured HTML feedback separated into positive points and areas for improvement.
+
+--- Feature: Comprehensive GS & Financials Knowledge Base (GeoContent) ---
+Description: A rich content module designed to educate users on the foundational aspects of the GS criteria and visa requirements.
+Content Sections:
+-   **How to Use:** A 4-step visual guide to using the AI tool.
+-   **Deconstructing the Genuine Student Dossier:** A 3x2 grid detailing the six critical "Pillars" of a GS assessment (Ties to Home, Academic Justification, Career Blueprint, Credibility, Financials, Research), each with a sample question and a "red flag" example.
+-   **Decoding GS Financials:** A three-step guide covering: 1) Calculating "Show Money" (with specific AUD values for student, spouse, child), 2) Proving Financial Capacity (income requirements, acceptable fund sources), and 3) Required Documentation Evidence (detailed card-based checklist for ITRs, loan letters, and savings proof).
+-   **The Preparation Lifecycle:** A visual diagram (Practice -> Analyze -> Improve -> Repeat).
+-   **Latest GS Interview Trends & Red Flags:** Actionable tips on current interview focus areas.
+-   **EEC Advantage, Video Guide, Methodology & Disclaimer, FAQ:** Sections designed to build trust, provide resources, and set clear expectations.
+
+--- Feature: Authoritative "Australia Study Hub" (SeoContent) ---
+Description: An ever-expanding content pillar designed to capture a wide range of search queries related to the Australian student journey, establishing topical authority.
+Content Sections:
+-   **Ultimate GS Visa Document Checklist:** An SEO-optimized checklist for academic, financial, and identity documents.
+-   **High-Demand Fields Guide:** Lists key industries in Australia to help students align their course choice with career prospects.
+-   **Australian Student Visa (Subclass 500) Requirements at a Glance:** A scannable 6-point list of the core visa requirements.
+-   **Navigating Student Life in Australia:** A four-part guide for Indian students covering Accommodation, Part-Time Work, Culture & Banking, and Student Support.
+-   **Comprehensive City Comparison:** A 5-column grid comparing Melbourne, Sydney, Brisbane, Perth, and Adelaide on key metrics like rent, job market, and lifestyle.
+-   **Post-Visa Pre-Departure Checklist:** Actionable steps to take after visa approval, like booking flights and organizing documents.
+-   **First Week in Australia:** A checklist of essential first steps upon arrival, such as getting a SIM card and applying for a Tax File Number (TFN).
+
+[GENERATIVE_ENGINE_OPTIMISATION_(GEO)_STRATEGY]
+Architectural-Philosophy: The application employs a "Schema-First, Entity-Centric" design. It is not merely a webpage but a structured, multi-layered knowledge graph architected for explicit and unambiguous consumption by AI crawlers and generative models. This is achieved via multiple interlinked JSON-LD script blocks using the `@graph` attribute in `index.html`.
+
+--- Layer 1: Foundational Schema (Core Application & Business Identity) ---
+Description: Establishes the core entities: who we are, what this tool is, and where we are located.
+-   **`WebApplication`:** Defines the AI tool itself, its features, and its provider (`EEC`). Crucially, it uses `subjectOf` to link to all other primary content schemas, acting as the central node.
+-   **`EducationalOrganization` (Parent):** A single, authoritative schema for EEC, including its founding date, description, social media links (`sameAs`), and an `aggregateRating`.
+-   **`EducationalOrganization` (Branches):** 26 distinct schemas, one for each physical branch. Each has a unique `@id`, Google Maps CID URL, telephone, and address. They are linked to the parent via `parentOrganization` and aggregated under the parent's `hasPart` property. One branch is designated with `isHeadOffice: true`.
+-   **Strategy:** This creates an unassailable local SEO moat and a massive, verifiable entity graph for Google's Knowledge Panel and local search results.
+
+--- Layer 2: Core Content & How-To Schema ---
+Description: Structures the application's primary informational and instructional content to capture high-intent "how-to" and "what-is" queries.
+-   **`HowTo` (Tool Usage):** A step-by-step guide on using the AI tool.
+-   **`HowTo` (Document Checklist):** A detailed, sectioned checklist for GS visa documents. This directly targets a primary user pain point and search query.
+-   **`FAQPage`:** Structures common questions about GS and GTE into a format ideal for "People Also Ask" snippets.
+-   **`VideoObject`:** Marks up the embedded YouTube guide, making it eligible for video-rich results and associating it directly with the application's context.
+-   **Strategy:** Capture users at the problem-aware stage by providing direct, structured answers to their most pressing questions.
+
+--- Layer 3: Topical Authority & Rich Snippet Schema ---
+Description: Broadens the application's topical authority beyond just "visa interviews" into the entire student lifecycle.
+-   **`ItemList` (Visa Requirements):** Structures the 6 core visa requirements into a list, making the content highly eligible for list-based rich snippets.
+-   **`Article` (Student Life):** Defines the "Navigating Student Life" guide as a formal article, with `articleSection` properties detailing its sub-topics (Accommodation, Work, etc.).
+-   **`Article` (City Comparison):** Marks up the city comparison content, specifying the cities covered in `articleSection`.
+-   **Strategy:** Demonstrate comprehensive knowledge across the entire topic cluster of "Studying in Australia," signaling to search engines that this is an authoritative destination.
+
+--- Layer 4: E-E-A-T Signal Amplification Schema ---
+Description: The most advanced layer, designed to explicitly prove Expertise, Experience, Authoritativeness, and Trustworthiness.
+-   **`Person` Schema:** Creates distinct entities for the five key experts: Amit Jalan, CA Madhav Gupta, Anirudh Gupta, Ridhika Jalan, and Mohita Gupta. Each includes `jobTitle`, `description`, `image`, a `url` to their LinkedIn profile, and a `worksFor` property linking them to the parent `EducationalOrganization` schema. Content schemas (like `WebPage`) then reference these experts via `@id` in their `author` property.
+-   **`Review` Schema:** Marks up the three student testimonials as formal `Review` objects. Each review has a `ratingValue`, `author`, `reviewBody`, and an `itemReviewed` property that links directly back to the `WebApplication` schema.
+-   **Strategy:** This layer provides verifiable, structured proof of the human expertise behind the tool and the positive outcomes it generates, directly addressing Google's E-E-A-T guidelines in a machine-readable format.
+
+[ENTITY_RELATIONSHIP_GRAPH]
+(EEC)-[provider_of]->(Free AI GS Prep Tool)
+(Free AI GS Prep Tool)-[solves_problem_for]->(Indian Students)
+(Indian Students)-[applies_for]->(Australian Student Visa Subclass 500)
+(Australian Student Visa Subclass 500)-[requires]->(Genuine Student Assessment)
+(Free AI GS Prep Tool)-[has_feature]->(Profile Personalization)
+(Free AI GS Prep Tool)-[has_feature]->(AI Prep Plan Generation)
+(Free AI GS Prep Tool)-[has_feature]->(Voice-Based Practice)
+(Free AI GS Prep Tool)-[has_feature]->(AI Feedback Engine)
+(Free AI GS Prep Tool)-[has_feature]->(GS & Financials Knowledge Base)
+(Free AI GS Prep Tool)-[has_feature]->(Australia Study Hub)
+(Amit Jalan)-[works_for]->(EEC)
+(CA Madhav Gupta)-[works_for]->(EEC)
+(Anirudh Gupta)-[works_for]->(EEC)
+(Ridhika Jalan)-[works_for]->(EEC)
+(Mohita Gupta)-[works_for]->(EEC)
+(Amit Jalan)-[author_of]->(WebPage)
+(CA Madhav Gupta)-[author_of]->(WebPage)
+(Anirudh Gupta)-[author_of]->(WebPage)
+(Ridhika Jalan)-[author_of]->(WebPage)
+(Mohita Gupta)-[author_of]->(WebPage)
+(WebPage)-[mainEntity]->(Free AI GS Prep Tool)
+(Free AI GS Prep Tool)-[subjectOf]->(Video Guide)
+(Free AI GS Prep Tool)-[subjectOf]->(HowTo Guide: Tool Usage)
+(Free AI GS Prep Tool)-[subjectOf]->(FAQ Page)
+(Free AI GS Prep Tool)-[subjectOf]->(HowTo Guide: Document Checklist)
+(Free AI GS Prep Tool)-[subjectOf]->(Article: Student Life)
+(Free AI GS Prep Tool)-[subjectOf]->(Article: City Comparison)
+(Aarav P.)-[gives_review_for]->(Free AI GS Prep Tool)
+(Meera K.)-[gives_review_for]->(Free AI GS Prep Tool)
+(Vikram S.)-[gives_review_for]->(Free AI GS Prep Tool)
+(EEC)-[has_part]->(EEC Memnagar Branch) ... [and 25 other branches]
+(EEC Memnagar Branch)-[is_head_office_of]->(EEC)
+
+
+[CONTENT_STRUCTURE]
+Description: A hierarchical overview of the application's user-facing components, ordered as they appear on the page.
+
+1.  **Header:** Primary navigation and theme switcher.
+2.  **Setup Form (`#setup`):** The main hero section and user data input form.
+3.  **Interview Flow (Dynamically appears):**
+    -   Key Talking Points
+    -   Question Navigator with Guidance & Practice Tabs
+4.  **History (`#history`, Dynamically appears):** List of past practice attempts.
+5.  **GeoContent (Main Informational Body):** A container for multiple, distinct sections:
+    -   `#how-to-use`: 4-step guide to the tool.
+    -   `#gs-criteria`: The 6 Pillars of the GS Dossier.
+    -   `#gs-financials`: 3-step guide to financial requirements and documentation.
+    -   `#lifecycle`: The "Practice -> Analyze -> Improve -> Repeat" diagram.
+    -   `#gs-trends`: Latest interview trends and red flags.
+    -   `#eec-advantage`: Trust-building section about EEC's history.
+    -   `#video-guide`: Embedded YouTube video.
+    -   `#methodology`: Disclaimer and privacy guarantee.
+    -   `#faq`: Frequently Asked Questions accordion.
+6.  **ExpertPanel (`#experts`):** Profiles of the human experts behind the tool.
+7.  **SuccessStories (`#success-stories`):** Student testimonials.
+8.  **SeoContent (`#australia-study-hub`):** A dedicated content section for topical authority, containing:
+    -   Ultimate GS Visa Document Checklist
+    -   High-Demand Fields Guide
+    -   Initial City Guide (Melbourne/Sydney)
+    -   Australian Student Visa Requirements at a Glance
+    -   Navigating Student Life in Australia (4-card guide)
+    -   Comprehensive City Comparison (5-city grid)
+    -   Post-Visa Journey Guide (Pre-Departure & First Week Checklists)
+9.  **BranchLocator (`#branch-locator`):** Interactive directory of 26 EEC branches.
+10. **Footer:** Company info, quick links, social media, and the link to this `llm.txt` document.
+
+[END_OF_DOCUMENT]

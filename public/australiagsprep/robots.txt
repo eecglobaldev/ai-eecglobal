@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://ai.eecglobal.com/australiagsprep/sitemap.xml
+LLM-Instructions: /llm.txt

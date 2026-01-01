@@ -1,0 +1,50 @@
+{
+  "name": "UK Pre-CAS Interview Prep by EEC",
+  "short_name": "UK Pre-CAS Prep",
+  "description": "AI-powered UK Pre-CAS visa interview preparation tool with personalized questions, audio recording, and real-time feedback",
+  "start_url": "/ukprecas/",
+  "scope": "/ukprecas/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/ukprecas/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ukprecas/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ukprecas/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ukprecas/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "en-GB",
+  "dir": "ltr",
+  "shortcuts": [
+    {
+      "name": "Start Practice",
+      "short_name": "Practice",
+      "description": "Start practicing interview questions",
+      "url": "/ukprecas/#interview-flow",
+      "icons": [{ "src": "/ukprecas/favicon.png", "sizes": "192x192" }]
+    }
+  ]
+}
+
