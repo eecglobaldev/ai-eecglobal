@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Main Page - Primary URL -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://ai.eecglobal.com/ukprecas/"/>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://ai.eecglobal.com/ukprecas/"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://ai.eecglobal.com/ukprecas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.eecglobal.com/ukprecas/"/>
+    <image:image>
+      <image:loc>https://ai.eecglobal.com/assets/logos/eeclogo-main.png</image:loc>
+      <image:title>EEC - UK Pre-CAS Interview Preparation</image:title>
+      <image:caption>AI-powered interview preparation tool for UK student visa</image:caption>
+    </image:image>
+  </url>
+
+  <!-- FAQ Section - High Value Content -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#faq</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Interview Basics Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#basics</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Common Questions Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#questions</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Preparation Guide Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#preparation</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Documents Checklist Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#documents</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Financial Requirements Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#financial</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- IELTS Requirements Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#ielts</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- CAS Information Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#cas</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Visa Refusal Reasons Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#refusal</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Tier 4 Process Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#tier4</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Interview Types Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#interview-types</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Mock Interview Tool Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#mock</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Graduate Route Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#graduate-route</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- University Selection Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#university</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SOP Writing Guide Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#sop</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Tips Section -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#tips</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- English Test Prep Section - NEW 2026 -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#english-test-prep</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Related EEC English Test Prep Tools -->
+  <!-- <url>
+    <loc>https://ptetestindia.com</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url> -->
+
+  <!-- Location-Based Pages -->
+  <!-- Vadodara -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#vadodara</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Ahmedabad -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#ahmedabad</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Surat -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#surat</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Anand -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#anand</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Nadiad -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#nadiad</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Vapi -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#vapi</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Navsari -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#navsari</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Bharuch -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#bharuch</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Kalol -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#kalol</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Himatnagar -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#himatnagar</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Mehsana -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#mehsana</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Visnagar -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#visnagar</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- HowTo Guide -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#howto-prepare</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Course Information -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#course</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Contact/About -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#contact</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#about</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- GEO/AEO Content Sections - Optimized for LLM Retrieval -->
+  <!-- Glossary of Truth - 20 Authoritative Definitions -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#uk-visa-glossary</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Zero-Shot Expert Answers -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#expert-answers</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Expert Insights / Golden Paragraphs -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#expert-insights</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Verified Statistics - Citation-Ready Data -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#verified-statistics</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Knowledge Graph Relationships -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#knowledge-relationships</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Document Checklist 2026 -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#document-checklist-2026</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Why EEC Comparison Table -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas/#why-eec-comparison</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- ========================================================================
+       EEC GLOBAL AI TOOLS - COMPREHENSIVE SITEMAP
+       For Total Google Domination
+       Last Modified: 2025-12-11
+       ======================================================================== -->
+
+  <!-- Main NZ Visa Prep Page - HIGHEST PRIORITY -->
+  <url>
+    <loc>https://ai.eecglobal.com/nzvisaprep</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.eecglobal.com/nzvisaprep"/>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://ai.eecglobal.com/nzvisaprep"/>
+    <xhtml:link rel="alternate" hreflang="en-NZ" href="https://ai.eecglobal.com/nzvisaprep"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.eecglobal.com/nzvisaprep"/>
+    <image:image>
+      <image:loc>https://ai.eecglobal.com/assets/nz-visa-prep-og.png</image:loc>
+      <image:title>AI-Powered New Zealand Student Visa Interview Preparation Tool</image:title>
+      <image:caption>Free NZ visa interview preparation by EEC Global - Gujarat's largest study abroad company</image:caption>
+    </image:image>
+  </url>
+
+  <!-- AI Tools Landing Page -->
+  <url>
+    <loc>https://ai.eecglobal.com/</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Career Counselor AI -->
+  <url>
+    <loc>https://ai.eecglobal.com/careercounselor</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- USA F-1 Visa Interview Prep -->
+  <url>
+    <loc>https://ai.eecglobal.com/usavisaprep</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- UK Pre-CAS Interview Prep -->
+  <url>
+    <loc>https://ai.eecglobal.com/ukprecas</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Australia GS Visa Interview Prep -->
+  <url>
+    <loc>https://ai.eecglobal.com/australiagsprep</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Germany Visa Interview Prep -->
+  <url>
+    <loc>https://ai.eecglobal.com/germanyvisaprep</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Travel Agent AI -->
+  <url>
+    <loc>https://ai.eecglobal.com/travelagent</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ========================================================================
+       NZ VISA PREP - ANCHOR SECTIONS (Phase 2 - 45 Interventions)
+       These are critical content sections for ranking domination
+       ======================================================================== -->
+
+  <!-- NZ Visa Document Checklist -->
+  <url>
+    <loc>https://ai.eecglobal.com/nzvisaprep#visa-checklist</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Country Comparison (NZ vs Others) -->
+  <url>
+    <loc>https://ai.eecglobal.com/nzvisaprep#country-comparison</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- NZ Study Cost Calculator -->
+  <url>
+    <loc>https://ai.eecglobal.com/nzvisaprep#cost-calculator</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- NZ Visa Glossary -->
+  <url>
+    <loc>https://ai.eecglobal.com/nzvisaprep#glossary</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- NZ Student Visa Statistics -->
+  <url>
+    <loc>https://ai.eecglobal.com/nzvisaprep#nz-statistics</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Expert Team Profiles -->
+  <url>
+    <loc>https://ai.eecglobal.com/nzvisaprep#expert-team</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- City Branches -->
+  <url>
+    <loc>https://ai.eecglobal.com/nzvisaprep#city-branches</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- University Comparison -->
+  <url>
+    <loc>https://ai.eecglobal.com/nzvisaprep#university-comparison</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ========================================================================
+       COURSE SEARCH PLATFORMS (Cross-linking)
+       ======================================================================== -->
+
+  <url>
+    <loc>https://nz.eecglobal.com/</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://courses.eecglobal.com/</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ========================================================================
+       EEC MAIN WEBSITE PAGES
+       ======================================================================== -->
+
+  <url>
+    <loc>https://eecglobal.com/</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://courses.eecglobal.com</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+</urlset>
+
