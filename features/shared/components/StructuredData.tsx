@@ -387,43 +387,6 @@ export default function StructuredData() {
             "description": "Official calculator for Australia Permanent Residency points, helping students assess eligibility for Subclass 189 and 190 visas."
           }
         ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How can I practice for the US F1 visa interview for free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can use EEC's free AI F-1 Visa Interview Prep tool. It simulates a real interview with a strict AI officer, listens to your answers, and provides instant feedback on your confidence and content."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I calculate my German Grade from Indian CGPA?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Use the EEC Germany Guide tool which features a built-in Bavarian Formula calculator. Simply enter your current CGPA and the maximum possible CGPA to get your German equivalent grade instantly."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is the Australia Genuine Student (GS) test difficult?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The GS test focuses on natural intent rather than memorized answers. EEC's Australia GS Prep AI helps you practice speaking naturally about your course and career goals to pass this requirement."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Which course has the best ROI for study abroad in 2026?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "EEC's Career Counsellor AI analyzes global job market trends for 2026 to recommend courses that offer high Return on Investment (ROI) and strong PR pathways, rather than just popular degrees."
-            }
-          }
-        ]
       }
     ]
   };
