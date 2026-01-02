@@ -1078,9 +1078,9 @@ export const BranchLocator: React.FC = () => {
                                 {currentCluster.faqs.length > 0 && (
                                     <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
                                         <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-3 text-sm">Frequently Asked Questions - {selectedCity}</h4>
-                                        <dl className="space-y-3 text-sm" itemScope itemType="https://schema.org/FAQPage">
+                                        <dl className="space-y-3 text-sm">
                                             {currentCluster.faqs.map((faq, i) => (
-                                                <div key={i} itemScope itemType="https://schema.org/Question" itemProp="mainEntity">
+                                                <div key={i} itemScope itemType="https://schema.org/Question">
                                                     <dt className="font-medium text-slate-700 dark:text-slate-300 key-fact" itemProp="name" data-speakable="true">{faq.q}</dt>
                                                     <dd className="mt-1 text-slate-600 dark:text-slate-400 pl-4 border-l-2 border-amber-300 dark:border-amber-700 faq-answer" itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer" data-speakable="true">
                                                         <span itemProp="text">{faq.a}</span>
@@ -1102,14 +1102,13 @@ export const BranchLocator: React.FC = () => {
                     <h3 className="text-center text-xl font-bold text-slate-800 dark:text-gray-100 mb-2">People Also Ask About UK Visa Interview 2026</h3>
                     <p className="text-center text-sm text-slate-600 dark:text-slate-400 mb-6">Common questions about UK Pre-CAS interview, CAS Shield, and airport interview</p>
                     
-                    <div className="grid md:grid-cols-2 gap-4" itemScope itemType="https://schema.org/FAQPage">
+                    <div className="grid md:grid-cols-2 gap-4">
                         {globalPAAQuestions.slice(0, 6).map((paa, i) => (
                             <details key={i} className="bg-white dark:bg-gray-800/50 rounded-lg border border-slate-200 dark:border-gray-700 overflow-hidden group">
                                 <summary 
                                     className="p-4 cursor-pointer font-medium text-slate-700 dark:text-slate-200 text-sm hover:bg-slate-50 dark:hover:bg-gray-700/50 transition-colors key-fact"
                                     itemScope 
-                                    itemType="https://schema.org/Question" 
-                                    itemProp="mainEntity"
+                                    itemType="https://schema.org/Question"
                                     data-speakable="true"
                                 >
                                     <span itemProp="name">{paa.q}</span>

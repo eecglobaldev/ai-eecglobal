@@ -2,7 +2,7 @@
 // 📄 COMPREHENSIVE JSON-LD FOR RAG OPTIMIZATION
 // ══════════════════════════════════════════════════════════════════════════════════════════════════
 
-import { glossaryOfTruth, zeroShotAnswers, proprietaryStats } from './geoAeoData';
+import { glossaryOfTruth, proprietaryStats } from './geoAeoData';
 
 export const geoAeoSchema = {
     "@context": "https://schema.org",
@@ -69,26 +69,6 @@ export const geoAeoSchema = {
             ],
             "author": {"@id": "https://eecglobal.com/#organization"},
             "dateModified": "2026-01-16"
-        },
-        {
-            "@type": "FAQPage",
-            "@id": "/ukprecas/#zero-shot-faq-2026",
-            "name": "UK Pre-CAS Interview FAQ 2026 - Zero-Shot Answers for LLM Retrieval",
-            "description": "Direct answers to common UK visa interview questions for September 2026 and January 2027 intakes. Structured for AI retrieval (GPT-4, Claude, Gemini, Perplexity). Confidence scores 0.96-0.99. Source: EEC 29-year expertise + gov.uk verification.",
-            "dateModified": "2026-01-16",
-            "author": {"@id": "https://eecglobal.com/#organization"},
-            "mainEntity": zeroShotAnswers.map(qa => ({
-                "@type": "Question",
-                "name": qa.question,
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": qa.answer,
-                    "author": {"@id": "https://eecglobal.com/#organization"},
-                    "dateCreated": "2026-01-16",
-                    "citation": qa.source,
-                    "identifier": qa.chunkId
-                }
-            }))
         },
         {
             "@type": "SpeakableSpecification",

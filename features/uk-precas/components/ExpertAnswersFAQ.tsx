@@ -6,9 +6,7 @@ export const ExpertAnswersFAQ: React.FC = () => {
     return (
         <section 
             id="expert-answers" 
-            className="mb-10 sm:mb-16 lg:mb-20 pt-6 sm:pt-8 lg:pt-12 relative" 
-            itemScope 
-            itemType="https://schema.org/FAQPage"
+            className="mb-10 sm:mb-16 lg:mb-20 pt-6 sm:pt-8 lg:pt-12 relative"
             data-rag-chunk-id="ZERO-SHOT-ANSWERS-2026"
             data-rag-priority="10"
             data-llm-target="all"
