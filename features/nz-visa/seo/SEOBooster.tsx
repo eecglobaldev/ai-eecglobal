@@ -636,13 +636,7 @@ export const generateMasterSchema = () => {
           "logo": "/assets/eeclogo.svg",
           "slogan": "Your Gateway to Global Education"
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "reviewCount": "12500",
-          "bestRating": "5",
-          "worstRating": "1"
-        }
+
       },
 
       // =========================================================================

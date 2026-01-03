@@ -262,13 +262,7 @@ export default function StructuredData() {
           "AIRC Certified Agency",
           "Top 10 Study Abroad Consultants India"
         ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "reviewCount": "2500",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
+
         "owns": {
           "@type": "WebApplication",
           "@id": "https://ai.eecglobal.com/#app"
