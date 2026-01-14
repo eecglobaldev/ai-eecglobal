@@ -27,6 +27,13 @@ export const metadata: Metadata = {
     description: 'Get instant career insights for any course worldwide. Free AI-powered course counseling.',
     images: ['/twitter-image.png'],
   },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
+  },
   alternates: {
     canonical: 'https://ai.eecglobal.com/careercounselor/',
   },

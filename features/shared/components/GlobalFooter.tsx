@@ -67,9 +67,11 @@ const GUIDES_LINKS = [
 ];
 
 const GLOSSARY_LINKS = [
+    { name: 'CAS (UK Visa)', href: '/glossary/cas' },
+    { name: 'I-20 (USA)', href: '/glossary/i-20' },
+    { name: 'DS-160 Guide', href: '/glossary/ds-160' },
     { name: 'F-1 Visa (USA)', href: '/glossary/f1-visa' },
     { name: 'Genuine Student Test', href: '/glossary/genuine-student-test' },
-    { name: 'Blocked Account', href: '/glossary/blocked-account' },
     { name: 'Full Glossary', href: '/glossary' },
 ];
 

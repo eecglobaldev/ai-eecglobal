@@ -6,6 +6,13 @@ export const metadata: Metadata = {
     title: 'USA F-1 Visa Interview Prep - AI Powered | EEC',
     description: 'Practice for your USA F-1 Student Visa Interview with our advanced AI interviewer. Get real-time feedback, pronunciation guides, and personalized prep plans.',
     keywords: ['USA F1 Visa', 'F-1 Visa Interview', 'Visa Interview Prep', 'Study Abroad', 'USA Visa', 'Student Visa', 'AI Interview Practice'],
+    robots: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+    },
     openGraph: {
         type: 'website',
         url: 'https://ai.eecglobal.com/usavisaprep/',

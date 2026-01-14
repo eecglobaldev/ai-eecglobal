@@ -42,6 +42,13 @@ export const metadata: Metadata = {
     description: 'Get verified visa requirements and travel services for Indian students. 100% free.',
     images: ['/twitter-image.png'],
   },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
+  },
   alternates: {
     canonical: 'https://ai.eecglobal.com/travelagent/',
   },

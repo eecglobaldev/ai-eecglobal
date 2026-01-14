@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Hero from "@/features/shared/components/Hero";
 import Workflow from "@/features/shared/components/Workflow";
 import ResourceHub from "@/features/shared/components/ResourceHub";
+import GEOHomeSection from "@/features/shared/components/GEOHomeSection";
 
 export const metadata: Metadata = {
   title: 'EEC AI Tools | Free Visa Interview Prep, PR Calculators & Study Abroad AI Agents',
@@ -52,6 +53,7 @@ export default function Home() {
       <Hero />
       <Workflow />
       <ResourceHub />
+      <GEOHomeSection />
     </div>
   );
 }

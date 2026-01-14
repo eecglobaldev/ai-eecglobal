@@ -18,6 +18,8 @@ import { useAppState } from '../hooks/useAppState';
 import { savePrepData, addPracticeHistoryItem } from '../services/prepDataService';
 import { getUserIdByEmail, ensureUserSignedIn, incrementPrepPlanCount } from '../services/userService';
 import Breadcrumbs from './Breadcrumbs';
+import { GeoContent } from './GeoContent';
+import { SeoContent } from './SeoContent';
 
 
 const App: React.FC = () => {
@@ -384,6 +386,10 @@ const App: React.FC = () => {
             </main>
 
             <Modal {...modalState} onCancel={hideModal} />
+
+            <GeoContent />
+            <SeoContent />
+
             <Footer />
         </>
     );

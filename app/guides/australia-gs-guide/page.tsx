@@ -22,7 +22,44 @@ const structuredData = {
   },
   "datePublished": "2024-03-23",
   "dateModified": "2026-01-01",
-  "mainEntityOfPage": "https://ai.eecglobal.com/guides/australia-gs-guide"
+  "mainEntityOfPage": "https://ai.eecglobal.com/guides/australia-gs-guide",
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the questions in the Genuine Student (GS) test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The GS test asks about your current circumstances, reasons for choosing your course and provider, why you chose Australia, and how the course benefits your future career."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long should GS answers be?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each answer is limited to a maximum of 150 words. You must be concise and specific."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is GTE still accepted?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. As of March 23, 2024, the Genuine Temporary Entrant (GTE) statement has been completely replaced by the Genuine Student (GS) requirement for new student visa applications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the financial requirement for Australian student visa 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The annual living cost requirement is AUD 24,505. You must also show funds for first-year tuition and travel."
+        }
+      }
+    ]
+  }
 };
 
 export default function AustraliaGSGuidePage() {
@@ -50,18 +87,18 @@ export default function AustraliaGSGuidePage() {
             <span>🆕</span>
             <span>REGULATORY UPDATE: March 2024</span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight">
             The GTE is Dead.<br />
             <span className="text-amber-400">Welcome to the Genuine Student Era.</span>
           </h1>
-          
+
           <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mb-8">
-            Australia replaced the Genuine Temporary Entrant (GTE) statement with targeted 
-            <strong className="text-white"> Genuine Student (GS) questions</strong> in March 2024. 
+            Australia replaced the Genuine Temporary Entrant (GTE) statement with targeted
+            <strong className="text-white"> Genuine Student (GS) questions</strong> in March 2024.
             This comprehensive guide covers everything you need to know about the new requirement.
           </p>
-          
+
           <div className="flex flex-wrap gap-4">
             <div className="px-4 py-3 bg-white/10 rounded-lg backdrop-blur">
               <span className="text-amber-400 font-bold text-lg">150</span>
@@ -87,7 +124,7 @@ export default function AustraliaGSGuidePage() {
         <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 p-6 mb-8">
           <div className="bg-amber-50 dark:bg-amber-950/20 border-l-4 border-amber-500 p-4 rounded-r-lg mb-6">
             <p className="text-amber-800 dark:text-amber-200 font-medium">
-              🚨 <strong>Critical Change:</strong> As of 23 March 2024, the GTE statement is no longer accepted. 
+              🚨 <strong>Critical Change:</strong> As of 23 March 2024, the GTE statement is no longer accepted.
               All new student visa applications must address the Genuine Student (GS) questions.
             </p>
           </div>
@@ -131,8 +168,8 @@ export default function AustraliaGSGuidePage() {
             <p className="text-amber-100 mb-4">
               EEC's AI GS Statement Builder helps you craft compelling 150-word answers for each question.
             </p>
-            <a href="/australiagsprep/" 
-               className="inline-block bg-white text-amber-700 px-6 py-3 rounded-lg font-semibold hover:bg-amber-50 transition">
+            <a href="/australiagsprep/"
+              className="inline-block bg-white text-amber-700 px-6 py-3 rounded-lg font-semibold hover:bg-amber-50 transition">
               Try GS Prep Tool →
             </a>
           </div>

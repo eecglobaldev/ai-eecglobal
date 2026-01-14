@@ -67,9 +67,6 @@ export const metadata: Metadata = {
     title: "EEC AI",
   },
   metadataBase: new URL("https://ai.eecglobal.com"),
-  alternates: {
-    canonical: "https://ai.eecglobal.com/",
-  },
 };
 
 export default function RootLayout({

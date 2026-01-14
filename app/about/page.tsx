@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'About EEC AI Tools | 28 Years of Consular Expertise Digitized | AIRC Certified',
@@ -403,8 +404,13 @@ export default function AboutPage() {
             {/* Leadership Cards */}
             <div className="not-prose my-12 grid md:grid-cols-3 gap-6">
               <div className="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 backdrop-blur-sm">
-                <div className="w-12 h-12 mb-4 rounded-xl flex items-center justify-center">
-                  <img src="/assets/Amit-Jalan.jpeg" alt="Mr. Amit Jalan" className="w-12 h-12 rounded-full object-cover" />
+                <div className="relative w-12 h-12 mb-4 rounded-xl flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/assets/Amit-Jalan.jpeg"
+                    alt="Mr. Amit Jalan"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <h4 className="text-lg font-bold text-white">Mr. Amit Jalan</h4>
                 <p className="text-sm text-blue-400 font-medium mb-2">Managing Director</p>
@@ -412,8 +418,13 @@ export default function AboutPage() {
                 <p className="text-sm text-slate-300 leading-relaxed">Visionary leadership in transforming traditional counseling into AI-powered student success</p>
               </div>
               <div className="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 backdrop-blur-sm">
-                <div className="w-12 h-12 mb-4 rounded-xl flex items-center justify-center">
-                  <img src="/assets/Madhav-Gupta.jpeg" alt="CA Madhav Gupta" className="w-12 h-12 rounded-full object-cover" />
+                <div className="relative w-12 h-12 mb-4 rounded-xl flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/assets/Madhav-Gupta.jpeg"
+                    alt="CA Madhav Gupta"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <h4 className="text-lg font-bold text-white">CA Madhav Gupta</h4>
                 <p className="text-sm text-blue-400 font-medium mb-2">Director, Financial Forensics</p>
@@ -421,8 +432,13 @@ export default function AboutPage() {
                 <p className="text-sm text-slate-300 leading-relaxed">Pioneer of the Consular Protocol™ audit system for visa-compliant financial documentation</p>
               </div>
               <div className="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 backdrop-blur-sm">
-                <div className="w-12 h-12 mb-4 rounded-xl flex items-center justify-center">
-                  <img src="/assets/mohita-gupta.jpeg" alt="Mrs. Mohita Gupta" className="w-12 h-12 rounded-full object-cover" />
+                <div className="relative w-12 h-12 mb-4 rounded-xl flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/assets/mohita-gupta.jpeg"
+                    alt="Mrs. Mohita Gupta"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <h4 className="text-lg font-bold text-white">Mrs. Mohita Gupta</h4>
                 <p className="text-sm text-blue-400 font-medium mb-2">Vice President, Visa Strategy</p>
