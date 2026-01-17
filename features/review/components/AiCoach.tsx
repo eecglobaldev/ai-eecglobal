@@ -2,10 +2,6 @@
 import React, { useState } from 'react';
 import { generateTrilingualScript } from '../services/geminiService';
 import type { ScriptResult, TestimonialData } from '../types';
-import LoginSignupModal from './LoginSignupModel';
-import AuthGateModal from './AuthGateModal';
-import { sendTestimonialScriptNotificationEmails } from '../services/emailService';
-import { incrementPrepPlanCount } from '../services/userService';
 
 const testimonialTypes = [
     { value: 'IELTS_Academic_Paper_Based_Test', label: 'IELTS (Academic Paper Based Test)' },
@@ -38,9 +34,6 @@ export const AiCoach: React.FC = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [scriptResult, setScriptResult] = useState<ScriptResult | null>(null);
     const [error, setError] = useState<string | null>(null);
-    const [showLoginModal, setShowLoginModal] = useState(false);
-    const [showSignupModal, setShowSignupModal] = useState(false);
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { id, value } = e.target;
@@ -48,14 +41,6 @@ export const AiCoach: React.FC = () => {
     };
 
     const handleGenerateScript = async () => {
-        // Check if user is logged in
-        const userEmail = localStorage.getItem('AiReview');
-        if (!userEmail) {
-            // User is not logged in, show signup modal
-            setShowSignupModal(true);
-            return;
-        }
-
         if (!formData.name || !formData.score || !formData.topic) {
             setError('Please fill in all fields to generate a script.');
             setScriptResult(null);
@@ -67,23 +52,9 @@ export const AiCoach: React.FC = () => {
         setError(null);
         setScriptResult(null);
 
-        // Increment count in background (non-blocking, fire and forget)
-        incrementPrepPlanCount(userEmail)
-            .then(() => console.log('User click count incremented'))
-            .catch((countError) => console.error('Failed to increment count:', countError));
-
         try {
             const result = await generateTrilingualScript(formData);
             setScriptResult(result);
-            
-            // Send email notification to admins and branch counselors
-            try {
-                await sendTestimonialScriptNotificationEmails(userEmail, formData, result);
-                console.log('Email notification sent successfully');
-            } catch (emailError) {
-                // Don't fail the script generation if email fails
-                console.error('Failed to send email notification:', emailError);
-            }
         } catch (err) {
             const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred.';
             setError(`Sorry, something went wrong. Please try again. Error: ${errorMessage}`);
@@ -93,30 +64,6 @@ export const AiCoach: React.FC = () => {
         }
     };
 
-    const handleAuthSuccess = () => {
-        setIsAuthenticated(true);
-        setShowLoginModal(false);
-        setShowSignupModal(false);
-        // Automatically trigger script generation after successful auth
-        setTimeout(() => {
-            handleGenerateScript();
-        }, 100);
-    };
-
-    const handleSwitchToLogin = () => {
-        setShowSignupModal(false);
-        setShowLoginModal(true);
-    };
-
-    const handleSwitchToSignup = () => {
-        setShowLoginModal(false);
-        setShowSignupModal(true);
-    };
-
-    const handleCloseModals = () => {
-        setShowLoginModal(false);
-        setShowSignupModal(false);
-    };
 
     return (
         <section id="ai-coach" className="mb-16 bg-white dark:bg-slate-800 rounded-lg shadow-xl p-6 md:p-8 border-t-4 border-yellow-400">
@@ -166,23 +113,6 @@ export const AiCoach: React.FC = () => {
                     )}
                 </div>
             </div>
-
-            {/* Authentication Modals */}
-            {showSignupModal && (
-                <LoginSignupModal
-                    onAuthSuccess={handleAuthSuccess}
-                    onSwitchToLogin={handleSwitchToLogin}
-                    onClose={handleCloseModals}
-                />
-            )}
-
-            {showLoginModal && (
-                <AuthGateModal
-                    onAuthSuccess={handleAuthSuccess}
-                    onSwitchToSignup={handleSwitchToSignup}
-                    onClose={handleCloseModals}
-                />
-            )}
         </section>
     );
 };
