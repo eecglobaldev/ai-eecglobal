@@ -1,9 +1,9 @@
 'use client';
 
-import UkPrecasDashboard from '@/features/uk-precas/dashboard/UkPrecasDashboard';
+import UkPrecasDashboardWrapper from './UkPrecasDashboardWrapper';
 
 export default function UkPrecasDashboardPage() {
-  return <UkPrecasDashboard />;
+  return <UkPrecasDashboardWrapper />;
 }
 
 

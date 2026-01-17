@@ -204,6 +204,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/review/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
     // Compare Pages
     {
       url: `${baseUrl}/compare/usa-vs-canada`,

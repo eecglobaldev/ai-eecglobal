@@ -1,9 +1,9 @@
 'use client';
 
-import UsaVisaDashboard from '@/features/usa-visa/dashboard/UsaVisaDashboard';
+import UsaVisaDashboardWrapper from './UsaVisaDashboardWrapper';
 
 export default function UsaVisaDashboardPage() {
-  return <UsaVisaDashboard />;
+  return <UsaVisaDashboardWrapper />;
 }
 
 

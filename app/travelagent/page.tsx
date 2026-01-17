@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import TravelAgentApp from '@/features/travel-agent/components/TravelAgentApp';
+import TravelAgentWrapper from './TravelAgentWrapper';
 
 export const metadata: Metadata = {
   title: 'AI-Powered EEC Visa & Travel Services | Free Visa Requirements Checker',
@@ -55,6 +55,6 @@ export const metadata: Metadata = {
 };
 
 export default function TravelAgentPage() {
-  return <TravelAgentApp />;
+  return <TravelAgentWrapper />;
 }
 

@@ -18,6 +18,7 @@ declare namespace NodeJS {
         NEXT_PUBLIC_GEMINI_API_KEY_UK_PRECAS: string;
         NEXT_PUBLIC_GEMINI_API_KEY_CAREER_COUNSELOR: string;
         NEXT_PUBLIC_GEMINI_API_KEY_TRAVEL_AGENT: string;
+        NEXT_PUBLIC_GEMINI_API_KEY_REVIEW?: string;
         
         // Server-side API keys (for Server Actions - optional)
         GEMINI_API_KEY_USA_VISA?: string;

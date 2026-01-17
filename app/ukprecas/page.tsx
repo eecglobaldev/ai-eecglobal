@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import UkPrecasApp from '@/features/uk-precas/components/UkPrecasApp';
 import UkPrecasStructuredData from '@/features/uk-precas/components/UkPrecasStructuredData';
 import GoogleTagManager from '@/components/GoogleTagManager';
+import UkPrecasWrapper from './UkPrecasWrapper';
 
 export const metadata: Metadata = {
     title: 'UK Pre-CAS Interview Prep 2026 by EEC | AI-Powered Visa Interview Practice',
@@ -132,7 +132,7 @@ export default function UkPrecasPage() {
         <>
             <GoogleTagManager gtmId="GTM-TDBRW6C4" />
             <UkPrecasStructuredData />
-            <UkPrecasApp />
+            <UkPrecasWrapper />
         </>
     );
 }

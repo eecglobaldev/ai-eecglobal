@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import NzVisaApp from '@/features/nz-visa/components/NzVisaApp';
 import GoogleTagManager from '@/components/GoogleTagManager';
+import NzVisaPrepWrapper from './NzVisaPrepWrapper';
 
 export const metadata: Metadata = {
     title: 'Free AI-Powered New Zealand Student Visa Interview Prep | EEC Global | Practice NZ Immigration Questions',
@@ -97,7 +97,7 @@ export default function NzVisaPrepPage() {
     return (
         <>
             <GoogleTagManager gtmId="GTM-5KZ55893" />
-            <NzVisaApp />
+            <NzVisaPrepWrapper />
         </>
     );
 }

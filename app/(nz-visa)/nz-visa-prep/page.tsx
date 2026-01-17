@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import NzVisaApp from '@/features/nz-visa/components/NzVisaApp';
+import NzVisaPrepWrapper from './NzVisaPrepWrapper';
 
 export const metadata: Metadata = {
     title: 'New Zealand Student Visa Prep | AI-Powered Interview Practice Tool',
@@ -33,6 +33,6 @@ export const metadata: Metadata = {
 };
 
 export default function NzVisaPrepPage() {
-    return <NzVisaApp />;
+    return <NzVisaPrepWrapper />;
 }
 

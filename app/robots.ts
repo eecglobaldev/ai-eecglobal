@@ -23,6 +23,7 @@ export default function robots(): MetadataRoute.Robots {
           '/nzvisaprep/',
           '/careercounselor/',
           '/travelagent/',
+          '/review/',
         ],
         disallow: [
           '/api/',

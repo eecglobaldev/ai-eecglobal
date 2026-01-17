@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import CareerCounselorApp from '@/features/career-counselor/components/CareerCounselorApp';
+import CareerCounselorWrapper from './CareerCounselorWrapper';
 
 export const metadata: Metadata = {
   title: 'AI-Powered Study Abroad Course Counselor | EEC Global',
@@ -33,6 +33,6 @@ export const metadata: Metadata = {
 };
 
 export default function CareerCounselorPage() {
-  return <CareerCounselorApp />;
+  return <CareerCounselorWrapper />;
 }
 
