@@ -30,27 +30,27 @@ const ResourceHub: React.FC = () => {
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                         <a href="/hub/study-in-usa" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
                             <span className="mb-2 flex items-center justify-center"><Flag country="US" size={32} /></span>
-                            <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in USA</span>
+                            <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in USA Guide</span>
                         </a>
                         <a href="/hub/study-in-canada" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
                             <span className="mb-2 flex items-center justify-center"><Flag country="CA" size={32} /></span>
-                            <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in Canada</span>
+                            <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in Canada Guide</span>
                         </a>
                         <a href="/hub/study-in-uk" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
                             <span className="mb-2 flex items-center justify-center"><Flag country="GB" size={32} /></span>
-                            <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in UK</span>
+                            <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in UK Guide</span>
                         </a>
                         <a href="/hub/study-in-australia" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
                             <span className="mb-2 flex items-center justify-center"><Flag country="AU" size={32} /></span>
-                            <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in Australia</span>
+                            <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Australia Study Guide</span>
                         </a>
                         <a href="/hub/study-in-germany" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
                             <span className="mb-2 flex items-center justify-center"><Flag country="DE" size={32} /></span>
-                            <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in Germany</span>
+                            <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Germany Study Guide</span>
                         </a>
                         <a href="/hub/study-in-ireland" className="group p-4 bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-blue-100/60 dark:hover:bg-blue-500/10 transition-all text-center">
                             <span className="mb-2 flex items-center justify-center"><Flag country="IE" size={32} /></span>
-                            <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in Ireland</span>
+                            <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Study in Ireland Guide</span>
                         </a>
                     </div>
                 </div>

@@ -340,7 +340,9 @@ export default function StructuredData() {
           "Voice Analysis for Confidence",
           "German Grade Calculator",
           "Australia PR Points Calculator",
-          "Career ROI Analysis"
+          "Career ROI Analysis",
+          "SOP Writing Assistant",
+          "Visa Success Predictor"
         ]
       },
       {

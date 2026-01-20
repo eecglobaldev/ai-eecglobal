@@ -18,7 +18,11 @@ export const metadata: Metadata = {
     'Study Abroad Career Counseling AI',
     'UK CAS Interview Questions',
     'New Zealand Student Visa Interview Guide',
-    'Free Study Abroad Tools'
+    'Free Study Abroad Tools',
+    'Study Abroad AI Agents',
+    'Free Visa SOP Generator',
+    '2026 Study Abroad Trends',
+    'Visa Success Prediction AI'
   ],
   openGraph: {
     type: 'website',

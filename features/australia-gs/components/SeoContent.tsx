@@ -131,6 +131,52 @@ export const SeoContent = () => {
                     </div>
                 </div>
 
+
+                {/* Visual FAQ Section for SEO Content */}
+                <div className="mt-12">
+                    <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                        Frequently Asked Questions about Australia Student Visa (GS)
+                    </h2>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                                GTE vs Genuine Student (GS) Requirement
+                            </h3>
+                            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                The <strong>Genuine Temporary Entrant (GTE)</strong> requirement has been replaced by the <strong>Genuine Student (GS)</strong> requirement as of March 2024.
+                                Unlike GTE, the GS requirement focuses more on the student's ties to their home country and the value of the course to their future career
+                                rather than proving they won't stay in Australia permanently.
+                            </p>
+                            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                                Student Visa Financial Requirements 2026
+                            </h3>
+                            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                To obtain an Australian Student Visa (Subclass 500) in 2025-2026, you must show evidence of sufficient funds.
+                                As of May 2024, this is <strong>AUD 29,710</strong> for living costs for a single applicant, plus course fees and travel costs.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                                How EEC's AI Helper Works
+                            </h3>
+                            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Our <strong>Australia Genuine Student Test Practice</strong> tool uses advanced AI to simulate the Department of Home Affairs interview.
+                                It helps you articulate your study goals, explain your course choice, and demonstrate your genuine intent to study,
+                                drastically improving your chances of success.
+                            </p>
+                            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                                Key Ranking Factors for GS
+                            </h3>
+                            <ul className="list-disc list-inside text-slate-600 dark:text-slate-400 text-sm space-y-1">
+                                <li>Relevance of the course to previous studies/work</li>
+                                <li>Knowledge about the education provider and Australia</li>
+                                <li>Economic circumstances in home country</li>
+                                <li>Potential return on investment (ROI) of the course</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
     );
