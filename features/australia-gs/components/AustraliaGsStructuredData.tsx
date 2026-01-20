@@ -85,6 +85,7 @@ export default function AustraliaGsStructuredData() {
         "creator": {
           "@type": "Organization",
           "name": "EEC (Enbee Education Center Private Limited)",
+          "url": "https://eecglobal.com",
           "@id": "#organization"
         },
         "license": "https://creativecommons.org/licenses/by/4.0/",
