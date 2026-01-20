@@ -72,11 +72,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/assets/logos/eeclogo-main.png", sizes: "400x400", type: "image/png" },
+      { url: "/assets/logos/eeclogo-icon.png", sizes: "400x400", type: "image/png" },
       { url: "/favicon.ico", type: "image/x-icon" },
     ],
     apple: [
-      { url: "/assets/logos/eeclogo-main.png", sizes: "180x180", type: "image/png" },
+      { url: "/assets/logos/eeclogo-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
   appleWebApp: {

@@ -29,13 +29,13 @@ export default function StructuredData() {
         "logo": {
           "@type": "ImageObject",
           "@id": "https://eecglobal.com/#logo",
-          "url": "https://ai.eecglobal.com/assets/logos/eeclogo-main.png",
-          "contentUrl": "https://ai.eecglobal.com/assets/logos/eeclogo-main.png",
+          "url": "https://ai.eecglobal.com/assets/logos/eeclogo-main.webp",
+          "contentUrl": "https://ai.eecglobal.com/assets/logos/eeclogo-main.webp",
           "width": 400,
           "height": 400,
           "caption": "EEC - Enbee Education Center Official Logo"
         },
-        "image": "https://ai.eecglobal.com/assets/logos/eeclogo-main.png",
+        "image": "https://ai.eecglobal.com/assets/logos/eeclogo-main.webp",
         "foundingDate": "1997",
         "foundingLocation": {
           "@type": "Place",
