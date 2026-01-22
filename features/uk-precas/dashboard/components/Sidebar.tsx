@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { HomeIcon, DocumentIcon, ChartBarIcon, UsersIcon, CogIcon, LogoutIcon, XIcon } from './icons';
+import { Home, LogOut, X } from 'lucide-react';
 import { auth } from '@/features/shared/lib/firebase';
 import { signOut } from 'firebase/auth';
 
@@ -51,7 +51,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, profileName, photoUR
           onClick={onClose}
           className="lg:hidden absolute top-4 left-4 p-2 rounded-lg text-gray-400 hover:bg-white/10 hover:text-white transition-all z-10"
         >
-          <XIcon className="h-6 w-6" />
+          <X className="h-6 w-6" />
         </button>
 
       <div className="w-full flex flex-col items-center mt-12 lg:mt-0">
@@ -80,7 +80,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, profileName, photoUR
               className="p-3 rounded-xl bg-primary-purple text-white shadow-lg transition-all duration-300 transform hover:scale-110"
               style={{ color: '#ffffff' }}
             >
-              <HomeIcon  style={{ color: '#ffffff' }} />
+              <Home  style={{ color: '#ffffff' }} />
             </button>
         </nav>
       </div>
@@ -106,7 +106,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, profileName, photoUR
           }}
           className="p-3 rounded-xl text-gray-400 hover:bg-white/10 hover:text-white transition-all duration-300 transform hover:scale-110"
         >
-        <LogoutIcon />
+        <LogOut />
       </button>
     </aside>
     </>
