@@ -19,8 +19,8 @@ Accordion.displayName = "Accordion"
 
 const AccordionItem = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
+  React.HTMLAttributes<HTMLDivElement> & { value?: string }
+>(({ className, value, ...props }, ref) => {
   const [isOpen, setIsOpen] = React.useState(false)
 
   return (
