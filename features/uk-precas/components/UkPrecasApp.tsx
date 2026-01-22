@@ -917,6 +917,30 @@ function UkPrecasApp() {
                             </div>
                         </div>
                         <div className="flex items-center gap-3">
+                            {/* Navigation Links - Desktop */}
+                            <div className="hidden lg:flex items-center gap-2">
+                                <a
+                                    href="/ukprecas/resources/"
+                                    className="group flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+                                >
+                                    <FileText className="w-4 h-4" />
+                                    <span>Resources</span>
+                                </a>
+                                <a
+                                    href="/ukprecas/about-eec/"
+                                    className="group flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+                                >
+                                    <Award className="w-4 h-4" />
+                                    <span>About EEC</span>
+                                </a>
+                                <a
+                                    href="/ukprecas/faq/"
+                                    className="group flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+                                >
+                                    <HelpCircle className="w-4 h-4" />
+                                    <span>FAQ</span>
+                                </a>
+                            </div>
                             <div className="hidden md:flex items-center gap-3">
                                 {isAuthenticated ? (
                                     <button
@@ -937,17 +961,41 @@ function UkPrecasApp() {
                                     </button>
                                 )}
                             </div>
-                            <div className="md:hidden">
-                                <button
-                                    onClick={isAuthenticated ? handleDashboardRedirect : () => triggerAuthModal('login')}
-                                    className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-300 ${isAuthenticated
-                                            ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md hover:shadow-lg'
-                                            : 'border-2 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:border-indigo-500'
-                                        }`}
-                                >
-                                    {isAuthenticated ? <LayoutDashboard className="w-4 h-4" /> : <LogIn className="w-4 h-4" />}
-                                    {isAuthenticated ? 'Dashboard' : 'Sign In'}
-                                </button>
+                            {/* Mobile Navigation Menu */}
+                            <div className="lg:hidden relative">
+                                <div className="flex items-center gap-2">
+                                    <a
+                                        href="/ukprecas/resources/"
+                                        className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+                                        title="Resources"
+                                    >
+                                        <FileText className="w-4 h-4" />
+                                    </a>
+                                    <a
+                                        href="/ukprecas/about-eec/"
+                                        className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+                                        title="About EEC"
+                                    >
+                                        <Award className="w-4 h-4" />
+                                    </a>
+                                    <a
+                                        href="/ukprecas/faq/"
+                                        className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+                                        title="FAQ"
+                                    >
+                                        <HelpCircle className="w-4 h-4" />
+                                    </a>
+                                    <button
+                                        onClick={isAuthenticated ? handleDashboardRedirect : () => triggerAuthModal('login')}
+                                        className={`flex items-center gap-2 rounded-xl px-3 py-2 text-xs font-semibold transition-all duration-300 ${isAuthenticated
+                                                ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md hover:shadow-lg'
+                                                : 'border-2 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:border-indigo-500'
+                                            }`}
+                                    >
+                                        {isAuthenticated ? <LayoutDashboard className="w-4 h-4" /> : <LogIn className="w-4 h-4" />}
+                                        <span className="hidden sm:inline">{isAuthenticated ? 'Dashboard' : 'Sign In'}</span>
+                                    </button>
+                                </div>
                             </div>
                             <ThemeSwitcher theme={theme} setTheme={setTheme} />
                         </div>

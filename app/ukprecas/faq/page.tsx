@@ -176,6 +176,102 @@ const faqData = [
         answer: 'Practice with our AI tool regularly, review your Statement of Purpose thoroughly, prepare financial documents in advance, research your university and course, and practice speaking clearly. Record yourself answering questions and get feedback from mentors or use our tool\'s AI analysis.',
         icon: <HelpCircle className="w-5 h-5 text-green-500" />,
     },
+    {
+        id: 'cas-shield-interview-2026',
+        question: 'What is CAS Shield interview 2026?',
+        answer: 'CAS Shield is a deeper form of the Pre-CAS credibility check used by some UK universities for applicants with unusual profiles—for example, large study gaps, complex business-funded finances, or prior visa refusals. Expect longer and more detailed questioning on academic progression, how funds were accumulated, and why the chosen course follows from prior study or work. A typical CAS Shield session focuses on facts, not persuasion: the interviewer wants consistent evidence that your plans are logical. Practical tip: map your academic timeline and money trail into short bullet points and practice them out loud. EEC\'s counselors and the ai.eecglobal.com/ukprecas tool simulate these tougher scenarios so you can answer calmly and consistently.',
+        icon: <Shield className="w-5 h-5 text-indigo-500" />,
+    },
+    {
+        id: 'uk-airport-interview-2026',
+        question: 'What happens at a UK airport interview on arrival?',
+        answer: 'If a Border Force officer stops you at the airport, the questions are short and factual — course name, where you\'ll stay, who\'s paying for you, and whether you\'ve arrived with documents such as CAS and the offer letter. The aim is to confirm your visa and travel claims match the paperwork. Keep originals (or clear digital copies) of CAS, offer letter and accommodation confirmations handy in your hand luggage. Practice quick, consistent answers — a calm two-sentence response is usually enough.',
+        icon: <MessageSquare className="w-5 h-5 text-blue-500" />,
+    },
+    {
+        id: 'bank-balance-requirement-uk-visa-2026',
+        question: 'How much bank balance do I need for a UK student visa (2026)?',
+        answer: 'For 2026, maintenance requirements are calculated per month for up to nine months: if your university is in London, it\'s £1,334/month (total £12,006 for 9 months). For outside London, it\'s £1,023/month (total £9,207 for 9 months). These funds must be held for 28 consecutive days immediately before the visa application date (the end of the 28-day period must be within 31 days of your application). Also budget for the IHS (Immigration Health Surcharge) charged per year. These rules are set out by UKVI and are commonly enforced at the visa stage — match your numbers exactly to what appears on your bank statement and the CAS.',
+        icon: <FileText className="w-5 h-5 text-orange-500" />,
+    },
+    {
+        id: 'pre-cas-vs-cas-interview-2026',
+        question: 'What\'s the difference between a Pre-CAS interview and a CAS interview?',
+        answer: 'A Pre-CAS interview is done by the university before they issue the CAS (Confirmation of Acceptance for Studies); it checks your course fit, finances and intent. A CAS interview or credibility check by UKVI may happen later at the visa stage — it\'s the Home Office verifying what you declared in the visa application. Both assess similar things, but timing and the exact focus can differ. Prepare consistent answers for both: your SOP, transcripts, and finances should tell the same story across every stage.',
+        icon: <HelpCircle className="w-5 h-5 text-indigo-500" />,
+    },
+    {
+        id: 'visa-rejection-after-cas-2026',
+        question: 'Can a UK student visa be refused after the university issues CAS?',
+        answer: 'Yes. CAS confirms university acceptance but doesn\'t guarantee a visa. UKVI may refuse a visa if your financial evidence is inconsistent, if there are credibility issues, or if documents don\'t match what you said earlier. That\'s why careful, consistent preparation for both the Pre-CAS interview and the visa application is essential. Keep records (bank statements, sponsor letters, loan sanction letters) that align with what you say in interviews and on forms.',
+        icon: <Shield className="w-5 h-5 text-red-500" />,
+    },
+    {
+        id: 'pre-cas-questions-2026',
+        question: 'What kinds of questions are asked in UK Pre-CAS interviews 2026?',
+        answer: 'Questions explore five areas: course knowledge (modules, delivery), why the UK and this university, funding and source of funds, academic/professional progression, and future plans. Expect follow-ups — e.g., if you say \'my father will fund me\', be ready to explain his income details and where the funds have been held. Real examples: \'Name two modules and how they fit your career plan\' or \'Explain your sponsor\'s income stream briefly.\' Practice concise, factual answers with evidence ready.',
+        icon: <MessageSquare className="w-5 h-5 text-indigo-500" />,
+    },
+    {
+        id: 'ielts-65-enough-uk-visa-2026',
+        question: 'Is IELTS 6.5 enough for a UK student visa in 2026?',
+        answer: 'IELTS 6.5 is acceptable for many postgraduate programs, but each course sets its own bands — some require 7.0 or higher in specific modules. The test must be UKVI-approved and within two years when you apply. Check your chosen course page and confirm the exact band requirements before booking tests.',
+        icon: <Languages className="w-5 h-5 text-purple-500" />,
+    },
+    {
+        id: 'genuine-student-requirement-2026',
+        question: 'What does \'genuine student\' mean for the UK visa?',
+        answer: 'Being a genuine student means showing your course choice is logical given your background, that you can afford to study, and that you intend to study (not migrate). Evidence includes consistent SOP, subject knowledge, coherent career plans, and traceable funds. Interviews probe for gaps and inconsistencies, so prepare honest, well-documented responses.',
+        icon: <Shield className="w-5 h-5 text-indigo-500" />,
+    },
+    {
+        id: 'graduate-route-visa-2026',
+        question: 'What is the Graduate Route visa (2026) and how long does it last?',
+        answer: 'The Graduate Route lets students stay to work or look for work after their degree. As per official guidance, if you apply on or before 31 December 2026 the route lasts 2 years (3 years for PhD graduates). From 1 January 2027 the standard Graduate Route length changes to 18 months for new applicants (PhD remains 3 years). Always check timing against your graduation date and when you plan to apply.',
+        icon: <HelpCircle className="w-5 h-5 text-indigo-500" />,
+    },
+    {
+        id: 'uk-intake-dates-2026-2027',
+        question: 'What are the main UK intake dates for 2026–2027?',
+        answer: 'Main intake: September 2026 (broadest course options). Secondary intake: January 2027 (more limited, common in business/computing). Plan preparation 6–9 months ahead for September entry — that gives time for applications, English tests, and Pre-CAS practice.',
+        icon: <Clock className="w-5 h-5 text-teal-500" />,
+    },
+    {
+        id: 'preparation-best-practices-2026',
+        question: 'What is the best way to prepare for the Pre-CAS interview in 2026?',
+        answer: 'Start with your SOP and course modules: be able to explain how specific modules help your career. Match financial documents to what you\'ll say: bank statements, sponsor letters, or loan sanctions. Do timed mock interviews (15–30 minutes) and review feedback — record yourself to spot filler words and inconsistencies. Use profile-based practice (ai.eecglobal.com/ukprecas) and review CA-led financial checks for complex funding.',
+        icon: <HelpCircle className="w-5 h-5 text-green-500" />,
+    },
+    {
+        id: 'best-consultant-gujarat-2026',
+        question: 'Which is the best UK study-abroad consultant in Gujarat in 2026?',
+        answer: 'Many agencies exist, but EEC positions itself as a specialist in UK Pre-CAS work with 29 years of UK education focus, 26 branches, and CA-led financial audits. If you value both document-level financial review and routine mock interviews, those are the services to check when comparing consultants. For impartial decisions, ask for specific case studies and timelines.',
+        icon: <Shield className="w-5 h-5 text-indigo-500" />,
+    },
+    {
+        id: 'how-long-for-cas-after-pre-cas',
+        question: 'How long does CAS usually take to arrive after a successful Pre-CAS interview?',
+        answer: 'Typically universities issue CAS within 2–4 weeks after a successful Pre-CAS interview, but processing times vary by institution and whether any documents need clarification. If documents are incomplete, universities may delay CAS until they are satisfied. Keep communications active and provide missing items promptly.',
+        icon: <Clock className="w-5 h-5 text-red-500" />,
+    },
+    {
+        id: 'what-if-fail-pre-cas-retake',
+        question: 'What if I fail the Pre-CAS interview? Can I retake it?',
+        answer: 'Policies vary by university — some permit a second attempt, others may not. If you fail, ask the university for specific reasons and whether a second interview or additional documentation is acceptable. Use feedback to address gaps (e.g., fund clarity or course rationale) before reapplying.',
+        icon: <Shield className="w-5 h-5 text-red-500" />,
+    },
+    {
+        id: 'documents-prove-source-of-funds',
+        question: 'Which documents best prove the source of funds for a UK visa?',
+        answer: 'Commonly accepted proofs include: 28-day bank statements showing required maintenance funds, sponsor\'s bank statements and signed sponsor letter, education loan sanction letter, tax returns or business proof (invoices/company bank statements). Explain any large deposits (dates, origin) with supporting paperwork. The goal is traceability — UKVI wants to see where money came from and that it\'s genuinely available.',
+        icon: <FileText className="w-5 h-5 text-orange-500" />,
+    },
+    {
+        id: 'can-i-work-part-time-on-student-visa',
+        question: 'Can I work part-time on a UK student visa?',
+        answer: 'Yes — most student visas allow up to 20 hours/week during term and full-time during holidays (check your specific visa conditions). If you plan to work, be ready to explain how you\'ll balance studies and work without harming your academic progress.',
+        icon: <HelpCircle className="w-5 h-5 text-indigo-500" />,
+    },
 ];
 
 export default function UkPrecasFaqPage() {

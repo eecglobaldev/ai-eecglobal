@@ -1,119 +1,9 @@
-import { Metadata } from 'next';
+'use client';
+
 import { Search, HelpCircle } from 'lucide-react';
 import { useState } from 'react';
 import GoogleTagManager from '@/components/GoogleTagManager';
 import UkPrecasStructuredData from '@/features/uk-precas/components/UkPrecasStructuredData';
-
-export const metadata: Metadata = {
-    title: 'UK Pre-CAS Interview Glossary | Key Terms & Definitions',
-    description: 'Comprehensive glossary of UK Pre-CAS interview terms, visa definitions, and study abroad terminology. Understand CAS, credibility assessment, and visa requirements.',
-    keywords: [
-        'UK Pre-CAS glossary',
-        'UK visa terms',
-        'CAS definition',
-        'credibility interview terms',
-        'UK student visa glossary',
-        'Pre-CAS terminology',
-        'study abroad terms',
-        'UK visa definitions',
-        'Tier 4 visa glossary',
-        'UK immigration terms'
-    ],
-    authors: [{ name: 'EEC - Enbee Education Center' }],
-    publisher: 'EEC - Enbee Education Center',
-    robots: {
-        index: true,
-        follow: true,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-        'max-video-preview': -1,
-        googleBot: 'index, follow',
-    },
-    alternates: {
-        canonical: 'https://ai.eecglobal.com/ukprecas/glossary/',
-        languages: {
-            'en-GB': 'https://ai.eecglobal.com/ukprecas/glossary/',
-            'en-IN': 'https://ai.eecglobal.com/ukprecas/glossary/',
-            'en-US': 'https://ai.eecglobal.com/ukprecas/glossary/',
-            'x-default': 'https://ai.eecglobal.com/ukprecas/glossary/',
-        },
-    },
-    openGraph: {
-        type: 'website',
-        url: 'https://ai.eecglobal.com/ukprecas/glossary/',
-        title: 'UK Pre-CAS Interview Glossary | Key Terms & Definitions',
-        description: 'Comprehensive glossary of UK Pre-CAS interview terms and visa definitions.',
-        siteName: 'EEC',
-        locale: 'en_GB',
-        alternateLocale: ['en_US', 'en_IN'],
-        images: [
-            {
-                url: 'https://ai.eecglobal.com/assets/eeclogo.svg',
-                secureUrl: 'https://ai.eecglobal.com/assets/eeclogo.svg',
-                type: 'image/svg+xml',
-                width: 1200,
-                height: 630,
-                alt: 'EEC - UK Pre-CAS Glossary',
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        site: '@eecglobal',
-        creator: '@eecglobal',
-        title: 'UK Pre-CAS Interview Glossary | Key Terms & Definitions',
-        description: 'Comprehensive glossary of UK Pre-CAS interview terms and visa definitions.',
-        images: ['https://ai.eecglobal.com/assets/eeclogo.svg'],
-    },
-    other: {
-        'google-site-verification': 'rqiI0_ZlREHbdPNC1E_HUY_RMmHcYEiO6yL9HdZ1VfE',
-        'msvalidate.01': '9A9B2AD82F89ED85E7EA6D30FAD943EC',
-        'yandex-verification': '4c16d6e2b3107e7f',
-        'indexnow-key': 'a76a6a94e6924e4eb33d0cf3ad7de3bc',
-        'p:domain_verify': 'f322a851a0ee625a14f30abb8d526f73',
-        'facebook-domain-verification': 'dch3wf3uiyuczeywymetwiixttq0e8',
-        'norton-safeweb-site-verification': 'ZORUDVR8LPMT3RSOVOQVIP2DV87E5MW8SMBN-RJ80HOQVBOZRDYNN3A83OE0BVBQFIQHZ6VQVJM2KKFSMBB7FON9R59MNWCPAV7VRN5-DJWONIVMA6XO5FK-VVUDT7LC',
-        'geo.region': 'IN-GJ',
-        'geo.placename': 'Gujarat, India',
-        'geo.position': '22.3072;73.1812',
-        'ICBM': '22.3072, 73.1812',
-        'language': 'English',
-        'pinterest-rich-pin': 'true',
-        'article:author': 'EEC - Enbee Education Center',
-        'article:publisher': 'https://www.facebook.com/eecglobal',
-        'article:section': 'Education',
-        'article:tag': 'UK Visa, Pre-CAS Interview, Glossary, Study Abroad',
-        'og:article:author': 'Amit Jalan',
-        'og:article:published_time': '2024-06-15T00:00:00+05:30',
-        'og:article:modified_time': '2026-01-16T00:00:00+05:30',
-        'theme-color': '#4f46e5',
-        'apple-mobile-web-app-capable': 'yes',
-        'apple-mobile-web-app-status-bar-style': 'black-translucent',
-        'apple-mobile-web-app-title': 'UK Pre-CAS Prep',
-        'application-name': 'UK Pre-CAS Interview Prep',
-        'msapplication-TileColor': '#4f46e5',
-        'msapplication-config': '/browserconfig.xml',
-        'format-detection': 'telephone=no',
-    },
-    icons: {
-        icon: [
-            { url: 'https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg', type: 'image/svg+xml' },
-            { url: '/favicon.ico', sizes: 'any' },
-        ],
-        apple: [
-            { url: '/apple-touch-icon.png', sizes: '180x180' },
-        ],
-    },
-    manifest: '/manifest.json',
-    appleWebApp: {
-        capable: true,
-        statusBarStyle: 'black-translucent',
-        title: 'UK Pre-CAS Prep',
-    },
-    verification: {
-        google: 'rqiI0_ZlREHbdPNC1E_HUY_RMmHcYEiO6yL9HdZ1VfE',
-    },
-};
 
 const glossaryTerms = [
     {
@@ -175,6 +65,86 @@ const glossaryTerms = [
         term: 'Maintenance Funds',
         definition: 'The minimum amount of money you must prove you have available for living expenses during your studies. Varies by location: £1,334/month for London, £1,023/month for outside London.',
         category: 'Financial',
+    },
+    {
+        term: 'CAS Shield Interview',
+        definition: 'An enhanced credibility assessment used by universities for higher-risk applicants. It digs deeper into academic progression, source-of-funds, and motivation. Useful to practice for if you have gaps, complex funding, or previous immigration issues.',
+        category: 'Interview',
+    },
+    {
+        term: 'UKVI (UK Visas and Immigration)',
+        definition: 'The UK government department handling visa decisions, border control and immigration policy. UKVI sets rules for student visas, including financial, English and CAS-related requirements.',
+        category: 'Government Terms',
+    },
+    {
+        term: 'Genuine Student Requirement',
+        definition: 'A principle UKVI applies to ensure applicants are coming to study, demonstrated via consistent documents, coherent course choice, traceable funds, and credible future plans.',
+        category: 'Requirements',
+    },
+    {
+        term: 'IHS (Immigration Health Surcharge) 2026',
+        definition: 'A mandatory healthcare surcharge paid during the visa application: typically £1,035 per year for most adult applicants (students pay the appropriate rate as part of their visa fee). It grants access to NHS services from the visa start date.',
+        category: 'Financial',
+    },
+    {
+        term: 'Points-Based System (PBS) UK',
+        definition: 'The framework used to score visa applications. For a student application, a total of 70 points is required (CAS and course requirements, funds, and English proficiency contribute to this total).',
+        category: 'Government Terms',
+    },
+    {
+        term: 'SELT (Secure English Language Test)',
+        definition: 'UKVI-approved English tests (e.g., IELTS for UKVI, PTE Academic UKVI) used to prove your language ability for visa purposes. Results are typically valid for two years.',
+        category: 'Requirements',
+    },
+    {
+        term: 'UK Airport Interview',
+        definition: 'A short credibility check by Border Force officers on arrival to confirm identity, study plans, and accommodation. Keep originals or clear digital copies of CAS and offer letter for arrival checks.',
+        category: 'Interview',
+    },
+    {
+        term: 'BRP (Biometric Residence Permit)',
+        definition: 'A card issued to non-UK nationals staying longer than six months. Collect it at the designated Post Office within 10 days of arrival; it proves your legal status in the UK.',
+        category: 'Documents',
+    },
+    {
+        term: 'Academic Progression',
+        definition: 'The expectation that your chosen course logically follows your previous education or employment. Good progression is a strong indicator of genuine intent.',
+        category: 'Requirements',
+    },
+    {
+        term: 'AIRC Certification',
+        definition: 'An industry certification for education agents demonstrating ethical recruitment and counselor training standards. EEC is AIRC-certified through 2031 per internal records.',
+        category: 'University Terms',
+    },
+    {
+        term: 'Source of Funds (SoF)',
+        definition: 'Documentation proving how your study funds were obtained — savings, salary, business income, loan letters — with evidence that funds were held for the required 28-day period.',
+        category: 'Financial',
+    },
+    {
+        term: 'UK Russell Group',
+        definition: 'A group of 24 leading UK research-intensive universities. Member institutions are often more selective and research-focused.',
+        category: 'University Terms',
+    },
+    {
+        term: 'TB Test for UK Visa',
+        definition: 'Tuberculosis screening required from applicants in certain countries, including India, for visas longer than six months. Tests must be taken at approved centres and are usually valid for six months.',
+        category: 'Documents',
+    },
+    {
+        term: 'UK September Intake',
+        definition: 'The primary academic start date (late September) when most UK courses commence; it offers the widest choice of programs and is the most common intake for international students.',
+        category: 'University Terms',
+    },
+    {
+        term: 'UK January Intake',
+        definition: 'A secondary intake (January/February) with limited course options; useful if you miss the September deadline or prefer a later start.',
+        category: 'University Terms',
+    },
+    {
+        term: 'EEC Pre-CAS AI Tool',
+        definition: 'A free, profile-based AI interview practice system that records answers, offers transcriptions and scores, and helps identify weak points before real interviews.',
+        category: 'University Terms',
     },
 ];
 
