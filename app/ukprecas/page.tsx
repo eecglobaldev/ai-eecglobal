@@ -5,7 +5,7 @@ import UkPrecasWrapper from './UkPrecasWrapper';
 
 export const metadata: Metadata = {
     title: 'UK Pre-CAS Interview Prep 2026 by EEC | AI-Powered Visa Interview Practice',
-    description: 'Ace your UK Pre-CAS interview 2026 with EEC\'s AI tool. Free mock interviews, instant feedback & expert UKVI guidance for Tier 4 visa success. September 2026 & January 2027 UK intakes. 26 Gujarat branches.',
+    description: 'Ace your UK Pre-CAS credibility interview 2026 with EEC\'s AI tool. Free mock interviews, instant feedback & expert UKVI guidance for Tier 4 visa success. September 2026 & January 2027 UK intakes. 26 Gujarat branches.',
     keywords: [
         'UK Pre-CAS interview 2026',
         'UK student visa interview 2026',
@@ -29,7 +29,13 @@ export const metadata: Metadata = {
         'study in UK 2026',
         'September 2026 UK intake',
         'January 2027 UK intake',
-        'Graduate Route 2026'
+        'Graduate Route 2026',
+        'UK Pre-CAS credibility interview preparation',
+        'UK student visa mock interview',
+        'AI UK visa prep tool',
+        'UK CAS interview questions',
+        'UK visa success rate',
+        'free UK visa interview practice'
     ],
     authors: [{ name: 'EEC - Enbee Education Center' }],
     publisher: 'EEC - Enbee Education Center',
@@ -53,8 +59,8 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         url: 'https://ai.eecglobal.com/ukprecas/',
-        title: 'UK Pre-CAS Interview Prep by EEC | AI-Powered Visa Interview Practice',
-        description: 'Ace your UK Pre-CAS interview with EEC\'s AI-powered prep tool. Get personalized questions, real-time feedback, and expert guidance for UK student visa success. Practice with audio recording & transcription.',
+        title: 'UK Pre-CAS Interview Prep 2026 by EEC | AI-Powered Visa Interview Practice',
+        description: 'Ace your UK Pre-CAS credibility interview with EEC\'s AI-powered prep tool. Get personalized questions, real-time feedback, and expert guidance for UK student visa success. Practice with audio recording & transcription. Trusted by 15,000+ students.',
         siteName: 'EEC',
         locale: 'en_GB',
         alternateLocale: ['en_US', 'en_IN'],
@@ -73,8 +79,8 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         site: '@eecglobal',
         creator: '@eecglobal',
-        title: 'UK Pre-CAS Interview Prep by EEC | AI-Powered Visa Interview Practice',
-        description: 'Ace your UK Pre-CAS interview with EEC\'s AI-powered prep tool. Get personalized questions, real-time feedback, and expert guidance for UK student visa success.',
+        title: 'UK Pre-CAS Interview Prep 2026 by EEC | AI-Powered Visa Interview Practice',
+        description: 'Ace your UK Pre-CAS credibility interview with EEC\'s AI-powered prep tool. Get personalized questions, real-time feedback, and expert guidance for UK student visa success.',
         images: ['https://ai.eecglobal.com/assets/eeclogo.svg'],
     },
     other: {
@@ -136,4 +142,3 @@ export default function UkPrecasPage() {
         </>
     );
 }
-

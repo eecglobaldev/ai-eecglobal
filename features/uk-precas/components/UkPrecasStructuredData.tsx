@@ -28,9 +28,9 @@ export default function UkPrecasStructuredData() {
         "@type": "WebSite",
         "@id": "https://ai.eecglobal.com/ukprecas/#website",
         "url": "https://ai.eecglobal.com/ukprecas/",
-        "name": "UK Pre-CAS Interview Prep by EEC",
+        "name": "UK Pre-CAS Interview Prep Tool by EEC",
         "alternateName": "UK Student Visa Interview Preparation Tool",
-        "description": "AI-powered UK Pre-CAS visa interview preparation platform with personalized questions, audio recording, and real-time feedback for UK student visa success",
+        "description": "AI-powered UK Pre-CAS credibility interview preparation platform with personalized questions, audio recording, and real-time feedback for UK student visa success",
         "publisher": {
           "@id": "https://eecglobal.com/#organization"
         },
@@ -226,7 +226,7 @@ export default function UkPrecasStructuredData() {
         "@id": "https://ai.eecglobal.com/ukprecas/#webpage",
         "url": "https://ai.eecglobal.com/ukprecas/",
         "name": "UK Pre-CAS Interview Prep 2026 by EEC | AI-Powered Visa Interview Practice",
-        "description": "Ace your UK Pre-CAS interview 2026 with EEC's AI tool. Free mock interviews, instant feedback & expert UKVI guidance for Tier 4 visa success. September 2026 & January 2027 UK intakes. 26 Gujarat branches.",
+        "description": "Ace your UK Pre-CAS interview 2026 with EEC's free AI tool. Get hyper-personalized questions, practice with your voice, and receive instant, expert feedback. Designed for Indian students applying for Tier 4 visas.",
         "isPartOf": {
           "@id": "https://ai.eecglobal.com/ukprecas/#website"
         },
@@ -240,7 +240,7 @@ export default function UkPrecasStructuredData() {
           "url": "https://ai.eecglobal.com/assets/eeclogo.svg",
           "width": 1200,
           "height": 630,
-          "caption": "EEC - UK Pre-CAS Interview Preparation"
+          "caption": "EEC UK Pre-CAS Interview Preparation"
         },
         "interactionStatistic": [
           {
@@ -321,6 +321,7 @@ export default function UkPrecasStructuredData() {
         "@type": "Service",
         "@id": "https://ai.eecglobal.com/ukprecas/#service",
         "name": "UK Pre-CAS Interview Preparation Service",
+        "serviceType": "EducationalService",
         "description": "AI-powered UK Pre-CAS credibility interview preparation service for Indian students applying for UK student visas",
         "provider": {
           "@id": "https://eecglobal.com/#organization"
@@ -329,7 +330,6 @@ export default function UkPrecasStructuredData() {
           "@type": "State",
           "name": "Gujarat"
         },
-        "serviceType": "Educational Service",
         "serviceChannel": {
           "@type": "ServiceChannel",
           "serviceUrl": "https://ai.eecglobal.com/ukprecas/",
@@ -442,6 +442,57 @@ export default function UkPrecasStructuredData() {
             }
           }
         ]
+      },
+      {
+        "@type": "Review",
+        "@id": "https://ai.eecglobal.com/ukprecas/#review-1",
+        "itemReviewed": { "@id": "https://ai.eecglobal.com/ukprecas/#webapp" },
+        "author": {
+          "@type": "Person",
+          "name": "Rajesh Patel"
+        },
+        "reviewBody": "The AI pinpointed the exact weak spot in my Pre-CAS answers regarding my study gap. The practice sessions were brutal but necessary. I went into the real interview with 100% confidence. Visa granted!",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "datePublished": "2024-12-01"
+      },
+      {
+        "@type": "Review",
+        "@id": "https://ai.eecglobal.com/ukprecas/#review-2",
+        "itemReviewed": { "@id": "https://ai.eecglobal.com/ukprecas/#webapp" },
+        "author": {
+          "@type": "Person",
+          "name": "Priya Sharma"
+        },
+        "reviewBody": "For me, it was the financial questions. The AI didn't just ask 'who is your sponsor', it drilled down into my father's income and ITR details. That level of specific practice is something you can't get anywhere else. This tool is a game-changer.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "datePublished": "2024-11-15"
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://ai.eecglobal.com/ukprecas/#local-vadodara",
+        "name": "EEC Alkapuri",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3rd Floor, B-Wing, Windsor Plaza, RC Dutt Rd, Alkapuri",
+          "addressLocality": "Vadodara",
+          "addressRegion": "Gujarat",
+          "addressCountry": "IN"
+        },
+        "telephone": "+918000506539",
+        "url": "https://maps.app.goo.gl/2Fw9ZqQ2cxPnc7oG7",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "reviewCount": "1113"
+        }
       }
     ]
   };
@@ -449,11 +500,7 @@ export default function UkPrecasStructuredData() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      dangerouslySetInnerHTML={{ __html": JSON.stringify(jsonLd) }}
     />
   );
 }
-
-
-
-
