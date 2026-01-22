@@ -242,7 +242,6 @@ export default function UkPrecasFaqPage() {
                             {faqData.map((faq, index) => (
                                 <AccordionItem
                                     key={faq.id}
-                                    value={faq.id}
                                     className="bg-white/90 dark:bg-[#161b22]/90 backdrop-blur-xl rounded-2xl border border-slate-200/50 dark:border-[#30363d] shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
                                     style={{ animationDelay: `${index * 50}ms` }}
                                 >
