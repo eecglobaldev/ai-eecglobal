@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils"
 
 const Accordion = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { type?: string; collapsible?: boolean }
->(({ className, type, collapsible, ...props }, ref) => (
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
   <div
     ref={ref}
     className={cn("space-y-2", className)}
@@ -19,21 +19,32 @@ Accordion.displayName = "Accordion"
 
 const AccordionItem = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { value?: string }
->(({ className, value, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("border-b", className)}
-    {...props}
-  />
-))
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => {
+  const [isOpen, setIsOpen] = React.useState(false)
+
+  return (
+    <div
+      ref={ref}
+      className={cn("border-b", className)}
+      {...props}
+      data-is-open={isOpen}
+      onToggle={() => setIsOpen(!isOpen)}
+    />
+  )
+})
 AccordionItem.displayName = "AccordionItem"
 
 const AccordionTrigger = React.forwardRef<
   HTMLButtonElement,
   React.ButtonHTMLAttributes<HTMLButtonElement>
 >(({ className, children, ...props }, ref) => {
+  const itemRef = React.useRef<HTMLDivElement>(null)
   const [isOpen, setIsOpen] = React.useState(false)
+
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
 
   return (
     <button
@@ -42,7 +53,7 @@ const AccordionTrigger = React.forwardRef<
         "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
         className
       )}
-      onClick={() => setIsOpen(!isOpen)}
+      onClick={toggle}
       data-state={isOpen ? "open" : "closed"}
       {...props}
     >
