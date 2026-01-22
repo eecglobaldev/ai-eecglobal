@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils"
 
 const Accordion = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { type?: string; collapsible?: boolean }
->(({ className, type, collapsible, ...props }, ref) => (
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
   <div
     ref={ref}
     className={cn("space-y-2", className)}
@@ -19,8 +19,8 @@ Accordion.displayName = "Accordion"
 
 const AccordionItem = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { value?: string }
->(({ className, value, ...props }, ref) => {
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => {
   const [isOpen, setIsOpen] = React.useState(false)
 
   return (
@@ -68,10 +68,11 @@ const AccordionContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, children, ...props }, ref) => {
+  const contentRef = React.useRef<HTMLDivElement>(null)
   const [isOpen, setIsOpen] = React.useState(false)
 
   React.useEffect(() => {
-    const trigger = props.parentElement?.querySelector('[data-state]') as HTMLElement
+    const trigger = contentRef.current?.parentElement?.querySelector('[data-state]') as HTMLElement
     if (trigger) {
       const observer = new MutationObserver(() => {
         setIsOpen(trigger.getAttribute('data-state') === 'open')
@@ -79,11 +80,15 @@ const AccordionContent = React.forwardRef<
       observer.observe(trigger, { attributes: true, attributeFilter: ['data-state'] })
       return () => observer.disconnect()
     }
-  }, [props.parentElement])
+  }, [])
 
   return (
     <div
-      ref={ref}
+      ref={(el) => {
+        contentRef.current = el
+        if (typeof ref === 'function') ref(el)
+        else if (ref) ref.current = el
+      }}
       className={cn(
         "overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
         isOpen ? "data-[state=open]" : "data-[state=closed]",
