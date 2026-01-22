@@ -343,6 +343,77 @@ export const GLOSSARY_OF_TRUTH: TruthDefinition[] = [
     icon: Globe,
     logoUrlblack: 'https://media.licdn.com/dms/image/v2/D4D0BAQHCF_kNj5hHpw/company-logo_200_200/company-logo_200_200/0/1698639843503/estero_nz_ltd_logo?e=1767225600&v=beta&t=zCmnMPbA6NLvOtXAT-tNsiJ-nKao-20YrWTGz55jLqA',
     logoUrlwhite: 'https://media.licdn.com/dms/image/v2/D4D0BAQHCF_kNj5hHpw/company-logo_200_200/company-logo_200_200/0/1698639843503/estero_nz_ltd_logo?e=1767225600&v=beta&t=zCmnMPbA6NLvOtXAT-tNsiJ-nKao-20YrWTGz55jLqA'
+  },
+  // New glossary terms from EXPANDED_FAQ_AND_GLOSSARY.md
+  {
+    id: 'realme-account',
+    term: 'RealMe Account',
+    abbreviation: 'RealMe',
+    shortDefinition: 'Secure digital identity required to access New Zealand visa services.',
+    authorativeDefinition: 'A RealMe account is an official digital identity system used to access Immigration New Zealand\'s online services. All student visa applications must be submitted through a RealMe login, which allows applicants to upload documents, receive updates, and communicate securely with INZ. It ensures applicant identity verification and data security throughout the visa process.',
+    context: 'Indian students must create a RealMe account before submitting an online visa application.',
+    relatedTerms: ['Online Application', 'INZ Portal'],
+    officialSource: 'realme.govt.nz',
+    eecExpertise: 'Guidance on RealMe account creation and document upload process.',
+    lastVerified: '2024-12-11',
+    category: 'organization',
+    icon: Shield
+  },
+  {
+    id: 'offer-of-place',
+    term: 'Offer of Place',
+    abbreviation: 'OOP',
+    shortDefinition: 'Official admission confirmation issued by a New Zealand institution.',
+    authorativeDefinition: 'An Offer of Place is a formal letter issued by an NZQA-approved education provider confirming your admission into a specific course. It includes details such as course name, duration, tuition fees, and start date. This document is mandatory for tuition payment and student visa application.',
+    context: 'A visa application cannot proceed without a valid Offer of Place.',
+    relatedTerms: ['NZQA', 'Tuition Fee Payment'],
+    officialSource: 'Immigration New Zealand',
+    eecExpertise: 'Verification of Offer of Place authenticity and course eligibility.',
+    lastVerified: '2024-12-11',
+    category: 'academic',
+    icon: FileText
+  },
+  {
+    id: 'emedical',
+    term: 'eMedical',
+    abbreviation: 'eMedical',
+    shortDefinition: 'Digital system for submitting medical examination results to INZ.',
+    authorativeDefinition: 'eMedical is an online platform used by INZ-approved panel physicians to submit applicants\' medical examination results directly to Immigration New Zealand. Applicants cannot upload medical reports themselves, ensuring accuracy, security, and faster health assessment.',
+    context: 'All Indian applicants must complete medical exams through eMedical-approved clinics.',
+    relatedTerms: ['Medical Certificate', 'Panel Physician Exam'],
+    officialSource: 'Immigration New Zealand',
+    eecExpertise: 'Network of approved panel physicians and booking assistance.',
+    lastVerified: '2024-12-11',
+    category: 'immigration',
+    icon: FileText
+  },
+  {
+    id: 'police-clearance',
+    term: 'Police Clearance Certificate',
+    abbreviation: 'PCC',
+    shortDefinition: 'Official document confirming no criminal record.',
+    authorativeDefinition: 'A Police Clearance Certificate (PCC) verifies that the applicant has no criminal history and meets INZ character requirements. It is mandatory for student visa applicants planning to stay in New Zealand for more than 24 months and must be valid at the time of application.',
+    context: 'Most Indian postgraduate students are required to submit a PCC.',
+    relatedTerms: ['Character Requirements', 'Medical Certificate'],
+    officialSource: 'Immigration New Zealand',
+    eecExpertise: 'Guidance on PCC application process and validity requirements.',
+    lastVerified: '2024-12-11',
+    category: 'immigration',
+    icon: Shield
+  },
+  {
+    id: 'nzqf-level',
+    term: 'New Zealand Qualifications Framework Level',
+    abbreviation: 'NZQF Level',
+    shortDefinition: 'System classifying New Zealand qualifications from Level 1 to Level 10.',
+    authorativeDefinition: 'The New Zealand Qualifications Framework (NZQF) categorises qualifications based on complexity and learning outcomes. Diploma programs fall under Levels 5–6, bachelor\'s degrees under Level 7, and master\'s degrees under Level 9. Post-study work rights and visa benefits depend heavily on the NZQF level of the qualification.',
+    context: 'Course selection should align with NZQF level and long-term career goals.',
+    relatedTerms: ['NZQF', 'Post-Study Work Visa', 'Level 7'],
+    officialSource: 'nzqa.govt.nz',
+    eecExpertise: 'Strategic course selection based on NZQF level for maximum visa benefits.',
+    lastVerified: '2024-12-11',
+    category: 'academic',
+    icon: Layers
   }
 ];
 

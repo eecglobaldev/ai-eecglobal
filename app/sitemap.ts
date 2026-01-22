@@ -214,7 +214,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/nzvisaprep/`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/nzvisaprep/faq/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/nzvisaprep/glossary/`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/nzvisaprep/preparation-guide/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/nzvisaprep/resources/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/nzvisaprep/about-eec/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/careercounselor/`,

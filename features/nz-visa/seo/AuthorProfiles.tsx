@@ -260,11 +260,13 @@ const UltraExpertCard: React.FC<{ expert: ExpertProfile; index: number; featured
         <div className="relative flex flex-col md:flex-row gap-6 p-6">
           {/* Left Column - Avatar & Stats */}
           <div className="flex flex-col items-center md:items-start gap-4 md:w-48 flex-shrink-0">
-            {/* Avatar with Dynamic Ring */}
+            {/* Avatar with Dynamic Ring - Showing Initials Only */}
             <div className="relative group/avatar">
               <div className={`absolute -inset-2 bg-gradient-to-br ${expert.gradient} rounded-2xl blur-md opacity-50 group-hover/avatar:opacity-80 transition-opacity duration-500`} />
               <div className={`relative w-28 h-28 rounded-xl bg-gradient-to-br ${expert.gradient} flex items-center justify-center shadow-xl`}>
-                <img src={expert.profileImage} alt={expert.name} className="w-full h-full object-cover rounded-xl" />
+                <span className="text-3xl font-black text-white">
+                  {expert.initials}
+                </span>
               </div>
             </div>
 

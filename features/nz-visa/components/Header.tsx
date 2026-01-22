@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/features/shared/lib/firebase';
 import { AUTH_MODAL_EVENT, DASHBOARD_URL } from '../constants';
+import { FileText, HelpCircle, BookOpen, Award, Target } from 'lucide-react';
 
 interface HeaderProps {
   theme: string;
@@ -142,6 +143,44 @@ export const Header: React.FC<HeaderProps> = ({ theme, setTheme }) => {
               </span>
             </div>
             <div className="flex items-center gap-2 sm:hidden">
+              {/* Mobile Navigation Menu */}
+              <div className="flex items-center gap-1">
+                <a
+                  href="/nzvisaprep/resources/"
+                  className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+                  title="Resources"
+                >
+                  <FileText className="w-4 h-4" />
+                </a>
+                <a
+                  href="/nzvisaprep/about-eec/"
+                  className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+                  title="About EEC"
+                >
+                  <Award className="w-4 h-4" />
+                </a>
+                <a
+                  href="/nzvisaprep/faq/"
+                  className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+                  title="FAQ"
+                >
+                  <HelpCircle className="w-4 h-4" />
+                </a>
+                <a
+                  href="/nzvisaprep/glossary/"
+                  className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+                  title="Glossary"
+                >
+                  <BookOpen className="w-4 h-4" />
+                </a>
+                <a
+                  href="/nzvisaprep/preparation-guide/"
+                  className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+                  title="Guide"
+                >
+                  <Target className="w-4 h-4" />
+                </a>
+              </div>
               {actionButton(
                 'rounded-full bg-blue-600 text-white px-3 py-1.5 text-xs font-semibold shadow-sm'
               )}
@@ -150,6 +189,44 @@ export const Header: React.FC<HeaderProps> = ({ theme, setTheme }) => {
           </div>
 
           <div className="hidden sm:flex items-center gap-3">
+            {/* Navigation Links - Desktop */}
+            <div className="hidden lg:flex items-center gap-2">
+              <a
+                href="/nzvisaprep/resources/"
+                className="group flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+              >
+                <FileText className="w-4 h-4" />
+                <span>Resources</span>
+              </a>
+              <a
+                href="/nzvisaprep/about-eec/"
+                className="group flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+              >
+                <Award className="w-4 h-4" />
+                <span>About EEC</span>
+              </a>
+              <a
+                href="/nzvisaprep/faq/"
+                className="group flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+              >
+                <HelpCircle className="w-4 h-4" />
+                <span>FAQ</span>
+              </a>
+              <a
+                href="/nzvisaprep/glossary/"
+                className="group flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+              >
+                <BookOpen className="w-4 h-4" />
+                <span>Glossary</span>
+              </a>
+              <a
+                href="/nzvisaprep/preparation-guide/"
+                className="group flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+              >
+                <Target className="w-4 h-4" />
+                <span>Guide</span>
+              </a>
+            </div>
             {actionButton('px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition')}
             <ThemeSwitcher theme={theme} setTheme={setTheme} />
           </div>
