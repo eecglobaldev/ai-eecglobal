@@ -238,7 +238,7 @@ export default function UkPrecasFaqPage() {
 
                     {/* FAQ Accordion */}
                     <div className="max-w-4xl mx-auto">
-                        <Accordion type="single" collapsible className="space-y-4">
+                        <Accordion className="space-y-4">
                             {faqData.map((faq, index) => (
                                 <AccordionItem
                                     key={faq.id}
