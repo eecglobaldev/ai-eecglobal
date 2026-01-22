@@ -126,7 +126,7 @@ const faqData = [
         id: 'is-tool-free',
         question: 'Is the UK Pre-CAS interview tool free?',
         answer: 'Yes, EEC\'s UK Pre-CAS interview prep tool is 100% free. You can practice unlimited mock interviews, get AI feedback, and track your progress at no cost. The tool is designed to help Indian students prepare for their UK visa interviews without any financial barriers.',
-        icon: <Shield classNameName="w-5 h-5 text-green-500" />,
+        icon: <Shield className="w-5 h-5 text-green-500" />,
     },
     {
         id: 'how-ai-feedback-works',
