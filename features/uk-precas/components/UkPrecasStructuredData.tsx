@@ -2,10 +2,10 @@
 
 /**
  * UK Pre-CAS Interview Prep - Comprehensive Structured Data (JSON-LD)
- * 
+ *
  * This component generates all the structured data schemas required for SEO,
  * matching the comprehensive implementation from the old UK Pre-CAS tool.
- * 
+ *
  * Includes:
  * - WebSite schema with SearchAction
  * - Organization schema with 26 branches
@@ -500,7 +500,7 @@ export default function UkPrecasStructuredData() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html": JSON.stringify(jsonLd) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   );
 }
