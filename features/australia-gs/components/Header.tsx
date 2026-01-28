@@ -30,13 +30,13 @@ const Header: React.FC<HeaderProps> = ({ theme, setTheme }) => {
     const navLinks = [
         { href: '#prep-tool-section', text: 'GS Prep Tool' },
         { href: '#knowledge-hub', text: 'Knowledge Hub' },
-        { href: '/australiagsprep/faq/', text: 'FAQ' },
         { href: '/australiagsprep/glossary/', text: 'Glossary' },
         { href: '/australiagsprep/preparation-guide/', text: 'Preparation Guide' },
-        { href: '/australiagsprep/resources/', text: 'Resources' },
-        { href: '/australiagsprep/about-eec/', text: 'About EEC' },
         { href: 'https://australia.eecglobal.com', text: 'Study in Australia' },
         { href: 'https://australia.eecglobal.com/prpointscalculator', text: 'PR Points' },
+        { href: '/australiagsprep/resources/', text: 'Resources' },
+        { href: '/australiagsprep/faq/', text: 'FAQ' },
+        { href: '/australiagsprep/about-eec/', text: 'About EEC' },
     ];
 
     // Check authentication status (both Firebase Auth and localStorage)
