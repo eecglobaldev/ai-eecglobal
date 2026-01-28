@@ -42,7 +42,7 @@
       "name": "Start Practice",
       "short_name": "Practice",
       "description": "Start practicing interview questions",
-      "url": "/ukprecas/#interview-flow",
+      "url": "/ukprecas/",
       "icons": [{ "src": "/ukprecas/favicon.png", "sizes": "192x192" }]
     }
   ]

@@ -1,103 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ai.eecglobal.com/australiagsprep</loc>
+    <loc>https://ai.eecglobal.com/australiagsprep/</loc>
     <lastmod>2024-07-30</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#prep-tool-section</loc>
+    <loc>https://ai.eecglobal.com/australiagsprep/dashboard/</loc>
     <lastmod>2024-07-30</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#interview-flow</loc>
-    <lastmod>2024-07-30</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#history</loc>
-    <lastmod>2024-07-30</lastmod>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#knowledge-hub</loc>
-    <lastmod>2024-07-30</lastmod>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#branch-locator</loc>
-    <lastmod>2024-07-30</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#gs-rulebook</loc>
+    <loc>https://ai.eecglobal.com/australiagsprep/faq/</loc>
     <lastmod>2024-07-30</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#gs-sop-playbook</loc>
+    <loc>https://ai.eecglobal.com/australiagsprep/glossary/</loc>
     <lastmod>2024-07-30</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#gs-interview-questions</loc>
+    <loc>https://ai.eecglobal.com/australiagsprep/preparation-guide/</loc>
     <lastmod>2024-07-30</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#financial-blueprint</loc>
+    <loc>https://ai.eecglobal.com/australiagsprep/resources/</loc>
     <lastmod>2024-07-30</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#financial-dossier</loc>
+    <loc>https://ai.eecglobal.com/australiagsprep/about-eec/</loc>
     <lastmod>2024-07-30</lastmod>
     <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#approved-banks</loc>
-    <lastmod>2024-07-30</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#career-hub</loc>
-    <lastmod>2024-07-30</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#psw-calculator</loc>
-    <lastmod>2024-07-30</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#pre-departure-guide</loc>
-    <lastmod>2024-07-30</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#tool-mastery</loc>
-    <lastmod>2024-07-30</lastmod>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#experts</loc>
-    <lastmod>2024-07-30</lastmod>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#video-guide</loc>
-    <lastmod>2024-07-30</lastmod>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#success-stories</loc>
-    <lastmod>2024-07-30</lastmod>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://ai.eecglobal.com/australiagsprep#faq</loc>
-    <lastmod>2024-07-30</lastmod>
-    <priority>0.70</priority>
   </url>
 </urlset>

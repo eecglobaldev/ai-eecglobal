@@ -254,6 +254,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/ukprecas/dashboard/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/ukprecas/resources/`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
@@ -288,6 +294,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/nzvisaprep/dashboard/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/nzvisaprep/faq/`,

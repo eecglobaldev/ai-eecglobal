@@ -13,6 +13,11 @@ import History from './History';
 import Modal from './Modal';
 import Footer from './Footer';
 import { Separator } from './Separator';
+import { ExpertPanel } from './ExpertPanel';
+import { BranchLocator } from './BranchLocator';
+import { Faq } from './Faq';
+import { SuccessStories } from './SuccessStories';
+import { PSWCalculator } from './PSWCalculator';
 import { KnowledgeHub } from './KnowledgeHub';
 import { useAppState } from '../hooks/useAppState';
 import { savePrepData, addPracticeHistoryItem } from '../services/prepDataService';
@@ -389,6 +394,12 @@ const App: React.FC = () => {
 
             <GeoContent />
             <SeoContent />
+
+            <ExpertPanel />
+            <SuccessStories />
+            <PSWCalculator />
+            <BranchLocator />
+            <Faq />
 
             <Footer />
         </>

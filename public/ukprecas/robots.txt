@@ -8,18 +8,13 @@
 # Allow all search engines - Primary configuration
 User-agent: *
 Allow: /ukprecas/
-Allow: /ukprecas/#faq
-Allow: /ukprecas/#basics
-Allow: /ukprecas/#questions
-Allow: /ukprecas/#preparation
-Allow: /ukprecas/#documents
-Allow: /ukprecas/#financial
-Allow: /ukprecas/#ielts
-Allow: /ukprecas/#mock
-Allow: /ukprecas/#course
-Allow: /ukprecas/#contact
+Allow: /ukprecas/dashboard/
+Allow: /ukprecas/faq/
+Allow: /ukprecas/glossary/
+Allow: /ukprecas/preparation-guide/
+Allow: /ukprecas/resources/
+Allow: /ukprecas/about-eec/
 Disallow: /ukprecas/api/
-Disallow: /ukprecas/dashboard/
 Disallow: /ukprecas/admin/
 
 # ================================================

@@ -15,6 +15,9 @@ Provider-History: Established 1997, Gujarat's largest and oldest study abroad co
 Application-Category: EducationalApplication, WebApplication
 Core-Function: To provide hyper-personalized, AI-driven preparation for the Australian Genuine Student (GS) visa interview and comprehensive guidance for the entire study abroad journey.
 
+[PAGE_STRUCTURE]
+Standalone pages (refactored structure): https://ai.eecglobal.com/australiagsprep/, https://ai.eecglobal.com/australiagsprep/dashboard/, https://ai.eecglobal.com/australiagsprep/faq/, https://ai.eecglobal.com/australiagsprep/glossary/, https://ai.eecglobal.com/australiagsprep/preparation-guide/, https://ai.eecglobal.com/australiagsprep/resources/, https://ai.eecglobal.com/australiagsprep/about-eec/
+
 [TARGET_AUDIENCE]
 Primary-User: Indian students applying for the Australian Student Visa (Subclass 500).
 Secondary-User: Students from other South Asian countries preparing for the GS interview.
@@ -173,28 +176,13 @@ Description: A hierarchical overview of the application's user-facing components
 3.  **Interview Flow (Dynamically appears):**
     -   Key Talking Points
     -   Question Navigator with Guidance & Practice Tabs
-4.  **History (`#history`, Dynamically appears):** List of past practice attempts.
-5.  **GeoContent (Main Informational Body):** A container for multiple, distinct sections:
-    -   `#how-to-use`: 4-step guide to the tool.
-    -   `#gs-criteria`: The 6 Pillars of the GS Dossier.
-    -   `#gs-financials`: 3-step guide to financial requirements and documentation.
-    -   `#lifecycle`: The "Practice -> Analyze -> Improve -> Repeat" diagram.
-    -   `#gs-trends`: Latest interview trends and red flags.
-    -   `#eec-advantage`: Trust-building section about EEC's history.
-    -   `#video-guide`: Embedded YouTube video.
-    -   `#methodology`: Disclaimer and privacy guarantee.
-    -   `#faq`: Frequently Asked Questions accordion.
-6.  **ExpertPanel (`#experts`):** Profiles of the human experts behind the tool.
-7.  **SuccessStories (`#success-stories`):** Student testimonials.
-8.  **SeoContent (`#australia-study-hub`):** A dedicated content section for topical authority, containing:
-    -   Ultimate GS Visa Document Checklist
-    -   High-Demand Fields Guide
-    -   Initial City Guide (Melbourne/Sydney)
-    -   Australian Student Visa Requirements at a Glance
-    -   Navigating Student Life in Australia (4-card guide)
-    -   Comprehensive City Comparison (5-city grid)
-    -   Post-Visa Journey Guide (Pre-Departure & First Week Checklists)
-9.  **BranchLocator (`#branch-locator`):** Interactive directory of 26 EEC branches.
-10. **Footer:** Company info, quick links, social media, and the link to this `llm.txt` document.
+4.  **History (`/dashboard/`):** List of past practice attempts.
+5.  **GeoContent (Main Informational Body):** A container for multiple, distinct sections on the main page (how-to-use, gs-criteria, gs-financials, lifecycle, gs-trends, eec-advantage, video-guide, methodology).
+6.  **FAQ (`/faq/`):** Frequently Asked Questions (standalone page).
+7.  **ExpertPanel (`/about-eec/`):** Profiles of the human experts behind the tool.
+8.  **SuccessStories (`/about-eec/`):** Student testimonials.
+9.  **SeoContent:** Preparation guide, resources, and topical authority content (see `/preparation-guide/`, `/resources/`).
+10. **BranchLocator (`/resources/`):** Interactive directory of 26 EEC branches.
+11. **Footer:** Company info, quick links, social media, and the link to this `llm.txt` document.
 
 [END_OF_DOCUMENT]

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Sitemap | EEC AI Tools - Complete Site Navigation',
   description: 'Complete sitemap of EEC AI Tools - Find all study abroad guides, AI tools, country information, branch locations, and resources.',
   alternates: {
-    canonical: 'https://ai.eecglobal.com/sitemap-page',
+    canonical: 'https://ai.eecglobal.com/sitemap-page/',
   },
 };
 
@@ -15,7 +15,7 @@ const structuredData = {
   "name": "EEC AI Tools Sitemap",
   "description": "Complete navigation directory for EEC AI Tools platform",
   "url": "https://ai.eecglobal.com/sitemap-page",
-  "isPartOf": {"@id": "https://ai.eecglobal.com/#website"}
+  "isPartOf": { "@id": "https://ai.eecglobal.com/#website" }
 };
 
 export default function SitemapPage() {
@@ -80,6 +80,11 @@ export default function SitemapPage() {
               <li>
                 <Link href="/travelagent/" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
                   → Travel Agent & Visa Checker
+                </Link>
+              </li>
+              <li>
+                <Link href="/review/" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
+                  → AI Testimonial Coach
                 </Link>
               </li>
             </ul>

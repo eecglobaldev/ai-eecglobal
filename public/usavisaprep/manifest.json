@@ -56,14 +56,14 @@
       "name": "Start Practice",
       "short_name": "Practice",
       "description": "Start practicing F-1 visa interview questions",
-      "url": "/usavisaprep#practice",
+      "url": "/usavisaprep/",
       "icons": [{"src": "/android-chrome-192x192.png", "sizes": "192x192"}]
     },
     {
       "name": "Find Branch",
       "short_name": "Branches",
       "description": "Find nearest EEC branch",
-      "url": "/usavisaprep#branches",
+      "url": "/usavisaprep/resources/",
       "icons": [{"src": "/android-chrome-192x192.png", "sizes": "192x192"}]
     }
   ],

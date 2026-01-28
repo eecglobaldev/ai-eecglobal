@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: 'EEC USA F-1 Visa Prep',
     locale: 'en_IN',
   },
-  alternates: { canonical: 'https://ai.eecglobal.com/usavisaprep/preparation-guide' },
+  alternates: { canonical: 'https://ai.eecglobal.com/usavisaprep/preparation-guide/' },
   robots: { index: true, follow: true },
 };
 

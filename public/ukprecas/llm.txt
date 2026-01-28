@@ -5,6 +5,7 @@
 
 Organization: EEC (Enbee Education Center Private Limited)
 URL: https://ai.eecglobal.com/ukprecas/
+Page structure: /ukprecas/, /ukprecas/dashboard/, /ukprecas/faq/, /ukprecas/glossary/, /ukprecas/preparation-guide/, /ukprecas/resources/, /ukprecas/about-eec/
 Parent: https://eecglobal.com
 Type: Education consultancy, UK student visa specialist
 Founded: 1997

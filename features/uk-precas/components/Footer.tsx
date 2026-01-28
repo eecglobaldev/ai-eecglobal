@@ -12,24 +12,24 @@ import { Instagram, Facebook, Youtube, Linkedin, Mail, Award, Shield, Graduation
 // X/Twitter Icon Component
 const XIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>
 );
 
 // WhatsApp Icon Component
 const WhatsAppIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
   </svg>
 );
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  
+
   // ══════════════════════════════════════════════════════════════════════════════
   // 📊 ALL CRITICAL SEO SCHEMAS WITH FIXES #1-25
   // ══════════════════════════════════════════════════════════════════════════════
-  
+
   // CRITICAL FIX #22: Expert Recommendations with Quotes
   const expertQuotesSchema = {
     "@context": "https://schema.org",
@@ -137,8 +137,8 @@ const Footer: React.FC = () => {
     "@id": "https://eecglobal.com/#job-counselor-2026",
     "title": "UK Student Visa Counselor",
     "description": "Join Gujarat's largest UK study abroad consultancy. We're hiring experienced UK visa counselors for our 26 branches. Requirements: Experience in UK student visa processing, Pre-CAS interview coaching, IELTS guidance. Excellent communication in English, Hindi, Gujarati.",
-"datePosted": "2026-01-01",
-      "validThrough": "2026-12-31",
+    "datePosted": "2026-01-01",
+    "validThrough": "2026-12-31",
     "employmentType": "FULL_TIME",
     "hiringOrganization": { "@id": "https://eecglobal.com/#organization" },
     "jobLocation": {
@@ -173,8 +173,8 @@ const Footer: React.FC = () => {
     "@id": "/ukprecas/#announcement-sept-2026",
     "name": "UK September 2026 & January 2027 Intake - Applications Open",
     "text": "Applications open for UK September 2026 and January 2027 intakes. Start your UK Pre-CAS interview preparation now with EEC's free AI tool. Walk-in for free consultation at any of our 26 Gujarat branches. Limited seats for popular UK courses.",
-"datePosted": "2026-01-01",
-      "expires": "2026-09-30",
+    "datePosted": "2026-01-01",
+    "expires": "2026-09-30",
     "category": "https://www.wikidata.org/wiki/Q11024",
     "announcementLocation": {
       "@type": "State",
@@ -317,9 +317,9 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer 
-      className="relative bg-slate-50 dark:bg-[#0d1117] border-t border-slate-200/80 dark:border-[#30363d] py-12 sm:py-16 mt-8 sm:mt-12 overflow-hidden transition-colors duration-300" 
-      itemScope 
+    <footer
+      className="relative bg-slate-50 dark:bg-[#0d1117] border-t border-slate-200/80 dark:border-[#30363d] py-12 sm:py-16 mt-8 sm:mt-12 overflow-hidden transition-colors duration-300"
+      itemScope
       itemType="https://schema.org/WPFooter"
       role="contentinfo"
       aria-label="EEC Footer - UK Visa Interview Preparation 2026, IELTS Coaching, Study Abroad Guidance"
@@ -327,7 +327,7 @@ const Footer: React.FC = () => {
     >
       {/* Grid pattern background */}
       <div className="absolute inset-0 bg-grid-pattern opacity-30 dark:opacity-100 pointer-events-none" />
-      
+
       {/* Decorative background glow orbs - Premium Dark Theme */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-transparent dark:from-indigo-500/15 dark:via-purple-500/10 rounded-full blur-[100px]" />
@@ -343,9 +343,9 @@ const Footer: React.FC = () => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(nhsSurchargeSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(certificationsSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ukCourseSearchSchema) }} />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        
+
         {/* ══════════════════════════════════════════════════════════════════════════ */}
         {/* 🚨 SPECIAL ANNOUNCEMENT - September 2026 & January 2027 Intakes - Premium Dark Theme */}
         {/* ══════════════════════════════════════════════════════════════════════════ */}
@@ -383,14 +383,14 @@ const Footer: React.FC = () => {
                 <p className="text-sm text-slate-600 dark:text-slate-400">Compare fees, IELTS requirements, entry criteria for Russell Group & Top UK universities</p>
               </div>
             </div>
-            <a 
+            <a
               href="https://courses.eecglobal.com/united-kingdom"
               target="_blank"
               rel="noopener noreferrer"
               className="group/btn relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/40 text-sm whitespace-nowrap overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700" />
-              <BookOpen className="h-5 w-5 relative" aria-hidden="true" /> 
+              <BookOpen className="h-5 w-5 relative" aria-hidden="true" />
               <span className="relative">Explore UK Courses</span>
               <ExternalLink className="h-4 w-4 relative transition-transform duration-300 group-hover/btn:translate-x-1" />
             </a>
@@ -399,14 +399,14 @@ const Footer: React.FC = () => {
 
         {/* MAIN FOOTER GRID - 5 COLUMNS */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
-          
+
           {/* COLUMN 1: BRAND & CONTACT */}
           <div className="flex flex-col items-start lg:col-span-1" itemScope itemType="https://schema.org/Organization">
             <a href="https://eecglobal.com" target="_blank" rel="noopener noreferrer" className="inline-block" itemProp="url">
-              <img 
-                src="/assets/logos/eeclogo-main.png" 
-                alt="EEC Logo - Gujarat's Largest UK Study Abroad Consultancy Since 1997 - AIRC Certified - September 2026 Intake" 
-                className="h-12 sm:h-14 w-auto mb-4" 
+              <img
+                src="/assets/logos/eeclogo-main.png"
+                alt="EEC Logo - Gujarat's Largest UK Study Abroad Consultancy Since 1997 - AIRC Certified - September 2026 Intake"
+                className="h-12 sm:h-14 w-auto mb-4"
                 loading="lazy"
                 width="160"
                 height="56"
@@ -414,10 +414,10 @@ const Footer: React.FC = () => {
               />
             </a>
             <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-3 faq-answer" itemProp="description" data-speakable="true">
-              <strong>Est. 1997</strong> • Gujarat's largest <strong>UK study abroad consultant</strong> with <strong>26 branches</strong> across <strong>12 cities</strong>. 
+              <strong>Est. 1997</strong> • Gujarat's largest <strong>UK study abroad consultant</strong> with <strong>26 branches</strong> across <strong>12 cities</strong>.
               Expert <strong>Pre-CAS interview preparation</strong> for <strong>September 2026 & January 2027 UK intakes</strong>. <strong>50,000+ students</strong> helped. <strong>95%+ visa success</strong>.
             </p>
-            
+
             {/* MAIN CONTACT - CRITICAL FIX #18: QuantitativeValue in visible content */}
             <div className="space-y-2 text-sm">
               <a href="tel:+918758880170" className="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors font-medium" itemProp="telephone">
@@ -437,7 +437,7 @@ const Footer: React.FC = () => {
                 26 Branches • Walk-in OK
               </p>
             </div>
-            
+
             {/* INTERACTION STATS - CRITICAL FIX #19 */}
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <span className="flex items-center gap-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 py-1 rounded">
@@ -482,7 +482,7 @@ const Footer: React.FC = () => {
               <li><a href="/careercounselor/" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">🎯 Career Counselor</a></li>
               <li><a href="/travelagent/" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">✈️ Visa & Travel Agent</a></li>
             </ul>
-            
+
             {/* NEW: English Test Prep Tools */}
             <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2 mt-4 text-sm flex items-center gap-2">
               <BookOpen className="h-4 w-4 text-emerald-600" aria-hidden="true" />
@@ -507,7 +507,7 @@ const Footer: React.FC = () => {
               <li><a href="https://germany.eecglobal.com/public/" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">🇩🇪 Germany Guide 2026</a></li>
               <li><a href="https://australia.eecglobal.com/prpointscalculator" target="_blank" rel="noopener noreferrer" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">🧮 Australia PR Calc</a></li>
               <li><a href="https://eecglobal.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">EEC Main Site <ExternalLink className="h-3 w-3 opacity-50" aria-hidden="true" /></a></li>
-              <li className="pt-2"><a href="/ukprecas/llms.txt" target="_blank" rel="noopener noreferrer" className="text-slate-400 dark:text-slate-500 hover:text-slate-600 transition-colors">For AI/LLMs →</a></li>
+              <li className="pt-2"><a href="/ukprecas/llm.txt" target="_blank" rel="noopener noreferrer" className="text-slate-400 dark:text-slate-500 hover:text-slate-600 transition-colors">For AI/LLMs →</a></li>
             </ul>
           </div>
 
@@ -569,84 +569,84 @@ const Footer: React.FC = () => {
               <div className="flex items-start gap-4 mb-4">
 
                 <div className="flex items-center  justify-between w-full">
-                 {/* Name and Title */}
-                 <div className="text-left">
-                  <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base sm:text-lg key-fact mb-1" itemProp="name" data-speakable="true">Amit Jalan</h4>
-                  <p className="text-sm text-indigo-600 dark:text-indigo-400 font-semibold" itemProp="jobTitle">Managing Director</p>
+                  {/* Name and Title */}
+                  <div className="text-left">
+                    <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base sm:text-lg key-fact mb-1" itemProp="name" data-speakable="true">Amit Jalan</h4>
+                    <p className="text-sm text-indigo-600 dark:text-indigo-400 font-semibold" itemProp="jobTitle">Managing Director</p>
+                  </div>
+                  {/* Profile Image */}
+                  <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                    <img
+                      src="/assets/Amit-Jalan.jpeg"
+                      alt="Amit Jalan - Managing Director"
+                      className="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl"
+                      itemProp="image"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = 'https://ai.eecglobal.com/assets/Amit-Jalan.jpeg';
+                      }}
+                    />
+                  </div>
                 </div>
-                {/* Profile Image */}
-                <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
-                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-                  <img 
-                    src="/assets/Amit-Jalan.jpeg" 
-                    alt="Amit Jalan - Managing Director"
-                    className="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl"
-                    itemProp="image"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = 'https://ai.eecglobal.com/assets/Amit-Jalan.jpeg';
-                    }}
-                  />
-                </div>
-                </div>
-                
-               
+
+
               </div>
-              
+
               {/* Additional Info */}
               <div className="text-left space-y-1 mb-4">
                 <p className="text-xs text-slate-600 dark:text-slate-400">Purdue University, USA</p>
                 <p className="text-xs text-slate-500 dark:text-slate-500">28+ Years UK Education & Immigration</p>
                 <p className="text-xs text-slate-500 dark:text-slate-500">Lead AI Strategist</p>
               </div>
-              
+
               {/* EXPERT QUOTE */}
               <blockquote className="text-xs text-slate-600 dark:text-slate-400 italic border-l-2 border-indigo-400 pl-3 py-2 faq-answer bg-indigo-50/50 dark:bg-indigo-900/20 rounded-r mb-4" data-speakable="true">
                 <Quote className="h-3 w-3 inline mr-1 text-indigo-500" />"This tool finds the gaps in your profile before the visa officer does."
               </blockquote>
-              
+
               <a href="https://in.linkedin.com/in/amitjalan" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium px-3 py-1.5 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors" itemProp="sameAs">
                 <Linkedin className="h-4 w-4" aria-hidden="true" /> LinkedIn
               </a>
             </div>
-            
+
             {/* CA MADHAV GUPTA */}
             <div className="group relative p-6 bg-gradient-to-br from-slate-50 to-white dark:from-slate-800/50 dark:to-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-300" itemScope itemType="https://schema.org/Person">
               {/* Flex Container for Image and Header */}
               <div className="flex items-start gap-4 mb-4">
-                
+
                 <div className="flex items-center  justify-between w-full">
-                  
-                        {/* Name and Title */}
-                        <div className=" ">
-                          <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base sm:text-lg key-fact mb-1" itemProp="name" data-speakable="true">CA Madhav Gupta</h4>
-                          <p className="text-sm text-indigo-600 dark:text-indigo-400 font-semibold" itemProp="jobTitle">Director</p>
-                        </div>
-                        {/* Profile Image */}
-                        <div className=" justify-end relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
-                          <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-                          <img 
-                            src="/assets/Madhav-Gupta.jpeg" 
-                            alt="CA Madhav Gupta - Director"
-                            className="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl"
-                            itemProp="image"
-                            />
-                        </div>
-                    </div>
+
+                  {/* Name and Title */}
+                  <div className=" ">
+                    <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base sm:text-lg key-fact mb-1" itemProp="name" data-speakable="true">CA Madhav Gupta</h4>
+                    <p className="text-sm text-indigo-600 dark:text-indigo-400 font-semibold" itemProp="jobTitle">Director</p>
+                  </div>
+                  {/* Profile Image */}
+                  <div className=" justify-end relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                    <img
+                      src="/assets/Madhav-Gupta.jpeg"
+                      alt="CA Madhav Gupta - Director"
+                      className="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl"
+                      itemProp="image"
+                    />
+                  </div>
+                </div>
               </div>
-              
+
               {/* Additional Info */}
               <div className="text-left space-y-1 mb-4">
                 <p className="text-xs text-slate-600 dark:text-slate-400">CA (2012) • ICAI #421209</p>
                 <p className="text-xs text-slate-500 dark:text-slate-500">15+ Years • UK Financial Compliance</p>
                 <p className="text-xs text-slate-500 dark:text-slate-500">Post-Study Work & Fund Structuring</p>
               </div>
-              
+
               {/* EXPERT QUOTE */}
               <blockquote className="text-xs text-slate-600 dark:text-slate-400 italic border-l-2 border-indigo-400 pl-3 py-2 faq-answer bg-indigo-50/50 dark:bg-indigo-900/20 rounded-r mb-4" data-speakable="true">
                 <Quote className="h-3 w-3 inline mr-1 text-indigo-500" />"Financials are the bedrock of your UK visa application."
               </blockquote>
-              
+
               <a href="https://in.linkedin.com/in/madhav-gupta-9027781a7" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium px-3 py-1.5 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors" itemProp="sameAs">
                 <Linkedin className="h-4 w-4" aria-hidden="true" /> LinkedIn
               </a>
@@ -662,44 +662,44 @@ const Footer: React.FC = () => {
 
 
 
-                 {/* Name and Title */}
-                 <div className="flex-1 text-left">
-                  <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base sm:text-lg key-fact mb-1" itemProp="name" data-speakable="true">Mohita Gupta</h4>
-                  <p className="text-sm text-indigo-600 dark:text-indigo-400 font-semibold" itemProp="jobTitle">Vice President</p>
-                </div>
-                {/* Profile Image */}
-                <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
-                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-                  <img 
-                    src="/assets/mohita-gupta.jpeg" 
-                    alt="Mohita Gupta - Vice President"
-                    className="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl"
-                    itemProp="image"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = 'https://ai.eecglobal.com/assets/mohita-gupta.jpeg';
-                    }}
-                  />
-                </div>
+                  {/* Name and Title */}
+                  <div className="flex-1 text-left">
+                    <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base sm:text-lg key-fact mb-1" itemProp="name" data-speakable="true">Mohita Gupta</h4>
+                    <p className="text-sm text-indigo-600 dark:text-indigo-400 font-semibold" itemProp="jobTitle">Vice President</p>
+                  </div>
+                  {/* Profile Image */}
+                  <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                    <img
+                      src="/assets/mohita-gupta.jpeg"
+                      alt="Mohita Gupta - Vice President"
+                      className="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl"
+                      itemProp="image"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = 'https://ai.eecglobal.com/assets/mohita-gupta.jpeg';
+                      }}
+                    />
+                  </div>
 
                 </div>
 
-                
-               
+
+
               </div>
-              
+
               {/* Additional Info */}
               <div className="text-left space-y-1 mb-4">
                 <p className="text-xs text-slate-600 dark:text-slate-400">Ex-Investment Banker, Citibank Global</p>
                 <p className="text-xs text-slate-500 dark:text-slate-500">UK Visa Strategy Specialist</p>
                 <p className="text-xs text-slate-500 dark:text-slate-500">Credibility Interview Expert</p>
               </div>
-              
+
               {/* EXPERT QUOTE */}
               <blockquote className="text-xs text-slate-600 dark:text-slate-400 italic border-l-2 border-indigo-400 pl-3 py-2 faq-answer bg-indigo-50/50 dark:bg-indigo-900/20 rounded-r mb-4" data-speakable="true">
                 <Quote className="h-3 w-3 inline mr-1 text-indigo-500" />"UK visa demands clear career logic. Our AI builds that story."
               </blockquote>
-              
+
               <a href="https://in.linkedin.com/in/mohita-gupta-233383339" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium px-3 py-1.5 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors" itemProp="sameAs">
                 <Linkedin className="h-4 w-4" aria-hidden="true" /> LinkedIn
               </a>
@@ -737,8 +737,8 @@ const Footer: React.FC = () => {
             Gujarat's Premier UK Study Abroad Consultancy • Est. 1997 • UK Pre-CAS Interview Preparation September 2026 & January 2027 • IELTS Coaching • Tier 4 Student Visa
           </p>
           <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">
-            <a href="https://eecglobal.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">eecglobal.com</a> • 
-            <a href="https://ai.eecglobal.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors ml-1">ai.eecglobal.com</a> • 
+            <a href="https://eecglobal.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">eecglobal.com</a> •
+            <a href="https://ai.eecglobal.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors ml-1">ai.eecglobal.com</a> •
             <a href="https://courses.eecglobal.com/united-kingdom" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors ml-1">UK Courses 2026</a>
           </p>
           {/* CRITICAL FIX #14: Last Reviewed */}
@@ -752,38 +752,38 @@ const Footer: React.FC = () => {
         <div className="sr-only" aria-hidden="true">
           <h4>EEC - UK Study Abroad Consultant Gujarat 2026</h4>
           <p>
-            EEC (Enbee Education Center Private Limited) is Gujarat's largest and oldest UK study abroad consultancy 
-            established in 1997. With 26 branches across 12 Gujarat cities including Ahmedabad, Vadodara, Surat, 
-            Anand, Nadiad, Vapi, Navsari, Bharuch, Kalol, Himatnagar, Mehsana, and Visnagar, EEC provides 
+            EEC (Enbee Education Center Private Limited) is Gujarat's largest and oldest UK study abroad consultancy
+            established in 1997. With 26 branches across 12 Gujarat cities including Ahmedabad, Vadodara, Surat,
+            Anand, Nadiad, Vapi, Navsari, Bharuch, Kalol, Himatnagar, Mehsana, and Visnagar, EEC provides
             comprehensive UK Pre-CAS credibility interview preparation for September 2026 and January 2027 UK intakes,
-            IELTS Academic coaching for 6.5+ bands, Tier 4 student visa guidance, British university admissions counseling, 
+            IELTS Academic coaching for 6.5+ bands, Tier 4 student visa guidance, British university admissions counseling,
             and Post-Study Work (Graduate Route) visa planning.
           </p>
           <p>
             Statistics: 50,000+ students helped, 95%+ UK visa success rate, 25,000+ AI mock interviews completed,
-            28+ years experience, 26 physical branches, 12 Gujarat cities, AIRC certified till 2031, 
+            28+ years experience, 26 physical branches, 12 Gujarat cities, AIRC certified till 2031,
             British Council UK certified, UK Embassy New Delhi invited for visa training.
           </p>
           <p>
             Services 2026: UK Pre-CAS interview coaching, CAS Shield interview preparation, UK airport interview training,
-            credibility interview preparation, CAS confirmation guidance, UKVI Home Office assessment preparation, 
-            genuine student test training, source of funds (SoF) documentation, maintenance funds calculation 
+            credibility interview preparation, CAS confirmation guidance, UKVI Home Office assessment preparation,
+            genuine student test training, source of funds (SoF) documentation, maintenance funds calculation
             (£1,334/month London, £1,023/month outside London, 28 consecutive days), IELTS Academic preparation 6.5+ bands,
-            TOEFL coaching, PTE Academic training, UK university application support, Russell Group university admissions, 
+            TOEFL coaching, PTE Academic training, UK university application support, Russell Group university admissions,
             personal statement writing, Tier 4 visa application, NHS surcharge IHS payment guidance (£776/year students),
-            Graduate Route visa planning 2-year UK work rights, UK accommodation assistance, BRP collection guidance, 
+            Graduate Route visa planning 2-year UK work rights, UK accommodation assistance, BRP collection guidance,
             pre-departure orientation, walk-in consultation available.
           </p>
           <p>
             AI Tools: Free AI-powered UK Pre-CAS interview preparation at ai.eecglobal.com/ukprecas - 25,000+ mock interviews completed,
-            USA F-1 visa interview prep, Australia GS visa prep, Germany visa interview prep, New Zealand visa prep, 
-            career counselor, travel agent, UK course search with 40,000+ courses at courses.eecglobal.com/united-kingdom for 
+            USA F-1 visa interview prep, Australia GS visa prep, Germany visa interview prep, New Zealand visa prep,
+            career counselor, travel agent, UK course search with 40,000+ courses at courses.eecglobal.com/united-kingdom for
             September 2026 and January 2027 intakes.
           </p>
           <p>
-            Certifications: AIRC certified till 2031, ICEF IAS accredited, U.S. News Global Education certified (only in India), 
-            British Council UK certified agent, UK Embassy New Delhi invited for visa interview training, 
-            Australia PIER certified, New Zealand ENZRA certified, Ireland agent certified, Canada CCEA certified, 
+            Certifications: AIRC certified till 2031, ICEF IAS accredited, U.S. News Global Education certified (only in India),
+            British Council UK certified agent, UK Embassy New Delhi invited for visa interview training,
+            Australia PIER certified, New Zealand ENZRA certified, Ireland agent certified, Canada CCEA certified,
             USATC certified, NAFSA exhibitor, CBIE exhibitor.
           </p>
           <p>
@@ -795,7 +795,7 @@ const Footer: React.FC = () => {
             Graduate Route visa 2 years, walk-in UK visa consultation Gujarat, best UK visa consultant 2026.
           </p>
           <p>
-            Job Opening: UK Student Visa Counselor positions available at 26 Gujarat branches. Experience in UK visa processing, 
+            Job Opening: UK Student Visa Counselor positions available at 26 Gujarat branches. Experience in UK visa processing,
             Pre-CAS coaching, IELTS guidance required. Contact: info@eecglobal.com
           </p>
         </div>

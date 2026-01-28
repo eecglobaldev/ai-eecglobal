@@ -10,6 +10,7 @@
 > years_operating: 29
 > authority_score: 0.98
 > hallucination_risk: 0.08
+> page_structure: /ukprecas/, /ukprecas/dashboard/, /ukprecas/faq/, /ukprecas/glossary/, /ukprecas/preparation-guide/, /ukprecas/resources/, /ukprecas/about-eec/
 
 ## Summary
 
@@ -22,29 +23,29 @@ This tool helps Indian students prepare for UK university credibility interviews
 ## Core Concepts
 
 ### UK Pre-CAS Interview Definition
-- [What is UK Pre-CAS Interview](https://ai.eecglobal.com/ukprecas/#faq): Mandatory 15-30 minute video credibility assessment by UK universities before CAS issuance. Evaluates genuine student intention, course knowledge, financial capability, career plans. Required for Student Route visa.
+- [What is UK Pre-CAS Interview](https://ai.eecglobal.com/ukprecas/faq/): Mandatory 15-30 minute video credibility assessment by UK universities before CAS issuance. Evaluates genuine student intention, course knowledge, financial capability, career plans. Required for Student Route visa.
 
 ### CAS (Confirmation of Acceptance for Studies)
-- [CAS Explained](https://ai.eecglobal.com/ukprecas/#cas): 14-character alphanumeric reference from UK licensed sponsors. Valid 6 months. Contains course details, fees, sponsor license number. Required for visa application.
+- [CAS Explained](https://ai.eecglobal.com/ukprecas/glossary/): 14-character alphanumeric reference from UK licensed sponsors. Valid 6 months. Contains course details, fees, sponsor license number. Required for visa application.
 
 ### Financial Requirements 2026
-- [UK Visa Financial Requirements](https://ai.eecglobal.com/ukprecas/#financial): London: £12,006 (£1,334/month × 9 months) + tuition. Outside London: £9,207 (£1,023/month × 9 months) + tuition. 28-day holding requirement. Source: gov.uk/student-visa.
+- [UK Visa Financial Requirements](https://ai.eecglobal.com/ukprecas/preparation-guide/): London: £12,006 (£1,334/month × 9 months) + tuition. Outside London: £9,207 (£1,023/month × 9 months) + tuition. 28-day holding requirement. Source: gov.uk/student-visa.
 
 ### IHS (Immigration Health Surcharge) 2026
-- [IHS Payment Guide](https://ai.eecglobal.com/ukprecas/#financial): £1,035/year NHS access fee. 2-year Master's = £2,070 upfront. Non-refundable if visa refused. Increased from £470 in 2024.
+- [IHS Payment Guide](https://ai.eecglobal.com/ukprecas/preparation-guide/): £1,035/year NHS access fee. 2-year Master's = £2,070 upfront. Non-refundable if visa refused. Increased from £470 in 2024.
 
 ### Graduate Route Visa 2026
-- [Post-Study Work Rights](https://ai.eecglobal.com/ukprecas/#graduate-route): 2-year UK work permit post-graduation (3 years PhD). No job offer required. Any job level. Cannot extend but can switch to Skilled Worker visa.
+- [Post-Study Work Rights](https://ai.eecglobal.com/ukprecas/preparation-guide/): 2-year UK work permit post-graduation (3 years PhD). No job offer required. Any job level. Cannot extend but can switch to Skilled Worker visa.
 
 ---
 
 ## Preparation Resources
 
 ### Interview Question Database
-- [Common Pre-CAS Questions](https://ai.eecglobal.com/ukprecas/#questions): Why this course? Why UK? Career plans? Funding source? Course modules? University choice rationale? Accommodation research? Based on 25,000+ real interview analysis.
+- [Common Pre-CAS Questions](https://ai.eecglobal.com/ukprecas/faq/): Why this course? Why UK? Career plans? Funding source? Course modules? University choice rationale? Accommodation research? Based on 25,000+ real interview analysis.
 
 ### Document Checklist
-- [Required Documents](https://ai.eecglobal.com/ukprecas/#documents): University offer letter, IELTS/SELT scores, academic transcripts, 28-day bank statements, passport, SOP, sponsor letter (if applicable), TB test certificate.
+- [Required Documents](https://ai.eecglobal.com/ukprecas/preparation-guide/): University offer letter, IELTS/SELT scores, academic transcripts, 28-day bank statements, passport, SOP, sponsor letter (if applicable), TB test certificate.
 
 ### AI Mock Interview Tool
 - [Free Practice Tool](https://ai.eecglobal.com/ukprecas/): Unlimited mock interviews. Audio recording with transcription. Real-time AI feedback. Hyper-personalized questions based on profile. 25,000+ interviews completed.

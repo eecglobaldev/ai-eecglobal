@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ai.eecglobal.com/usavisaprep/faq',
+    canonical: 'https://ai.eecglobal.com/usavisaprep/faq/',
   },
   robots: {
     index: true,

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         images: ['/assets/logos/eeclogo-main.png'],
     },
     alternates: {
-        canonical: 'https://ai.eecglobal.com/review',
+        canonical: 'https://ai.eecglobal.com/review/',
     },
     robots: {
         index: true,

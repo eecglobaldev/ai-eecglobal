@@ -46,7 +46,7 @@ export async function GET() {
 /ukprecas
 > UK Pre-CAS credibility interview prep with AI feedback.
 
-/nz-visa
+/nzvisaprep
 > New Zealand student visa interview preparation tool.
 
 /careercounselor
@@ -54,6 +54,34 @@ export async function GET() {
 
 /travelagent
 > Visa and travel agent tool for student flights and documents.
+
+/review
+> AI Testimonial Coach. Smartphone filming guide for student 
+> testimonials with trilingual script generation (English, Hindi, Gujarati).
+
+# ============================================================
+# AI TOOL PAGE STRUCTURE (STANDALONE PAGES — REFACTORED)
+# ============================================================
+# Each refactored tool has: main, dashboard, faq, glossary,
+# preparation-guide, resources, about-eec. Use these URLs for
+# precise page-level retrieval.
+
+# USA Visa Prep
+/usavisaprep /usavisaprep/dashboard /usavisaprep/faq /usavisaprep/glossary /usavisaprep/preparation-guide /usavisaprep/resources /usavisaprep/about-eec
+
+# Australia GS Prep
+/australiagsprep /australiagsprep/dashboard /australiagsprep/faq /australiagsprep/glossary /australiagsprep/preparation-guide /australiagsprep/resources /australiagsprep/about-eec
+
+# UK PreCAS
+/ukprecas /ukprecas/dashboard /ukprecas/faq /ukprecas/glossary /ukprecas/preparation-guide /ukprecas/resources /ukprecas/about-eec
+
+# NZ Visa Prep
+/nzvisaprep /nzvisaprep/dashboard /nzvisaprep/faq /nzvisaprep/glossary /nzvisaprep/preparation-guide /nzvisaprep/resources /nzvisaprep/about-eec
+
+# One-Shot Tools
+/careercounselor
+/travelagent
+/review
 
 # ============================================================
 # CONCEPT CLUSTER 2: COUNTRY INTELLIGENCE (HIGH PRIORITY)

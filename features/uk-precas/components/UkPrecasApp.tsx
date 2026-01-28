@@ -988,8 +988,8 @@ function UkPrecasApp() {
                                     <button
                                         onClick={isAuthenticated ? handleDashboardRedirect : () => triggerAuthModal('login')}
                                         className={`flex items-center gap-2 rounded-xl px-3 py-2 text-xs font-semibold transition-all duration-300 ${isAuthenticated
-                                                ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md hover:shadow-lg'
-                                                : 'border-2 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:border-indigo-500'
+                                            ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md hover:shadow-lg'
+                                            : 'border-2 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:border-indigo-500'
                                             }`}
                                     >
                                         {isAuthenticated ? <LayoutDashboard className="w-4 h-4" /> : <LogIn className="w-4 h-4" />}
@@ -1106,8 +1106,8 @@ function UkPrecasApp() {
                                                                 type="button"
                                                                 onClick={() => handleUniversitySelect(u)}
                                                                 className={`w-full text-left px-4 py-2 text-sm transition ${profile.university === u
-                                                                        ? 'bg-indigo-50 text-indigo-700 dark:bg-slate-800 dark:text-indigo-300'
-                                                                        : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+                                                                    ? 'bg-indigo-50 text-indigo-700 dark:bg-slate-800 dark:text-indigo-300'
+                                                                    : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
                                                                     }`}
                                                             >
                                                                 {u}
@@ -1292,6 +1292,9 @@ function UkPrecasApp() {
             {/* Final CTA */}
             <div className="container mx-auto items-center justify-center px-2 sm:px-4 lg:px-8 py-6 sm:py-8 lg:py-12">
                 <FinalCTA />
+            </div>
+            <div className="container mx-auto items-center justify-center px-2 sm:px-4 lg:px-8 py-6 sm:py-8 lg:py-12">
+                <BranchLocator />
             </div>
             <Footer />
         </>
@@ -1548,10 +1551,10 @@ const PracticeContainer: React.FC<PracticeContainerProps> = ({
                             <div
                                 key={i}
                                 className={`w-2 h-2 rounded-full transition-all duration-300 ${i < questionNumber
-                                        ? 'bg-gradient-to-r from-indigo-500 to-purple-500 shadow-sm shadow-indigo-500/50'
-                                        : i === questionNumber - 1
-                                            ? 'bg-indigo-500 ring-2 ring-indigo-300 ring-offset-1'
-                                            : 'bg-slate-200 dark:bg-slate-700'
+                                    ? 'bg-gradient-to-r from-indigo-500 to-purple-500 shadow-sm shadow-indigo-500/50'
+                                    : i === questionNumber - 1
+                                        ? 'bg-indigo-500 ring-2 ring-indigo-300 ring-offset-1'
+                                        : 'bg-slate-200 dark:bg-slate-700'
                                     }`}
                             />
                         ))}
@@ -1591,8 +1594,8 @@ const PracticeContainer: React.FC<PracticeContainerProps> = ({
                     <button
                         onClick={() => setActiveTab('guidance')}
                         className={`group flex items-center gap-2 py-4 px-5 text-sm font-semibold transition-all duration-300 border-b-2 ${activeTab === 'guidance'
-                                ? 'text-indigo-600 dark:text-indigo-400 border-indigo-500'
-                                : 'text-slate-500 dark:text-slate-400 border-transparent hover:text-indigo-500 dark:hover:text-indigo-400 hover:border-indigo-300'
+                            ? 'text-indigo-600 dark:text-indigo-400 border-indigo-500'
+                            : 'text-slate-500 dark:text-slate-400 border-transparent hover:text-indigo-500 dark:hover:text-indigo-400 hover:border-indigo-300'
                             }`}
                     >
                         <BookOpen className={`w-4 h-4 transition-transform duration-300 ${activeTab === 'guidance' ? 'scale-110' : 'group-hover:scale-110'}`} />
@@ -1603,8 +1606,8 @@ const PracticeContainer: React.FC<PracticeContainerProps> = ({
                     <button
                         onClick={() => setActiveTab('practice')}
                         className={`group relative flex items-center justify-center gap-2 py-3 px-6 rounded-xl text-sm font-bold text-white transition-all duration-300 overflow-hidden ${activeTab === 'practice'
-                                ? 'bg-gradient-to-r from-rose-500 to-red-600 shadow-xl shadow-red-500/40 scale-105'
-                                : 'bg-gradient-to-r from-rose-500 to-red-600 shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 hover:scale-105'
+                            ? 'bg-gradient-to-r from-rose-500 to-red-600 shadow-xl shadow-red-500/40 scale-105'
+                            : 'bg-gradient-to-r from-rose-500 to-red-600 shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 hover:scale-105'
                             }`}
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
@@ -2111,8 +2114,8 @@ const FeedbackTranslationControls: React.FC<{ onTranslate: (lang: 'hi' | 'gu') =
             <button
                 onClick={() => handleLangClick('en')}
                 className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${activeLang === 'en'
-                        ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30'
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                    ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
                     }`}
                 disabled={isTranslating}
             >
@@ -2121,8 +2124,8 @@ const FeedbackTranslationControls: React.FC<{ onTranslate: (lang: 'hi' | 'gu') =
             <button
                 onClick={() => handleLangClick('hi')}
                 className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${activeLang === 'hi'
-                        ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30'
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                    ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
                     }`}
                 disabled={isTranslating}
             >
@@ -2131,8 +2134,8 @@ const FeedbackTranslationControls: React.FC<{ onTranslate: (lang: 'hi' | 'gu') =
             <button
                 onClick={() => handleLangClick('gu')}
                 className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 ${activeLang === 'gu'
-                        ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30'
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                    ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/30'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
                     }`}
                 disabled={isTranslating}
             >

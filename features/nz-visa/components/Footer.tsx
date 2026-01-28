@@ -1,20 +1,20 @@
 import React from 'react';
-import { 
-  Instagram, 
-  Facebook, 
-  Youtube, 
-  Linkedin, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  ExternalLink, 
-  Award, 
-  Globe, 
-  GraduationCap, 
-  MessageCircle, 
-  Sparkles, 
-  Shield, 
-  Users, 
+import {
+  Instagram,
+  Facebook,
+  Youtube,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+  ExternalLink,
+  Award,
+  Globe,
+  GraduationCap,
+  MessageCircle,
+  Sparkles,
+  Shield,
+  Users,
   CheckCircle2,
   Building2,
   ArrowUpRight,
@@ -76,9 +76,9 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer 
+    <footer
       className="relative overflow-hidden"
-      itemScope 
+      itemScope
       itemType="https://schema.org/WPFooter"
     >
       {/* ESTERO Partnership Banner - Premium Gradient */}
@@ -87,14 +87,14 @@ const Footer: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-                <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHCF_kNj5hHpw/company-logo_200_200/company-logo_200_200/0/1698639843503/estero_nz_ltd_logo?e=1767225600&v=beta&t=zCmnMPbA6NLvOtXAT-tNsiJ-nKao-20YrWTGz55jLqA" alt="Estero logo" className="h-10 rounded-xl" />
-             
+              <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHCF_kNj5hHpw/company-logo_200_200/company-logo_200_200/0/1698639843503/estero_nz_ltd_logo?e=1767225600&v=beta&t=zCmnMPbA6NLvOtXAT-tNsiJ-nKao-20YrWTGz55jLqA" alt="Estero logo" className="h-10 rounded-xl" />
+
               <div className="text-center md:text-left">
                 <h3 className="text-white font-bold text-lg">Exclusive ESTERO New Zealand Partnership</h3>
                 <p className="text-blue-100 text-sm">Official Representative of All 8 NZ Universities in Gujarat</p>
               </div>
             </div>
-           
+
           </div>
         </div>
       </section>
@@ -103,10 +103,10 @@ const Footer: React.FC = () => {
       <div className="bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-            
+
             {/* Column 1: About EEC */}
             <div itemScope itemType="https://schema.org/Organization">
-                          <a
+              <a
                 href="https://eecglobal.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -155,18 +155,18 @@ const Footer: React.FC = () => {
 
               <meta itemProp="name" content="Enbee Education Center Private Limited" />
               <meta itemProp="foundingDate" content="1997" />
-              
+
               <p className="text-slate-400 text-sm leading-relaxed mb-6" itemProp="description">
-                <strong className="text-white">Since 1997</strong> — Gujarat's largest study abroad company. 
-                <span className="text-indigo-400"> 26 branches</span> across 
-                <span className="text-indigo-400"> 12 cities</span>. 
+                <strong className="text-white">Since 1997</strong> — Gujarat's largest study abroad company.
+                <span className="text-indigo-400"> 26 branches</span> across
+                <span className="text-indigo-400"> 12 cities</span>.
                 Certified counsellors for test prep, admissions & visa guidance.
               </p>
 
               {/* Contact */}
               <div className="space-y-3">
-                <a 
-                  href="tel:+918758750036" 
+                <a
+                  href="tel:+918758750036"
                   className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
                   itemProp="telephone"
                 >
@@ -175,9 +175,9 @@ const Footer: React.FC = () => {
                   </div>
                   <span>+91 87587 50036</span>
                 </a>
-                <a 
-                  href="https://Wa.Me/918758750036" 
-                  target="_blank" 
+                <a
+                  href="https://Wa.Me/918758750036"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
                 >
@@ -186,8 +186,8 @@ const Footer: React.FC = () => {
                   </div>
                   <span>WhatsApp Us</span>
                 </a>
-                <a 
-                  href="mailto:info@eecglobal.com" 
+                <a
+                  href="mailto:info@eecglobal.com"
                   className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
                   itemProp="email"
                 >
@@ -232,11 +232,10 @@ const Footer: React.FC = () => {
                       href={tool.url}
                       target={tool.isCurrent ? '_self' : '_blank'}
                       rel={tool.isCurrent ? undefined : 'noopener noreferrer'}
-                      className={`flex items-center gap-2 text-sm transition-colors ${
-                        tool.isCurrent 
-                          ? 'text-indigo-400 font-semibold' 
+                      className={`flex items-center gap-2 text-sm transition-colors ${tool.isCurrent
+                          ? 'text-indigo-400 font-semibold'
                           : 'text-slate-400 hover:text-white'
-                      }`}
+                        }`}
                     >
                       {tool.name}
                       {tool.isNew && (
@@ -248,7 +247,7 @@ const Footer: React.FC = () => {
                     </a>
                   </li>
                 ))}
-               
+
               </ul>
             </nav>
 
@@ -344,17 +343,17 @@ const Footer: React.FC = () => {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div>
 
-              <p className="text-sm text-slate-500 text-center md:text-left">
-                © {currentYear} <strong className="text-slate-400">Enbee Education Center Private Limited</strong>.<br className="block md:hidden" /> All Rights Reserved.
-              </p>
-              <p className="text-center md:text-left">
+                <p className="text-sm text-slate-500 text-center md:text-left">
+                  © {currentYear} <strong className="text-slate-400">Enbee Education Center Private Limited</strong>.<br className="block md:hidden" /> All Rights Reserved.
+                </p>
+                <p className="text-center md:text-left">
 
-              <a href="/nzvisaprep/llms.txt" target="_blank" rel="noopener noreferrer" className="hover:text-slate-400 text-slate-400 text-sm transition-colors ">  LLM & Generative Engines read here </a>     
-              </p>
+                  <a href="/nzvisaprep/llm.txt" target="_blank" rel="noopener noreferrer" className="hover:text-slate-400 text-slate-400 text-sm transition-colors ">  LLM & Generative Engines read here </a>
+                </p>
 
               </div>
               <div className="flex items-center gap-6 text-sm text-slate-500">
-               <a href="https://eecglobal.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Privacy</a>
+                <a href="https://eecglobal.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Privacy</a>
                 <a href="https://eecglobal.com/terms" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Terms</a>
                 <a href="https://eecglobal.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Main Site</a>
               </div>
