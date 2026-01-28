@@ -3,6 +3,46 @@ import AustraliaGsApp from '@/features/australia-gs/components/AustraliaGsApp';
 import AustraliaGsStructuredData from '@/features/australia-gs/components/AustraliaGsStructuredData';
 import GoogleTagManager from '@/components/GoogleTagManager';
 
+// FAQ data for schema (extracted from existing components)
+const mainPageFAQSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the Genuine Student (GS) requirement for an Australian student visa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Genuine Student (GS) requirement is a key integrity measure for the Australian student visa program. It assesses whether an applicant is a genuine student intending to obtain a quality education in Australia. Applicants must demonstrate their understanding of the course, their future plans in their home country, and provide evidence of their circumstances.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much fund is required for Australia Student Visa 2025-2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'As of May 2024, the financial requirement for the primary applicant is AUD 29,710 per year for living costs, plus the first year\'s tuition fee and travel expenses (approx AUD 2,000).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I use this tool for the subclass 500 visa interview?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, absolutely. This tool is specifically designed to prepare students for the interview component related to the Australian Student Visa (subclass 500), with a strong focus on satisfying the new Genuine Student (GS) criteria.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does EEC Global help with Australia Visa filing?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, EEC Global has 26 branches across Gujarat and specializes in Australian student visas. We assist with University applications, GTE/GS drafting, and Visa filing ensuring high success rates.',
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
     title: 'Free AI Australia GS Interview Prep Tool by EEC',
     description: '10X your Australian student visa success with EEC\'s free AI-powered Genuine Student (GS) interview prep tool. Get hyper-personalized questions, practice with your voice, and receive instant, expert feedback. Designed for Indian students applying for the Subclass 500 visa.',
@@ -62,6 +102,10 @@ export default function AustraliaGsPrepPage() {
     return (
         <>
             <GoogleTagManager />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(mainPageFAQSchema) }}
+            />
             <AustraliaGsStructuredData />
             <AustraliaGsApp />
         </>
