@@ -1,7 +1,17 @@
-import React, { useState, useEffect, useLayoutEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
 import { onAuthStateChanged, getAuth } from 'firebase/auth';
 import { auth } from '../services/firebaseConfig';
 import { AUTH_MODAL_EVENT, AUTH_SUCCESS_EVENT, DASHBOARD_URL } from '../constants';
+
+const NAV_LINKS = [
+  { href: '/usavisaprep/', text: 'Start Prep' },
+  { href: '/usavisaprep/glossary/', text: 'Glossary' },
+  { href: '/usavisaprep/preparation-guide/', text: 'Preparation Guide' },
+  { href: '/usavisaprep/resources/', text: 'Resources' },
+  { href: '/usavisaprep/faq/', text: 'FAQ' },
+  { href: '/usavisaprep/about-eec/', text: 'About EEC' },
+];
 
 type Theme = 'light' | 'dark';
 
@@ -149,10 +159,24 @@ const Header: React.FC = () => {
             <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center gap-3">
-                        <img src="/assets/logos/eeclogo-main.png" alt="EEC" className="h-8" />
-                        <span className="text-xl font-bold text-slate-800 dark:text-slate-200">USA F-1 Visa Prep</span>
+                        <Link href="/usavisaprep/" className="flex items-center gap-3">
+                            <img src="/assets/logos/eeclogo-main.png" alt="EEC" className="h-8" />
+                            <span className="text-xl font-bold text-slate-800 dark:text-slate-200">USA F-1 Visa Prep</span>
+                        </Link>
                     </div>
-                    <div className="flex items-center space-x-3 md:space-x-8">
+                    <div className="flex items-center gap-4 md:gap-6 flex-wrap justify-end">
+                        <div className="hidden lg:flex items-center gap-5">
+                            {NAV_LINKS.map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors whitespace-nowrap"
+                                >
+                                    {link.text}
+                                </Link>
+                            ))}
+                        </div>
+                        <div className="flex items-center space-x-3 md:space-x-4">
                         {/* Mobile View Button */}
                         <div className="md:hidden">
                             {loggedIn ? (
@@ -190,6 +214,7 @@ const Header: React.FC = () => {
                                     Sign In
                                 </button>
                             )}
+                        </div>
                         </div>
                     </div>
                 </div>
