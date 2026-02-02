@@ -86,6 +86,7 @@ Disallow: /*.map$
 # SITEMAPS - Critical for Google Discovery
 # ============================================================================
 Sitemap: https://ai.eecglobal.com/sitemap.xml
+Sitemap: https://ai.eecglobal.com/nzvisaprep/sitemap.xml
 Sitemap: https://ai.eecglobal.com/sitemap-aitools.xml
 Sitemap: https://ai.eecglobal.com/sitemap-branches.xml
 

@@ -1,6 +1,14 @@
 import { MetadataRoute } from 'next';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+type SitemapEntry = {
+  url: string;
+  lastModified: string;
+  changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+  priority: number;
+  images?: string[];
+};
+
+export default function sitemap(): SitemapEntry[] {
   const baseUrl = 'https://ai.eecglobal.com';
   const currentDate = new Date().toISOString().split('T')[0];
 
@@ -166,7 +174,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/usavisaprep/`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
-      priority: 0.9,
+      priority: 1.0,
+      images: [
+        `${baseUrl}/assets/screenshots/usa-visa-dashboard.png`,
+        `${baseUrl}/og-image.png`
+      ]
     },
     {
       url: `${baseUrl}/usavisaprep/dashboard/`,
@@ -204,12 +216,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     },
-    // Australia GS Prep – main tool + subpages
+    // Australia GS Prep Tool
     {
       url: `${baseUrl}/australiagsprep/`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
-      priority: 0.9,
+      priority: 1.0,
+      images: [
+        `${baseUrl}/assets/screenshots/australia-gs-dashboard.png`,
+        `${baseUrl}/assets/logos/australialogo.png`,
+        `${baseUrl}/assets/tools/australia-gs-hero.png`
+      ]
     },
     {
       url: `${baseUrl}/australiagsprep/dashboard/`,
@@ -331,6 +348,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     },
+    // Career Counselor – main tool + subpages (no dashboard)
     {
       url: `${baseUrl}/careercounselor/`,
       lastModified: currentDate,
@@ -338,10 +356,70 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/careercounselor/faq/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/careercounselor/glossary/`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/careercounselor/preparation-guide/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/careercounselor/resources/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/careercounselor/about-eec/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.75,
+    },
+    {
       url: `${baseUrl}/travelagent/`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/travelagent/faq/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.65,
+    },
+    {
+      url: `${baseUrl}/travelagent/glossary/`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.65,
+    },
+    {
+      url: `${baseUrl}/travelagent/preparation-guide/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.65,
+    },
+    {
+      url: `${baseUrl}/travelagent/resources/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.65,
+    },
+    {
+      url: `${baseUrl}/travelagent/about-eec/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.65,
     },
     {
       url: `${baseUrl}/review/`,

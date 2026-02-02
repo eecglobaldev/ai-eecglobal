@@ -30,6 +30,16 @@ document:
   contact_for_corrections: info@eecglobal.com
 
 # 
+# PAGE STRUCTURE (REFACTORED STANDALONE PAGES)
+# Canonical URLs for the Career Counselor tool (no dashboard):
+#   https://ai.eecglobal.com/careercounselor/
+#   https://ai.eecglobal.com/careercounselor/faq/
+#   https://ai.eecglobal.com/careercounselor/glossary/
+#   https://ai.eecglobal.com/careercounselor/preparation-guide/
+#   https://ai.eecglobal.com/careercounselor/resources/
+#   https://ai.eecglobal.com/careercounselor/about-eec/
+
+# 
 # SECTION 2: ORGANIZATION PROFILE (PRIMARY ENTITY)
 # 
 

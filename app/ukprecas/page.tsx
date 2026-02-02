@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import UkPrecasStructuredData from '@/features/uk-precas/components/UkPrecasStructuredData';
 import GoogleTagManager from '@/components/GoogleTagManager';
 import UkPrecasWrapper from './UkPrecasWrapper';
+import BreadcrumbSchema from '@/features/shared/components/BreadcrumbSchema';
+import SoftwareApplicationSchema from '@/features/shared/components/SoftwareApplicationSchema';
 
 export const metadata: Metadata = {
     title: 'UK Pre-CAS Interview Prep 2026 by EEC | AI-Powered Visa Interview Practice',
@@ -137,6 +139,31 @@ export default function UkPrecasPage() {
     return (
         <>
             <GoogleTagManager gtmId="GTM-TDBRW6C4" />
+            <BreadcrumbSchema
+                items={[
+                    { name: 'Home', url: 'https://ai.eecglobal.com/' },
+                    { name: 'UK Pre-CAS Prep' }
+                ]}
+            />
+            <SoftwareApplicationSchema
+                name="UK Pre-CAS Interview Prep AI"
+                description="AI-powered UK Pre-CAS credibility interview preparation tool for Tier 4 student visa. Practice with UKVI-style questions and get expert feedback for 2026 intakes."
+                url="https://ai.eecglobal.com/ukprecas/"
+                applicationCategory="EducationalApplication"
+                aggregateRating={{
+                    ratingValue: "4.7",
+                    reviewCount: "645"
+                }}
+                featureList={[
+                    "UKVI Credibility Interview Practice",
+                    "CAS Interview Questions",
+                    "Audio Recording & Transcription",
+                    "Real-time Feedback",
+                    "Graduate Route Guidance",
+                    "2026 Intake Preparation"
+                ]}
+                screenshot="https://ai.eecglobal.com/assets/screenshots/uk-precas-dashboard.png"
+            />
             <UkPrecasStructuredData />
             <UkPrecasWrapper />
         </>

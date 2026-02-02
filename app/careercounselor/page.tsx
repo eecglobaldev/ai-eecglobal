@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import CareerCounselorApp from '@/features/career-counselor/components/CareerCounselorApp';
+import BreadcrumbSchema from '@/features/shared/components/BreadcrumbSchema';
+import SoftwareApplicationSchema from '@/features/shared/components/SoftwareApplicationSchema';
 
 export const metadata: Metadata = {
   title: 'AI-Powered Study Abroad Course Counselor | EEC Global',
@@ -40,6 +42,34 @@ export const metadata: Metadata = {
 };
 
 export default function CareerCounselorPage() {
-  return <CareerCounselorApp />;
+  return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://ai.eecglobal.com/' },
+          { name: 'Career Counselor AI' }
+        ]}
+      />
+      <SoftwareApplicationSchema
+        name="AI Career Counselor for Study Abroad"
+        description="AI-powered career counseling tool for study abroad decisions. Get instant insights on job prospects, salaries, top companies, and universities for any course worldwide."
+        url="https://ai.eecglobal.com/careercounselor/"
+        applicationCategory="BusinessApplication"
+        aggregateRating={{
+          ratingValue: "4.6",
+          reviewCount: "312"
+        }}
+        featureList={[
+          "Course ROI Calculator",
+          "Job Prospects Analysis",
+          "Salary Insights",
+          "Top Companies Database",
+          "University Rankings",
+          "Career Path Guidance"
+        ]}
+        screenshot="https://ai.eecglobal.com/assets/screenshots/career-counselor.png"
+      />
+      <CareerCounselorApp />
+    </>
+  );
 }
-

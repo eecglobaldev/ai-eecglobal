@@ -1,7 +1,7 @@
 # ═══════════════════════════════════════════════════════════════════════════════════════
 # EEC AI Course Counselor - robots.txt
 # https://ai.eecglobal.com/careercounselor
-# Last Updated: 2025-12-10
+# Last Updated: 2026-01
 # ═══════════════════════════════════════════════════════════════════════════════════════
 
 # ═══════════════════════════════════════════════════════════════════════════════════════
@@ -10,6 +10,12 @@
 
 User-agent: *
 Allow: /
+Allow: /careercounselor/
+Allow: /careercounselor/faq/
+Allow: /careercounselor/glossary/
+Allow: /careercounselor/preparation-guide/
+Allow: /careercounselor/resources/
+Allow: /careercounselor/about-eec/
 Allow: /llm.txt
 Allow: /sitemap.xml
 
@@ -158,8 +164,9 @@ Disallow: /.git/
 # - Branch locations and contact information
 # URL: https://ai.eecglobal.com/llm.txt
 
-# Sitemap for comprehensive URL discovery
+# Sitemaps for URL discovery
 Sitemap: https://ai.eecglobal.com/sitemap.xml
+Sitemap: https://ai.eecglobal.com/careercounselor/sitemap.xml
 
 # ═══════════════════════════════════════════════════════════════════════════════════════
 # CRAWL SETTINGS

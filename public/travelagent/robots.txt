@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
+Allow: /travelagent/
+Allow: /travelagent/faq/
+Allow: /travelagent/glossary/
+Allow: /travelagent/preparation-guide/
+Allow: /travelagent/resources/
+Allow: /travelagent/about-eec/
 
+Sitemap: https://ai.eecglobal.com/sitemap.xml
 Sitemap: https://ai.eecglobal.com/travelagent/sitemap.xml
+
+# LLM optimization file
+# https://ai.eecglobal.com/travelagent/llm.txt

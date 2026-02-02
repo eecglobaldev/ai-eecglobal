@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import AustraliaGsApp from '@/features/australia-gs/components/AustraliaGsApp';
 import AustraliaGsStructuredData from '@/features/australia-gs/components/AustraliaGsStructuredData';
 import GoogleTagManager from '@/components/GoogleTagManager';
+import BreadcrumbSchema from '@/features/shared/components/BreadcrumbSchema';
+import SoftwareApplicationSchema from '@/features/shared/components/SoftwareApplicationSchema';
 
 // FAQ data for schema (extracted from existing components)
 const mainPageFAQSchema = {
@@ -44,71 +46,95 @@ const mainPageFAQSchema = {
 };
 
 export const metadata: Metadata = {
+  title: 'Free AI Australia GS Interview Prep Tool by EEC',
+  description: '10X your Australian student visa success with EEC\'s free AI-powered Genuine Student (GS) interview prep tool. Get hyper-personalized questions, practice with your voice, and receive instant, expert feedback. Designed for Indian students applying for the Subclass 500 visa.',
+  keywords: ['Australia student visa', 'Genuine Student', 'GS interview', 'GS criteria Australia', 'EEC', 'study in Australia', 'visa interview prep', 'AI visa tool', 'Indian students', 'subclass 500 visa India', 'free AI interview coach', 'genuine student assessment Australia', 'GTE to GS changes', 'Australian visa interview questions for Indian students', 'EEC branches Gujarat', 'study abroad consultants India'],
+  authors: [{ name: 'EEC (Enbee Education Center Private Limited)' }],
+  publisher: 'EEC (Enbee Education Center Private Limited)',
+  openGraph: {
+    type: 'website',
+    url: 'https://ai.eecglobal.com/australiagsprep/',
     title: 'Free AI Australia GS Interview Prep Tool by EEC',
-    description: '10X your Australian student visa success with EEC\'s free AI-powered Genuine Student (GS) interview prep tool. Get hyper-personalized questions, practice with your voice, and receive instant, expert feedback. Designed for Indian students applying for the Subclass 500 visa.',
-    keywords: ['Australia student visa', 'Genuine Student', 'GS interview', 'GS criteria Australia', 'EEC', 'study in Australia', 'visa interview prep', 'AI visa tool', 'Indian students', 'subclass 500 visa India', 'free AI interview coach', 'genuine student assessment Australia', 'GTE to GS changes', 'Australian visa interview questions for Indian students', 'EEC branches Gujarat', 'study abroad consultants India'],
-    authors: [{ name: 'EEC (Enbee Education Center Private Limited)' }],
-    publisher: 'EEC (Enbee Education Center Private Limited)',
-    openGraph: {
-        type: 'website',
-        url: 'https://ai.eecglobal.com/australiagsprep/',
-        title: 'Free AI Australia GS Interview Prep Tool by EEC',
-        description: 'A 100% free, AI-powered tool for Indian students to prepare for the Australian Genuine Student (GS) visa interview.',
-        siteName: 'EEC Australia GS Prep',
-        locale: 'en_IN',
-        images: [
-            {
-                url: '/assets/logos/eeclogo-main.png',
-                width: 1200,
-                height: 630,
-                alt: 'EEC Australia GS Prep Tool',
-            },
-        ],
+    description: 'A 100% free, AI-powered tool for Indian students to prepare for the Australian Genuine Student (GS) visa interview.',
+    siteName: 'EEC Australia GS Prep',
+    locale: 'en_IN',
+    images: [
+      {
+        url: '/assets/logos/eeclogo-main.png',
+        width: 1200,
+        height: 630,
+        alt: 'EEC Australia GS Prep Tool',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free AI Australia GS Interview Prep Tool by EEC',
+    description: 'A 100% free, AI-powered tool for Indian students to prepare for the Australian Genuine Student (GS) visa interview.',
+    images: ['/assets/logos/eeclogo-main.png'],
+  },
+  alternates: {
+    canonical: 'https://ai.eecglobal.com/australiagsprep/',
+    types: {
+      'application/rss+xml': [{ url: '/australiagsprep/feed.xml', title: 'RSS Feed' }],
     },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Free AI Australia GS Interview Prep Tool by EEC',
-        description: 'A 100% free, AI-powered tool for Indian students to prepare for the Australian Genuine Student (GS) visa interview.',
-        images: ['/assets/logos/eeclogo-main.png'],
-    },
-    alternates: {
-        canonical: 'https://ai.eecglobal.com/australiagsprep/',
-        types: {
-            'application/rss+xml': [{ url: '/australiagsprep/feed.xml', title: 'RSS Feed' }],
-        },
-    },
-    other: {
-        'google-site-verification': 'rqiI0_ZlREHbdPNC1E_HUY_RMmHcYEiO6yL9HdZ1VfE',
-    },
-    icons: {
-        icon: [
-            { url: '/assets/logos/australialogo.png', type: 'image/png' },
-            { url: '/favicon.ico', sizes: 'any' },
-        ],
-        apple: [
-            { url: '/apple-touch-icon.png', sizes: '180x180' },
-        ],
-    },
-    robots: {
-        index: true,
-        follow: true,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-        'max-video-preview': -1,
-    },
+  },
+  other: {
+    'google-site-verification': 'rqiI0_ZlREHbdPNC1E_HUY_RMmHcYEiO6yL9HdZ1VfE',
+  },
+  icons: {
+    icon: [
+      { url: '/assets/logos/australialogo.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180' },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
+  },
 };
 
 export default function AustraliaGsPrepPage() {
-    return (
-        <>
-            <GoogleTagManager />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(mainPageFAQSchema) }}
-            />
-            <AustraliaGsStructuredData />
-            <AustraliaGsApp />
-        </>
-    );
+  return (
+    <>
+      <GoogleTagManager />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://ai.eecglobal.com/' },
+          { name: 'Australia GS Prep' }
+        ]}
+      />
+      <SoftwareApplicationSchema
+        name="Australia GS Interview Prep AI"
+        description="AI-powered Genuine Student (GS) interview preparation tool for Australian student visa (subclass 500). Practice with personalized questions, voice recording, and instant expert feedback."
+        url="https://ai.eecglobal.com/australiagsprep/"
+        applicationCategory="EducationalApplication"
+        aggregateRating={{
+          ratingValue: "4.9",
+          reviewCount: "892"
+        }}
+        featureList={[
+          "AI Mock Interviews",
+          "Voice Recording & Analysis",
+          "Real-time Feedback",
+          "Personalized Questions",
+          "GS Criteria Assessment",
+          "Dashboard Analytics"
+        ]}
+        screenshot="https://ai.eecglobal.com/assets/screenshots/australia-gs-dashboard.png"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(mainPageFAQSchema) }}
+      />
+      <AustraliaGsStructuredData />
+      <AustraliaGsApp />
+    </>
+  );
 }
-

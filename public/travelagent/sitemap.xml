@@ -9,10 +9,39 @@
 
 <url>
   <loc>https://ai.eecglobal.com/travelagent/</loc>
-      <priority>1.0</priority>
-    <changefreq>daily</changefreq>
-  <lastmod>2025-11-27T06:02:36+00:00</lastmod>
+  <priority>1.0</priority>
+  <changefreq>daily</changefreq>
+  <lastmod>2026-01-23</lastmod>
 </url>
-
+<url>
+  <loc>https://ai.eecglobal.com/travelagent/faq/</loc>
+  <priority>0.9</priority>
+  <changefreq>weekly</changefreq>
+  <lastmod>2026-01-23</lastmod>
+</url>
+<url>
+  <loc>https://ai.eecglobal.com/travelagent/glossary/</loc>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2026-01-23</lastmod>
+</url>
+<url>
+  <loc>https://ai.eecglobal.com/travelagent/preparation-guide/</loc>
+  <priority>0.85</priority>
+  <changefreq>weekly</changefreq>
+  <lastmod>2026-01-23</lastmod>
+</url>
+<url>
+  <loc>https://ai.eecglobal.com/travelagent/resources/</loc>
+  <priority>0.9</priority>
+  <changefreq>weekly</changefreq>
+  <lastmod>2026-01-23</lastmod>
+</url>
+<url>
+  <loc>https://ai.eecglobal.com/travelagent/about-eec/</loc>
+  <priority>0.9</priority>
+  <changefreq>weekly</changefreq>
+  <lastmod>2026-01-23</lastmod>
+</url>
 
 </urlset>

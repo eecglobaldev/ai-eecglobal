@@ -1,0 +1,13 @@
+# EEC AI Testimonial Coach (Review) - robots.txt
+# https://ai.eecglobal.com/review
+# Allow access to everything
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ai.eecglobal.com/sitemap.xml
+Sitemap: https://ai.eecglobal.com/review/sitemap.xml
+
+# LLM optimization file
+# https://ai.eecglobal.com/review/llm.txt

@@ -23,7 +23,8 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: '/nzvisaprep/:path*',
+        // Apply security headers to all routes
+        source: '/:path*',
         headers: [
           {
             key: 'X-Content-Type-Options',
@@ -34,12 +35,20 @@ const nextConfig: NextConfig = {
             value: 'SAMEORIGIN',
           },
           {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+          {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
           },
           {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(self), geolocation=()',
+            value: 'camera=(), microphone=(self), geolocation=(), interest-cohort=()',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
           },
         ],
       },

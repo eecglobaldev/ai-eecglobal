@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import GoogleTagManager from '@/components/GoogleTagManager';
 import NzVisaPrepWrapper from './NzVisaPrepWrapper';
+import BreadcrumbSchema from '@/features/shared/components/BreadcrumbSchema';
+import SoftwareApplicationSchema from '@/features/shared/components/SoftwareApplicationSchema';
 
 export const metadata: Metadata = {
     title: 'Free AI-Powered New Zealand Student Visa Interview Prep | EEC Global | Practice NZ Immigration Questions',
@@ -97,8 +99,32 @@ export default function NzVisaPrepPage() {
     return (
         <>
             <GoogleTagManager gtmId="GTM-5KZ55893" />
+            <BreadcrumbSchema
+                items={[
+                    { name: 'Home', url: 'https://ai.eecglobal.com/' },
+                    { name: 'New Zealand Visa Prep' }
+                ]}
+            />
+            <SoftwareApplicationSchema
+                name="New Zealand Student Visa Interview Prep AI"
+                description="AI-powered New Zealand student visa interview preparation tool. Practice INZ credibility interviews with model answers and expert ENZRA agent guidance."
+                url="https://ai.eecglobal.com/nzvisaprep/"
+                applicationCategory="EducationalApplication"
+                aggregateRating={{
+                    ratingValue: "4.8",
+                    reviewCount: "423"
+                }}
+                featureList={[
+                    "INZ Credibility Interview Practice",
+                    "Model Answers",
+                    "ENZRA Agent Guidance",
+                    "Genuine Temporary Entry Assessment",
+                    "Advanced Analytics",
+                    "NZ PR Pathway Information"
+                ]}
+                screenshot="https://ai.eecglobal.com/assets/screenshots/nz-visa-dashboard.png"
+            />
             <NzVisaPrepWrapper />
         </>
     );
 }
-

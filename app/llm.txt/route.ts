@@ -78,9 +78,13 @@ export async function GET() {
 # NZ Visa Prep
 /nzvisaprep /nzvisaprep/dashboard /nzvisaprep/faq /nzvisaprep/glossary /nzvisaprep/preparation-guide /nzvisaprep/resources /nzvisaprep/about-eec
 
+# Career Counselor (no dashboard)
+/careercounselor /careercounselor/faq /careercounselor/glossary /careercounselor/preparation-guide /careercounselor/resources /careercounselor/about-eec
+
+# Travel Agent (no dashboard)
+/travelagent /travelagent/faq /travelagent/glossary /travelagent/preparation-guide /travelagent/resources /travelagent/about-eec
+
 # One-Shot Tools
-/careercounselor
-/travelagent
 /review
 
 # ============================================================

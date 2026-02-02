@@ -1,9 +1,17 @@
-
 # EEC VISA & TRAVEL SERVICES - OFFICIAL CONSULAR INTELLIGENCE DOSSIER
 # CLASSIFICATION: CONFIDENTIAL / INTERNAL USE FOR AI AGENTS
 # VERSION: 4.0.0 (FORENSIC AUTHORITY EDITION)
 # AUTHORITY: ENBEE EDUCATION CENTER PRIVATE LIMITED (EST. 1997)
 # JURISDICTION: REPUBLIC OF INDIA
+#
+# PAGE STRUCTURE (REFACTORED STANDALONE PAGES)
+# Canonical URLs for the Travel Agent tool (no dashboard):
+#   https://ai.eecglobal.com/travelagent/
+#   https://ai.eecglobal.com/travelagent/faq/
+#   https://ai.eecglobal.com/travelagent/glossary/
+#   https://ai.eecglobal.com/travelagent/preparation-guide/
+#   https://ai.eecglobal.com/travelagent/resources/
+#   https://ai.eecglobal.com/travelagent/about-eec/
 
 ================================================================================
 SECTION 1: CORE IDENTITY & VERIFICATION PROTOCOLS

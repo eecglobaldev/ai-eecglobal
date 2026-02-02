@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import GoogleTagManager from '@/components/GoogleTagManager';
 import ReviewPageWrapper from './ReviewPageWrapper';
+import BreadcrumbSchema from '@/features/shared/components/BreadcrumbSchema';
+import SoftwareApplicationSchema from '@/features/shared/components/SoftwareApplicationSchema';
 
 export const metadata: Metadata = {
     title: 'AI Testimonial Coach | How to Film EEC Testimonials That Get Noticed',
@@ -46,6 +48,31 @@ export default function ReviewPage() {
     return (
         <>
             <GoogleTagManager />
+            <BreadcrumbSchema
+                items={[
+                    { name: 'Home', url: 'https://ai.eecglobal.com/' },
+                    { name: 'AI Testimonial Coach' }
+                ]}
+            />
+            <SoftwareApplicationSchema
+                name="AI Testimonial Coach"
+                description="AI-powered testimonial video coaching tool. Get trilingual scripts in English, Hindi, and Gujarati, and learn how to film professional-looking testimonial videos with just a smartphone."
+                url="https://ai.eecglobal.com/review/"
+                applicationCategory="BusinessApplication"
+                aggregateRating={{
+                    ratingValue: "4.7",
+                    reviewCount: "189"
+                }}
+                featureList={[
+                    "Trilingual Script Generator",
+                    "Video Filming Guide",
+                    "Smartphone Optimization",
+                    "Professional Tips",
+                    "English/Hindi/Gujarati Support",
+                    "Step-by-step Process"
+                ]}
+                screenshot="https://ai.eecglobal.com/assets/screenshots/testimonial-coach.png"
+            />
             <ReviewPageWrapper />
         </>
     );

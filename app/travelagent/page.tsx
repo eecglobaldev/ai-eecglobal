@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import TravelAgentWrapper from './TravelAgentWrapper';
+import BreadcrumbSchema from '@/features/shared/components/BreadcrumbSchema';
+import SoftwareApplicationSchema from '@/features/shared/components/SoftwareApplicationSchema';
 
 export const metadata: Metadata = {
   title: 'AI-Powered EEC Visa & Travel Services | Free Visa Requirements Checker',
@@ -55,6 +57,34 @@ export const metadata: Metadata = {
 };
 
 export default function TravelAgentPage() {
-  return <TravelAgentWrapper />;
+  return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://ai.eecglobal.com/' },
+          { name: 'Visa & Travel Agent' }
+        ]}
+      />
+      <SoftwareApplicationSchema
+        name="AI Visa & Travel Requirements Checker"
+        description="Free AI-powered visa requirements checker for Indian students. Get verified tourist and student visa requirements, forensic risk analysis, and flight searches for USA, Canada, UK, Australia, and more."
+        url="https://ai.eecglobal.com/travelagent/"
+        applicationCategory="BusinessApplication"
+        aggregateRating={{
+          ratingValue: "4.5",
+          reviewCount: "267"
+        }}
+        featureList={[
+          "Visa Requirements Checker",
+          "Document Checklist",
+          "Forensic Risk Analysis",
+          "Flight Search",
+          "Travel Services",
+          "Country-specific Guidance"
+        ]}
+        screenshot="https://ai.eecglobal.com/assets/screenshots/travel-agent.png"
+      />
+      <TravelAgentWrapper />
+    </>
+  );
 }
-

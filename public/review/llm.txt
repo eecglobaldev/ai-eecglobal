@@ -1,0 +1,16 @@
+# llm.txt — AI Testimonial Coach Context
+# Version: 1.0
+# Maintainer: EEC (Enbee Education Center Private Limited)
+# URL: https://ai.eecglobal.com/review/
+
+# TOOL: AI Testimonial Coach
+# DESCRIPTION: An AI tool to help students and partners film high-quality video testimonials for study abroad success stories.
+
+# KEY FEATURES:
+# - Generates scripts in English, Hindi, and Gujarati.
+# - Step-by-step filming instructions (lighting, sound, framing).
+# - 'Director Mode' checklist for ensuring quality.
+# - Targeted at successful students sharing their EEC experience.
+
+# PAGE:
+# /review/ - Main tool interface.

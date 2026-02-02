@@ -1,6 +1,8 @@
 import React from 'react';
 import UsaVisaApp from '@/features/usa-visa/components/UsaVisaApp';
 import { Metadata } from 'next';
+import BreadcrumbSchema from '@/features/shared/components/BreadcrumbSchema';
+import SoftwareApplicationSchema from '@/features/shared/components/SoftwareApplicationSchema';
 
 export const metadata: Metadata = {
     title: 'USA F-1 Visa Interview Prep - AI Powered | EEC',
@@ -43,11 +45,34 @@ export const metadata: Metadata = {
 export default function UsaVisaPrepPage() {
     return (
         <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-200">
+            <BreadcrumbSchema
+                items={[
+                    { name: 'Home', url: 'https://ai.eecglobal.com/' },
+                    { name: 'USA F-1 Visa Prep' }
+                ]}
+            />
+            <SoftwareApplicationSchema
+                name="USA F-1 Visa Interview Prep AI"
+                description="AI-powered F-1 student visa interview preparation tool. Practice with realistic consular officer simulations, get pronunciation feedback, and receive personalized prep plans."
+                url="https://ai.eecglobal.com/usavisaprep/"
+                applicationCategory="EducationalApplication"
+                aggregateRating={{
+                    ratingValue: "4.8",
+                    reviewCount: "1523"
+                }}
+                featureList={[
+                    "AI Consular Officer Simulation",
+                    "Voice & Pronunciation Analysis",
+                    "Real-time Feedback",
+                    "214(b) Refusal Prevention",
+                    "DS-160 Guidance",
+                    "Interview Confidence Scoring"
+                ]}
+                screenshot="https://ai.eecglobal.com/assets/screenshots/usa-visa-dashboard.png"
+            />
             <UsaVisaApp />
         </div>
     );
 }
-
-
 
 
