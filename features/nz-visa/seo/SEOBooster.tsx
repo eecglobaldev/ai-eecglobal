@@ -22,7 +22,7 @@ import { BRANCH_DATA } from '../data/branches';
 
 export const generateMasterSchema = () => {
   const currentDate = new Date().toISOString().split('T')[0];
-  
+
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -138,7 +138,7 @@ export const generateMasterSchema = () => {
             "@type": "ListItem",
             "position": 4,
             "name": "NZ Visa Interview Prep",
-            "item": "/nzvisaprep/"
+            "item": "https://ai.eecglobal.com/nzvisaprep/"
           }
         ]
       },
@@ -1137,7 +1137,7 @@ export const generateMasterSchema = () => {
 
 export const SEOBooster: React.FC = () => {
   const masterSchema = generateMasterSchema();
-  
+
   // Generate LocalBusiness schemas for all branches
   const branchSchemas = BRANCH_DATA.map(branch => ({
     "@context": "https://schema.org",
@@ -1182,17 +1182,17 @@ export const SEOBooster: React.FC = () => {
   return (
     <>
       {/* Master Schema */}
-      <script 
-        type="application/ld+json" 
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(masterSchema) }} 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(masterSchema) }}
       />
-      
+
       {/* Branch Schemas */}
       {branchSchemas.map((schema, index) => (
-        <script 
+        <script
           key={`branch-schema-${index}`}
-          type="application/ld+json" 
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ))}
     </>

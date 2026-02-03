@@ -29,9 +29,9 @@ export const generateVideoSchemas = () => {
       "name": "New Zealand Student Visa Interview Preparation Guide 2025",
       "description": "Complete guide to preparing for your New Zealand student visa interview. Learn what INZ visa officers ask, how to answer credibility interview questions, and tips from ENZRA certified experts at EEC Global.",
       "thumbnailUrl": "/assets/nzvisaprep-og.png",
-      "uploadDate": "2024-06-15",
+      "uploadDate": "2024-06-15T09:00:00+05:30",
       "duration": "PT15M32S",
-      "contentUrl": "https://www.youtube.com/watch?v=example",
+      "contentUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       "embedUrl": "https://www.youtube.com/embed/example",
       "publisher": {
         "@type": "Organization",
@@ -67,8 +67,9 @@ export const generateVideoSchemas = () => {
       "name": "FTS (Funds to Support) Scheme Explained for NZ Visa",
       "description": "Detailed explanation of New Zealand's Funds to Support scheme. Learn how to prepare financial documents, what amounts are required, and how to present your financial capacity to Immigration New Zealand.",
       "thumbnailUrl": "/assets/nzvisaprep-og.png",
-      "uploadDate": "2024-08-20",
+      "uploadDate": "2024-08-20T09:00:00+05:30",
       "duration": "PT12M45S",
+      "contentUrl": "https://www.youtube.com/watch?v=example_fts",
       "publisher": {
         "@type": "Organization",
         "@id": "https://eecglobal.com/#organization"
@@ -83,8 +84,9 @@ export const generateVideoSchemas = () => {
       "name": "Post-Study Work Visa (PSWV) in New Zealand - Complete Guide",
       "description": "Everything you need to know about the 3-year Post-Study Work Visa in New Zealand. Career opportunities, PR pathway, and how to transition from student visa to work visa.",
       "thumbnailUrl": "/assets/nzvisaprep-og.png",
-      "uploadDate": "2024-10-05",
+      "uploadDate": "2024-10-05T09:00:00+05:30",
       "duration": "PT18M20S",
+      "contentUrl": "https://www.youtube.com/watch?v=example_pswv",
       "publisher": {
         "@type": "Organization",
         "@id": "https://eecglobal.com/#organization"
@@ -102,7 +104,7 @@ export const generateEventSchemas = () => {
   const today = new Date();
   const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
   const nextMonth = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000);
-  
+
   return [
     {
       "@context": "https://schema.org",
@@ -181,6 +183,11 @@ export const generateEventSchemas = () => {
           "addressCountry": "IN"
         }
       },
+      "image": "/assets/nzvisaprep-og.png",
+      "performer": {
+        "@type": "Organization",
+        "name": "Universities New Zealand Representatives"
+      },
       "organizer": {
         "@type": "Organization",
         "@id": "https://eecglobal.com/#organization"
@@ -189,7 +196,9 @@ export const generateEventSchemas = () => {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "INR",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "url": "https://eecglobal.com/events/nz-fair",
+        "validFrom": today.toISOString()
       },
       "isAccessibleForFree": true
     }
