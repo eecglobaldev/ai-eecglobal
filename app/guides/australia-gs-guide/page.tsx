@@ -62,9 +62,11 @@ const structuredData = {
   }
 };
 
+import GlossaryInjector from '@/features/shared/components/GlossaryInjector';
+
 export default function AustraliaGSGuidePage() {
   return (
-    <>
+    <GlossaryInjector>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -175,7 +177,7 @@ export default function AustraliaGSGuidePage() {
           </div>
         </div>
       </main>
-    </>
+    </GlossaryInjector>
   );
 }
 
