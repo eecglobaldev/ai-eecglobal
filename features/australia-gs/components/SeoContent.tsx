@@ -73,15 +73,7 @@ export const SeoContent = () => {
 
     return (
         <section className="py-8 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800">
-            {/* Inject Schema into Head */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
-            />
+
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 

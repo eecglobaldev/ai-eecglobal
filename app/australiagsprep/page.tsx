@@ -28,6 +28,14 @@ const mainPageFAQSchema = {
     },
     {
       '@type': 'Question',
+      name: 'Can I use AI to write my GS Statement?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'While you can use AI tools like EEC\'s AI Prep specifically designed for this to generate ideas and structure, your GS statement must be personal and authentic. Copy-pasting generic AI content can lead to refusal. Our tool helps you structure YOUR personal story.',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'Can I use this tool for the subclass 500 visa interview?',
       acceptedAnswer: {
         '@type': 'Answer',
