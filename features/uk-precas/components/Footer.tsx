@@ -145,8 +145,10 @@ const Footer: React.FC = () => {
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "3rd floor, B-Wing, Windsor Plaza, RC Dutt Rd, Alkapuri",
         "addressLocality": "Multiple locations across Gujarat",
         "addressRegion": "Gujarat",
+        "postalCode": "390007",
         "addressCountry": "IN"
       }
     },
