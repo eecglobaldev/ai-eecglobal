@@ -148,6 +148,11 @@ export const EnglishTestPrep: React.FC = () => {
                                     <meta itemProp="maxValue" content="1" />
                                     <meta itemProp="unitCode" content="DAY" />
                                 </div>
+                                <div itemProp="transitTime" itemScope itemType="https://schema.org/QuantitativeValue">
+                                    <meta itemProp="minValue" content="0" />
+                                    <meta itemProp="maxValue" content="0" />
+                                    <meta itemProp="unitCode" content="DAY" />
+                                </div>
                             </div>
                         </div>
 
@@ -155,10 +160,7 @@ export const EnglishTestPrep: React.FC = () => {
                         <div itemProp="hasMerchantReturnPolicy" itemScope itemType="https://schema.org/MerchantReturnPolicy" style={{ display: 'none' }}>
                             <meta itemProp="applicableCountry" content="IN" />
                             <meta itemProp="returnPolicyCategory" content="https://schema.org/MerchantReturnFiniteReturnWindow" />
-                            <div itemProp="merchantReturnDays" itemScope itemType="https://schema.org/QuantitativeValue">
-                                <meta itemProp="value" content="7" />
-                                <meta itemProp="unitCode" content="DAY" />
-                            </div>
+                            <meta itemProp="merchantReturnDays" content="7" />
                             <meta itemProp="returnMethod" content="https://schema.org/ReturnByMail" />
                             <meta itemProp="returnFees" content="https://schema.org/FreeReturn" />
                         </div>
