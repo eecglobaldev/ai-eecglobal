@@ -169,6 +169,7 @@ export const generateEventSchemas = () => {
       "name": "NZ University Fair - Meet Representatives from All 8 Universities",
       "description": "Exclusive opportunity to meet representatives from all 8 New Zealand universities at EEC's campus fair. Get direct admission information, scholarship opportunities, and course guidance.",
       "startDate": nextMonth.toISOString(),
+      "endDate": new Date(nextMonth.getTime() + 4 * 60 * 60 * 1000).toISOString(),
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
