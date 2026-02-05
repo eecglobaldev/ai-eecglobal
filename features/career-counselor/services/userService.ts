@@ -66,6 +66,12 @@ export const registerUser = async (userData: any) => {
       return "EXISTS"; // user already has an account
     }
 
+    // Extract new fields
+    const { firstName, lastName, passportNumber } = userData;
+
+    // Compute fullName for backward compatibility
+    const fullName = `${firstName} ${lastName}`.trim();
+
     // 2️⃣ CONVERT BRANCH ID TO BRANCH NAME
     let branchName = '';
     if (userData.isEECAgent === 'Yes' && userData.branch) {
@@ -83,6 +89,10 @@ export const registerUser = async (userData: any) => {
     // 4️⃣ CREATE NEW USER
     await addDoc(usersRef, {
       ...userData,
+      firstName,
+      lastName,
+      fullName,
+      passportNumber,
       state: stateName, // Save state name instead of code
       // targetCountry: userData.targetCountry || 'United Kingdom', // Ensure targetCountry is saved (default to USA if not provided)
       isEECAgent: userData.isEECAgent || '', // Save EEC agent status
@@ -102,7 +112,7 @@ export const registerUser = async (userData: any) => {
 export const incrementPrepPlanCount = async (email: string) => {
   try {
     const usersRef = collection(db, "career_counselor");
-    
+
     // Find user by email
     const q = query(usersRef, where("email", "==", email));
     const querySnapshot = await getDocs(q);
@@ -131,7 +141,7 @@ export const incrementPrepPlanCount = async (email: string) => {
 export const saveCareerInsightQuery = async (email: string, courseName: string, targetCountry: string) => {
   try {
     const usersRef = collection(db, "career_counselor");
-    
+
     // Find user by email
     const q = query(usersRef, where("email", "==", email));
     const querySnapshot = await getDocs(q);

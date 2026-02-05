@@ -92,7 +92,7 @@ export const getOrCreateAuthUser = async (
     if (existingAuth) {
       // User exists, sign them in using custom token
       const token = await issueCustomTokenForEmail(email);
-      
+
       if (!token) {
         console.error("Failed to get custom token");
         return null;
@@ -144,12 +144,12 @@ const issueCustomTokenForEmail = async (email: string): Promise<string | null> =
     }
 
     const data = await response.json();
-    
+
     if (data.success && data.token) {
       // console.log("✅ Custom token issued successfully");
       return data.token;
     }
-    
+
     console.error("❌ Custom token response missing token:", data);
     return null;
   } catch (error: any) {
@@ -175,15 +175,15 @@ const callMigrationCloudFunction = async (
   try {
     const functions = getFunctions();
     const migrateUser = httpsCallable(functions, 'migrateSingleUserToGlobalAuth');
-    
+
     // Call the onCall function with data
     const result = await migrateUser({ email, collection });
-    
+
     if ((result.data as any).success) {
       // console.log("✅ User migrated successfully via Cloud Function");
       return true;
     }
-    
+
     console.error("❌ Migration failed:", result.data);
     return false;
   } catch (error: any) {
@@ -222,32 +222,32 @@ export const signInWithHiddenAuth = async (
     if (!authEntry) {
       // console.warn("⚠️ No users_auth entry found for:", email);
       // console.log("🔄 Attempting automatic migration...");
-      
+
       // Try to migrate the user automatically
       const migrationSuccess = await callMigrationCloudFunction(email, collection);
-      
+
       if (!migrationSuccess) {
         console.error("❌ Automatic migration failed");
         return null;
       }
-      
+
       // Wait a moment for Firestore to update
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       // Retry fetching users_auth entry
       authEntry = await getUsersAuthByEmail(email);
-      
+
       if (!authEntry) {
         console.error("❌ users_auth entry still not found after migration");
         return null;
       }
-      
+
       // console.log("✅ Migration successful, proceeding with sign in");
     }
 
     // 🎫 Issue Custom Token (server decrypts password, we never see it)
     const customToken = await issueCustomTokenForEmail(email);
-    
+
     if (!customToken) {
       console.error("❌ Failed to get custom token");
       return null;
@@ -316,30 +316,34 @@ export const checkUserAuthExists = async (email: string): Promise<boolean> => {
 };
 
 /**
- * 🔐 Register User (Global) - Server-Side Registration
+ * 🔐 Global User Registration (Server-Side)
  * 
- * Uses REST API for server-side registration (no CORS issues)
- * 
- * Server handles:
- * - Password generation (server-side)
- * - Encryption (server-side)
- * - Firebase Auth user creation
- * - users_auth entry creation
- * - Country-specific profile creation
+ * Registers a new user via Cloud Function that handles:
+ * - Firebase Auth account creation
+ * - Password generation and encryption
+ * - users_auth collection entry
+ * - Tool-specific user profile creation
  * 
  * @param email - User email
  * @param phone - User phone
- * @param name - User name (optional)
+ * @param firstName - User first name
+ * @param lastName - User last name
+ * @param passportNumber - User passport number
  * @param collection - Collection name (nz_users by default, australia_gs_users, etc.)
  * @returns Registration result or null
  */
 export const globalRegisterUser = async (
   email: string,
   phone: string,
-  name?: string,
+  firstName: string,
+  lastName: string,
+  passportNumber: string,
   collection: string = 'nz_users'
 ): Promise<{ success: boolean; uid: string; message: string } | null> => {
   try {
+    // Compute fullName for backward compatibility
+    const fullName = `${firstName} ${lastName}`.trim();
+
     const functionUrl = 'https://us-central1-usa-visa-prep-c72f7.cloudfunctions.net/demoregisterUser';
     const response = await fetch(functionUrl, {
       method: 'POST',
@@ -349,7 +353,10 @@ export const globalRegisterUser = async (
       body: JSON.stringify({
         email,
         phone,
-        name,
+        firstName,
+        lastName,
+        fullName,
+        passportNumber,
         collection
       }),
     });
@@ -357,11 +364,11 @@ export const globalRegisterUser = async (
     if (!response.ok) {
       const errorData = await response.json();
       console.error("❌ Registration request failed:", errorData);
-      
+
       if (response.status === 409) {
         console.error("User already exists");
       }
-      
+
       return null;
     }
 

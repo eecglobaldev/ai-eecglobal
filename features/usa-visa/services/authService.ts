@@ -310,30 +310,34 @@ export const checkUserAuthExists = async (email: string): Promise<boolean> => {
 };
 
 /**
- * 🔐 Register User (Global) - Server-Side Registration
+ * 🔐 Global User Registration (Server-Side)
  * 
- * Uses REST API for server-side registration (no CORS issues)
- * 
- * Server handles:
- * - Password generation (server-side)
- * - Encryption (server-side)
- * - Firebase Auth user creation
- * - users_auth entry creation
- * - Country-specific profile creation
+ * Registers a new user via Cloud Function that handles:
+ * - Firebase Auth account creation
+ * - Password generation and encryption
+ * - users_auth collection entry
+ * - Tool-specific user profile creation
  * 
  * @param email - User email
  * @param phone - User phone
- * @param name - User name (optional)
+ * @param firstName - User first name
+ * @param lastName - User last name
+ * @param passportNumber - User passport number
  * @param collection - Collection name (usa_users, australia_gs_users, etc.)
  * @returns Registration result or null
  */
 export const globalRegisterUser = async (
     email: string,
     phone: string,
-    name?: string,
+    firstName: string,
+    lastName: string,
+    passportNumber: string,
     collection: string = 'usa_users'
 ): Promise<{ success: boolean; uid: string; message: string } | null> => {
     try {
+        // Compute fullName for backward compatibility
+        const fullName = `${firstName} ${lastName}`.trim();
+
         const functionUrl = 'https://us-central1-usa-visa-prep-c72f7.cloudfunctions.net/demoregisterUser';
         const response = await fetch(functionUrl, {
             method: 'POST',
@@ -343,7 +347,10 @@ export const globalRegisterUser = async (
             body: JSON.stringify({
                 email,
                 phone,
-                name,
+                firstName,
+                lastName,
+                fullName,
+                passportNumber,
                 collection
             }),
         });

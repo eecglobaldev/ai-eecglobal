@@ -11,7 +11,7 @@ interface LoginSignupModalProps {
   onClose: () => void;
 }
 
-const Spinner: React.FC<{className?: string}> = ({ className = "h-5 w-5 text-white" }) => (
+const Spinner: React.FC<{ className?: string }> = ({ className = "h-5 w-5 text-white" }) => (
   <svg className={`animate-spin ${className}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -31,15 +31,12 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
   const [phoneOtpError, setPhoneOtpError] = useState<string | null>(null);
 
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
-    // state: '',
-    // city: '',
+    passportNumber: '',
     targetCountry: 'New Zealand', // Default to New Zealand
-    // visaType: '', // Study Visa, PR Visa, Work Visa
-    // educationLevel: '', // Diploma, Bachelor's, Master's
-    // parentAnnualIncome: '', // Income ranges
     isEECAgent: '', // Yes or No
     branch: '', // Selected branch identifier
   });
@@ -162,8 +159,8 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
 
     } else if (name === 'isEECAgent') {
       // If user selects No, clear the branch selection
-      setFormData(prev => ({ 
-        ...prev, 
+      setFormData(prev => ({
+        ...prev,
         [name]: value,
         branch: value === 'No' ? '' : prev.branch
       }));
@@ -242,13 +239,13 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
     try {
 
 
-       // Check if email already exists in Firebase
-       const emailExists = await checkEmailExists(formData.email);
-       if (emailExists) {
-         setEmailError("An account with this email already exists. Please sign in instead.");
-         setIsRegistering(false);
-         return;
-       }
+      // Check if email already exists in Firebase
+      const emailExists = await checkEmailExists(formData.email);
+      if (emailExists) {
+        setEmailError("An account with this email already exists. Please sign in instead.");
+        setIsRegistering(false);
+        return;
+      }
 
       // Ensure all required fields are included in the data being sent to Firebase
       const userDataToSave = {
@@ -257,7 +254,7 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
         isEECAgent: formData.isEECAgent || '', // EEC agent status
         branch: formData.isEECAgent === 'Yes' ? (formData.branch || '') : '', // Branch only if EEC agent is Yes
       };
-      
+
       const result = await registerUser(userDataToSave);
 
       if (result === "EXISTS") {
@@ -273,7 +270,9 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
 
       // Store user email in localStorage for tracking
       if (typeof window !== 'undefined') {
+        const fullName = `${formData.firstName} ${formData.lastName}`.trim();
         localStorage.setItem('travelagentemail', formData.email);
+        localStorage.setItem('travelagentname', fullName);
       }
 
       // Note: Email notification will be sent when user clicks "Generate Prep Plan" button
@@ -305,8 +304,8 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
         `}</style>
 
         {/* Close button */}
-        <button 
-          onClick={onClose} 
+        <button
+          onClick={onClose}
           className="absolute top-4 right-4 z-50 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full p-1 w-8 h-8 flex items-center justify-center transition-colors duration-200"
           aria-label="Close"
         >
@@ -334,11 +333,32 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
 
 
 
-          {/* FULL NAME */}
-          <div>
-            <label className={labelClass}>Full Name</label>
-            <input type="text" name="name" required value={formData.name}
-              onChange={handleInputChange} className={inputClass} />
+          {/* FIRST NAME & LAST NAME */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className={labelClass}>First Name<span className="text-red-500 ml-1">*</span></label>
+              <input
+                type="text"
+                name="firstName"
+                required
+                value={formData.firstName}
+                onChange={handleInputChange}
+                className={inputClass}
+                placeholder="John"
+              />
+            </div>
+            <div>
+              <label className={labelClass}>Last Name<span className="text-red-500 ml-1">*</span></label>
+              <input
+                type="text"
+                name="lastName"
+                required
+                value={formData.lastName}
+                onChange={handleInputChange}
+                className={inputClass}
+                placeholder="Doe"
+              />
+            </div>
           </div>
 
 
@@ -358,7 +378,7 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
                   setEmailError(null); // Clear error when user types
                 }}
                 className={`${inputClass} ${emailError ? 'border-red-500' : ''}`}
-                //disabled={emailVerificationStep !== "idle"}
+              //disabled={emailVerificationStep !== "idle"}
               />
 
               {/* {emailVerificationStep === "idle" && (
@@ -387,7 +407,7 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
             <div className="mt-2 p-3 bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-slate-800 dark:to-slate-700 rounded-lg border border-indigo-200 dark:border-slate-600 shadow-sm space-y-2">
 
               <p className="text-xs text-center text-slate-700 dark:text-slate-300">
-                Enter the 6-digit code sent to<br/>
+                Enter the 6-digit code sent to<br />
                 <strong className="text-indigo-600 dark:text-indigo-400 text-xs">{formData.email}</strong>
               </p>
 
@@ -465,7 +485,7 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
                   onClick={handleSendPhoneOtp}
                   disabled={isSendingPhoneOtp || formData.phone.length !== 10} //|| emailVerificationStep !== 'verified'}
                   className="px-4 py-3 bg-indigo-600 text-white rounded-lg disabled:bg-slate-400 disabled:cursor-not-allowed"
-                  //title={emailVerificationStep !== 'verified' ? "Please verify your email first" : ""}
+                //title={emailVerificationStep !== 'verified' ? "Please verify your email first" : ""}
                 >
                   {isSendingPhoneOtp ? <Spinner /> : "Verify"}
                 </button>
@@ -487,7 +507,7 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
             <div className="mt-2 p-3 bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-slate-800 dark:to-slate-700 rounded-lg border border-indigo-200 dark:border-slate-600 shadow-sm space-y-2">
 
               <p className="text-xs text-center text-slate-700 dark:text-slate-300">
-                Enter OTP sent to<br/>
+                Enter OTP sent to<br />
                 <strong className="text-indigo-600 dark:text-indigo-400 text-xs">+91 {formData.phone}</strong>
               </p>
 
@@ -532,6 +552,43 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
 
 
 
+          {/* PASSPORT NUMBER - Only show after phone verification */}
+          {phoneStep === "verified" && (
+            <div className="p-4 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg border border-green-200 dark:border-green-800">
+              <p className="text-sm text-green-700 dark:text-green-400 mb-3 flex items-center gap-2">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                Phone verified! Please provide your passport details.
+              </p>
+              <div>
+                <label className={labelClass}>
+                  Passport Number
+                  <span className="text-red-500 ml-1">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="passportNumber"
+                  required
+                  value={formData.passportNumber}
+                  onChange={(e) => {
+                    const value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+                    handleInputChange({
+                      ...e,
+                      target: { ...e.target, name: 'passportNumber', value }
+                    } as React.ChangeEvent<HTMLInputElement>);
+                  }}
+                  className={inputClass}
+                  placeholder="A12345678"
+                  maxLength={15}
+                  title="Enter your passport number (letters and numbers only)"
+                />
+                <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  Enter exactly as shown on your passport (letters and numbers only)
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* EEC AGENT QUESTION */}
           <div className="flex items-center gap-x-6">
@@ -590,7 +647,7 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
             </div>
           )}
 
-          
+
 
 
           {/* SUBMIT BUTTON */}
@@ -608,21 +665,21 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
 
         </form>
 
-          {/* ALREADY REGISTERED BUTTON */}
-          <button
+        {/* ALREADY REGISTERED BUTTON */}
+        <button
           type="button"
           onClick={onSwitchToLogin}
           className="group relative w-full py-3 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 hover:from-indigo-50 hover:to-blue-50 dark:hover:from-indigo-900/30 dark:hover:to-blue-900/30 text-slate-700 dark:text-slate-200 font-semibold rounded-lg mt-3 transition-all duration-300 flex items-center justify-center min-h-[44px] border border-slate-200 dark:border-slate-600 hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] backdrop-blur-sm overflow-hidden"
         >
           {/* Animated gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-indigo-500/10 to-indigo-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-          
+
           {/* Button content */}
           <span className="relative flex items-center gap-2">
-            <svg 
-              className="w-5 h-5 transition-transform duration-300 group-hover:rotate-[-10deg]" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-5 h-5 transition-transform duration-300 group-hover:rotate-[-10deg]"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />

@@ -78,16 +78,19 @@ export const getUserByEmail = async (email: string) => {
  */
 export const registerUser = async (userData: any) => {
   try {
-    const { email, phone, name } = userData;
+    const { email, phone, firstName, lastName, passportNumber } = userData;
 
     // Check if user already exists
     if (await checkEmailExists(email)) {
       return "EXISTS";
     }
 
+    // Compute fullName for backward compatibility
+    const fullName = `${firstName} ${lastName}`.trim();
+
     // 1️⃣ CALL SERVER-SIDE REGISTRATION (handles everything)
-    const result = await globalRegisterUser(email, phone, name, 'nz_users');
-    
+    const result = await globalRegisterUser(email, phone, firstName, lastName, passportNumber, 'nz_users');
+
     if (!result || !result.success) {
       return "ERROR";
     }
@@ -96,7 +99,7 @@ export const registerUser = async (userData: any) => {
 
     // 2️⃣ UPDATE nz_users WITH ADDITIONAL FIELDS
     // Server creates basic profile, we add country-specific fields
-    
+
     // Convert branch ID to branch name
     let branchName = '';
     if (userData.isEECAgent === 'Yes' && userData.branch) {
@@ -114,6 +117,10 @@ export const registerUser = async (userData: any) => {
     // Update nz_users with additional fields
     const userDocRef = doc(db, "nz_users", uid);
     await updateDoc(userDocRef, {
+      firstName,
+      lastName,
+      fullName,
+      passportNumber,
       state: stateName,
       city: userData.city || '',
       targetCountry: userData.targetCountry || 'USA',
@@ -138,7 +145,7 @@ export const registerUser = async (userData: any) => {
 export const incrementPrepPlanCount = async (email: string) => {
   try {
     const usersRef = collection(db, "nz_users");
-    
+
     // Find user by email
     const q = query(usersRef, where("email", "==", email));
     const querySnapshot = await getDocs(q);

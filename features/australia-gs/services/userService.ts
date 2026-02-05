@@ -13,10 +13,10 @@ import {
 import { User } from "firebase/auth";
 import { BRANCHES } from '../data/branches';
 import { STATES } from '../data/states';
-import { 
-  globalRegisterUser, 
+import {
+  globalRegisterUser,
   signInWithHiddenAuth as authSignIn,
-  ensureUserSignedIn as authEnsureSignedIn 
+  ensureUserSignedIn as authEnsureSignedIn
 } from './authService';
 
 // ============================================================================
@@ -106,15 +106,23 @@ export const registerUser = async (userData: any) => {
       return "EXISTS";
     }
 
+    // Extract new fields
+    const { email, phone, firstName, lastName, passportNumber } = userData;
+
+    // Compute fullName for backward compatibility
+    const fullName = `${firstName} ${lastName}`.trim();
+
     // 2️⃣ CALL SERVER-SIDE REGISTRATION (authService.ts → Cloud Function)
     // This creates:
     //   - Firebase Auth user (with generated password)
     //   - users_auth/{uid} entry (with encrypted password)
     //   - Basic user profile in australia_gs_users/{uid}
     const registrationResult = await globalRegisterUser(
-      userData.email,
-      userData.phone,
-      userData.name,
+      email,
+      phone,
+      firstName,
+      lastName,
+      passportNumber,
       'australia_gs_users' // Collection name for Australia GS prep
     );
 
@@ -142,8 +150,12 @@ export const registerUser = async (userData: any) => {
     // The Cloud Function already created the basic profile
     // Now we add the Australia-specific fields
     const userDocRef = doc(db, "australia_gs_users", uid);
-    
+
     await updateDoc(userDocRef, {
+      firstName,
+      lastName,
+      fullName,
+      passportNumber,
       state: stateName,
       city: userData.city || '',
       targetCountry: userData.targetCountry || 'Australia',

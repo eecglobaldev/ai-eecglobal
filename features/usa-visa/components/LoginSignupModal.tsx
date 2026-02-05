@@ -35,9 +35,11 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
     const [phoneOtpError, setPhoneOtpError] = useState<string | null>(null);
 
     const [formData, setFormData] = useState({
-        name: '',
+        firstName: '',
+        lastName: '',
         email: '',
         phone: '',
+        passportNumber: '',
         state: '',
         city: '',
         targetCountry: 'USA', // Default to USA
@@ -362,11 +364,32 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
 
 
 
-                    {/* FULL NAME */}
-                    <div>
-                        <label className={labelClass}>Full Name</label>
-                        <input type="text" name="name" required value={formData.name}
-                            onChange={handleInputChange} className={inputClass} />
+                    {/* FIRST NAME & LAST NAME */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label className={labelClass}>First Name<span className="text-red-500 ml-1">*</span></label>
+                            <input
+                                type="text"
+                                name="firstName"
+                                required
+                                value={formData.firstName}
+                                onChange={handleInputChange}
+                                className={inputClass}
+                                placeholder="John"
+                            />
+                        </div>
+                        <div>
+                            <label className={labelClass}>Last Name<span className="text-red-500 ml-1">*</span></label>
+                            <input
+                                type="text"
+                                name="lastName"
+                                required
+                                value={formData.lastName}
+                                onChange={handleInputChange}
+                                className={inputClass}
+                                placeholder="Doe"
+                            />
+                        </div>
                     </div>
 
 
@@ -553,6 +576,44 @@ const LoginSignupModal: React.FC<LoginSignupModalProps> = ({ onAuthSuccess, onSw
                     )}
 
 
+
+                    {/* PASSPORT NUMBER - Only show after phone verification */}
+                    {phoneStep === "verified" && (
+                        <div className="p-4 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg border border-green-200 dark:border-green-800">
+                            <p className="text-sm text-green-700 dark:text-green-400 mb-3 flex items-center gap-2">
+                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                </svg>
+                                Phone verified! Please provide your passport details.
+                            </p>
+                            <div>
+                                <label className={labelClass}>
+                                    Passport Number
+                                    <span className="text-red-500 ml-1">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="passportNumber"
+                                    required
+                                    value={formData.passportNumber}
+                                    onChange={(e) => {
+                                        const value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+                                        handleInputChange({
+                                            ...e,
+                                            target: { ...e.target, name: 'passportNumber', value }
+                                        } as React.ChangeEvent<HTMLInputElement>);
+                                    }}
+                                    className={inputClass}
+                                    placeholder="A12345678"
+                                    maxLength={15}
+                                    title="Enter your passport number (letters and numbers only)"
+                                />
+                                <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                                    Enter exactly as shown on your passport (letters and numbers only)
+                                </p>
+                            </div>
+                        </div>
+                    )}
 
 
                     {/* EEC AGENT QUESTION */}
