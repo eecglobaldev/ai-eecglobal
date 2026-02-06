@@ -8,6 +8,11 @@
   --color-brand-dark: #020617;
   --color-brand-primary: #4F46E5;
   --color-brand-secondary: #8B5CF6;
+  /* Review / Testimonial Coach tool */
+  --color-brand-blue: #118AB2;
+  --color-brand-green: #06D6A0;
+  --color-brand-yellow: #FFD166;
+  --color-brand-red: #FF6B6B;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

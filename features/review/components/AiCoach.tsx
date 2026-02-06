@@ -92,8 +92,9 @@ export const AiCoach: React.FC = () => {
                     <label htmlFor="topic" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Key Topic / Experience</label>
                     <input type="text" id="topic" value={formData.topic} onChange={handleInputChange} className="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., EEC's weekly mock tests" />
                 </div>
-                <button onClick={handleGenerateScript} disabled={isLoading} className="w-full bg-brand-blue text-white font-bold py-3 px-4 dark:text-white-600 dark:bg-green-600 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center disabled:opacity-70 disabled:text-slate-200 disabled:cursor-not-allowed">
-                    {isLoading ? 'Generating...' : '✨ Generate Trilingual Script'}
+                <button onClick={handleGenerateScript} disabled={isLoading} className="w-full bg-brand-blue text-white font-bold py-3 px-4 dark:bg-green-600 dark:text-white rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 disabled:opacity-70 disabled:text-slate-200 disabled:cursor-not-allowed">
+                    <span aria-hidden="true">✨</span>
+                    <span>{isLoading ? 'Generating...' : 'Generate Trilingual Script'}</span>
                 </button>
 
                 <div className="mt-6">
